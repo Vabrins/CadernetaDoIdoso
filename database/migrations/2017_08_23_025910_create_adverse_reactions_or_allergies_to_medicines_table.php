@@ -13,7 +13,15 @@ class CreateAdverseReactionsOrAllergiesToMedicinesTable extends Migration
      */
     public function up()
     {
-        //
+        Schema::create('adverse_reactions_or_allergies_to_medicines_2_4', function (Blueprint $table) {
+            $table->increments('id');
+            $table->unsignedInteger('id_historys');
+            $table->foreign('id_historys', 'adverse_reactions_or_allergies_to_medicines_2_4_fk_historys')->references('id')->on('historys');
+            $table->string('medicine_2_4');
+            $table->date('date_2_4');
+            $table->string('adverse_reactions_or_allergies_2_4');
+            $table->timestamps();
+        });
     }
 
     /**
@@ -23,6 +31,6 @@ class CreateAdverseReactionsOrAllergiesToMedicinesTable extends Migration
      */
     public function down()
     {
-        //
+        Schema::dropIfExists('adverse_reactions_or_allergies_to_medicines_2_4');
     }
 }

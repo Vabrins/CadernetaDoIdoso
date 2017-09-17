@@ -14,15 +14,15 @@ class CreateUsersTable extends Migration
     public function up()
     {
         Schema::create('users', function (Blueprint $table) {
-            $table->increments('id');
+            $table->bigInteger('cpf', false, true)->unique();
             $table->string('email')->unique();
             $table->string('password');
             $table->string('name');
             $table->string('card_number_cns');
-            $table->bigInteger('cpf', false, true)->nullable();
             $table->string('company');
             $table->enum('level', ['professional', 'elderly']);
             $table->rememberToken();
+            $table->primary('cpf');
             $table->timestamps();
         });
     }

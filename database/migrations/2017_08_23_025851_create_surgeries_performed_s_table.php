@@ -13,7 +13,15 @@ class CreateSurgeriesPerformedSTable extends Migration
      */
     public function up()
     {
-        //
+        Schema::create('surgeries_performed_s_2_3', function (Blueprint $table) {
+            $table->increments('id');
+            $table->unsignedInteger('id_historys');
+            $table->foreign('id_historys', 'surgeries_performed_s_2_3_fk_historys')->references('id')->on('historys');
+            $table->string('surgery_2_3');
+            $table->string('year_2_3');
+            $table->string('comments_2_3');
+            $table->timestamps();
+        });
     }
 
     /**
@@ -23,6 +31,6 @@ class CreateSurgeriesPerformedSTable extends Migration
      */
     public function down()
     {
-        //
+        Schema::dropIfExists('surgeries_performed_s_2_3');
     }
 }

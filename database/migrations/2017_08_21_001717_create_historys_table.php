@@ -13,10 +13,10 @@ class CreateHistorysTable extends Migration
      */
     public function up()
     {
-        Schema::create('users', function (Blueprint $table) {
+        Schema::create('historys', function (Blueprint $table) {
             $table->increments('id');
-            $table->unsignedInteger('user_id');
-            $table->foreign('user_id', 'historys_fk_users')->references('id')->on('users');
+            $table->bigInteger('cpf', false, true);
+            $table->foreign('cpf', 'historys_fk_users')->references('cpf')->on('users');
             $table->timestamps();
         });
     }

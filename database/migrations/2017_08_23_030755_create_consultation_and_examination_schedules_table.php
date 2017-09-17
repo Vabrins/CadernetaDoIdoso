@@ -13,7 +13,17 @@ class CreateConsultationAndExaminationSchedulesTable extends Migration
      */
     public function up()
     {
-        //
+        Schema::create('consultation_and_examination_schedules_2_11_e', function (Blueprint $table) {
+            $table->increments('id');
+            $table->unsignedInteger('id_historys');
+            $table->foreign('id_historys', 'consultation_and_examination_schedules_2_11_e_fk_historys')->references('id')->on('historys');
+            $table->date('date_2_11_e');
+            $table->string('hour_2_11_e');
+            $table->string('place_2_11_e');
+            $table->string('query_exam_2_11_e');
+            $table->string('profissional_name_2_11_e');
+            $table->timestamps();
+        });
     }
 
     /**
@@ -23,6 +33,6 @@ class CreateConsultationAndExaminationSchedulesTable extends Migration
      */
     public function down()
     {
-        //
+        Schema::dropIfExists('consultation_and_examination_schedules_2_11_e');
     }
 }
