@@ -78,11 +78,14 @@
             @endif
 
             <div class="content">
+                <p>hello final project!</p>
                 <div class="title m-b-md">
                     Caderneta do Idoso
                 </div>
 
                 <div class="links">
+                    <!-- <a href="{{ url('/caderneta.blade.php') }}">Formulário de questões</a> -->
+                    <a href="http://127.0.0.1/CadernetaDoIdoso/resources/views/caderneta.blade.php">Formulário de questões</a>
                     <a href="https://github.com/Vabrins/CadernetaDoIdoso">GitHub</a>
                 </div>
             </div>
