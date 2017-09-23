@@ -15,8 +15,8 @@ class CreateHistorysTable extends Migration
     {
         Schema::create('historys', function (Blueprint $table) {
             $table->increments('id');
-            $table->bigInteger('cpf', false, true);
-            $table->foreign('cpf', 'historys_fk_users')->references('cpf')->on('users');
+            $table->unsignedInteger('id_users');
+            $table->foreign('id_users', 'historys_fk_users')->references('id')->on('users');
             $table->timestamps();
         });
     }

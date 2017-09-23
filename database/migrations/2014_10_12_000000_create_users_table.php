@@ -14,6 +14,7 @@ class CreateUsersTable extends Migration
     public function up()
     {
         Schema::create('users', function (Blueprint $table) {
+            $table->increments('id');
             $table->bigInteger('cpf', false, true)->unique();
             $table->string('email')->unique();
             $table->string('password');
@@ -22,7 +23,6 @@ class CreateUsersTable extends Migration
             $table->string('company');
             $table->enum('level', ['professional', 'elderly']);
             $table->rememberToken();
-            $table->primary('cpf');
             $table->timestamps();
         });
     }
