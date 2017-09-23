@@ -84,8 +84,7 @@
                 </div>
 
                 <div class="links">
-                    <!-- <a href="{{ url('/caderneta.blade.php') }}">Formulário de questões</a> -->
-                    <a href="http://127.0.0.1/CadernetaDoIdoso/resources/views/caderneta.blade.php">Formulário de questões</a>
+                    <a href="{{ url('/index') }}">Formulário de questões</a>
                     <a href="https://github.com/Vabrins/CadernetaDoIdoso">GitHub</a>
                 </div>
             </div>
