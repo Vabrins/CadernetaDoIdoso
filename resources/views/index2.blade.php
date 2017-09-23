@@ -17,6 +17,7 @@
   <link rel="stylesheet" href="../../public/css/sb-admin.css">
   <!-- Google fonts -->
   <link rel='stylesheet' type='text/css' href='https://fonts.googleapis.com/css?family=Open+Sans'>
+  <link rel="stylesheet" href="../../public/css/global.css">
 </head>
 
 <body class="fixed-nav sticky-footer bg-dark" id="page-top">
