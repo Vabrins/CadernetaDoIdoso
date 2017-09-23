@@ -24,7 +24,7 @@ class CreateVulnerableElderlyIdentificationProtocolsTable extends Migration
             $table->string('raise_or_extend_arms_above_level_of_the_shoulder_2_6');
             $table->string('write_or_manipulate_and_hold_small_objects_2_6');
             $table->string('walk_400_meters_about_four_blocks_2_6');
-            $table->string('do_domestic_service_heavy_like_rubbing_the_floor_or_clean_windows_2_6');
+            $table->string('do_domestic_serv_heavy_rubbing_floor_clean_windows_2_6');
             $table->timestamps();
         });
     }
