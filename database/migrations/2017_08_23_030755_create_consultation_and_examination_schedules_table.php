@@ -18,10 +18,10 @@ class CreateConsultationAndExaminationSchedulesTable extends Migration
             $table->unsignedInteger('id_historys');
             $table->foreign('id_historys', 'consultation_examination_schedules_2_11_e_fk_historys')->references('id')->on('historys');
             $table->date('date_2_11_e');
-            $table->string('hour_2_11_e');
-            $table->string('place_2_11_e');
-            $table->string('query_exam_2_11_e');
-            $table->string('profissional_name_2_11_e');
+            $table->string('hour_2_11_e', '5');
+            $table->string('place_2_11_e', '40');
+            $table->string('query_exam_2_11_e', '255');
+            $table->string('profissional_name_2_11_e', '40');
             $table->timestamps();
         });
     }

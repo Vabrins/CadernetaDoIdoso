@@ -17,9 +17,9 @@ class CreateSurgeriesPerformedSTable extends Migration
             $table->increments('id');
             $table->unsignedInteger('id_historys');
             $table->foreign('id_historys', 'surgeries_performed_s_2_3_fk_historys')->references('id')->on('historys');
-            $table->string('surgery_2_3');
-            $table->string('year_2_3');
-            $table->string('comments_2_3');
+            $table->string('surgery_2_3', '50');
+            $table->string('year_2_3', '5');
+            $table->string('comments_2_3', '50');
             $table->timestamps();
         });
     }

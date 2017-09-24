@@ -18,9 +18,9 @@ class CreateUsersTable extends Migration
             $table->string('cpf', '11')->unique();
             $table->string('email', '35')->unique();
             $table->string('password', '20');
-            $table->string('name', '20');
-            $table->string('card_number_cns', '20');
-            $table->string('company', '20');
+            $table->string('name', '30');
+            $table->string('card_number_cns', '15');
+            $table->string('company', '30');
             $table->enum('level', ['professional', 'elderly']);
             $table->rememberToken();
             $table->timestamps();

@@ -32,7 +32,7 @@ class CreateOralHealthAssessmentsTable extends Migration
             $table->boolean('dental_loss_in_last_year_2_11_d');
             $table->boolean('attendance_at_the_health_unit_2_11_d');
             $table->boolean('home_service_2_11_d');
-            $table->string('forwarding_for_specialties_dental_2_11_d');
+            $table->string('forwarding_for_specialties_dental_2_11_d', '2');
             $table->timestamps();
         });
     }

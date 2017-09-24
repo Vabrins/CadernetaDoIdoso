@@ -17,11 +17,11 @@ class CreateVaccinationCalendarsTable extends Migration
             $table->increments('id');
             $table->unsignedInteger('id_historys');
             $table->foreign('id_historys', 'vaccination_calendars_2_11_c_fk_historys')->references('id')->on('historys');
-            $table->string('name_2_11_c');
+            $table->string('name_2_11_c', '30');
             $table->date('date_2_11_c');
-            $table->string('lot_2_11_c');
-            $table->string('signature_2_11_c');
-            $table->string('dose_2_11_c');
+            $table->string('lot_2_11_c', '15');
+            $table->string('signature_2_11_c', '30');
+            $table->string('dose_2_11_c', '25');
             $table->timestamps();
         });
     }
