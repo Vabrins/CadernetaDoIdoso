@@ -1,30 +1,23 @@
 <!DOCTYPE html>
-<html lang="pt">
+<html lang="pt-BR">
 
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="description" content="">
-  <meta name="author" content="">
+  <meta name="description" content="Caderneta Digital do Idoso">
+  <meta name="author" content="Vabrins - Vitor Teofilo, Bruno Rodrigues e André da Silva">
   <title>Caderneta Digital do Idoso</title>
   <!-- Bootstrap core CSS-->
-  <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="../../vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
   <!-- Custom fonts for this template-->
-  <link href="vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+  <link href="../../vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
   <!-- Custom styles for this template-->
-  <link href="css/sb-admin.css" rel="stylesheet">
-  <!-- GOOGLE FONTS -->
+  <!-- <link rel="stylesheet" href="{{ asset('/css/sb-admin.css') }}"> -->
+  <link rel="stylesheet" href="../../public/css/sb-admin.css">
+  <!-- Google fonts -->
   <link rel='stylesheet' type='text/css' href='https://fonts.googleapis.com/css?family=Open+Sans'>
-  <style>
-    a, p, h1, h2{
-      font-family: Open Sans;
-      font-weight: 100;
-    }
-    * {
-      font-family: Open Sans;
-    }
-  </style>>
+  <link rel="stylesheet" href="../../public/css/global.css">
 </head>
 
 <body class="fixed-nav sticky-footer bg-dark" id="page-top">
@@ -46,55 +39,73 @@
               <a href="#">Dados Pessoais</a>
             </li>
             <li>
-              <a class="nav-link-collapse collapsed" data-toggle="collapse" href="#collapseMulti2">Avaliação da pessoa idosa</a>
-              <ul class="sidenav-third-level collapse" id="collapseMulti2">
+              <a class="nav-link-collapse collapsed" data-toggle="collapse" href="#item-elderly_evaluete">Avaliação da pessoa idosa</a>
+              <ul class="sidenav-third-level collapse" id="item-elderly_evaluete">
                 <li>
-                  <a href="#">Item</a>
+                  <a href="#">2.1 Medicamentos, fitoterápicos, suplementos e vitaminas em uso</a>
+                </li>
+                <li>
+                  <a href="#">2.2 Diagnósticos e internações prévios</a>
+                </li>
+                <li>
+                  <a href="#">2.3 Cirurgias realizadas</a>
+                </li>
+                <li>
+                  <a href="#">2.4 Reações adversas ou alergias a medicamentos</a>
+                </li>
+                <li>
+                  <a href="#">2.5 Dados antropométrico</a>
+                </li>
+                <li>
+                  <a href="#">2.6 Protocolo de identificação do idoso vulnerável (VES-13)</a>
+                </li>
+                <li>
+                  <a href="#">2.7 Informações complementares </a>
+                </li>
+                <li>
+                  <a href="#">2.8 Avaliação ambienta</a>
+                </li>
+                <li>
+                  <a href="#">2.9 Quedas</a>
+                </li>
+                <li>
+                  <a href="#">2.10 Identificação de dor crônica</a>
+                </li>
+                <li>
+                  <a href="#">2.11 Hábitos de vida</a>
                 </li>
               </ul>
             </li>
             <li>
-              <a class="nav-link-collapse collapsed" data-toggle="collapse" href="#collapseMulti2">Controle de pressão arterial</a>
-              <ul class="sidenav-third-level collapse" id="collapseMulti2">
-                <li>
-                  <a href="#">Item</a>
-                </li>
-              </ul>
+              <a href="#">Controle de pressão arterial</a>
             </li>
             <li>
-              <a class="nav-link-collapse collapsed" data-toggle="collapse" href="#collapseMulti2">Controle de glicemia</a>
-              <ul class="sidenav-third-level collapse" id="collapseMulti2">
-                <li>
-                  <a href="#">Item</a>
-                </li>
-              </ul>
+              <a href="#">Controle de glicemia</a>
             </li>
             <li>
-              <a class="nav-link-collapse collapsed" data-toggle="collapse" href="#collapseMulti2">Calendário de vacinação</a>
-              <ul class="sidenav-third-level collapse" id="collapseMulti2">
-                <li>
-                  <a href="#">Item</a>
-                </li>
-              </ul>
+              <a href="#">Calendário de vacinação</a>
             </li>
             <li>
-              <a class="nav-link-collapse collapsed" data-toggle="collapse" href="#collapseMulti2">Avaliação de saúde bucal</a>
-              <ul class="sidenav-third-level collapse" id="collapseMulti2">
+              <a class="nav-link-collapse collapsed" data-toggle="collapse" href="#item-schedule">Avaliação de saúde bucal</a>
+              <ul class="sidenav-third-level collapse" id="item-schedule">
                 <li>
-                  <a href="#">Item</a>
+                  <a href="#">Agenda de consultas e exames</a>
+                </li>
+                <li>
+                  <a href="#">Atualizações da caderneta</a>
                 </li>
               </ul>
             </li>
           </ul>
         </li>
         <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Listagens">
-          <a class="nav-link" href="charts.html">
+          <a class="nav-link" href="#">
             <i class="fa fa-fw fa-list-alt"></i>
             <span class="nav-link-text">Listagens</span>
           </a>
         </li>
         <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Resultados">
-          <a class="nav-link" href="charts.html">
+          <a class="nav-link" href="#">
             <i class="fa fa-fw fa-area-chart"></i>
             <span class="nav-link-text">Resultados</span>
           </a>
@@ -142,6 +153,7 @@
             <div class="progress-bar" role="progressbar" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
           </div>
           <p>Conteúdo</p>
+          <div id="app"></div>
         </div>
       </div>
     </div>
@@ -176,14 +188,19 @@
         </div>
       </div>
     </div>
+    <script src="../../public/bundle.js"></script>
+    <script type="text/babel">
+
+    </script>
     <!-- Bootstrap core JavaScript-->
-    <script src="vendor/jquery/jquery.min.js"></script>
-    <script src="vendor/popper/popper.min.js"></script>
-    <script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+    <script src="../../vendor/jquery/jquery.min.js"></script>
+    <script src="../../vendor/popper/popper.min.js"></script>
+    <script src="../../vendor/bootstrap/js/bootstrap.min.js"></script>
     <!-- Core plugin JavaScript-->
-    <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+    <script src="../../vendor/jquery-easing/jquery.easing.min.js"></script>
     <!-- Custom scripts for all pages-->
-    <script src="js/sb-admin.min.js"></script>
+    <!-- <script src="{{ asset('/js/sb-admin.min.js') }}"></script> -->
+    <script src="../../public/js/sb-admin.min.js"></script>
   </div>
 </body>
 
