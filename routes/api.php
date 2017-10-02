@@ -26,7 +26,7 @@ Route::resource('environmentalassessment', 'EnvironmentalAssessmentController');
 Route::resource('glucosecontrol', 'GlucoseControlController');
 Route::resource('history', 'HistoryController');
 Route::resource('identificationchronicpain', 'IdentificationChronicPainController');
-Route::resource('identificationchronicpainsintensity', 'IdentificationChronicPainsIntensityController');
+Route::resource('idenchronicpainsintensity', 'IdenChronicPainsIntensityController');
 Route::resource('livinghabits', 'LivingHabitsController');
 Route::resource('medicinesherbalremedies', 'MedicinesHerbalRemediesController');
 Route::resource('oralhealthassessment', 'OralHealthAssessmentController');

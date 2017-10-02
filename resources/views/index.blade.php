@@ -8,22 +8,23 @@
   <meta name="description" content="Caderneta Digital do Idoso">
   <meta name="author" content="Vabrins - Vitor Teofilo, Bruno Rodrigues e André da Silva">
   <title>Caderneta Digital do Idoso</title>
+
   <!-- Bootstrap core CSS-->
-  <link href="../../vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="http://127.0.0.1:8000/css/bootstrap.min.css">
   <!-- Custom fonts for this template-->
-  <link href="../../vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="{{ asset('/css/font-awesome/css/font-awesome.min.css') }}">
   <!-- Custom styles for this template-->
-  <!-- <link rel="stylesheet" href="{{ asset('/css/sb-admin.css') }}"> -->
-  <link rel="stylesheet" href="../../public/css/sb-admin.css">
+  <link rel="stylesheet" href="{{ asset('/css/sb-admin.css') }}">
   <!-- Google fonts -->
   <link rel='stylesheet' type='text/css' href='https://fonts.googleapis.com/css?family=Open+Sans'>
-  <link rel="stylesheet" href="../../public/css/global.css">
+  <!-- General styles -->
+  <link rel="stylesheet" href="{{ asset('/css/global.css') }}">
 </head>
 
-<body class="fixed-nav sticky-footer bg-dark" id="page-top">
+<body class="fixed-nav sticky-footer bg-dark sidenav-toggled" id="page-top">
   <!-- Navigation-->
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" id="mainNav">
-    <a class="navbar-brand" href="blank.html">Caderneta Digital do Idoso</a>
+    <a class="navbar-brand" href="blank.html">Caderneta Digital do Idoso</a>    
     <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -111,7 +112,7 @@
           </a>
         </li>
         <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Sobre">
-          <a class="nav-link" href="tables.html">
+          <a class="nav-link" href="#">
             <i class="fa fa-fw fa-question-circle-o"></i>
             <span class="nav-link-text">Sobre</span>
           </a>
@@ -139,7 +140,7 @@
         </li>
         <li class="nav-item">
           <a class="nav-link" data-toggle="modal" data-target="#exampleModal">
-            <i class="fa fa-fw fa-sign-out"></i>Logout</a>
+            <i class="fa fa-fw fa-sign-out"></i>Sair</a>
         </li>
       </ul>
     </div>
@@ -148,12 +149,49 @@
     <div class="container-fluid">
       <div class="row">
         <div class="col-12">
-          <h1>Formulário</h1>
+          <ul id="step" class="nav nav-tabs">
+            <li class="nav-item">
+              <a class="nav-link active">Dados Pessoais</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Av. da pessoa idosa</a>
+              <div class="dropdown-menu">
+                <a class="dropdown-item" href="#">Medicamentos, fitoterápicos, suplementos e vitaminas em uso</a>
+                <a class="dropdown-item" href="#">Diagnósticos e internações prévios</a>
+                <a class="dropdown-item" href="#">Cirurgias realizadas</a>
+                <a class="dropdown-item" href="#">Reações adversas ou alergias a medicamentos</a>
+                <a class="dropdown-item" href="#">Dados antropométrico</a>
+                <a class="dropdown-item" href="#">Protocolo de identificação do idoso vulnerável</a>
+                <a class="dropdown-item" href="#">Informações complementares</a>
+                <a class="dropdown-item" href="#">Avaliação ambienta</a>
+                <a class="dropdown-item" href="#">Quedas</a>
+                <a class="dropdown-item" href="#">Identificação de dor crônica</a>
+                <a class="dropdown-item" href="#">Hábitos de vida</a>
+              </div>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link">Controle de PA</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link">Controle de glicemia</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link">Calendário de vacinação</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Av. de saúde bucal</a>
+              <div class="dropdown-menu">
+                <a class="dropdown-item" href="#">Agenda de consultas e exames</a>
+                <a class="dropdown-item" href="#">Atualizações da caderneta</a>
+              </div>
+            </li>
+          </ul>
           <div class="progress">
-            <div class="progress-bar" role="progressbar" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
-          </div>
-          <p>Conteúdo</p>
-          <div id="app"></div>
+            <div class="progress-bar" role="progressbar" style="width: 25%; height: 1px;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+          </div>                            
+              
+          <div id="app" class="container-fluid"></div>
+          <div id="test"></div>
         </div>
       </div>
     </div>
@@ -188,19 +226,16 @@
         </div>
       </div>
     </div>
-    <script src="../../public/bundle.js"></script>
-    <script type="text/babel">
-
-    </script>
+    <!-- React components modules -->
+    <script async src="{{ asset('/js/bundle.js') }}"></script>
     <!-- Bootstrap core JavaScript-->
-    <script src="../../vendor/jquery/jquery.min.js"></script>
-    <script src="../../vendor/popper/popper.min.js"></script>
-    <script src="../../vendor/bootstrap/js/bootstrap.min.js"></script>
+    <script src="{{ asset('/js/jquery.min.js') }}"></script>
+    <script src="{{ asset('/js/popper/popper.min.js') }}"></script>
+    <script src="{{ asset('/js/bootstrap.min.js') }}"></script>
     <!-- Core plugin JavaScript-->
-    <script src="../../vendor/jquery-easing/jquery.easing.min.js"></script>
+    <script src="{{ asset('/js/jquery.easing.min.js') }}"></script>
     <!-- Custom scripts for all pages-->
-    <!-- <script src="{{ asset('/js/sb-admin.min.js') }}"></script> -->
-    <script src="../../public/js/sb-admin.min.js"></script>
+    <script src="{{ asset('/js/sb-admin.min.js') }}"></script>
   </div>
 </body>
 
