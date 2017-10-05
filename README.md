@@ -7,4 +7,4 @@ Informatização da Caderneta de Saúde do Idoso
 - Executar ``` php artisan migrate ```
 - Executar ``` composer dumpautoload ```
 - Executar ``` php artisan serve ``` - p/ iniciar servidor do laravel
-- Executar em outro terminal ``` webpack -w ``` - p/ escutar e aplicar mudanças no bundle.js
+- Executar em outro terminal ``` webpack -w ``` - p/ escutar e aplicar mudanças do bundle.js
