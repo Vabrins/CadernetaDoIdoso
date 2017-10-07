@@ -13,6 +13,11 @@ class Controller extends BaseController
 
     private $model;
 
+    public function __construct(){
+        $this->model = 'App\\'.str_replace('Controller', '', class_basename(get_called_class())
+        );
+    }
+
     /**
      * Display a listing of the resource.
      *
@@ -20,9 +25,7 @@ class Controller extends BaseController
      */
     public function index()
     {
-        $this->model = 'App\\'.str_replace('Controller', '', class_basename(get_called_class())
-    	);
-    	dd($this->model::all());
+    	echo json_encode($this->model::all());
     }
 
     /**
@@ -43,7 +46,7 @@ class Controller extends BaseController
      */
     public function store(Request $request)
     {
-        //
+        
     }
 
     /**
@@ -54,7 +57,7 @@ class Controller extends BaseController
      */
     public function show($id)
     {
-        //
+        echo json_encode($this->model::find($id));
     }
 
     /**
