@@ -17,7 +17,7 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-Route::group(['prefix' => '/api/v1'], function () {
+Route::group(['prefix' => '/v1'], function () {
 	Route::resource('/anthropometricdata', 'AnthropometricDataController');
 	Route::resource('/complementaryinformation', 'ComplementaryInformationController');
 	Route::resource('/consultationexamination', 'ConsultationExaminationController');
@@ -27,7 +27,7 @@ Route::group(['prefix' => '/api/v1'], function () {
 	Route::resource('/glucosecontrol', 'GlucoseControlController');
 	Route::resource('/history', 'HistoryController');
 	Route::resource('/identificationchronicpain', 'IdentificationChronicPainController');
-	Route::resource('/idenchronicpainsintensity', 'IdenChronicPainsIntensityController');
+	Route::resource('/idenchronicpainsintensity', 'IdentificationChronicPainsIntensityController');
 	Route::resource('/livinghabits', 'LivingHabitsController');
 	Route::resource('/medicinesherbalremedies', 'MedicinesHerbalRemediesController');
 	Route::resource('/oralhealthassessment', 'OralHealthAssessmentController');

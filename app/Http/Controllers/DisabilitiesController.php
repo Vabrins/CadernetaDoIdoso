@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-class AnthropometricDataController extends Controller
+class DisabilitiesController extends Controller
 {
     /**
      * Display a listing of the resource.
