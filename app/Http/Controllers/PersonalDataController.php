@@ -24,6 +24,9 @@ class PersonalDataController extends Controller
     public function create()
     {
         //
+        $val = json_decode('test');
+        // dd($val);
+        echo json_encode('olar in controller');        
     }
 
     /**
@@ -45,6 +48,8 @@ class PersonalDataController extends Controller
      */
     public function show($id)
     {
+        $dados = array('nome' => 'bruno', 'apelido' => 'livinho', 'cns' => '12345678910' );
+        echo json_encode($dados);
         //
     }
 

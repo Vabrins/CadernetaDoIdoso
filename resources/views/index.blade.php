@@ -10,7 +10,7 @@
   <title>Caderneta Digital do Idoso</title>
 
   <!-- Bootstrap core CSS-->
-  <link rel="stylesheet" href="http://127.0.0.1:8000/css/bootstrap.min.css">
+  <link rel="stylesheet" href="{{ asset('/css/bootstrap.min.css') }}">
   <!-- Custom fonts for this template-->
   <link rel="stylesheet" href="{{ asset('/css/font-awesome/css/font-awesome.min.css') }}">
   <!-- Custom styles for this template-->
@@ -29,102 +29,7 @@
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarResponsive">
-      <ul class="navbar-nav navbar-sidenav" id="exampleAccordion">
-        <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Formulário">
-          <a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#collapseMulti" data-parent="#exampleAccordion">
-            <i class="fa fa-fw fa-stethoscope"></i>
-            <span class="nav-link-text">Formulário</span>
-          </a>
-          <ul class="sidenav-second-level collapse" id="collapseMulti">
-            <li>
-              <a href="#">Dados Pessoais</a>
-            </li>
-            <li>
-              <a class="nav-link-collapse collapsed" data-toggle="collapse" href="#item-elderly_evaluete">Avaliação da pessoa idosa</a>
-              <ul class="sidenav-third-level collapse" id="item-elderly_evaluete">
-                <li>
-                  <a href="#">2.1 Medicamentos, fitoterápicos, suplementos e vitaminas em uso</a>
-                </li>
-                <li>
-                  <a href="#">2.2 Diagnósticos e internações prévios</a>
-                </li>
-                <li>
-                  <a href="#">2.3 Cirurgias realizadas</a>
-                </li>
-                <li>
-                  <a href="#">2.4 Reações adversas ou alergias a medicamentos</a>
-                </li>
-                <li>
-                  <a href="#">2.5 Dados antropométrico</a>
-                </li>
-                <li>
-                  <a href="#">2.6 Protocolo de identificação do idoso vulnerável (VES-13)</a>
-                </li>
-                <li>
-                  <a href="#">2.7 Informações complementares </a>
-                </li>
-                <li>
-                  <a href="#">2.8 Avaliação ambienta</a>
-                </li>
-                <li>
-                  <a href="#">2.9 Quedas</a>
-                </li>
-                <li>
-                  <a href="#">2.10 Identificação de dor crônica</a>
-                </li>
-                <li>
-                  <a href="#">2.11 Hábitos de vida</a>
-                </li>
-              </ul>
-            </li>
-            <li>
-              <a href="#">Controle de pressão arterial</a>
-            </li>
-            <li>
-              <a href="#">Controle de glicemia</a>
-            </li>
-            <li>
-              <a href="#">Calendário de vacinação</a>
-            </li>
-            <li>
-              <a class="nav-link-collapse collapsed" data-toggle="collapse" href="#item-schedule">Avaliação de saúde bucal</a>
-              <ul class="sidenav-third-level collapse" id="item-schedule">
-                <li>
-                  <a href="#">Agenda de consultas e exames</a>
-                </li>
-                <li>
-                  <a href="#">Atualizações da caderneta</a>
-                </li>
-              </ul>
-            </li>
-          </ul>
-        </li>
-        <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Listagens">
-          <a class="nav-link" href="#">
-            <i class="fa fa-fw fa-list-alt"></i>
-            <span class="nav-link-text">Listagens</span>
-          </a>
-        </li>
-        <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Resultados">
-          <a class="nav-link" href="#">
-            <i class="fa fa-fw fa-area-chart"></i>
-            <span class="nav-link-text">Resultados</span>
-          </a>
-        </li>
-        <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Sobre">
-          <a class="nav-link" href="#">
-            <i class="fa fa-fw fa-question-circle-o"></i>
-            <span class="nav-link-text">Sobre</span>
-          </a>
-        </li>
-      </ul>
-      <ul class="navbar-nav sidenav-toggler">
-        <li class="nav-item">
-          <a class="nav-link text-center" id="sidenavToggler">
-            <i class="fa fa-fw fa-angle-left"></i>
-          </a>
-        </li>
-      </ul>
+      <div id="sidemenu"></div>
       <ul class="navbar-nav ml-auto">
         <li class="nav-item">
           <form class="form-inline my-2 my-lg-0 mr-lg-2">
@@ -149,43 +54,7 @@
     <div class="container-fluid">
       <div class="row">
         <div class="col-12">
-          <ul id="step" class="nav nav-tabs">
-            <li class="nav-item">
-              <a class="nav-link active">Dados Pessoais</a>
-            </li>
-            <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Av. da pessoa idosa</a>
-              <div class="dropdown-menu">
-                <a class="dropdown-item" href="#">Medicamentos, fitoterápicos, suplementos e vitaminas em uso</a>
-                <a class="dropdown-item" href="#">Diagnósticos e internações prévios</a>
-                <a class="dropdown-item" href="#">Cirurgias realizadas</a>
-                <a class="dropdown-item" href="#">Reações adversas ou alergias a medicamentos</a>
-                <a class="dropdown-item" href="#">Dados antropométrico</a>
-                <a class="dropdown-item" href="#">Protocolo de identificação do idoso vulnerável</a>
-                <a class="dropdown-item" href="#">Informações complementares</a>
-                <a class="dropdown-item" href="#">Avaliação ambienta</a>
-                <a class="dropdown-item" href="#">Quedas</a>
-                <a class="dropdown-item" href="#">Identificação de dor crônica</a>
-                <a class="dropdown-item" href="#">Hábitos de vida</a>
-              </div>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link">Controle de PA</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link">Controle de glicemia</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link">Calendário de vacinação</a>
-            </li>
-            <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Av. de saúde bucal</a>
-              <div class="dropdown-menu">
-                <a class="dropdown-item" href="#">Agenda de consultas e exames</a>
-                <a class="dropdown-item" href="#">Atualizações da caderneta</a>
-              </div>
-            </li>
-          </ul>
+          <div id="menu_guide"></div>
           <div class="progress">
             <div class="progress-bar" role="progressbar" style="width: 25%; height: 1px;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
           </div>                            
