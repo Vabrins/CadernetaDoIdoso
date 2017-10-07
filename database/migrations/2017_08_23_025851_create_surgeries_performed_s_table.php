@@ -19,7 +19,7 @@ class CreateSurgeriesPerformedSTable extends Migration
             $table->foreign('id_historys', 'surgeries_performed_s_2_3_fk_historys')->references('id')->on('historys');
             $table->string('surgery_2_3', '50')->nullable(true);
             $table->string('year_2_3', '5')->nullable(true);
-            $table->string('comments_2_3', '50')->nullable(true);
+            $table->string('comments_2_3', '100')->nullable(true);
             $table->timestamps();
         });
     }

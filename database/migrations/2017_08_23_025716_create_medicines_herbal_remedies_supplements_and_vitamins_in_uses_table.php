@@ -20,6 +20,8 @@ class CreateMedicinesHerbalRemediesSupplementsAndVitaminsInUsesTable extends Mig
             $table->string('name_of_the_medicinal_supplement_or_vitamin_2_1', '50')->nullable(true);
             $table->string('dose_and_frequency_2_1', '50')->nullable(true);
             $table->string('start_date_or_time_of_use_2_1')->nullable(true);
+            $table->string('it_was_prescribed_by_some_professional_2_1', '30')->nullable(true);
+            $table->text('suspension_information_2_1')->nullable(true);
             $table->boolean('concomitant_use_of_five_or_more_medicines_2_1')->nullable(true);
             $table->timestamps();
         });

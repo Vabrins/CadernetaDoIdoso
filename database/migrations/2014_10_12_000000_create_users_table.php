@@ -21,7 +21,7 @@ class CreateUsersTable extends Migration
             $table->string('name', '30');
             $table->string('card_number_cns', '15');
             $table->string('company', '30');
-            $table->enum('level', ['professional', 'elderly']);
+            $table->enum('level', ['professional', 'super_admin']);
             $table->rememberToken();
             $table->timestamps();
         });
