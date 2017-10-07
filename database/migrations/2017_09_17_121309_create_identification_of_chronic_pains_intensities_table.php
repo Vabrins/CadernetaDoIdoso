@@ -17,8 +17,8 @@ class CreateIdentificationOfChronicPainsIntensitiesTable extends Migration
             $table->increments('id');
             $table->unsignedInteger('id_historys');
             $table->foreign('id_historys', 'identification_of_chronic_pains_intensities_2_10_b_fk_historys')->references('id')->on('historys');
-            $table->date('date_2_10_b');
-            $table->integer('place_of_pain_2_10_b');
+            $table->date('date_2_10_b')->nullable(true);
+            $table->integer('place_of_pain_2_10_b')->nullable(true);
             $table->timestamps();
         });
     }

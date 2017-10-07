@@ -17,11 +17,11 @@ class CreateAnthropometricDataSTable extends Migration
             $table->increments('id');
             $table->unsignedInteger('id_historys');
             $table->foreign('id_historys', 'anthropometric_data_s_2_5_fk_historys')->references('id')->on('historys');
-            $table->float('weight_2_5', 8, 2);
-            $table->float('height_2_5', 8, 2);
-            $table->float('imc_weight_height_2_5', 8, 2);
-            $table->float('calf_perimeter_pp_left_2_5', 8, 2);
-            $table->boolean('you_have_exp_loss_uni_weight_min_body_last_year_2_5');
+            $table->float('weight_2_5', 8, 2)->nullable(true);
+            $table->float('height_2_5', 8, 2)->nullable(true);
+            $table->float('imc_weight_height_2_5', 8, 2)->nullable(true);
+            $table->float('calf_perimeter_pp_left_2_5', 8, 2)->nullable(true);
+            $table->boolean('you_have_exp_loss_uni_weight_min_body_last_year_2_5')->nullable(true);
             $table->timestamps();
         });
     }

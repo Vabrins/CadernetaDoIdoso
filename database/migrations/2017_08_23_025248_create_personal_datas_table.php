@@ -37,6 +37,7 @@ class CreatePersonalDatasTable extends Migration
             $table->string('do_you_have_a_religion_aux_1', '20')->nullable(true);
             $table->string('occupation_primary_profession_1', '50')->nullable(true);
             $table->string('marital_status_1', '50')->nullable(true);
+            $table->string('marital_status_aux_1', '50')->nullable(true);
             $table->string('basic_heath_unit_that_attends_1', '30')->nullable(true);
             $table->string('do_you_have_any_major_allergies_1', '50')->nullable(true);
             $table->boolean('do_you_have_any_disabilities_1')->nullable(true);
