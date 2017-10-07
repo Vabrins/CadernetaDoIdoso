@@ -1230,7 +1230,7 @@ class SideMenu extends __WEBPACK_IMPORTED_MODULE_0_react___default.a.Component {
   }
 }
 
-/* harmony default export */ __webpack_exports__["a"] = (SideMenu);
+/* unused harmony default export */ var _unused_webpack_default_export = (SideMenu);
 
 /***/ }),
 /* 16 */
@@ -1243,7 +1243,7 @@ class SideMenu extends __WEBPACK_IMPORTED_MODULE_0_react___default.a.Component {
 
 const divStyle = {
   margin: '40px',
-  border: '5px solid pink'
+  border: '5px solid'
 };
 
 class CadernetaMenuGuide extends __WEBPACK_IMPORTED_MODULE_0_react___default.a.Component {
@@ -1401,11 +1401,6 @@ class CadernetaMenuGuide extends __WEBPACK_IMPORTED_MODULE_0_react___default.a.C
             )
           )
         )
-      ),
-      __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-        'button',
-        { onClick: this.setVisibility },
-        '+'
       )
     );
   }
@@ -1424,20 +1419,19 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_react_dom__ = __webpack_require__(20);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_react_dom___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_react_dom__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__components_App__ = __webpack_require__(34);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__components_Test__ = __webpack_require__(35);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__components_PersonalData__ = __webpack_require__(37);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__components_CadernetaMenuGuide__ = __webpack_require__(16);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__components_SideMenu__ = __webpack_require__(15);
 
 
 
 
 
-
+// import SideMenu from './components/SideMenu'
 
 __WEBPACK_IMPORTED_MODULE_1_react_dom___default.a.render(__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_2__components_App__["a" /* default */], null), document.getElementById('app'));
-__WEBPACK_IMPORTED_MODULE_1_react_dom___default.a.render(__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_3__components_Test__["a" /* default */], null), document.getElementById('test'));
+__WEBPACK_IMPORTED_MODULE_1_react_dom___default.a.render(__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_3__components_PersonalData__["a" /* default */], null), document.getElementById('personal-data'));
 __WEBPACK_IMPORTED_MODULE_1_react_dom___default.a.render(__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_4__components_CadernetaMenuGuide__["a" /* default */], null), document.getElementById('menu_guide'));
-__WEBPACK_IMPORTED_MODULE_1_react_dom___default.a.render(__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_5__components_SideMenu__["a" /* default */], null), document.getElementById('sidemenu'));
+// ReactDOM.render(<SideMenu />, document.getElementById('sidemenu'))
 
 /***/ }),
 /* 18 */
@@ -9860,9 +9854,7 @@ module.exports = function () {
 class App extends __WEBPACK_IMPORTED_MODULE_0_react___default.a.Component {
   constructor(props) {
     super(props);
-    this.state = {
-      teste: 'teste'
-    };
+    this.state = {};
   }
 
   render() {
@@ -9873,408 +9865,7 @@ class App extends __WEBPACK_IMPORTED_MODULE_0_react___default.a.Component {
 /* harmony default export */ __webpack_exports__["a"] = (App);
 
 /***/ }),
-/* 35 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react__ = __webpack_require__(2);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_react__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_jquery__ = __webpack_require__(36);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_jquery___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_jquery__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__SideMenu__ = __webpack_require__(15);
-
-
-
-
-class Test extends __WEBPACK_IMPORTED_MODULE_0_react___default.a.Component {
-
-  constructor(props) {
-    super(props);
-
-    this.state = { personal_data: [], id_historys: '1', name_1: '', nick_name_1: '', card_number_cns_1: '', photo_1: '', document_cpf_1: '', document_rg_1: '', mothers_name_1: '', date_of_birth_1: '', sexuality_1: '', city_of_birth_1: '', nationality_1: '', country_of_birth_1: '', can_you_read_and_write_1: '', scholarity_1: '', breed_color_1: '', breed_color_aux_1: '', do_you_have_a_religion_1: '', birth_parents_1: 'errado', do_you_have_a_religion_aux_1: '', occupation_primary_profession_1: '', marital_status_1: '', basic_heath_unit_that_attends_1: '', do_you_have_any_major_allergies_1: '', do_you_have_any_disabilities_1: '', do_you_have_any_disabilities_aux_1: '', blood_type_1: '1', rh_factor_1: '' };
-    this.sendForm = this.sendForm.bind(this);
-    this.setName1 = this.setName1.bind(this);
-    this.setNickName1 = this.setNickName1.bind(this);
-    this.setCardNumberCns1 = this.setCardNumberCns1.bind(this);
-    this.setDocumentRg1 = this.setDocumentRg1.bind(this);
-    this.setMothersName1 = this.setMothersName1.bind(this);
-    this.setDoYouHaveaReligionAux1 = this.setDoYouHaveaReligionAux1.bind(this);
-    this.setDocumentCpf1 = this.setDocumentCpf1.bind(this);
-    this.setCityOfBirth1 = this.setCityOfBirth1.bind(this);
-    this.setCountryOfBirth1 = this.setCountryOfBirth1.bind(this);
-    this.setBreedColorAux1 = this.setBreedColorAux1.bind(this);
-    this.setSexuality = this.setSexuality.bind(this);
-    this.setNationality1 = this.setNationality1.bind(this);
-    this.setCanYouReadAndWrite1 = this.setCanYouReadAndWrite1.bind(this);
-    this.setScholarity1 = this.setScholarity1.bind(this);
-    this.setBreedColor1 = this.setBreedColor1.bind(this);
-    this.setDoYouHaveaReligion1 = this.setDoYouHaveaReligion1.bind(this);
-    this.setDateOfBirth1 = this.setDateOfBirth1.bind(this);
-    this.setPhoto1 = this.setPhoto1.bind(this);
-  }
-
-  componentWillMount() {
-    __WEBPACK_IMPORTED_MODULE_1_jquery___default.a.ajax({
-      url: "http://127.0.0.1:8000/api/personaldata/show",
-      dataType: "json",
-      success: function (response) {
-        console.log(response);
-        this.setState({ personal_data: response });
-      }.bind(this)
-    });
-  }
-
-  sendForm(evt) {
-    evt.preventDefault();
-    // console.log('You have selected:', this.state.sexuality_1);
-    // console.log('You have selected:', this.state.nationality_1);
-    // console.log('You have selected:', this.state.can_you_read_and_write_1);
-    // console.log('You have selected:', this.state.scholarity_1);
-    // console.log('You have selected:', this.state.breed_color_1);
-    // console.log('You have selected:', this.state.do_you_have_a_religion_1);
-    // console.log('You have selected:', this.state.date_of_birth_1);
-    // console.log('You have selected:', this.state.photo_1);
-
-    __WEBPACK_IMPORTED_MODULE_1_jquery___default.a.ajax({
-      url: "http://127.0.0.1:8000/api/personaldata/create",
-      contentType: 'application/json',
-      dataType: 'json',
-      data: JSON.stringify({ test: 'heyy' }),
-      success: function (response) {
-        console.log(response);
-        console.log("enviado com sucesso");
-      },
-      error: function (response) {
-        console.log("erro");
-      }.bind(this)
-    });
-  }
-
-  next() {
-    console.log("next");
-  }
-
-  render() {
-    return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-      'div',
-      { className: 'container' },
-      __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-        'form',
-        { onSubmit: this.sendForm, method: 'post' },
-        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-          'div',
-          { className: 'row' },
-          __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-            'div',
-            { className: 'col' },
-            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-              'fieldset',
-              null,
-              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                'label',
-                null,
-                'Nome'
-              ),
-              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('br', null),
-              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('input', { type: 'text', value: this.state.name_1, onChange: this.setName1, placeholder: 'Nome', className: 'answers-1', id: '1-name', name: 'answers[1[name]]', maxLength: '50' }),
-              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('br', null),
-              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('br', null),
-              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                'label',
-                null,
-                'Apelido/Nome Social'
-              ),
-              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('br', null),
-              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('input', { type: 'text', value: this.state.nick_name_1, onChange: this.setNickName1, placeholder: 'Apelido/Nome Social', className: 'answers-2', id: '1-nickname', name: 'answers[1[nickname]]', maxLength: '50' }),
-              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('br', null),
-              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('br', null),
-              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                'label',
-                null,
-                'N\xBA do cart\xE3o SUS '
-              ),
-              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('br', null),
-              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('input', { type: 'text', value: this.state.card_number_cns_1, onChange: this.setCardNumberCns1, placeholder: 'N\xBA do cart\xE3o SUS ', className: 'answers-3', id: '1-cardnumber', name: 'answers[1[cardnumber]]', maxLength: '11' }),
-              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('br', null),
-              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('br', null),
-              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                'div',
-                { className: 'form-group' },
-                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                  'label',
-                  { htmlFor: 'exampleFormControlFile1' },
-                  'Foto'
-                ),
-                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('input', { type: 'file', value: this.state.photo_1, onChange: this.setPhoto1, className: 'form-control-file 1-photo', name: 'answers[1[photo]]', id: 'exampleFormControlFile1', maxLength: '255' })
-              ),
-              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('br', null),
-              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                'label',
-                null,
-                'Documento de identidade '
-              ),
-              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('br', null),
-              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('input', { type: 'text', value: this.state.document_rg_1, onChange: this.setDocumentRg1, placeholder: 'Documento de identidade', className: 'answers-5', id: '1-document', name: 'answers[1[Document2]]', maxLength: '12' }),
-              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('br', null),
-              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('br', null),
-              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                'label',
-                null,
-                'CPF'
-              ),
-              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('br', null),
-              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('input', { type: 'text', value: this.state.document_cpf_1, onChange: this.setDocumentCpf1, placeholder: 'CPF', className: 'answers-5', id: '1-document1', name: 'answers[1[Document1]]', maxLength: '14' })
-            )
-          ),
-          __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-            'div',
-            { className: 'col' },
-            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-              'fieldset',
-              null,
-              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                'label',
-                null,
-                'Nome completo da m\xE3e'
-              ),
-              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('br', null),
-              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('input', { type: 'text', value: this.state.mothers_name_1, onChange: this.setMothersName1, placeholder: 'Nome completo da m\xE3e', className: 'answers-6', id: '1-monthersname', name: 'answers[1[monthersname]]', maxLength: '50' }),
-              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('br', null),
-              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('br', null),
-              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                'label',
-                null,
-                'Data de nascimento'
-              ),
-              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('br', null),
-              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('input', { type: 'date', value: this.state.date_of_birth_1, onChange: this.setDateOfBirth1, placeholder: 'Data de nascimento', className: 'answers-7', id: '1-dateofbirth', name: 'answers[1[dateofbirth]]' }),
-              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('br', null),
-              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('br', null),
-              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                'label',
-                null,
-                'Sexo'
-              ),
-              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('br', null),
-              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('input', { type: 'radio', checked: this.state.sexuality_1 === 'F', onChange: this.setSexuality, className: 'answers-8', id: '1-sexuality-f', name: 'answers[1[sexuality]]', value: 'F' }),
-              ' Feminino',
-              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('input', { type: 'radio', checked: this.state.sexuality_1 === 'M', onChange: this.setSexuality, className: 'answers-8', id: '1-sexuality-m', name: 'answers[1[sexuality]]', value: 'M' }),
-              'Masculino',
-              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('br', null),
-              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('br', null),
-              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                'label',
-                null,
-                'Munic\xEDpio de nascimento/UF'
-              ),
-              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('br', null),
-              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('input', { type: 'text', value: this.state.city_of_birth_1, onChange: this.setCityOfBirth1, placeholder: 'Munic\xEDpio de nascimento/UF', className: 'answers-9', id: '1-cityofbirth', name: 'answers[1[cityofbirth]]', maxLength: '30' }),
-              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('br', null),
-              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('br', null),
-              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                'label',
-                null,
-                'Nacionalidade'
-              ),
-              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('br', null),
-              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('input', { type: 'radio', checked: this.state.nationality_1 === 'brasileira', onChange: this.setNationality1, className: 'answers-10', id: '1-nationality', name: 'answers[1[nationality]]', value: 'brasileira' }),
-              ' Brasileira',
-              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('input', { type: 'radio', checked: this.state.nationality_1 === 'naturalizado', onChange: this.setNationality1, className: 'answers-10', id: '1-nationality', name: 'answers[1[nationality]]', value: 'naturalizado' }),
-              'Naturalizado',
-              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('input', { type: 'radio', checked: this.state.nationality_1 === 'estrageira', onChange: this.setNationality1, className: 'answers-10', id: '1-nationality', name: 'answers[1[nationality]]', value: 'estrageira' }),
-              'Estrageira',
-              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('br', null),
-              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('br', null),
-              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                'label',
-                null,
-                'Pa\xEDs de nascimento'
-              ),
-              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('br', null),
-              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('input', { type: 'text', value: this.state.country_of_birth_1, onChange: this.setCountryOfBirth1, placeholder: 'Pa\xEDs de nascimento', className: 'answers-10', id: '1-birthparents', name: 'answers[1[birthparents]]', maxLength: '30' })
-            )
-          ),
-          __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-            'div',
-            { className: 'col' },
-            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-              'fieldset',
-              null,
-              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                'label',
-                null,
-                'Sabe ler e escrever? '
-              ),
-              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('br', null),
-              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('input', { type: 'radio', checked: this.state.can_you_read_and_write_1 === 'y', onChange: this.setCanYouReadAndWrite1, className: 'answers-11', id: '1-readwrite-y', name: 'answers[1[readwrite]]', value: 'y' }),
-              ' Sim',
-              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('input', { type: 'radio', checked: this.state.can_you_read_and_write_1 === 'n', onChange: this.setCanYouReadAndWrite1, className: 'answers-11', id: '1-readwrite-n', name: 'answers[1[readwrite]]', value: 'n' }),
-              ' N\xE3o',
-              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('br', null),
-              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('br', null),
-              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                'label',
-                null,
-                'Escolaridade'
-              ),
-              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('br', null),
-              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('input', { type: 'radio', checked: this.state.scholarity_1 === 'nothing', onChange: this.setScholarity1, className: 'answers-12', id: '1-sholarity-n', name: 'answers[1[scholarity]]', value: 'nothing' }),
-              'nenhuma',
-              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('input', { type: 'radio', checked: this.state.scholarity_1 === 'from1to3years', onChange: this.setScholarity1, className: 'answers-12', id: '1-sholarity-1/3', name: 'answers[1[scholarity]]', value: 'from1to3years' }),
-              'de 1 a 3 anos',
-              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('input', { type: 'radio', checked: this.state.scholarity_1 === 'from4to7years', onChange: this.setScholarity1, className: 'answers-12', id: '1-sholarity-4/7', name: 'answers[1[scholarity]]', value: 'from4to7years' }),
-              'de 4 a 7 anos',
-              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('input', { type: 'radio', checked: this.state.scholarity_1 === 'nenhuma', onChange: this.setScholarity1, className: 'answers-12', id: '1-sholarity-8', name: 'answers[1[scholarity]]', value: 'nenhuma' }),
-              '8 anos ou mais',
-              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('br', null),
-              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('br', null),
-              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                'label',
-                null,
-                'Ra\xE7a/cor'
-              ),
-              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('br', null),
-              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('input', { type: 'radio', checked: this.state.breed_color_1 === 'white', onChange: this.setBreedColor1, className: 'answers-13', id: '1-breedcolor-white', name: 'answers[1[breedcolor]]', value: 'white' }),
-              'Branca',
-              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('input', { type: 'radio', checked: this.state.breed_color_1 === 'black', onChange: this.setBreedColor1, className: 'answers-13', id: '1-breedcolor-black', name: 'answers[1[breedcolor]]', value: 'black' }),
-              'Preto',
-              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('input', { type: 'radio', checked: this.state.breed_color_1 === 'brown', onChange: this.setBreedColor1, className: 'answers-13', id: '1-breedcolor-brown', name: 'answers[1[breedcolor]]', value: 'brown' }),
-              'Parda',
-              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('input', { type: 'radio', checked: this.state.breed_color_1 === 'yellow', onChange: this.setBreedColor1, className: 'answers-13', id: '1-breedcolor-yellow', name: 'answers[1[breedcolor]]', value: 'yellow' }),
-              'Amarela',
-              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('input', { type: 'radio', checked: this.state.breed_color_1 === 'undeclared', onChange: this.setBreedColor1, className: 'answers-13', id: '1-breedcolor-undeclared', name: 'answers[1[breedcolor]]', value: 'undeclared' }),
-              ' N\xE3o declarada',
-              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('br', null),
-              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('input', { type: 'text', value: this.state.breed_color_aux_1, onChange: this.setBreedColorAux1, placeholder: 'Qual etnia', className: 'answers-13', id: '1-breedcolor-what', name: 'answers[1[breedcolor_aux]]', maxLength: '30' }),
-              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('br', null),
-              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('br', null),
-              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                'label',
-                null,
-                'Tem religi\xE3o?'
-              ),
-              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('br', null),
-              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('input', { type: 'radio', checked: this.state.do_you_have_a_religion_1 === 'y', onChange: this.setDoYouHaveaReligion1, className: 'answers-14', id: '1-religion-y', name: 'answers[1[religion]]', value: 'y' }),
-              'Sim',
-              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('input', { type: 'radio', checked: this.state.do_you_have_a_religion_1 === 'n', onChange: this.setDoYouHaveaReligion1, className: 'answers-14', id: '1-religion-n', name: 'answers[1[religion]]', value: 'n' }),
-              'N\xE3o',
-              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('br', null),
-              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('input', { type: 'text', value: this.state.do_you_have_a_religion_aux_1, onChange: this.setDoYouHaveaReligionAux1, placeholder: 'Qual?', className: 'answers-14', id: '1-religion-w', name: 'answers[1[religion]]', maxLength: '20' })
-            )
-          )
-        ),
-        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-          'button',
-          { type: 'submit', className: 'btn btn-primary' },
-          'Lets que lets'
-        )
-      ),
-      __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-        'nav',
-        { 'aria-label': 'Dados Pessoais' },
-        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-          'ul',
-          { className: 'pagination justify-content-center' },
-          __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-            'li',
-            { className: 'page-item disabled' },
-            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-              'a',
-              { className: 'page-link', href: '#', tabIndex: '-1' },
-              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('i', { className: 'fa fa-arrow-left', 'aria-hidden': 'true' })
-            )
-          ),
-          __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-            'li',
-            { className: 'page-item' },
-            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-              'a',
-              { className: 'page-link', onClick: this.next, href: 'javascript:;' },
-              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('i', { className: 'fa fa-arrow-right', 'aria-hidden': 'true' })
-            )
-          )
-        )
-      )
-    );
-  }
-
-  setName1(evt) {
-    this.setState({ name_1: evt.target.value });
-  }
-
-  setNickName1(evt) {
-    this.setState({ nick_name_1: evt.target.value });
-  }
-
-  setCardNumberCns1(evt) {
-    this.setState({ card_number_cns_1: evt.target.value });
-  }
-
-  setDocumentRg1(evt) {
-    this.setState({ document_rg_1: evt.target.value });
-  }
-
-  setMothersName1(evt) {
-    this.setState({ mothers_name_1: evt.target.value });
-  }
-
-  setDoYouHaveaReligionAux1(evt) {
-    this.setState({ do_you_have_a_religion_aux_1: evt.target.value });
-  }
-
-  setDocumentCpf1(evt) {
-    this.setState({ document_cpf_1: evt.target.value });
-  }
-
-  setCityOfBirth1(evt) {
-    this.setState({ city_of_birth_1: evt.target.value });
-  }
-
-  setCountryOfBirth1(evt) {
-    this.setState({ country_of_birth_1: evt.target.value });
-  }
-
-  setBreedColorAux1(evt) {
-    this.setState({ breed_color_aux_1: evt.target.value });
-  }
-
-  setSexuality(evt) {
-    this.setState({ sexuality_1: evt.target.value });
-  }
-
-  setNationality1(evt) {
-    this.setState({ nationality_1: evt.target.value });
-  }
-
-  setCanYouReadAndWrite1(evt) {
-    this.setState({ can_you_read_and_write_1: evt.target.value });
-  }
-
-  setScholarity1(evt) {
-    this.setState({ scholarity_1: evt.target.value });
-  }
-
-  setBreedColor1(evt) {
-    this.setState({ breed_color_1: evt.target.value });
-  }
-
-  setDoYouHaveaReligion1(evt) {
-    this.setState({ do_you_have_a_religion_1: evt.target.value });
-  }
-
-  setDateOfBirth1(evt) {
-    this.setState({ date_of_birth_1: evt.target.value });
-  }
-
-  setPhoto1(evt) {
-    this.setState({ photo_1: evt.target.value });
-  }
-
-}
-
-/* harmony default export */ __webpack_exports__["a"] = (Test);
-
-/***/ }),
+/* 35 */,
 /* 36 */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -20103,6 +19694,401 @@ var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/*!
 
 	return jQuery;
 });
+
+/***/ }),
+/* 37 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react__ = __webpack_require__(2);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_react__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_jquery__ = __webpack_require__(36);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_jquery___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_jquery__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__SideMenu__ = __webpack_require__(15);
+
+
+
+
+class PersonalData extends __WEBPACK_IMPORTED_MODULE_0_react___default.a.Component {
+
+  constructor(props) {
+    super(props);
+
+    this.state = { personal_data: [], id_historys: '1', name_1: '', nick_name_1: '', card_number_cns_1: '', photo_1: '', document_cpf_1: '', document_rg_1: '', mothers_name_1: '', date_of_birth_1: '', sexuality_1: '', city_of_birth_1: '', nationality_1: '', country_of_birth_1: '', can_you_read_and_write_1: '', scholarity_1: '', breed_color_1: '', breed_color_aux_1: '', do_you_have_a_religion_1: '', country_of_birth_1: '', do_you_have_a_religion_aux_1: '', occupation_primary_profession_1: '', marital_status_1: '', basic_heath_unit_that_attends_1: '', do_you_have_any_major_allergies_1: '', do_you_have_any_disabilities_1: '', do_you_have_any_disabilities_aux_1: '', blood_type_1: '1', rh_factor_1: '' };
+    this.sendForm = this.sendForm.bind(this);
+    this.setName1 = this.setName1.bind(this);
+    this.setNickName1 = this.setNickName1.bind(this);
+    this.setCardNumberCns1 = this.setCardNumberCns1.bind(this);
+    this.setDocumentRg1 = this.setDocumentRg1.bind(this);
+    this.setMothersName1 = this.setMothersName1.bind(this);
+    this.setDoYouHaveaReligionAux1 = this.setDoYouHaveaReligionAux1.bind(this);
+    this.setDocumentCpf1 = this.setDocumentCpf1.bind(this);
+    this.setCityOfBirth1 = this.setCityOfBirth1.bind(this);
+    this.setCountryOfBirth1 = this.setCountryOfBirth1.bind(this);
+    this.setBreedColorAux1 = this.setBreedColorAux1.bind(this);
+    this.setSexuality = this.setSexuality.bind(this);
+    this.setNationality1 = this.setNationality1.bind(this);
+    this.setCanYouReadAndWrite1 = this.setCanYouReadAndWrite1.bind(this);
+    this.setScholarity1 = this.setScholarity1.bind(this);
+    this.setBreedColor1 = this.setBreedColor1.bind(this);
+    this.setDoYouHaveaReligion1 = this.setDoYouHaveaReligion1.bind(this);
+    this.setDateOfBirth1 = this.setDateOfBirth1.bind(this);
+    this.setPhoto1 = this.setPhoto1.bind(this);
+  }
+
+  componentWillMount() {
+    __WEBPACK_IMPORTED_MODULE_1_jquery___default.a.ajax({
+      url: "http://127.0.0.1:8000/api/v1/personaldata",
+      dataType: "json",
+      method: "GET",
+      success: function (response) {
+        console.log(response);
+      }.bind(this)
+    });
+  }
+
+  sendForm(evt) {
+    evt.preventDefault();
+    // console.log('You have selected:', this.state.sexuality_1);
+    // console.log('You have selected:', this.state.nationality_1);
+    // console.log('You have selected:', this.state.can_you_read_and_write_1);
+    // console.log('You have selected:', this.state.scholarity_1);
+    // console.log('You have selected:', this.state.breed_color_1);
+    // console.log('You have selected:', this.state.do_you_have_a_religion_1);
+    // console.log('You have selected:', this.state.date_of_birth_1);
+    // console.log('You have selected:', this.state.photo_1);
+
+    __WEBPACK_IMPORTED_MODULE_1_jquery___default.a.ajax({
+      url: "http://127.0.0.1:8000/api/v1/personaldata",
+      contentType: 'application/json',
+      dataType: 'json',
+      method: "POST",
+      data: JSON.stringify({ test: this.state }),
+      success: function (response) {
+        console.log(response);
+        console.log("enviado com sucesso");
+      },
+      error: function (response) {
+        console.log("erro");
+        console.log(response);
+      }.bind(this)
+    });
+  }
+
+  render() {
+    return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+      'div',
+      { className: 'container' },
+      __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+        'form',
+        { id: 'personaldata', method: 'post' },
+        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+          'div',
+          { className: 'row' },
+          __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+            'div',
+            { className: 'col' },
+            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+              'fieldset',
+              null,
+              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                'label',
+                null,
+                'Nome'
+              ),
+              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('br', null),
+              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('input', { type: 'text', value: this.state.name_1, onChange: this.setName1, placeholder: 'Nome', className: 'answers-1', id: '1-name', name: 'answers[1[name]]', maxLength: '50' }),
+              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('br', null),
+              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('br', null),
+              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                'label',
+                null,
+                'Apelido/Nome Social'
+              ),
+              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('br', null),
+              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('input', { type: 'text', value: this.state.nick_name_1, onChange: this.setNickName1, placeholder: 'Apelido/Nome Social', className: 'answers-2', id: '1-nickname', name: 'answers[1[nickname]]', maxLength: '50' }),
+              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('br', null),
+              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('br', null),
+              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                'label',
+                null,
+                'N\xBA do cart\xE3o SUS '
+              ),
+              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('br', null),
+              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('input', { type: 'text', value: this.state.card_number_cns_1, onChange: this.setCardNumberCns1, placeholder: 'N\xBA do cart\xE3o SUS ', className: 'answers-3', id: '1-cardnumber', name: 'answers[1[cardnumber]]', maxLength: '11' }),
+              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('br', null),
+              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('br', null),
+              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                'div',
+                { className: 'form-group' },
+                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                  'label',
+                  { htmlFor: 'exampleFormControlFile1' },
+                  'Foto'
+                ),
+                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('input', { type: 'file', value: this.state.photo_1, onChange: this.setPhoto1, className: 'form-control-file 1-photo', name: 'answers[1[photo]]', id: 'exampleFormControlFile1', maxLength: '255' })
+              ),
+              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('br', null),
+              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                'label',
+                null,
+                'Documento de identidade '
+              ),
+              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('br', null),
+              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('input', { type: 'text', value: this.state.document_rg_1, onChange: this.setDocumentRg1, placeholder: 'Documento de identidade', className: 'answers-5', id: '1-document', name: 'answers[1[Document2]]', maxLength: '12' }),
+              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('br', null),
+              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('br', null),
+              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                'label',
+                null,
+                'CPF'
+              ),
+              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('br', null),
+              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('input', { type: 'text', value: this.state.document_cpf_1, onChange: this.setDocumentCpf1, placeholder: 'CPF', className: 'answers-5', id: '1-document1', name: 'answers[1[Document1]]', maxLength: '14' })
+            )
+          ),
+          __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+            'div',
+            { className: 'col' },
+            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+              'fieldset',
+              null,
+              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                'label',
+                null,
+                'Nome completo da m\xE3e'
+              ),
+              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('br', null),
+              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('input', { type: 'text', value: this.state.mothers_name_1, onChange: this.setMothersName1, placeholder: 'Nome completo da m\xE3e', className: 'answers-6', id: '1-monthersname', name: 'answers[1[monthersname]]', maxLength: '50' }),
+              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('br', null),
+              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('br', null),
+              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                'label',
+                null,
+                'Data de nascimento'
+              ),
+              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('br', null),
+              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('input', { type: 'date', value: this.state.date_of_birth_1, onChange: this.setDateOfBirth1, placeholder: 'Data de nascimento', className: 'answers-7', id: '1-dateofbirth', name: 'answers[1[dateofbirth]]' }),
+              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('br', null),
+              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('br', null),
+              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                'label',
+                null,
+                'Sexo'
+              ),
+              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('br', null),
+              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('input', { type: 'radio', checked: this.state.sexuality_1 === 'F', onChange: this.setSexuality, className: 'answers-8', id: '1-sexuality-f', name: 'answers[1[sexuality]]', value: 'F' }),
+              ' Feminino',
+              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('input', { type: 'radio', checked: this.state.sexuality_1 === 'M', onChange: this.setSexuality, className: 'answers-8', id: '1-sexuality-m', name: 'answers[1[sexuality]]', value: 'M' }),
+              'Masculino',
+              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('br', null),
+              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('br', null),
+              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                'label',
+                null,
+                'Munic\xEDpio de nascimento/UF'
+              ),
+              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('br', null),
+              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('input', { type: 'text', value: this.state.city_of_birth_1, onChange: this.setCityOfBirth1, placeholder: 'Munic\xEDpio de nascimento/UF', className: 'answers-9', id: '1-cityofbirth', name: 'answers[1[cityofbirth]]', maxLength: '2' }),
+              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('br', null),
+              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('br', null),
+              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                'label',
+                null,
+                'Nacionalidade'
+              ),
+              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('br', null),
+              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('input', { type: 'radio', checked: this.state.nationality_1 === 'brasileira', onChange: this.setNationality1, className: 'answers-10', id: '1-nationality', name: 'answers[1[nationality]]', value: 'brasileira' }),
+              ' Brasileira',
+              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('input', { type: 'radio', checked: this.state.nationality_1 === 'naturalizado', onChange: this.setNationality1, className: 'answers-10', id: '1-nationality', name: 'answers[1[nationality]]', value: 'naturalizado' }),
+              'Naturalizado',
+              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('input', { type: 'radio', checked: this.state.nationality_1 === 'estrageira', onChange: this.setNationality1, className: 'answers-10', id: '1-nationality', name: 'answers[1[nationality]]', value: 'estrageira' }),
+              'Estrageira',
+              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('br', null),
+              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('br', null),
+              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                'label',
+                null,
+                'Pa\xEDs de nascimento'
+              ),
+              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('br', null),
+              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('input', { type: 'text', value: this.state.country_of_birth_1, onChange: this.setCountryOfBirth1, placeholder: 'Pa\xEDs de nascimento', className: 'answers-10', id: '1-birthparents', name: 'answers[1[birthparents]]', maxLength: '30' })
+            )
+          ),
+          __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+            'div',
+            { className: 'col' },
+            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+              'fieldset',
+              null,
+              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                'label',
+                null,
+                'Sabe ler e escrever? '
+              ),
+              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('br', null),
+              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('input', { type: 'radio', checked: this.state.can_you_read_and_write_1 === 'y', onChange: this.setCanYouReadAndWrite1, className: 'answers-11', id: '1-readwrite-y', name: 'answers[1[readwrite]]', value: 'y' }),
+              ' Sim',
+              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('input', { type: 'radio', checked: this.state.can_you_read_and_write_1 === 'n', onChange: this.setCanYouReadAndWrite1, className: 'answers-11', id: '1-readwrite-n', name: 'answers[1[readwrite]]', value: 'n' }),
+              ' N\xE3o',
+              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('br', null),
+              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('br', null),
+              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                'label',
+                null,
+                'Escolaridade'
+              ),
+              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('br', null),
+              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('input', { type: 'radio', checked: this.state.scholarity_1 === 'nothing', onChange: this.setScholarity1, className: 'answers-12', id: '1-sholarity-n', name: 'answers[1[scholarity]]', value: 'nothing' }),
+              'nenhuma',
+              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('input', { type: 'radio', checked: this.state.scholarity_1 === 'from1to3years', onChange: this.setScholarity1, className: 'answers-12', id: '1-sholarity-1/3', name: 'answers[1[scholarity]]', value: 'from1to3years' }),
+              'de 1 a 3 anos',
+              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('input', { type: 'radio', checked: this.state.scholarity_1 === 'from4to7years', onChange: this.setScholarity1, className: 'answers-12', id: '1-sholarity-4/7', name: 'answers[1[scholarity]]', value: 'from4to7years' }),
+              'de 4 a 7 anos',
+              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('input', { type: 'radio', checked: this.state.scholarity_1 === 'nenhuma', onChange: this.setScholarity1, className: 'answers-12', id: '1-sholarity-8', name: 'answers[1[scholarity]]', value: 'nenhuma' }),
+              '8 anos ou mais',
+              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('br', null),
+              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('br', null),
+              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                'label',
+                null,
+                'Ra\xE7a/cor'
+              ),
+              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('br', null),
+              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('input', { type: 'radio', checked: this.state.breed_color_1 === 'white', onChange: this.setBreedColor1, className: 'answers-13', id: '1-breedcolor-white', name: 'answers[1[breedcolor]]', value: 'white' }),
+              'Branca',
+              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('input', { type: 'radio', checked: this.state.breed_color_1 === 'black', onChange: this.setBreedColor1, className: 'answers-13', id: '1-breedcolor-black', name: 'answers[1[breedcolor]]', value: 'black' }),
+              'Preto',
+              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('input', { type: 'radio', checked: this.state.breed_color_1 === 'brown', onChange: this.setBreedColor1, className: 'answers-13', id: '1-breedcolor-brown', name: 'answers[1[breedcolor]]', value: 'brown' }),
+              'Parda',
+              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('input', { type: 'radio', checked: this.state.breed_color_1 === 'yellow', onChange: this.setBreedColor1, className: 'answers-13', id: '1-breedcolor-yellow', name: 'answers[1[breedcolor]]', value: 'yellow' }),
+              'Amarela',
+              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('input', { type: 'radio', checked: this.state.breed_color_1 === 'undeclared', onChange: this.setBreedColor1, className: 'answers-13', id: '1-breedcolor-undeclared', name: 'answers[1[breedcolor]]', value: 'undeclared' }),
+              ' N\xE3o declarada',
+              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('br', null),
+              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('input', { type: 'text', value: this.state.breed_color_aux_1, onChange: this.setBreedColorAux1, placeholder: 'Qual etnia', className: 'answers-13', id: '1-breedcolor-what', name: 'answers[1[breedcolor_aux]]', maxLength: '30' }),
+              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('br', null),
+              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('br', null),
+              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                'label',
+                null,
+                'Tem religi\xE3o?'
+              ),
+              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('br', null),
+              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('input', { type: 'radio', checked: this.state.do_you_have_a_religion_1 === 'y', onChange: this.setDoYouHaveaReligion1, className: 'answers-14', id: '1-religion-y', name: 'answers[1[religion]]', value: 'y' }),
+              'Sim',
+              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('input', { type: 'radio', checked: this.state.do_you_have_a_religion_1 === 'n', onChange: this.setDoYouHaveaReligion1, className: 'answers-14', id: '1-religion-n', name: 'answers[1[religion]]', value: 'n' }),
+              'N\xE3o',
+              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('br', null),
+              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('input', { type: 'text', value: this.state.do_you_have_a_religion_aux_1, onChange: this.setDoYouHaveaReligionAux1, placeholder: 'Qual?', className: 'answers-14', id: '1-religion-w', name: 'answers[1[religion]]', maxLength: '20' })
+            )
+          )
+        )
+      ),
+      __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+        'nav',
+        { 'aria-label': 'Dados Pessoais' },
+        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+          'ul',
+          { className: 'pagination justify-content-center' },
+          __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+            'li',
+            { className: 'page-item disabled' },
+            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+              'a',
+              { className: 'page-link', href: '#', tabIndex: '-1' },
+              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('i', { className: 'fa fa-arrow-left', 'aria-hidden': 'true' })
+            )
+          ),
+          __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+            'li',
+            { className: 'page-item' },
+            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+              'a',
+              { className: 'page-link', onClick: this.sendForm, href: 'javascript:;' },
+              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('i', { className: 'fa fa-arrow-right', 'aria-hidden': 'true' })
+            )
+          )
+        )
+      )
+    );
+  }
+
+  setName1(evt) {
+    this.setState({ name_1: evt.target.value });
+  }
+
+  setNickName1(evt) {
+    this.setState({ nick_name_1: evt.target.value });
+  }
+
+  setCardNumberCns1(evt) {
+    this.setState({ card_number_cns_1: evt.target.value });
+  }
+
+  setDocumentRg1(evt) {
+    this.setState({ document_rg_1: evt.target.value });
+  }
+
+  setMothersName1(evt) {
+    this.setState({ mothers_name_1: evt.target.value });
+  }
+
+  setDoYouHaveaReligionAux1(evt) {
+    this.setState({ do_you_have_a_religion_aux_1: evt.target.value });
+  }
+
+  setDocumentCpf1(evt) {
+    this.setState({ document_cpf_1: evt.target.value });
+  }
+
+  setCityOfBirth1(evt) {
+    this.setState({ city_of_birth_1: evt.target.value });
+  }
+
+  setCountryOfBirth1(evt) {
+    this.setState({ country_of_birth_1: evt.target.value });
+  }
+
+  setBreedColorAux1(evt) {
+    this.setState({ breed_color_aux_1: evt.target.value });
+  }
+
+  setSexuality(evt) {
+    this.setState({ sexuality_1: evt.target.value });
+  }
+
+  setNationality1(evt) {
+    this.setState({ nationality_1: evt.target.value });
+  }
+
+  setCanYouReadAndWrite1(evt) {
+    this.setState({ can_you_read_and_write_1: evt.target.value });
+  }
+
+  setScholarity1(evt) {
+    this.setState({ scholarity_1: evt.target.value });
+  }
+
+  setBreedColor1(evt) {
+    this.setState({ breed_color_1: evt.target.value });
+  }
+
+  setDoYouHaveaReligion1(evt) {
+    this.setState({ do_you_have_a_religion_1: evt.target.value });
+  }
+
+  setDateOfBirth1(evt) {
+    this.setState({ date_of_birth_1: evt.target.value });
+  }
+
+  setPhoto1(evt) {
+    this.setState({ photo_1: evt.target.value });
+  }
+
+}
+
+/* harmony default export */ __webpack_exports__["a"] = (PersonalData);
 
 /***/ })
 /******/ ]);

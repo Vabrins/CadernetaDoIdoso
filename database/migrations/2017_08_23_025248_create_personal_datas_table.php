@@ -26,7 +26,7 @@ class CreatePersonalDatasTable extends Migration
             $table->string('mothers_name_1', '50')->nullable(true);
             $table->date('date_of_birth_1')->nullable(true);
             $table->char('sexuality_1', 2)->nullable(true);
-            $table->string('city_of_birth_1', '30')->nullable(true);
+            $table->string('city_of_birth_1', '2')->nullable(true);
             $table->string('nationality_1', '30')->nullable(true);
             $table->string('country_of_birth_1', '30')->nullable(true);
             $table->boolean('can_you_read_and_write_1')->nullable(true);

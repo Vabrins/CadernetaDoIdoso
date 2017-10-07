@@ -2,12 +2,12 @@ import React from 'react';
 import $ from 'jquery';
 import SideMenu from './SideMenu';
 
-class Test extends React.Component {
+class PersonalData extends React.Component {
   
   constructor (props) {
     super(props);
 
-    this.state = {personal_data : [], id_historys:'1', name_1:'', nick_name_1:'', card_number_cns_1:'', photo_1:'', document_cpf_1:'', document_rg_1:'', mothers_name_1:'', date_of_birth_1:'', sexuality_1:'', city_of_birth_1:'', nationality_1:'', country_of_birth_1:'', can_you_read_and_write_1:'', scholarity_1:'', breed_color_1:'', breed_color_aux_1:'', do_you_have_a_religion_1:'', birth_parents_1:'errado', do_you_have_a_religion_aux_1:'', occupation_primary_profession_1:'', marital_status_1:'', basic_heath_unit_that_attends_1:'', do_you_have_any_major_allergies_1:'', do_you_have_any_disabilities_1:'', do_you_have_any_disabilities_aux_1:'', blood_type_1:'1', rh_factor_1:''};
+    this.state = {personal_data : [], id_historys:'1', name_1:'', nick_name_1:'', card_number_cns_1:'', photo_1:'', document_cpf_1:'', document_rg_1:'', mothers_name_1:'', date_of_birth_1:'', sexuality_1:'', city_of_birth_1:'', nationality_1:'', country_of_birth_1:'', can_you_read_and_write_1:'', scholarity_1:'', breed_color_1:'', breed_color_aux_1:'', do_you_have_a_religion_1:'', country_of_birth_1:'', do_you_have_a_religion_aux_1:'', occupation_primary_profession_1:'', marital_status_1:'', basic_heath_unit_that_attends_1:'', do_you_have_any_major_allergies_1:'', do_you_have_any_disabilities_1:'', do_you_have_any_disabilities_aux_1:'', blood_type_1:'1', rh_factor_1:''};
     this.sendForm = this.sendForm.bind(this);
     this.setName1 = this.setName1.bind(this);
     this.setNickName1 = this.setNickName1.bind(this);
@@ -31,11 +31,11 @@ class Test extends React.Component {
 
   componentWillMount() {
     $.ajax({
-      url: "http://127.0.0.1:8000/api/personaldata/show",
+      url: "http://127.0.0.1:8000/api/v1/personaldata",
       dataType: "json",
+      method: "GET",
       success:function(response){
         console.log(response);
-        this.setState({personal_data:response});
       }.bind(this)
     });
   }
@@ -52,28 +52,26 @@ class Test extends React.Component {
     // console.log('You have selected:', this.state.photo_1);
 
     $.ajax({
-      url: "http://127.0.0.1:8000/api/personaldata/create",
+      url: "http://127.0.0.1:8000/api/v1/personaldata",
       contentType: 'application/json',
       dataType: 'json',
-      data: JSON.stringify({ test: 'heyy' }),
+      method: "POST",
+      data: JSON.stringify({ test: this.state }),
       success: function(response){
         console.log(response);
         console.log("enviado com sucesso");
       },
       error: function(response){
         console.log("erro");
+        console.log(response);
       }.bind(this)
     });
-  }
-
-  next() {
-    console.log("next");
   }
 
  render () {
   return (
           <div className="container" >
-            <form onSubmit={this.sendForm} method="post">
+            <form id="personaldata" method="post">
               <div className="row">
                 <div className="col">
                   <fieldset>
@@ -111,7 +109,7 @@ class Test extends React.Component {
                     <input type="radio" checked={this.state.sexuality_1 === 'M'} onChange={this.setSexuality} className="answers-8" id="1-sexuality-m" name="answers[1[sexuality]]" value="M" />Masculino
                     <br/><br/>
                     <label>Município de nascimento/UF</label><br/>
-                    <input type="text" value={this.state.city_of_birth_1} onChange={this.setCityOfBirth1}  placeholder="Município de nascimento/UF" className="answers-9" id="1-cityofbirth" name="answers[1[cityofbirth]]" maxLength="30" />
+                    <input type="text" value={this.state.city_of_birth_1} onChange={this.setCityOfBirth1}  placeholder="Município de nascimento/UF" className="answers-9" id="1-cityofbirth" name="answers[1[cityofbirth]]" maxLength="2" />
                     <br/><br/>
                     <label>Nacionalidade</label><br/>
                     <input type="radio" checked={this.state.nationality_1 === 'brasileira'} onChange={this.setNationality1} className="answers-10" id="1-nationality" name="answers[1[nationality]]" value="brasileira" /> Brasileira
@@ -154,16 +152,14 @@ class Test extends React.Component {
                   </fieldset>
                 </div>
               </div>
-              <button type="submit" className="btn btn-primary">Lets que lets</button>
             </form>
-
             <nav aria-label="Dados Pessoais">
               <ul className="pagination justify-content-center">
                 <li className="page-item disabled">
                   <a className="page-link" href="#" tabIndex="-1"><i className="fa fa-arrow-left" aria-hidden="true"></i></a>
                 </li>
                 <li className="page-item">
-                  <a className="page-link" onClick={this.next} href="javascript:;"><i className="fa fa-arrow-right" aria-hidden="true"></i></a>
+                  <a className="page-link" onClick={this.sendForm} href="javascript:;"><i className="fa fa-arrow-right" aria-hidden="true"></i></a>
                 </li>
               </ul>
             </nav>
@@ -246,4 +242,4 @@ class Test extends React.Component {
 
 }
 
-export default Test
+export default PersonalData

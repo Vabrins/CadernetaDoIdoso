@@ -13,7 +13,7 @@ class PersonalDataController extends Controller
      */
     public function index()
     {
-        //
+        echo json_encode('olar in index');
     }
 
     /**
@@ -23,10 +23,7 @@ class PersonalDataController extends Controller
      */
     public function create()
     {
-        //
-        $val = json_decode('test');
-        // dd($val);
-        echo json_encode('olar in controller');        
+        echo json_encode('olar in create');
     }
 
     /**
@@ -37,7 +34,8 @@ class PersonalDataController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        echo json_encode("ok");
+        dd($request);
     }
 
     /**
@@ -50,7 +48,6 @@ class PersonalDataController extends Controller
     {
         $dados = array('nome' => 'bruno', 'apelido' => 'livinho', 'cns' => '12345678910' );
         echo json_encode($dados);
-        //
     }
 
     /**
@@ -61,7 +58,7 @@ class PersonalDataController extends Controller
      */
     public function edit($id)
     {
-        //
+        echo json_encode("olar in edit");
     }
 
     /**
@@ -73,7 +70,7 @@ class PersonalDataController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        echo json_encode("olar in update");
     }
 
     /**
@@ -84,6 +81,6 @@ class PersonalDataController extends Controller
      */
     public function destroy($id)
     {
-        //
+        echo json_encode("olar in destroy");
     }
 }
