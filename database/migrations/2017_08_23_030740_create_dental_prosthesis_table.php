@@ -15,8 +15,10 @@ class CreateDentalProsthesisTable extends Migration
     {
         Schema::create('dental_prosthesis_2_11_d_a', function (Blueprint $table) {
             $table->increments('id');
-            $table->unsignedInteger('id_historys');
-            $table->foreign('id_historys', 'dental_prosthesis_2_11_d_a_fk_historys')->references('id')->on('historys');
+            $table->unsignedInteger('id_history');
+            $table->foreign('id_history', 'dental_prosthesis_2_11_d_a_1_fk_historys')->references('id')->on('historys');
+            $table->unsignedInteger('id_elderly');
+            $table->foreign('id_elderly', 'dental_prosthesis_2_11_d_a_2_fk_elderlies')->references('id')->on('elderlies');
             $table->boolean('superior_2_11_d_a')->nullable(true);
             $table->boolean('inferior_2_11_d_a')->nullable(true);
             $table->boolean('total_prosthesis_2_11_d_a')->nullable(true);

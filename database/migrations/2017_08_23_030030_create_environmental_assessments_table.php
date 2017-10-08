@@ -15,8 +15,10 @@ class CreateEnvironmentalAssessmentsTable extends Migration
     {
         Schema::create('environmental_assessments_2_8', function (Blueprint $table) {
             $table->increments('id');
-            $table->unsignedInteger('id_historys');
-            $table->foreign('id_historys', 'environmental_assessments_2_8_fk_historys')->references('id')->on('historys');
+            $table->unsignedInteger('id_history');
+            $table->foreign('id_history', 'environmental_assessments_2_8_1_fk_historys')->references('id')->on('historys');
+            $table->unsignedInteger('id_elderly');
+            $table->foreign('id_elderly', 'environmental_assessments_2_8_2_fk_elderlies')->references('id')->on('elderlies');
             $table->integer('unimpeded_walking_areas_2_8')->nullable(true);
             $table->integer('presence_of_support_bars_2_8')->nullable(true);
             $table->integer('uniform_floors_and_carpets_well_fixed_2_8')->nullable(true);

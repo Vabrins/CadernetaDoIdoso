@@ -15,14 +15,15 @@ class CreatePersonalDatasTable extends Migration
     {
         Schema::create('personal_datas_1', function (Blueprint $table) {
             $table->increments('id');
-            $table->unsignedInteger('id_historys');
-            $table->foreign('id_historys', 'personal_datas_1_fk_historys')->references('id')->on('historys');
+            $table->unsignedInteger('id_history');
+            $table->foreign('id_history', 'personal_datas_1_fk_historys')->references('id')->on('historys');
+            $table->unsignedInteger('id_elderly');
+            $table->foreign('id_elderly', 'personal_datas_2_fk_elderlies')->references('id')->on('elderlies');
             $table->string('name_1', '50')->nullable(true);
             $table->string('nick_name_1', '50')->nullable(true);
             $table->string('card_number_cns_1', '15')->nullable(true);
             $table->string('photo_1', '255')->nullable(true);
             $table->string('document_rg_1', '20')->nullable(true);
-            $table->string('document_cpf_1', '20')->nullable(true);
             $table->string('mothers_name_1', '50')->nullable(true);
             $table->date('date_of_birth_1')->nullable(true);
             $table->char('sexuality_1', 2)->nullable(true);

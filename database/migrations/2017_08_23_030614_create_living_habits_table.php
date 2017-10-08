@@ -15,8 +15,10 @@ class CreateLivingHabitsTable extends Migration
     {
         Schema::create('living_habits_2_11', function (Blueprint $table) {
             $table->increments('id');
-            $table->unsignedInteger('id_historys');
-            $table->foreign('id_historys', 'living_habits_2_11_fk_historys')->references('id')->on('historys');
+            $table->unsignedInteger('id_history');
+            $table->foreign('id_history', 'living_habits_2_11_1_fk_historys')->references('id')->on('historys');
+            $table->unsignedInteger('id_elderly');
+            $table->foreign('id_elderly', 'living_habits_2_11_2_fk_elderlies')->references('id')->on('elderlies');
             $table->boolean('do_you_go_to_day_centers_clubs_or_social_groups_2_11')->nullable(true);
             $table->boolean('do_you_do_any_volunteer_work_2_11')->nullable(true);
             $table->boolean('do_you_have_any_leisure_activities_2_11')->nullable(true);

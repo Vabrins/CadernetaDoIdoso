@@ -15,8 +15,10 @@ class CreateAnthropometricDataSTable extends Migration
     {
         Schema::create('anthropometric_data_s_2_5', function (Blueprint $table) {
             $table->increments('id');
-            $table->unsignedInteger('id_historys');
-            $table->foreign('id_historys', 'anthropometric_data_s_2_5_fk_historys')->references('id')->on('historys');
+            $table->unsignedInteger('id_history');
+            $table->foreign('id_history', 'anthropometric_data_s_2_5_1_fk_historys')->references('id')->on('historys');
+            $table->unsignedInteger('id_elderly');
+            $table->foreign('id_elderly', 'anthropometric_data_s_2_5_2_fk_elderlies')->references('id')->on('elderlies');
             $table->float('weight_2_5', 8, 2)->nullable(true);
             $table->float('height_2_5', 8, 2)->nullable(true);
             $table->float('imc_weight_height_2_5', 8, 2)->nullable(true);

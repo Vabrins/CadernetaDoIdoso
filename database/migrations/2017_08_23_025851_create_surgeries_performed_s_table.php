@@ -15,8 +15,10 @@ class CreateSurgeriesPerformedSTable extends Migration
     {
         Schema::create('surgeries_performed_s_2_3', function (Blueprint $table) {
             $table->increments('id');
-            $table->unsignedInteger('id_historys');
-            $table->foreign('id_historys', 'surgeries_performed_s_2_3_fk_historys')->references('id')->on('historys');
+            $table->unsignedInteger('id_history');
+            $table->foreign('id_history', 'surgeries_performed_s_2_3_1_fk_historys')->references('id')->on('historys');
+            $table->unsignedInteger('id_elderly');
+            $table->foreign('id_elderly', 'surgeries_performed_s_2_3_2_fk_elderlies')->references('id')->on('elderlies');
             $table->string('surgery_2_3', '50')->nullable(true);
             $table->string('year_2_3', '5')->nullable(true);
             $table->string('comments_2_3', '100')->nullable(true);

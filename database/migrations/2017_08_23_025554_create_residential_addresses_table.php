@@ -15,8 +15,10 @@ class CreateResidentialAddressesTable extends Migration
     {
         Schema::create('residential_addresses_1_a', function (Blueprint $table) {
             $table->increments('id');
-            $table->unsignedInteger('id_historys');
-            $table->foreign('id_historys', 'residential_addresses_1_a_fk_historys')->references('id')->on('historys');
+            $table->unsignedInteger('id_history');
+            $table->foreign('id_history', 'residential_addresses_1_a_1_fk_historys')->references('id')->on('historys');
+            $table->unsignedInteger('id_elderly');
+            $table->foreign('id_elderly', 'residential_addresses_1_a_2_fk_elderlies')->references('id')->on('elderlies');
             $table->string('street_avenue_square_1_a', '70')->nullable(true);
             $table->integer('number_1_a')->nullable(true);
             $table->string('complement_1_a', '20')->nullable(true);

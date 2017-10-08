@@ -15,8 +15,10 @@ class CreateSocialAndFamilyInformationsTable extends Migration
     {
         Schema::create('social_and_family_informations_1_b', function (Blueprint $table) {
             $table->increments('id');
-            $table->unsignedInteger('id_historys');
-            $table->foreign('id_historys', 'social_and_family_informations_1_b_fk_historys')->references('id')->on('historys');
+            $table->unsignedInteger('id_history');
+            $table->foreign('id_history', 'social_and_family_informations_1_b_1_fk_historys')->references('id')->on('historys');
+            $table->unsignedInteger('id_elderly');
+            $table->foreign('id_elderly', 'social_and_family_informations_1_b_2_fk_elderlies')->references('id')->on('elderlies');
             $table->boolean('do_you_live_alone_1_b')->nullable(true);
             $table->boolean('do_you_live_with_relatives_1_b')->nullable(true);
             $table->boolean('do_you_live_with_your_spouse_or_partne_1_b')->nullable(true);

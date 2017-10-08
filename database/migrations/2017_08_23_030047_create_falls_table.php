@@ -15,8 +15,10 @@ class CreateFallsTable extends Migration
     {
         Schema::create('falls_2_9', function (Blueprint $table) {
             $table->increments('id');
-            $table->unsignedInteger('id_historys');
-            $table->foreign('id_historys', 'falls_2_9_fk_historys')->references('id')->on('historys');
+            $table->unsignedInteger('id_history');
+            $table->foreign('id_history', 'falls_2_9_1_fk_historys')->references('id')->on('historys');
+            $table->unsignedInteger('id_elderly');
+            $table->foreign('id_elderly', 'falls_2_9_2_fk_elderlies')->references('id')->on('elderlies');
             $table->string('date_of_fall_month_2_9', '12');
             $table->string('date_of_fall_year_2_9', '12');
             $table->boolean('the_fall_caused_some_fracture_2_9');

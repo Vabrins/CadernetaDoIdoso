@@ -15,8 +15,10 @@ class CreateDisabilities26ATable extends Migration
     {
         Schema::create('disabilities_2_6_a', function (Blueprint $table) {
             $table->increments('id');
-            $table->unsignedInteger('id_historys');
-            $table->foreign('id_historys', 'disabilities_2_6_a_fk_historys')->references('id')->on('historys');
+            $table->unsignedInteger('id_history');
+            $table->foreign('id_history', 'disabilities_2_6_a_1_fk_historys')->references('id')->on('historys');
+            $table->unsignedInteger('id_elderly');
+            $table->foreign('id_elderly', 'disabilities_2_6_a_2_fk_elderlies')->references('id')->on('elderlies');
             $table->boolean('stopped_shopping_2_6_a')->nullable(true);
             $table->boolean('stop_tracking_your_money_2_6_a')->nullable(true);
             $table->boolean('stopped_walking_in_the_house_2_6_a')->nullable(true);

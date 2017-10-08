@@ -15,8 +15,10 @@ class CreateVulnerableElderlyIdentificationProtocolsTable extends Migration
     {
         Schema::create('vulnerable_elderly_identification_protocols_2_6', function (Blueprint $table) {
             $table->increments('id');
-            $table->unsignedInteger('id_historys');
-            $table->foreign('id_historys', 'vulnerable_elderly_identification_protocols_2_6_fk_historys')->references('id')->on('historys');
+            $table->unsignedInteger('id_history');
+            $table->foreign('id_history', 'vulnerable_elderly_identification_protocols_2_6_1_fk_historys')->references('id')->on('historys');
+            $table->unsignedInteger('id_elderly');
+            $table->foreign('id_elderly', 'vulnerable_elderly_identification_protocols_2_6_2_fk_elderlies')->references('id')->on('elderlies');
             $table->integer('age_2_6')->nullable(true);
             $table->string('self_perception_of_health_2_6', '200')->nullable(true);
             $table->string('bending_crouching_or_kneel_down_2_6', '50')->nullable(true);

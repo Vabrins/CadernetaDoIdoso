@@ -15,8 +15,10 @@ class CreateDiagnosisAndPreviousHospitalizationsTable extends Migration
     {
         Schema::create('diagnosis_and_previous_hospitalizations_2_2_1', function (Blueprint $table) {
             $table->increments('id');
-            $table->unsignedInteger('id_historys');
-            $table->foreign('id_historys', 'diagnosis_and_previous_hospitalizations_2_2_fk_historys')->references('id')->on('historys');
+            $table->unsignedInteger('id_history');
+            $table->foreign('id_history', 'diagnosis_and_previous_hospitalizations_2_2_1_1_fk_historys')->references('id')->on('historys');
+            $table->unsignedInteger('id_elderly');
+            $table->foreign('id_elderly', 'diagnosis_and_previous_hospitalizations_2_2_1_2_fk_elderlies')->references('id')->on('elderlies');
             $table->string('diagnostics_2_2', '30')->nullable(true);
             $table->string('diagnostics_year_2_2', '5')->nullable(true);
             $table->string('hospitalization_2_2', '30')->nullable(true);

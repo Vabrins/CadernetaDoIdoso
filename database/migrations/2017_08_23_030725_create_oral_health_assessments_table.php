@@ -15,8 +15,10 @@ class CreateOralHealthAssessmentsTable extends Migration
     {
         Schema::create('oral_health_assessments_2_11_d', function (Blueprint $table) {
             $table->increments('id');
-            $table->unsignedInteger('id_historys');
-            $table->foreign('id_historys', 'oral_health_assessments_2_11_d_fk_historys')->references('id')->on('historys');
+            $table->unsignedInteger('id_history');
+            $table->foreign('id_history', 'oral_health_assessments_2_11_d_1_fk_historys')->references('id')->on('historys');
+            $table->unsignedInteger('id_elderly');
+            $table->foreign('id_elderly', 'oral_health_assessments_2_11_d_2_fk_elderlies')->references('id')->on('elderlies');
             $table->boolean('alcohol_2_11_d')->nullable(true);
             $table->boolean('smoke_2_11_d')->nullable(true);
             $table->boolean('presence_of_lesion_on_the_buccal_mucosa_2_11_d')->nullable(true);

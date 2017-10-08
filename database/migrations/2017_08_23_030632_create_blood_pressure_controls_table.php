@@ -15,8 +15,10 @@ class CreateBloodPressureControlsTable extends Migration
     {
         Schema::create('blood_pressure_controls_2_11_a', function (Blueprint $table) {
             $table->increments('id');
-            $table->unsignedInteger('id_historys');
-            $table->foreign('id_historys', 'blood_pressure_controls_2_11_a_fk_historys')->references('id')->on('historys');
+            $table->unsignedInteger('id_history');
+            $table->foreign('id_history', 'blood_pressure_controls_2_11_a_1_fk_historys')->references('id')->on('historys');
+            $table->unsignedInteger('id_elderly');
+            $table->foreign('id_elderly', 'blood_pressure_controls_2_11_a_2_fk_elderlies')->references('id')->on('elderlies');
             $table->date('date_2_11_a')->nullable(true);
             $table->float('pa_2_11_a', 8, 2)->nullable(true);
             $table->timestamps();
