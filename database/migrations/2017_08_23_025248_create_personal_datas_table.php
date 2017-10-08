@@ -43,6 +43,7 @@ class CreatePersonalDatasTable extends Migration
             $table->string('do_you_have_any_major_allergies_1', '50')->nullable(true);
             $table->boolean('do_you_have_any_disabilities_1')->nullable(true);
             $table->string('do_you_have_any_disabilities_aux_1', '30')->nullable(true);
+            $table->string('whatdeficiency_1', '30')->nullable(true);            
             $table->string('blood_type_1', '30')->nullable(true);
             $table->string('rh_factor_1', '50')->nullable(true);
             $table->timestamps();
