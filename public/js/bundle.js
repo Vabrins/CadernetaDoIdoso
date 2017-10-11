@@ -60,7 +60,7 @@
 /******/ 	__webpack_require__.p = "";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 17);
+/******/ 	return __webpack_require__(__webpack_require__.s = 15);
 /******/ })
 /************************************************************************/
 /******/ ([
@@ -258,6 +258,20 @@ process.umask = function () {
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
+/* WEBPACK VAR INJECTION */(function(process) {
+
+if (process.env.NODE_ENV === 'production') {
+  module.exports = __webpack_require__(16);
+} else {
+  module.exports = __webpack_require__(17);
+}
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
+
+/***/ }),
+/* 2 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
 
 
 /**
@@ -294,20 +308,6 @@ emptyFunction.thatReturnsArgument = function (arg) {
 };
 
 module.exports = emptyFunction;
-
-/***/ }),
-/* 2 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-/* WEBPACK VAR INJECTION */(function(process) {
-
-if (process.env.NODE_ENV === 'production') {
-  module.exports = __webpack_require__(18);
-} else {
-  module.exports = __webpack_require__(19);
-}
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
 
 /***/ }),
 /* 3 */
@@ -504,7 +504,7 @@ module.exports = emptyObject;
 
 
 
-var emptyFunction = __webpack_require__(1);
+var emptyFunction = __webpack_require__(2);
 
 /**
  * Similar to invariant but only logs a warning if the condition is not met.
@@ -697,7 +697,7 @@ module.exports = ExecutionEnvironment;
  * @typechecks
  */
 
-var emptyFunction = __webpack_require__(1);
+var emptyFunction = __webpack_require__(2);
 
 /**
  * Upstream version of event listener. Does not take into account specific
@@ -849,7 +849,7 @@ module.exports = shallowEqual;
  * 
  */
 
-var isTextNode = __webpack_require__(22);
+var isTextNode = __webpack_require__(20);
 
 /*eslint-disable no-bitwise */
 
@@ -954,487 +954,20 @@ module.exports = getActiveElement;
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react__ = __webpack_require__(2);
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react__ = __webpack_require__(1);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_react__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__CadernetaMenuGuide__ = __webpack_require__(16);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_react_dom__ = __webpack_require__(18);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_react_dom___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_react_dom__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__components_App__ = __webpack_require__(32);
 
 
 
-class SideMenu extends __WEBPACK_IMPORTED_MODULE_0_react___default.a.Component {
-  constructor(props) {
-    super(props);
-    this.state = {};
-  }
 
-  render() {
-    return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-      'div',
-      null,
-      __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-        'ul',
-        { className: 'navbar-nav navbar-sidenav', id: 'exampleAccordion' },
-        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-          'li',
-          { className: 'nav-item', 'data-toggle': 'tooltip', 'data-placement': 'right', title: 'Formul\xE1rio' },
-          __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-            'a',
-            { className: 'nav-link nav-link-collapse collapsed', 'data-toggle': 'collapse', href: '#collapseMulti', 'data-parent': '#exampleAccordion' },
-            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('i', { className: 'fa fa-fw fa-stethoscope' }),
-            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-              'span',
-              { className: 'nav-link-text' },
-              'Formul\xE1rio'
-            )
-          ),
-          __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-            'ul',
-            { className: 'sidenav-second-level collapse', id: 'collapseMulti' },
-            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-              'li',
-              null,
-              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                'a',
-                { href: '#' },
-                'Dados Pessoais'
-              )
-            ),
-            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-              'li',
-              null,
-              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                'a',
-                { className: 'nav-link-collapse collapsed', 'data-toggle': 'collapse', href: '#item-elderly_evaluete' },
-                'Avalia\xE7\xE3o da pessoa idosa'
-              ),
-              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                'ul',
-                { className: 'sidenav-third-level collapse', id: 'item-elderly_evaluete' },
-                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                  'li',
-                  null,
-                  __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                    'a',
-                    { href: '#' },
-                    '2.1 Medicamentos, fitoter\xE1picos, suplementos e vitaminas em uso'
-                  )
-                ),
-                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                  'li',
-                  null,
-                  __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                    'a',
-                    { href: '#' },
-                    '2.2 Diagn\xF3sticos e interna\xE7\xF5es pr\xE9vios'
-                  )
-                ),
-                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                  'li',
-                  null,
-                  __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                    'a',
-                    { href: '#' },
-                    '2.3 Cirurgias realizadas'
-                  )
-                ),
-                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                  'li',
-                  null,
-                  __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                    'a',
-                    { href: '#' },
-                    '2.4 Rea\xE7\xF5es adversas ou alergias a medicamentos'
-                  )
-                ),
-                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                  'li',
-                  null,
-                  __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                    'a',
-                    { href: '#' },
-                    '2.5 Dados antropom\xE9trico'
-                  )
-                ),
-                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                  'li',
-                  null,
-                  __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                    'a',
-                    { href: '#' },
-                    '2.6 Protocolo de identifica\xE7\xE3o do idoso vulner\xE1vel (VES-13)'
-                  )
-                ),
-                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                  'li',
-                  null,
-                  __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                    'a',
-                    { href: '#' },
-                    '2.7 Informa\xE7\xF5es complementares '
-                  )
-                ),
-                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                  'li',
-                  null,
-                  __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                    'a',
-                    { href: '#' },
-                    '2.8 Avalia\xE7\xE3o ambienta'
-                  )
-                ),
-                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                  'li',
-                  null,
-                  __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                    'a',
-                    { href: '#' },
-                    '2.9 Quedas'
-                  )
-                ),
-                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                  'li',
-                  null,
-                  __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                    'a',
-                    { href: '#' },
-                    '2.10 Identifica\xE7\xE3o de dor cr\xF4nica'
-                  )
-                ),
-                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                  'li',
-                  null,
-                  __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                    'a',
-                    { href: '#' },
-                    '2.11 H\xE1bitos de vida'
-                  )
-                )
-              )
-            ),
-            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-              'li',
-              null,
-              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                'a',
-                { href: '#' },
-                'Controle de press\xE3o arterial'
-              )
-            ),
-            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-              'li',
-              null,
-              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                'a',
-                { href: '#' },
-                'Controle de glicemia'
-              )
-            ),
-            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-              'li',
-              null,
-              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                'a',
-                { href: '#' },
-                'Calend\xE1rio de vacina\xE7\xE3o'
-              )
-            ),
-            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-              'li',
-              null,
-              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                'a',
-                { className: 'nav-link-collapse collapsed', 'data-toggle': 'collapse', href: '#item-schedule' },
-                'Avalia\xE7\xE3o de sa\xFAde bucal'
-              ),
-              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                'ul',
-                { className: 'sidenav-third-level collapse', id: 'item-schedule' },
-                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                  'li',
-                  null,
-                  __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                    'a',
-                    { href: '#' },
-                    'Agenda de consultas e exames'
-                  )
-                ),
-                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                  'li',
-                  null,
-                  __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                    'a',
-                    { href: '#' },
-                    'Atualiza\xE7\xF5es da caderneta'
-                  )
-                )
-              )
-            )
-          )
-        ),
-        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-          'li',
-          { className: 'nav-item', 'data-toggle': 'tooltip', 'data-placement': 'right', title: 'Listagens' },
-          __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-            'a',
-            { className: 'nav-link', href: '#' },
-            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('i', { className: 'fa fa-fw fa-list-alt' }),
-            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-              'span',
-              { className: 'nav-link-text' },
-              'Listagens'
-            )
-          )
-        ),
-        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-          'li',
-          { className: 'nav-item', 'data-toggle': 'tooltip', 'data-placement': 'right', title: 'Resultados' },
-          __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-            'a',
-            { className: 'nav-link', href: '#' },
-            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('i', { className: 'fa fa-fw fa-area-chart' }),
-            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-              'span',
-              { className: 'nav-link-text' },
-              'Resultados'
-            )
-          )
-        ),
-        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-          'li',
-          { className: 'nav-item', 'data-toggle': 'tooltip', 'data-placement': 'right', title: 'Sobre' },
-          __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-            'a',
-            { className: 'nav-link', href: '#' },
-            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('i', { className: 'fa fa-fw fa-question-circle-o' }),
-            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-              'span',
-              { className: 'nav-link-text' },
-              'Sobre'
-            )
-          )
-        )
-      ),
-      __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-        'ul',
-        { className: 'navbar-nav sidenav-toggler' },
-        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-          'li',
-          { className: 'nav-item' },
-          __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-            'a',
-            { className: 'nav-link text-center', onClick: __WEBPACK_IMPORTED_MODULE_1__CadernetaMenuGuide__["a" /* default */].setVisibility, id: 'sidenavToggler' },
-            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('i', { className: 'fa fa-fw fa-angle-left' })
-          )
-        )
-      )
-    );
-  }
-}
-
-/* unused harmony default export */ var _unused_webpack_default_export = (SideMenu);
+__WEBPACK_IMPORTED_MODULE_1_react_dom___default.a.render(__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_2__components_App__["a" /* default */], null), document.getElementById('app'));
 
 /***/ }),
 /* 16 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react__ = __webpack_require__(2);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_react__);
-
-
-const divStyle = {
-  margin: '40px',
-  border: '5px solid'
-};
-
-class CadernetaMenuGuide extends __WEBPACK_IMPORTED_MODULE_0_react___default.a.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      istoggle: false,
-      num: 0
-    };
-    this.setVisibility = this.setVisibility.bind(this);
-  }
-
-  setVisibility() {
-    const count = this.state.num;
-    this.setState({ num: count + 1 });
-
-    if ((this.state.num & 1) == 0) {
-      this.setState({ istoggle: true });
-    } else {
-      this.setState({ istoggle: false });
-    }
-  }
-
-  render() {
-    return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-      'div',
-      null,
-      __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-        'ul',
-        { id: 'step', className: 'nav nav-tabs', style: { display: this.state.istoggle ? 'flex' : 'none' } },
-        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-          'li',
-          { className: 'nav-item' },
-          __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-            'a',
-            { className: 'nav-link active' },
-            'Dados Pessoais'
-          )
-        ),
-        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-          'li',
-          { className: 'nav-item dropdown' },
-          __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-            'a',
-            { className: 'nav-link dropdown-toggle', 'data-toggle': 'dropdown', href: '#', role: 'button', 'aria-haspopup': 'true', 'aria-expanded': 'false' },
-            'Av. da pessoa idosa'
-          ),
-          __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-            'div',
-            { className: 'dropdown-menu' },
-            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-              'a',
-              { className: 'dropdown-item', href: '#' },
-              'Medicamentos, fitoter\xE1picos, suplementos e vitaminas em uso'
-            ),
-            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-              'a',
-              { className: 'dropdown-item', href: '#' },
-              'Diagn\xF3sticos e interna\xE7\xF5es pr\xE9vios'
-            ),
-            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-              'a',
-              { className: 'dropdown-item', href: '#' },
-              'Cirurgias realizadas'
-            ),
-            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-              'a',
-              { className: 'dropdown-item', href: '#' },
-              'Rea\xE7\xF5es adversas ou alergias a medicamentos'
-            ),
-            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-              'a',
-              { className: 'dropdown-item', href: '#' },
-              'Dados antropom\xE9trico'
-            ),
-            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-              'a',
-              { className: 'dropdown-item', href: '#' },
-              'Protocolo de identifica\xE7\xE3o do idoso vulner\xE1vel'
-            ),
-            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-              'a',
-              { className: 'dropdown-item', href: '#' },
-              'Informa\xE7\xF5es complementares'
-            ),
-            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-              'a',
-              { className: 'dropdown-item', href: '#' },
-              'Avalia\xE7\xE3o ambienta'
-            ),
-            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-              'a',
-              { className: 'dropdown-item', href: '#' },
-              'Quedas'
-            ),
-            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-              'a',
-              { className: 'dropdown-item', href: '#' },
-              'Identifica\xE7\xE3o de dor cr\xF4nica'
-            ),
-            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-              'a',
-              { className: 'dropdown-item', href: '#' },
-              'H\xE1bitos de vida'
-            )
-          )
-        ),
-        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-          'li',
-          { className: 'nav-item' },
-          __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-            'a',
-            { className: 'nav-link' },
-            'Controle de PA'
-          )
-        ),
-        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-          'li',
-          { className: 'nav-item' },
-          __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-            'a',
-            { className: 'nav-link' },
-            'Controle de glicemia'
-          )
-        ),
-        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-          'li',
-          { className: 'nav-item' },
-          __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-            'a',
-            { className: 'nav-link' },
-            'Calend\xE1rio de vacina\xE7\xE3o'
-          )
-        ),
-        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-          'li',
-          { className: 'nav-item dropdown' },
-          __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-            'a',
-            { className: 'nav-link dropdown-toggle', 'data-toggle': 'dropdown', href: '#', role: 'button', 'aria-haspopup': 'true', 'aria-expanded': 'false' },
-            'Av. de sa\xFAde bucal'
-          ),
-          __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-            'div',
-            { className: 'dropdown-menu' },
-            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-              'a',
-              { className: 'dropdown-item', href: '#' },
-              'Agenda de consultas e exames'
-            ),
-            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-              'a',
-              { className: 'dropdown-item', href: '#' },
-              'Atualiza\xE7\xF5es da caderneta'
-            )
-          )
-        )
-      )
-    );
-  }
-}
-
-/* harmony default export */ __webpack_exports__["a"] = (CadernetaMenuGuide);
-
-/***/ }),
-/* 17 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react__ = __webpack_require__(2);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_react__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_react_dom__ = __webpack_require__(20);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_react_dom___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_react_dom__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__components_App__ = __webpack_require__(34);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__components_PersonalData__ = __webpack_require__(37);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__components_CadernetaMenuGuide__ = __webpack_require__(16);
-
-
-
-
-
-// import SideMenu from './components/SideMenu'
-
-__WEBPACK_IMPORTED_MODULE_1_react_dom___default.a.render(__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_2__components_App__["a" /* default */], null), document.getElementById('app'));
-__WEBPACK_IMPORTED_MODULE_1_react_dom___default.a.render(__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_3__components_PersonalData__["a" /* default */], null), document.getElementById('personal-data'));
-__WEBPACK_IMPORTED_MODULE_1_react_dom___default.a.render(__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_4__components_CadernetaMenuGuide__["a" /* default */], null), document.getElementById('menu_guide'));
-// ReactDOM.render(<SideMenu />, document.getElementById('sidemenu'))
-
-/***/ }),
-/* 18 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1449,7 +982,7 @@ __WEBPACK_IMPORTED_MODULE_1_react_dom___default.a.render(__WEBPACK_IMPORTED_MODU
 */
 
 var f = __webpack_require__(4),
-    p = __webpack_require__(5);__webpack_require__(3);var r = __webpack_require__(1);
+    p = __webpack_require__(5);__webpack_require__(3);var r = __webpack_require__(2);
 function t(a) {
   for (var b = arguments.length - 1, d = "Minified React error #" + a + "; visit http://facebook.github.io/react/docs/error-decoder.html?invariant\x3d" + a, e = 0; e < b; e++) d += "\x26args[]\x3d" + encodeURIComponent(arguments[e + 1]);b = Error(d + " for the full message or use the non-minified dev environment for full errors and additional helpful warnings.");b.name = "Invariant Violation";b.framesToPop = 1;throw b;
 }
@@ -1547,7 +1080,7 @@ module.exports = { Children: { map: S.map, forEach: S.forEach, count: S.count, t
     } }, Component: B.Component, PureComponent: B.PureComponent, unstable_AsyncComponent: B.AsyncComponent, createElement: G.createElement, cloneElement: G.cloneElement, isValidElement: G.isValidElement, createFactory: G.createFactory, version: "16.0.0", __SECRET_INTERNALS_DO_NOT_USE_OR_YOU_WILL_BE_FIRED: { ReactCurrentOwner: C, assign: f } };
 
 /***/ }),
-/* 19 */
+/* 17 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1570,7 +1103,7 @@ if (process.env.NODE_ENV !== "production") {
     var require$$0 = __webpack_require__(6);
     var emptyObject = __webpack_require__(5);
     var invariant = __webpack_require__(3);
-    var emptyFunction = __webpack_require__(1);
+    var emptyFunction = __webpack_require__(2);
     var checkPropTypes = __webpack_require__(7);
 
     /**
@@ -3248,7 +2781,7 @@ if (process.env.NODE_ENV !== "production") {
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
 
 /***/ }),
-/* 20 */
+/* 18 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -3283,14 +2816,14 @@ if (process.env.NODE_ENV === 'production') {
   // DCE check should happen before ReactDOM bundle executes so that
   // DevTools can report bad minification during injection.
   checkDCE();
-  module.exports = __webpack_require__(21);
+  module.exports = __webpack_require__(19);
 } else {
-  module.exports = __webpack_require__(24);
+  module.exports = __webpack_require__(22);
 }
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
 
 /***/ }),
-/* 21 */
+/* 19 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -3305,10 +2838,10 @@ if (process.env.NODE_ENV === 'production') {
  Modernizr 3.0.0pre (Custom Build) | MIT
 */
 
-var aa = __webpack_require__(2);__webpack_require__(3);var l = __webpack_require__(9),
+var aa = __webpack_require__(1);__webpack_require__(3);var l = __webpack_require__(9),
     n = __webpack_require__(4),
     ba = __webpack_require__(10),
-    ca = __webpack_require__(1),
+    ca = __webpack_require__(2),
     da = __webpack_require__(5),
     ea = __webpack_require__(11),
     fa = __webpack_require__(12),
@@ -5551,7 +5084,7 @@ var ek = { createPortal: dk, hydrate: function (a, b, c) {
   unstable_deferredUpdates: Xj.deferredUpdates, flushSync: Xj.flushSync, __SECRET_INTERNALS_DO_NOT_USE_OR_YOU_WILL_BE_FIRED: { EventPluginHub: Jb, EventPluginRegistry: sa, EventPropagators: Th, ReactControlledComponent: nb, ReactDOMComponentTree: G, ReactDOMEventListener: L } };Cj({ findFiberByHostInstance: G.getClosestInstanceFromNode, findHostInstanceByFiber: Xj.findHostInstance, bundleType: 0, version: "16.0.0", rendererPackageName: "react-dom" });module.exports = ek;
 
 /***/ }),
-/* 22 */
+/* 20 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -5566,7 +5099,7 @@ var ek = { createPortal: dk, hydrate: function (a, b, c) {
  * @typechecks
  */
 
-var isNode = __webpack_require__(23);
+var isNode = __webpack_require__(21);
 
 /**
  * @param {*} object The object to check.
@@ -5579,7 +5112,7 @@ function isTextNode(object) {
 module.exports = isTextNode;
 
 /***/ }),
-/* 23 */
+/* 21 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -5608,7 +5141,7 @@ function isNode(object) {
 module.exports = isNode;
 
 /***/ }),
-/* 24 */
+/* 22 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -5619,7 +5152,7 @@ module.exports = isNode;
  *
  * This source code is licensed under the MIT license found in the
  * LICENSE file in the root directory of this source tree.
- */if(process.env.NODE_ENV!=="production"){(function(){'use strict';var react=__webpack_require__(2);var invariant=__webpack_require__(3);var ExecutionEnvironment=__webpack_require__(9);var _assign=__webpack_require__(4);var EventListener=__webpack_require__(10);var require$$0=__webpack_require__(6);var hyphenateStyleName=__webpack_require__(25);var emptyFunction=__webpack_require__(1);var camelizeStyleName=__webpack_require__(27);var performanceNow=__webpack_require__(29);var propTypes=__webpack_require__(31);var emptyObject=__webpack_require__(5);var checkPropTypes=__webpack_require__(7);var shallowEqual=__webpack_require__(11);var containsNode=__webpack_require__(12);var focusNode=__webpack_require__(13);var getActiveElement=__webpack_require__(14);/**
+ */if(process.env.NODE_ENV!=="production"){(function(){'use strict';var react=__webpack_require__(1);var invariant=__webpack_require__(3);var ExecutionEnvironment=__webpack_require__(9);var _assign=__webpack_require__(4);var EventListener=__webpack_require__(10);var require$$0=__webpack_require__(6);var hyphenateStyleName=__webpack_require__(23);var emptyFunction=__webpack_require__(2);var camelizeStyleName=__webpack_require__(25);var performanceNow=__webpack_require__(27);var propTypes=__webpack_require__(29);var emptyObject=__webpack_require__(5);var checkPropTypes=__webpack_require__(7);var shallowEqual=__webpack_require__(11);var containsNode=__webpack_require__(12);var focusNode=__webpack_require__(13);var getActiveElement=__webpack_require__(14);/**
  * Copyright (c) 2013-present, Facebook, Inc.
  *
  * This source code is licensed under the MIT license found in the
@@ -9013,7 +8546,7 @@ if(/^(https?|file):$/.test(protocol)){console.info('%cDownload the React DevTool
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
 
 /***/ }),
-/* 25 */
+/* 23 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -9028,7 +8561,7 @@ if(/^(https?|file):$/.test(protocol)){console.info('%cDownload the React DevTool
 
 
 
-var hyphenate = __webpack_require__(26);
+var hyphenate = __webpack_require__(24);
 
 var msPattern = /^ms-/;
 
@@ -9055,7 +8588,7 @@ function hyphenateStyleName(string) {
 module.exports = hyphenateStyleName;
 
 /***/ }),
-/* 26 */
+/* 24 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -9091,7 +8624,7 @@ function hyphenate(string) {
 module.exports = hyphenate;
 
 /***/ }),
-/* 27 */
+/* 25 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -9106,7 +8639,7 @@ module.exports = hyphenate;
 
 
 
-var camelize = __webpack_require__(28);
+var camelize = __webpack_require__(26);
 
 var msPattern = /^-ms-/;
 
@@ -9134,7 +8667,7 @@ function camelizeStyleName(string) {
 module.exports = camelizeStyleName;
 
 /***/ }),
-/* 28 */
+/* 26 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -9169,7 +8702,7 @@ function camelize(string) {
 module.exports = camelize;
 
 /***/ }),
-/* 29 */
+/* 27 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -9184,7 +8717,7 @@ module.exports = camelize;
  * @typechecks
  */
 
-var performance = __webpack_require__(30);
+var performance = __webpack_require__(28);
 
 var performanceNow;
 
@@ -9206,7 +8739,7 @@ if (performance.now) {
 module.exports = performanceNow;
 
 /***/ }),
-/* 30 */
+/* 28 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -9232,7 +8765,7 @@ if (ExecutionEnvironment.canUseDOM) {
 module.exports = performance || {};
 
 /***/ }),
-/* 31 */
+/* 29 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /* WEBPACK VAR INJECTION */(function(process) {/**
@@ -9252,16 +8785,16 @@ if (process.env.NODE_ENV !== 'production') {
   // By explicitly using `prop-types` you are opting into new development behavior.
   // http://fb.me/prop-types-in-prod
   var throwOnDirectAccess = true;
-  module.exports = __webpack_require__(32)(isValidElement, throwOnDirectAccess);
+  module.exports = __webpack_require__(30)(isValidElement, throwOnDirectAccess);
 } else {
   // By explicitly using `prop-types` you are opting into new production behavior.
   // http://fb.me/prop-types-in-prod
-  module.exports = __webpack_require__(33)();
+  module.exports = __webpack_require__(31)();
 }
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
 
 /***/ }),
-/* 32 */
+/* 30 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -9274,7 +8807,7 @@ if (process.env.NODE_ENV !== 'production') {
 
 
 
-var emptyFunction = __webpack_require__(1);
+var emptyFunction = __webpack_require__(2);
 var invariant = __webpack_require__(3);
 var warning = __webpack_require__(6);
 var assign = __webpack_require__(4);
@@ -9784,7 +9317,7 @@ module.exports = function (isValidElement, throwOnDirectAccess) {
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
 
 /***/ }),
-/* 33 */
+/* 31 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -9797,7 +9330,7 @@ module.exports = function (isValidElement, throwOnDirectAccess) {
 
 
 
-var emptyFunction = __webpack_require__(1);
+var emptyFunction = __webpack_require__(2);
 var invariant = __webpack_require__(3);
 var ReactPropTypesSecret = __webpack_require__(8);
 
@@ -9843,12 +9376,16 @@ module.exports = function () {
 };
 
 /***/ }),
-/* 34 */
+/* 32 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react__ = __webpack_require__(2);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react__ = __webpack_require__(1);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_react__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__PersonalData__ = __webpack_require__(33);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__CadernetaMenuGuide__ = __webpack_require__(36);
+
+
 
 
 class App extends __WEBPACK_IMPORTED_MODULE_0_react___default.a.Component {
@@ -9858,15 +9395,601 @@ class App extends __WEBPACK_IMPORTED_MODULE_0_react___default.a.Component {
   }
 
   render() {
-    return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('div', null);
+    return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+      'div',
+      { className: 'container-fluid' },
+      __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+        'div',
+        { className: 'row' },
+        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+          'div',
+          { className: 'col-12' },
+          __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('div', { id: 'menu_guide' }),
+          __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+            'div',
+            { className: 'progress' },
+            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('div', { className: 'progress-bar', role: 'progressbar', style: { width: '25%', height: '1px' }, 'aria-valuenow': '25', 'aria-valuemin': '0', 'aria-valuemax': '100' })
+          ),
+          __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_2__CadernetaMenuGuide__["a" /* default */], null),
+          __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_1__PersonalData__["a" /* default */], null)
+        )
+      )
+    );
   }
 }
 
 /* harmony default export */ __webpack_exports__["a"] = (App);
 
 /***/ }),
-/* 35 */,
-/* 36 */
+/* 33 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react__ = __webpack_require__(1);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_react__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_jquery__ = __webpack_require__(34);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_jquery___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_jquery__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__RadioGroup__ = __webpack_require__(37);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_react_input_mask__ = __webpack_require__(41);
+
+
+
+
+
+class PersonalData extends __WEBPACK_IMPORTED_MODULE_0_react___default.a.Component {
+
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      personal_data: [],
+      id_historys: '1',
+      name_1: '',
+      nick_name_1: '',
+      card_number_cns_1: '',
+      photo_1: '',
+      document_cpf_1: '',
+      document_rg_1: '',
+      mothers_name_1: '',
+      date_of_birth_1: '',
+      sexuality_1: '',
+      city_of_birth_1: '',
+      nationality_1: '',
+      country_of_birth_1: '',
+      can_you_read_and_write_1: '',
+      scholarity_1: '',
+      breed_color_1: '',
+      breed_color_aux_1: '',
+      do_you_have_a_religion_1: '',
+      country_of_birth_1: '',
+      do_you_have_a_religion_aux_1: '',
+      occupation_primary_profession_1: '',
+      marital_status_1: '',
+      marital_status_aux_1: '',
+      basic_heath_unit_that_attends_1: '',
+      do_you_have_any_major_allergies_1: '',
+      do_you_have_any_disabilities_1: '',
+      do_you_have_any_disabilities_aux_1: '',
+      whatdeficiency_1: '',
+      blood_type_1: '',
+      rh_factor_1: ''
+    };
+    this.sendForm = this.sendForm.bind(this);
+    this.setName1 = this.setName1.bind(this);
+    this.setNickName1 = this.setNickName1.bind(this);
+    this.setCardNumberCns1 = this.setCardNumberCns1.bind(this);
+    this.setDocumentRg1 = this.setDocumentRg1.bind(this);
+    this.setMothersName1 = this.setMothersName1.bind(this);
+    this.setDoYouHaveaReligionAux1 = this.setDoYouHaveaReligionAux1.bind(this);
+    this.setDocumentCpf1 = this.setDocumentCpf1.bind(this);
+    this.setCityOfBirth1 = this.setCityOfBirth1.bind(this);
+    this.setCountryOfBirth1 = this.setCountryOfBirth1.bind(this);
+    this.setBreedColorAux1 = this.setBreedColorAux1.bind(this);
+    this.setSexuality = this.setSexuality.bind(this);
+    this.setNationality1 = this.setNationality1.bind(this);
+    this.setCanYouReadAndWrite1 = this.setCanYouReadAndWrite1.bind(this);
+    this.setScholarity1 = this.setScholarity1.bind(this);
+    this.setBreedColor1 = this.setBreedColor1.bind(this);
+    this.setDoYouHaveaReligion1 = this.setDoYouHaveaReligion1.bind(this);
+    this.setDateOfBirth1 = this.setDateOfBirth1.bind(this);
+    this.setPhoto1 = this.setPhoto1.bind(this);
+    this.setMaritalStatus1 = this.setMaritalStatus1.bind(this);
+    this.setMaritalStatusAux1 = this.setMaritalStatusAux1.bind(this);
+    this.setOccupationPrimaryProfession1 = this.setOccupationPrimaryProfession1.bind(this);
+    this.setBasicHeathUnitThatAttends1 = this.setBasicHeathUnitThatAttends1.bind(this);
+    this.setDoYouHaveAnyMajorAllergies1 = this.setDoYouHaveAnyMajorAllergies1.bind(this);
+    this.setDoYouHaveAnyDisabilities1 = this.setDoYouHaveAnyDisabilities1.bind(this);
+    this.setDoYouHaveAnyDisabilitiesAux1 = this.setDoYouHaveAnyDisabilitiesAux1.bind(this);
+    this.setWhatDeficiency1 = this.setWhatDeficiency1.bind(this);
+    this.setBloodType1 = this.setBloodType1.bind(this);
+    this.setRhFactor1 = this.setRhFactor1.bind(this);
+  }
+
+  componentWillMount() {
+    __WEBPACK_IMPORTED_MODULE_1_jquery___default.a.ajax({
+      url: "http://127.0.0.1:8000/api/v1/personaldata",
+      dataType: "json",
+      method: "GET",
+      success: function (response) {
+        console.log(response);
+      }.bind(this)
+    });
+  }
+
+  sendForm(evt) {
+    evt.preventDefault();
+    console.log('You have selected:', this.state.document_cpf_1);
+
+    __WEBPACK_IMPORTED_MODULE_1_jquery___default.a.ajax({
+      url: "http://127.0.0.1:8000/api/v1/personaldata",
+      contentType: 'application/json',
+      dataType: 'json',
+      method: "POST",
+      data: JSON.stringify({ test: this.state }),
+      success: function (response) {
+        console.log(response);
+        console.log("enviado com sucesso");
+      },
+      error: function (response) {
+        console.log("erro");
+        console.log(response);
+      }.bind(this)
+    });
+  }
+
+  render() {
+    return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+      'div',
+      { className: 'container' },
+      __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+        'form',
+        { id: 'personaldata', method: 'post' },
+        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+          'div',
+          { className: 'row' },
+          __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+            'div',
+            { className: 'col' },
+            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+              'fieldset',
+              null,
+              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                'label',
+                null,
+                'Nome'
+              ),
+              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('br', null),
+              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('input', { type: 'text', value: this.state.name_1, onChange: this.setName1, placeholder: 'Nome', className: 'answers-1', id: '1-name', name: 'answers[1[name]]', maxLength: '50' }),
+              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('br', null),
+              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('br', null),
+              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                'label',
+                null,
+                'Apelido/Nome Social'
+              ),
+              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('br', null),
+              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('input', { type: 'text', value: this.state.nick_name_1, onChange: this.setNickName1, placeholder: 'Apelido/Nome Social', className: 'answers-2', id: '1-nickname', name: 'answers[1[nickname]]', maxLength: '50' }),
+              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('br', null),
+              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('br', null),
+              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                'label',
+                null,
+                'N\xBA do cart\xE3o SUS '
+              ),
+              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('br', null),
+              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('input', { type: 'text', value: this.state.card_number_cns_1, onChange: this.setCardNumberCns1, placeholder: 'N\xBA do cart\xE3o SUS ', className: 'answers-3', id: '1-cardnumber', name: 'answers[1[cardnumber]]', maxLength: '11' }),
+              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('br', null),
+              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('br', null),
+              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                'div',
+                { className: 'form-group' },
+                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                  'label',
+                  { htmlFor: 'exampleFormControlFile1' },
+                  'Foto'
+                ),
+                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('input', { type: 'file', value: this.state.photo_1, onChange: this.setPhoto1, className: 'form-control-file 1-photo', name: 'answers[1[photo]]', id: 'exampleFormControlFile1', maxLength: '255' })
+              ),
+              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('br', null),
+              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                'label',
+                null,
+                'Documento de identidade '
+              ),
+              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('br', null),
+              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_3_react_input_mask__["a" /* default */], { mask: '99.999.999-99', maskChar: ' ', type: 'text', value: this.state.document_rg_1, onChange: this.setDocumentRg1, placeholder: 'Documento de identidade', className: 'answers-5', id: '1-document', name: 'answers[1[Document2]]' }),
+              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('br', null),
+              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('br', null),
+              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                'label',
+                null,
+                'CPF'
+              ),
+              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('br', null),
+              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_3_react_input_mask__["a" /* default */], { mask: '99.999.999-9', type: 'text', value: this.state.document_cpf_1, onChange: this.setDocumentCpf1, placeholder: 'CPF', className: 'answers-5', id: '1-document1', name: 'answers[1[Document1]]' }),
+              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('br', null),
+              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('br', null),
+              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                'label',
+                null,
+                'Nome completo da m\xE3e'
+              ),
+              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('br', null),
+              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('input', { type: 'text', value: this.state.mothers_name_1, onChange: this.setMothersName1, placeholder: 'Nome completo da m\xE3e', className: 'answers-6', id: '1-monthersname', name: 'answers[1[monthersname]]', maxLength: '50' }),
+              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('br', null),
+              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('br', null),
+              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                'label',
+                null,
+                'Data de nascimento'
+              ),
+              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('br', null),
+              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('input', { type: 'date', value: this.state.date_of_birth_1, onChange: this.setDateOfBirth1, placeholder: 'Data de nascimento', className: 'answers-7', id: '1-dateofbirth', name: 'answers[1[dateofbirth]]' }),
+              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('br', null),
+              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('br', null),
+              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                'label',
+                null,
+                'Sexo'
+              ),
+              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('br', null),
+              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('input', { type: 'radio', checked: this.state.sexuality_1 === 'F', onChange: this.setSexuality, className: 'answers-8', id: '1-sexuality-f', name: 'answers[1[sexuality]]', value: 'F' }),
+              ' Feminino',
+              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('input', { type: 'radio', checked: this.state.sexuality_1 === 'M', onChange: this.setSexuality, className: 'answers-8', id: '1-sexuality-m', name: 'answers[1[sexuality]]', value: 'M' }),
+              'Masculino',
+              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('br', null),
+              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('br', null),
+              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                'label',
+                null,
+                'Munic\xEDpio de nascimento/UF'
+              ),
+              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('br', null),
+              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('input', { type: 'text', value: this.state.city_of_birth_1, onChange: this.setCityOfBirth1, placeholder: 'Munic\xEDpio de nascimento/UF', className: 'answers-9', id: '1-cityofbirth', name: 'answers[1[cityofbirth]]', maxLength: '2' }),
+              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('br', null),
+              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('br', null),
+              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                'label',
+                null,
+                'Nacionalidade'
+              ),
+              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('br', null),
+              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('input', { type: 'radio', checked: this.state.nationality_1 === 'brasileira', onChange: this.setNationality1, className: 'answers-10', id: '1-nationality', name: 'answers[1[nationality]]', value: 'brasileira' }),
+              ' Brasileira',
+              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('input', { type: 'radio', checked: this.state.nationality_1 === 'naturalizado', onChange: this.setNationality1, className: 'answers-10', id: '1-nationality', name: 'answers[1[nationality]]', value: 'naturalizado' }),
+              'Naturalizado',
+              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('input', { type: 'radio', checked: this.state.nationality_1 === 'estrageira', onChange: this.setNationality1, className: 'answers-10', id: '1-nationality', name: 'answers[1[nationality]]', value: 'estrageira' }),
+              'Estrageira',
+              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('br', null),
+              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('br', null),
+              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                'label',
+                null,
+                'Pa\xEDs de nascimento'
+              ),
+              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('br', null),
+              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('input', { type: 'text', value: this.state.country_of_birth_1, onChange: this.setCountryOfBirth1, placeholder: 'Pa\xEDs de nascimento', className: 'answers-10', id: '1-birthparents', name: 'answers[1[birthparents]]', maxLength: '30' }),
+              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('br', null),
+              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                'label',
+                null,
+                'Sabe ler e escrever? '
+              ),
+              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('br', null),
+              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('input', { type: 'radio', checked: this.state.can_you_read_and_write_1 === '1', onChange: this.setCanYouReadAndWrite1, className: 'answers-11', id: '1-readwrite-y', name: 'answers[1[readwrite]]', value: '1' }),
+              ' Sim',
+              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('input', { type: 'radio', checked: this.state.can_you_read_and_write_1 === '0', onChange: this.setCanYouReadAndWrite1, className: 'answers-11', id: '1-readwrite-n', name: 'answers[1[readwrite]]', value: '0' }),
+              ' N\xE3o',
+              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('br', null),
+              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('br', null)
+            )
+          ),
+          __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+            'div',
+            { className: 'col' },
+            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+              'fieldset',
+              null,
+              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                'label',
+                null,
+                'Escolaridade'
+              ),
+              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('br', null),
+              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('input', { type: 'radio', checked: this.state.scholarity_1 === 'nothing', onChange: this.setScholarity1, className: 'answers-12', id: '1-sholarity-n', name: 'answers[1[scholarity]]', value: 'nothing' }),
+              'nenhuma',
+              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('input', { type: 'radio', checked: this.state.scholarity_1 === 'from1to3years', onChange: this.setScholarity1, className: 'answers-12', id: '1-sholarity-1/3', name: 'answers[1[scholarity]]', value: 'from1to3years' }),
+              'de 1 a 3 anos',
+              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('input', { type: 'radio', checked: this.state.scholarity_1 === 'from4to7years', onChange: this.setScholarity1, className: 'answers-12', id: '1-sholarity-4/7', name: 'answers[1[scholarity]]', value: 'from4to7years' }),
+              'de 4 a 7 anos',
+              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('input', { type: 'radio', checked: this.state.scholarity_1 === 'nenhuma', onChange: this.setScholarity1, className: 'answers-12', id: '1-sholarity-8', name: 'answers[1[scholarity]]', value: 'nenhuma' }),
+              '8 anos ou mais',
+              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('br', null),
+              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('br', null),
+              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                'label',
+                null,
+                'Ra\xE7a/cor'
+              ),
+              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('br', null),
+              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('input', { type: 'radio', checked: this.state.breed_color_1 === 'white', onChange: this.setBreedColor1, className: 'answers-13', id: '1-breedcolor-white', name: 'answers[1[breedcolor]]', value: 'white' }),
+              'Branca',
+              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('input', { type: 'radio', checked: this.state.breed_color_1 === 'black', onChange: this.setBreedColor1, className: 'answers-13', id: '1-breedcolor-black', name: 'answers[1[breedcolor]]', value: 'black' }),
+              'Preto',
+              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('input', { type: 'radio', checked: this.state.breed_color_1 === 'brown', onChange: this.setBreedColor1, className: 'answers-13', id: '1-breedcolor-brown', name: 'answers[1[breedcolor]]', value: 'brown' }),
+              'Parda',
+              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('input', { type: 'radio', checked: this.state.breed_color_1 === 'yellow', onChange: this.setBreedColor1, className: 'answers-13', id: '1-breedcolor-yellow', name: 'answers[1[breedcolor]]', value: 'yellow' }),
+              'Amarela',
+              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('input', { type: 'radio', checked: this.state.breed_color_1 === 'undeclared', onChange: this.setBreedColor1, className: 'answers-13', id: '1-breedcolor-undeclared', name: 'answers[1[breedcolor]]', value: 'undeclared' }),
+              ' N\xE3o declarada',
+              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('br', null),
+              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('input', { type: 'text', value: this.state.breed_color_aux_1, onChange: this.setBreedColorAux1, placeholder: 'Qual etnia', className: 'answers-13', id: '1-breedcolor-what', name: 'answers[1[breedcolor_aux]]', maxLength: '30' }),
+              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('br', null),
+              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('br', null),
+              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                'label',
+                null,
+                'Tem religi\xE3o?'
+              ),
+              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('br', null),
+              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('input', { type: 'radio', checked: this.state.do_you_have_a_religion_1 === 'y', onChange: this.setDoYouHaveaReligion1, className: 'answers-14', id: '1-religion-y', name: 'answers[1[religion]]', value: 'y' }),
+              'Sim',
+              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('input', { type: 'radio', checked: this.state.do_you_have_a_religion_1 === 'n', onChange: this.setDoYouHaveaReligion1, className: 'answers-14', id: '1-religion-n', name: 'answers[1[religion]]', value: 'n' }),
+              'N\xE3o',
+              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('br', null),
+              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('input', { type: 'text', value: this.state.do_you_have_a_religion_aux_1, onChange: this.setDoYouHaveaReligionAux1, placeholder: 'Qual?', className: 'answers-14', id: '1-religion-w', name: 'answers[1[religion]]', maxLength: '20' }),
+              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                'label',
+                null,
+                'OCUPA\xC7\xC3O/OCUPA\xC7\xC3O PROFISSIONAL:'
+              ),
+              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('br', null),
+              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('input', { type: 'text', value: this.state.occupation_primary_profession_1, onChange: this.setOccupationPrimaryProfession1, placeholder: 'Ocupa\xE7\xE3o/profiss\xE3o principal', className: 'answers-16', id: '1-primaryprofession', name: 'answers[1[primaryprofession]]' }),
+              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('br', null),
+              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('br', null),
+              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                'label',
+                null,
+                'Situa\xE7\xE3o conjugal'
+              ),
+              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('br', null),
+              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('input', { type: 'radio', checked: this.state.marital_status_1 === "notmarried", onChange: this.setMaritalStatus1, className: 'answers-17', id: '1-maritalstatus-s', name: 'answers[1[maritalstatus]]', value: 'notmarried' }),
+              ' Solteiro(a)',
+              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('input', { type: 'radio', checked: this.state.marital_status_1 === "married", onChange: this.setMaritalStatus1, className: 'answers-17', id: '1-maritalstatus-m', name: 'answers[1[maritalstatus]]', value: 'married' }),
+              ' Casado(a)/convivio com parceiro(a)',
+              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('input', { type: 'radio', checked: this.state.marital_status_1 === "divorced", onChange: this.setMaritalStatus1, className: 'answers-17', id: '1-maritalstatus-d', name: 'answers[1[maritalstatus]]', value: 'divorced' }),
+              ' Divorciado(a)/separado(a)',
+              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('input', { type: 'radio', checked: this.state.marital_status_1 === "widower", onChange: this.setMaritalStatus1, className: 'answers-17', id: '1-maritalstatus-w', name: 'answers[1[maritalstatus]]', value: 'widower' }),
+              ' Vi\xFAvo(a)',
+              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('input', { type: 'radio', checked: this.state.marital_status_1 === "Other", onChange: this.setMaritalStatus1, className: 'answers-17', id: '1-maritalstatus-o', name: 'answers[1[maritalstatus]]', value: 'Other' }),
+              ' Outra',
+              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('input', { type: 'text', value: this.state.marital_status_aux_1, onChange: this.setMaritalStatusAux1, placeholder: ' Desde quando(ano)?', className: 'answers-17', id: '1-maritalstatus-sw', name: 'answers[1[maritalstatus]]', maxLength: '50' }),
+              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('br', null),
+              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('br', null),
+              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                'label',
+                null,
+                'Unidade b\xE1sica de s\xFAade que frequenta'
+              ),
+              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('br', null),
+              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('input', { type: 'text', value: this.state.basic_heath_unit_that_attends_1, onChange: this.setBasicHeathUnitThatAttends1, placeholder: 'Unidade b\xE1sica de s\xFAade que frequenta', className: 'answers-18', id: '1-Basic unit', name: 'answers[1[Basicunit]]', maxLength: '30' }),
+              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('br', null),
+              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('br', null),
+              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                'label',
+                null,
+                'Tem alguma alergia de maior gravidade? Especificar'
+              ),
+              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('br', null),
+              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('input', { type: 'text', value: this.state.do_you_have_any_major_allergies_1, onChange: this.setDoYouHaveAnyMajorAllergies1, placeholder: 'alergia de maior gravidade?', className: 'answers-19', id: '1-Major allergy', name: 'answers[1[maritalstatus]]', maxLength: '50' }),
+              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('br', null),
+              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('br', null),
+              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                'label',
+                null,
+                'Tem alguma defici\xEAncia? '
+              ),
+              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('br', null),
+              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('input', { type: 'radio', checked: this.state.do_you_have_any_disabilities_1 === "1", onChange: this.setDoYouHaveAnyDisabilities1, className: 'answers-20', id: '1-deficiency-y', name: 'answers[1[deficiency]]', value: '1' }),
+              ' Sim',
+              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('input', { type: 'radio', checked: this.state.do_you_have_any_disabilities_1 === "0", onChange: this.setDoYouHaveAnyDisabilities1, className: 'answers-20', id: '1-deficiency-n', name: 'answers[1[deficiency]]', value: '0' }),
+              ' N\xE3o',
+              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('br', null),
+              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('br', null),
+              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                'label',
+                null,
+                'Qual? '
+              ),
+              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('br', null),
+              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('input', { type: 'radio', checked: this.state.do_you_have_any_disabilities_aux_1 === "auditory", onChange: this.setDoYouHaveAnyDisabilitiesAux1, className: 'answers-21', id: '1-whatdeficiency-a', name: 'answers[1[whatdeficiency]]', value: 'auditory' }),
+              'Auditiva',
+              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('input', { type: 'radio', checked: this.state.do_you_have_any_disabilities_aux_1 === "visual", onChange: this.setDoYouHaveAnyDisabilitiesAux1, className: 'answers-21', id: '1-whatdeficiency-v', name: 'answers[1[whatdeficiency]]', value: 'visual' }),
+              'Visual',
+              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('input', { type: 'radio', checked: this.state.do_you_have_any_disabilities_aux_1 === "intellectual_cognitive", onChange: this.setDoYouHaveAnyDisabilitiesAux1, className: 'answers-21', id: '1-whatdeficiency-i', name: 'answers[1[whatdeficiency]]', value: 'intellectual_cognitive' }),
+              'Intelectual/Cognitiva',
+              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('input', { type: 'radio', checked: this.state.do_you_have_any_disabilities_aux_1 === "physical", onChange: this.setDoYouHaveAnyDisabilitiesAux1, className: 'answers-21', id: '1-whatdeficiency-p', name: 'answers[1[whatdeficiency]]', value: 'physical' }),
+              'F\xEDsica',
+              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('input', { type: 'radio', checked: this.state.do_you_have_any_disabilities_aux_1 === "other", onChange: this.setDoYouHaveAnyDisabilitiesAux1, className: 'answers-21', id: '1-whatdeficiency-o', name: 'answers[1[whatdeficiency]]', value: 'other' }),
+              'Outra',
+              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('br', null),
+              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('br', null),
+              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                'label',
+                null,
+                'Especificar'
+              ),
+              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('br', null),
+              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('input', { type: 'text', type: 'text', value: this.state.whatdeficiency_1, onChange: this.setWhatDeficiency1, placeholder: 'Especificar', className: 'answers-21', id: '1-specify', name: 'answers[1[whatdeficiency]]', maxLength: '30' }),
+              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('br', null),
+              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('br', null),
+              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                'label',
+                null,
+                'Grupo sangu\xEDneo'
+              ),
+              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('br', null),
+              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('input', { type: 'text', value: this.state.blood_type_1, onChange: this.setBloodType1, placeholder: 'Grupo sangu\xEDneo', className: 'answers-22', id: '1-bloodtype', name: 'answers[1[bloodtype]]', maxLength: '30' }),
+              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('br', null),
+              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('br', null),
+              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                'label',
+                null,
+                'Fator RH'
+              ),
+              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('br', null),
+              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('input', { type: 'text', value: this.state.rh_factor_1, onChange: this.setRhFactor1, placeholder: 'Fator RH', className: 'answers-23', id: '1-rhfactor', name: 'answers[1[rhfactor]]', maxLength: '50' })
+            )
+          )
+        )
+      ),
+      __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+        'nav',
+        { 'aria-label': 'Dados Pessoais' },
+        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+          'ul',
+          { className: 'pagination justify-content-center' },
+          __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+            'li',
+            { className: 'page-item disabled' },
+            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+              'a',
+              { className: 'page-link', href: '#', tabIndex: '-1' },
+              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('i', { className: 'fa fa-arrow-left', 'aria-hidden': 'true' })
+            )
+          ),
+          __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+            'li',
+            { className: 'page-item' },
+            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+              'a',
+              { className: 'page-link', onClick: this.sendForm, href: 'javascript:;' },
+              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('i', { className: 'fa fa-arrow-right', 'aria-hidden': 'true' })
+            )
+          )
+        )
+      )
+    );
+  }
+
+  setName1(evt) {
+    this.setState({ name_1: evt.target.value });
+  }
+
+  setNickName1(evt) {
+    this.setState({ nick_name_1: evt.target.value });
+  }
+
+  setCardNumberCns1(evt) {
+    this.setState({ card_number_cns_1: evt.target.value });
+  }
+
+  setDocumentRg1(evt) {
+    this.setState({ document_rg_1: evt.target.value });
+  }
+
+  setMothersName1(evt) {
+    this.setState({ mothers_name_1: evt.target.value });
+  }
+
+  setDoYouHaveaReligionAux1(evt) {
+    this.setState({ do_you_have_a_religion_aux_1: evt.target.value });
+  }
+
+  setDocumentCpf1(evt) {
+    this.setState({ document_cpf_1: evt.target.value });
+  }
+
+  setCityOfBirth1(evt) {
+    this.setState({ city_of_birth_1: evt.target.value });
+  }
+
+  setCountryOfBirth1(evt) {
+    this.setState({ country_of_birth_1: evt.target.value });
+  }
+
+  setBreedColorAux1(evt) {
+    this.setState({ breed_color_aux_1: evt.target.value });
+  }
+
+  setSexuality(evt) {
+    this.setState({ sexuality_1: evt.target.value });
+  }
+
+  setNationality1(evt) {
+    this.setState({ nationality_1: evt.target.value });
+  }
+
+  setCanYouReadAndWrite1(evt) {
+    this.setState({ can_you_read_and_write_1: evt.target.value });
+  }
+
+  setScholarity1(evt) {
+    this.setState({ scholarity_1: evt.target.value });
+  }
+
+  setBreedColor1(evt) {
+    this.setState({ breed_color_1: evt.target.value });
+  }
+
+  setDoYouHaveaReligion1(evt) {
+    this.setState({ do_you_have_a_religion_1: evt.target.value });
+  }
+
+  setDateOfBirth1(evt) {
+    this.setState({ date_of_birth_1: evt.target.value });
+  }
+
+  setPhoto1(evt) {
+    this.setState({ photo_1: evt.target.value });
+  }
+
+  setMaritalStatus1(evt) {
+    this.setState({ marital_status_1: evt.target.value });
+  }
+
+  setMaritalStatusAux1(evt) {
+    this.setState({ marital_status_aux_1: evt.target.value });
+  }
+
+  setOccupationPrimaryProfession1(evt) {
+    this.setState({ occupation_primary_profession_1: evt.target.value });
+  }
+
+  setBasicHeathUnitThatAttends1(evt) {
+    this.setState({ basic_heath_unit_that_attends_1: evt.target.value });
+  }
+
+  setDoYouHaveAnyMajorAllergies1(evt) {
+    this.setState({ do_you_have_any_major_allergies_1: evt.target.value });
+  }
+
+  setDoYouHaveAnyDisabilities1(evt) {
+    this.setState({ do_you_have_any_disabilities_1: evt.target.value });
+  }
+
+  setDoYouHaveAnyDisabilitiesAux1(evt) {
+    this.setState({ do_you_have_any_disabilities_aux_1: evt.target.value });
+  }
+
+  setWhatDeficiency1(evt) {
+    this.setState({ whatdeficiency_1: evt.target.value });
+  }
+
+  setBloodType1(evt) {
+    this.setState({ blood_type_1: evt.target.value });
+  }
+
+  setRhFactor1(evt) {
+    this.setState({ rh_factor_1: evt.target.value });
+  }
+
+}
+
+/* harmony default export */ __webpack_exports__["a"] = (PersonalData);
+
+/***/ }),
+/* 34 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/*!
@@ -19696,570 +19819,1139 @@ var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/*!
 });
 
 /***/ }),
-/* 37 */
+/* 35 */,
+/* 36 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react__ = __webpack_require__(2);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react__ = __webpack_require__(1);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_react__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_jquery__ = __webpack_require__(36);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_jquery___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_jquery__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__SideMenu__ = __webpack_require__(15);
 
 
+const divStyle = {
+  margin: '40px',
+  border: '5px solid'
+};
 
-
-class PersonalData extends __WEBPACK_IMPORTED_MODULE_0_react___default.a.Component {
-
+class CadernetaMenuGuide extends __WEBPACK_IMPORTED_MODULE_0_react___default.a.Component {
   constructor(props) {
     super(props);
-
     this.state = {
-      personal_data: [],
-      id_historys: '1',
-      name_1: '',
-      nick_name_1: '',
-      card_number_cns_1: '',
-      photo_1: '',
-      document_cpf_1: '',
-      document_rg_1: '',
-      mothers_name_1: '',
-      date_of_birth_1: '',
-      sexuality_1: '',
-      city_of_birth_1: '',
-      nationality_1: '',
-      country_of_birth_1: '',
-      can_you_read_and_write_1: '',
-      scholarity_1: '',
-      breed_color_1: '',
-      breed_color_aux_1: '',
-      do_you_have_a_religion_1: '',
-      country_of_birth_1: '',
-      do_you_have_a_religion_aux_1: '',
-      occupation_primary_profession_1: '',
-      marital_status_1: '',
-      marital_status_aux_1: '',
-      basic_heath_unit_that_attends_1: '',
-      do_you_have_any_major_allergies_1: '',
-      do_you_have_any_disabilities_1: '',
-      do_you_have_any_disabilities_aux_1: '',
-      whatdeficiency_1: '',
-      blood_type_1: '',
-      rh_factor_1: ''
+      istoggle: false,
+      num: 0
+      // this.setVisibility = this.setVisibility.bind(this);
     };
-    this.sendForm = this.sendForm.bind(this);
-    this.setName1 = this.setName1.bind(this);
-    this.setNickName1 = this.setNickName1.bind(this);
-    this.setCardNumberCns1 = this.setCardNumberCns1.bind(this);
-    this.setDocumentRg1 = this.setDocumentRg1.bind(this);
-    this.setMothersName1 = this.setMothersName1.bind(this);
-    this.setDoYouHaveaReligionAux1 = this.setDoYouHaveaReligionAux1.bind(this);
-    this.setDocumentCpf1 = this.setDocumentCpf1.bind(this);
-    this.setCityOfBirth1 = this.setCityOfBirth1.bind(this);
-    this.setCountryOfBirth1 = this.setCountryOfBirth1.bind(this);
-    this.setBreedColorAux1 = this.setBreedColorAux1.bind(this);
-    this.setSexuality = this.setSexuality.bind(this);
-    this.setNationality1 = this.setNationality1.bind(this);
-    this.setCanYouReadAndWrite1 = this.setCanYouReadAndWrite1.bind(this);
-    this.setScholarity1 = this.setScholarity1.bind(this);
-    this.setBreedColor1 = this.setBreedColor1.bind(this);
-    this.setDoYouHaveaReligion1 = this.setDoYouHaveaReligion1.bind(this);
-    this.setDateOfBirth1 = this.setDateOfBirth1.bind(this);
-    this.setPhoto1 = this.setPhoto1.bind(this);
-    this.setMaritalStatus1 = this.setMaritalStatus1.bind(this);
-    this.setMaritalStatusAux1 = this.setMaritalStatusAux1.bind(this);
-    this.setOccupationPrimaryProfession1 = this.setOccupationPrimaryProfession1.bind(this);
-    this.setBasicHeathUnitThatAttends1 = this.setBasicHeathUnitThatAttends1.bind(this);
-    this.setDoYouHaveAnyMajorAllergies1 = this.setDoYouHaveAnyMajorAllergies1.bind(this);
-    this.setDoYouHaveAnyDisabilities1 = this.setDoYouHaveAnyDisabilities1.bind(this);
-    this.setDoYouHaveAnyDisabilitiesAux1 = this.setDoYouHaveAnyDisabilitiesAux1.bind(this);
-    this.setWhatDeficiency1 = this.setWhatDeficiency1.bind(this);
-    this.setBloodType1 = this.setBloodType1.bind(this);
-    this.setRhFactor1 = this.setRhFactor1.bind(this);
   }
 
-  componentWillMount() {
-    __WEBPACK_IMPORTED_MODULE_1_jquery___default.a.ajax({
-      url: "http://127.0.0.1:8000/api/v1/personaldata",
-      dataType: "json",
-      method: "GET",
-      success: function (response) {
-        console.log(response);
-      }.bind(this)
-    });
-  }
+  // setVisibility() {
+  //   const count = this.state.num;
+  //   this.setState({num: count+1});
 
-  sendForm(evt) {
-    evt.preventDefault();
-    // console.log('You have selected:', this.state.sexuality_1);
-
-    __WEBPACK_IMPORTED_MODULE_1_jquery___default.a.ajax({
-      url: "http://127.0.0.1:8000/api/v1/personaldata",
-      contentType: 'application/json',
-      dataType: 'json',
-      method: "POST",
-      data: JSON.stringify({ test: this.state }),
-      success: function (response) {
-        console.log(response);
-        console.log("enviado com sucesso");
-      },
-      error: function (response) {
-        console.log("erro");
-        console.log(response);
-      }.bind(this)
-    });
-  }
+  //   if ((this.state.num & 1) == 0) {
+  //     this.setState({istoggle: true}); 
+  //   } else {
+  //     this.setState({istoggle: false});
+  //   }
+  // }
 
   render() {
     return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
       'div',
-      { className: 'container' },
+      null,
       __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-        'form',
-        { id: 'personaldata', method: 'post' },
+        'ul',
+        { id: 'step', className: 'nav nav-tabs', style: { display: this.state.istoggle ? 'flex' : 'none' } },
         __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-          'div',
-          { className: 'row' },
+          'li',
+          { className: 'nav-item' },
           __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-            'div',
-            { className: 'col' },
-            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-              'fieldset',
-              null,
-              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                'label',
-                null,
-                'Nome'
-              ),
-              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('br', null),
-              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('input', { type: 'text', value: this.state.name_1, onChange: this.setName1, placeholder: 'Nome', className: 'answers-1', id: '1-name', name: 'answers[1[name]]', maxLength: '50' }),
-              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('br', null),
-              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('br', null),
-              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                'label',
-                null,
-                'Apelido/Nome Social'
-              ),
-              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('br', null),
-              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('input', { type: 'text', value: this.state.nick_name_1, onChange: this.setNickName1, placeholder: 'Apelido/Nome Social', className: 'answers-2', id: '1-nickname', name: 'answers[1[nickname]]', maxLength: '50' }),
-              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('br', null),
-              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('br', null),
-              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                'label',
-                null,
-                'N\xBA do cart\xE3o SUS '
-              ),
-              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('br', null),
-              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('input', { type: 'text', value: this.state.card_number_cns_1, onChange: this.setCardNumberCns1, placeholder: 'N\xBA do cart\xE3o SUS ', className: 'answers-3', id: '1-cardnumber', name: 'answers[1[cardnumber]]', maxLength: '11' }),
-              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('br', null),
-              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('br', null),
-              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                'div',
-                { className: 'form-group' },
-                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                  'label',
-                  { htmlFor: 'exampleFormControlFile1' },
-                  'Foto'
-                ),
-                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('input', { type: 'file', value: this.state.photo_1, onChange: this.setPhoto1, className: 'form-control-file 1-photo', name: 'answers[1[photo]]', id: 'exampleFormControlFile1', maxLength: '255' })
-              ),
-              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('br', null),
-              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                'label',
-                null,
-                'Documento de identidade '
-              ),
-              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('br', null),
-              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('input', { type: 'text', value: this.state.document_rg_1, onChange: this.setDocumentRg1, placeholder: 'Documento de identidade', className: 'answers-5', id: '1-document', name: 'answers[1[Document2]]', maxLength: '12' }),
-              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('br', null),
-              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('br', null),
-              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                'label',
-                null,
-                'CPF'
-              ),
-              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('br', null),
-              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('input', { type: 'text', value: this.state.document_cpf_1, onChange: this.setDocumentCpf1, placeholder: 'CPF', className: 'answers-5', id: '1-document1', name: 'answers[1[Document1]]', maxLength: '14' }),
-              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('br', null),
-              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('br', null),
-              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                'label',
-                null,
-                'Nome completo da m\xE3e'
-              ),
-              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('br', null),
-              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('input', { type: 'text', value: this.state.mothers_name_1, onChange: this.setMothersName1, placeholder: 'Nome completo da m\xE3e', className: 'answers-6', id: '1-monthersname', name: 'answers[1[monthersname]]', maxLength: '50' }),
-              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('br', null),
-              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('br', null),
-              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                'label',
-                null,
-                'Data de nascimento'
-              ),
-              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('br', null),
-              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('input', { type: 'date', value: this.state.date_of_birth_1, onChange: this.setDateOfBirth1, placeholder: 'Data de nascimento', className: 'answers-7', id: '1-dateofbirth', name: 'answers[1[dateofbirth]]' }),
-              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('br', null),
-              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('br', null),
-              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                'label',
-                null,
-                'Sexo'
-              ),
-              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('br', null),
-              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('input', { type: 'radio', checked: this.state.sexuality_1 === 'F', onChange: this.setSexuality, className: 'answers-8', id: '1-sexuality-f', name: 'answers[1[sexuality]]', value: 'F' }),
-              ' Feminino',
-              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('input', { type: 'radio', checked: this.state.sexuality_1 === 'M', onChange: this.setSexuality, className: 'answers-8', id: '1-sexuality-m', name: 'answers[1[sexuality]]', value: 'M' }),
-              'Masculino',
-              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('br', null),
-              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('br', null),
-              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                'label',
-                null,
-                'Munic\xEDpio de nascimento/UF'
-              ),
-              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('br', null),
-              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('input', { type: 'text', value: this.state.city_of_birth_1, onChange: this.setCityOfBirth1, placeholder: 'Munic\xEDpio de nascimento/UF', className: 'answers-9', id: '1-cityofbirth', name: 'answers[1[cityofbirth]]', maxLength: '2' }),
-              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('br', null),
-              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('br', null),
-              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                'label',
-                null,
-                'Nacionalidade'
-              ),
-              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('br', null),
-              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('input', { type: 'radio', checked: this.state.nationality_1 === 'brasileira', onChange: this.setNationality1, className: 'answers-10', id: '1-nationality', name: 'answers[1[nationality]]', value: 'brasileira' }),
-              ' Brasileira',
-              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('input', { type: 'radio', checked: this.state.nationality_1 === 'naturalizado', onChange: this.setNationality1, className: 'answers-10', id: '1-nationality', name: 'answers[1[nationality]]', value: 'naturalizado' }),
-              'Naturalizado',
-              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('input', { type: 'radio', checked: this.state.nationality_1 === 'estrageira', onChange: this.setNationality1, className: 'answers-10', id: '1-nationality', name: 'answers[1[nationality]]', value: 'estrageira' }),
-              'Estrageira',
-              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('br', null),
-              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('br', null),
-              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                'label',
-                null,
-                'Pa\xEDs de nascimento'
-              ),
-              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('br', null),
-              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('input', { type: 'text', value: this.state.country_of_birth_1, onChange: this.setCountryOfBirth1, placeholder: 'Pa\xEDs de nascimento', className: 'answers-10', id: '1-birthparents', name: 'answers[1[birthparents]]', maxLength: '30' }),
-              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('br', null),
-              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                'label',
-                null,
-                'Sabe ler e escrever? '
-              ),
-              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('br', null),
-              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('input', { type: 'radio', checked: this.state.can_you_read_and_write_1 === 'y', onChange: this.setCanYouReadAndWrite1, className: 'answers-11', id: '1-readwrite-y', name: 'answers[1[readwrite]]', value: 'y' }),
-              ' Sim',
-              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('input', { type: 'radio', checked: this.state.can_you_read_and_write_1 === 'n', onChange: this.setCanYouReadAndWrite1, className: 'answers-11', id: '1-readwrite-n', name: 'answers[1[readwrite]]', value: 'n' }),
-              ' N\xE3o',
-              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('br', null),
-              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('br', null)
-            )
+            'a',
+            { className: 'nav-link active' },
+            'Dados Pessoais'
+          )
+        ),
+        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+          'li',
+          { className: 'nav-item dropdown' },
+          __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+            'a',
+            { className: 'nav-link dropdown-toggle', 'data-toggle': 'dropdown', href: '#', role: 'button', 'aria-haspopup': 'true', 'aria-expanded': 'false' },
+            'Av. da pessoa idosa'
           ),
           __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
             'div',
-            { className: 'col' },
+            { className: 'dropdown-menu' },
             __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-              'fieldset',
-              null,
-              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                'label',
-                null,
-                'Escolaridade'
-              ),
-              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('br', null),
-              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('input', { type: 'radio', checked: this.state.scholarity_1 === 'nothing', onChange: this.setScholarity1, className: 'answers-12', id: '1-sholarity-n', name: 'answers[1[scholarity]]', value: 'nothing' }),
-              'nenhuma',
-              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('input', { type: 'radio', checked: this.state.scholarity_1 === 'from1to3years', onChange: this.setScholarity1, className: 'answers-12', id: '1-sholarity-1/3', name: 'answers[1[scholarity]]', value: 'from1to3years' }),
-              'de 1 a 3 anos',
-              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('input', { type: 'radio', checked: this.state.scholarity_1 === 'from4to7years', onChange: this.setScholarity1, className: 'answers-12', id: '1-sholarity-4/7', name: 'answers[1[scholarity]]', value: 'from4to7years' }),
-              'de 4 a 7 anos',
-              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('input', { type: 'radio', checked: this.state.scholarity_1 === 'nenhuma', onChange: this.setScholarity1, className: 'answers-12', id: '1-sholarity-8', name: 'answers[1[scholarity]]', value: 'nenhuma' }),
-              '8 anos ou mais',
-              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('br', null),
-              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('br', null),
-              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                'label',
-                null,
-                'Ra\xE7a/cor'
-              ),
-              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('br', null),
-              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('input', { type: 'radio', checked: this.state.breed_color_1 === 'white', onChange: this.setBreedColor1, className: 'answers-13', id: '1-breedcolor-white', name: 'answers[1[breedcolor]]', value: 'white' }),
-              'Branca',
-              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('input', { type: 'radio', checked: this.state.breed_color_1 === 'black', onChange: this.setBreedColor1, className: 'answers-13', id: '1-breedcolor-black', name: 'answers[1[breedcolor]]', value: 'black' }),
-              'Preto',
-              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('input', { type: 'radio', checked: this.state.breed_color_1 === 'brown', onChange: this.setBreedColor1, className: 'answers-13', id: '1-breedcolor-brown', name: 'answers[1[breedcolor]]', value: 'brown' }),
-              'Parda',
-              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('input', { type: 'radio', checked: this.state.breed_color_1 === 'yellow', onChange: this.setBreedColor1, className: 'answers-13', id: '1-breedcolor-yellow', name: 'answers[1[breedcolor]]', value: 'yellow' }),
-              'Amarela',
-              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('input', { type: 'radio', checked: this.state.breed_color_1 === 'undeclared', onChange: this.setBreedColor1, className: 'answers-13', id: '1-breedcolor-undeclared', name: 'answers[1[breedcolor]]', value: 'undeclared' }),
-              ' N\xE3o declarada',
-              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('br', null),
-              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('input', { type: 'text', value: this.state.breed_color_aux_1, onChange: this.setBreedColorAux1, placeholder: 'Qual etnia', className: 'answers-13', id: '1-breedcolor-what', name: 'answers[1[breedcolor_aux]]', maxLength: '30' }),
-              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('br', null),
-              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('br', null),
-              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                'label',
-                null,
-                'Tem religi\xE3o?'
-              ),
-              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('br', null),
-              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('input', { type: 'radio', checked: this.state.do_you_have_a_religion_1 === 'y', onChange: this.setDoYouHaveaReligion1, className: 'answers-14', id: '1-religion-y', name: 'answers[1[religion]]', value: 'y' }),
-              'Sim',
-              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('input', { type: 'radio', checked: this.state.do_you_have_a_religion_1 === 'n', onChange: this.setDoYouHaveaReligion1, className: 'answers-14', id: '1-religion-n', name: 'answers[1[religion]]', value: 'n' }),
-              'N\xE3o',
-              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('br', null),
-              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('input', { type: 'text', value: this.state.do_you_have_a_religion_aux_1, onChange: this.setDoYouHaveaReligionAux1, placeholder: 'Qual?', className: 'answers-14', id: '1-religion-w', name: 'answers[1[religion]]', maxLength: '20' }),
-              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                'label',
-                null,
-                'OCUPA\xC7\xC3O/OCUPA\xC7\xC3O PROFISSIONAL:'
-              ),
-              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('br', null),
-              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('input', { type: 'text', value: this.state.occupation_primary_profession_1, onChange: this.setOccupationPrimaryProfession1, placeholder: 'Ocupa\xE7\xE3o/profiss\xE3o principal', className: 'answers-16', id: '1-primaryprofession', name: 'answers[1[primaryprofession]]' }),
-              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('br', null),
-              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('br', null),
-              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                'label',
-                null,
-                'Situa\xE7\xE3o conjugal:'
-              ),
-              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('br', null),
-              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('input', { type: 'radio', checked: this.state.marital_status_1 === "notmarried", onChange: this.setMaritalStatus1, className: 'answers-17', id: '1-maritalstatus-s', name: 'answers[1[maritalstatus]]', value: 'notmarried' }),
-              ' Solteiro(a)',
-              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('input', { type: 'radio', checked: this.state.marital_status_1 === "married", onChange: this.setMaritalStatus1, className: 'answers-17', id: '1-maritalstatus-m', name: 'answers[1[maritalstatus]]', value: 'married' }),
-              ' Casado(a)/convivio com parceiro(a)',
-              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('input', { type: 'radio', checked: this.state.marital_status_1 === "divorced", onChange: this.setMaritalStatus1, className: 'answers-17', id: '1-maritalstatus-d', name: 'answers[1[maritalstatus]]', value: 'divorced' }),
-              ' Divorciado(a)/separado(a)',
-              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('input', { type: 'radio', checked: this.state.marital_status_1 === "widower", onChange: this.setMaritalStatus1, className: 'answers-17', id: '1-maritalstatus-w', name: 'answers[1[maritalstatus]]', value: 'widower' }),
-              ' Vi\xFAvo(a)',
-              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('input', { type: 'radio', checked: this.state.marital_status_1 === "Other", onChange: this.setMaritalStatus1, className: 'answers-17', id: '1-maritalstatus-o', name: 'answers[1[maritalstatus]]', value: 'Other' }),
-              ' Outra',
-              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('input', { type: 'text', value: this.state.marital_status_aux_1, onChange: this.setMaritalStatusAux1, placeholder: ' Desde quando(ano)?', className: 'answers-17', id: '1-maritalstatus-sw', name: 'answers[1[maritalstatus]]' }),
-              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('br', null),
-              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('br', null),
-              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                'label',
-                null,
-                'Unidade b\xE1sica de s\xFAade que frequenta:'
-              ),
-              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('br', null),
-              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('input', { type: 'text', value: this.state.basic_heath_unit_that_attends_1, onChange: this.setBasicHeathUnitThatAttends1, placeholder: 'Unidade b\xE1sica de s\xFAade que frequenta', className: 'answers-18', id: '1-Basic unit', name: 'answers[1[Basicunit]]' }),
-              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('br', null),
-              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('br', null),
-              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                'label',
-                null,
-                'Tem alguma alergia de maior gravidade? Especificar:'
-              ),
-              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('br', null),
-              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('input', { type: 'text', value: this.state.do_you_have_any_major_allergies_1, onChange: this.setDoYouHaveAnyMajorAllergies1, placeholder: 'alergia de maior gravidade?', className: 'answers-19', id: '1-Major allergy', name: 'answers[1[maritalstatus]]' }),
-              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('br', null),
-              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('br', null),
-              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                'label',
-                null,
-                'Tem alguma defici\xEAncia? :'
-              ),
-              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('br', null),
-              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('input', { type: 'radio', checked: this.state.do_you_have_any_disabilities_1 === "1", onChange: this.setDoYouHaveAnyDisabilities1, className: 'answers-20', id: '1-deficiency-y', name: 'answers[1[deficiency]]', value: '1' }),
-              ' Sim',
-              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('input', { type: 'radio', checked: this.state.do_you_have_any_disabilities_1 === "0", onChange: this.setDoYouHaveAnyDisabilities1, className: 'answers-20', id: '1-deficiency-n', name: 'answers[1[deficiency]]', value: '0' }),
-              ' N\xE3o',
-              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('br', null),
-              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('br', null),
-              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                'label',
-                null,
-                'Qual? :'
-              ),
-              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('br', null),
-              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('input', { type: 'radio', checked: this.state.do_you_have_any_disabilities_aux_1 === "auditory", onChange: this.setDoYouHaveAnyDisabilitiesAux1, className: 'answers-21', id: '1-whatdeficiency-a', name: 'answers[1[whatdeficiency]]', value: 'auditory' }),
-              'Auditiva',
-              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('input', { type: 'radio', checked: this.state.do_you_have_any_disabilities_aux_1 === "visual", onChange: this.setDoYouHaveAnyDisabilitiesAux1, className: 'answers-21', id: '1-whatdeficiency-v', name: 'answers[1[whatdeficiency]]', value: 'visual' }),
-              'Visual',
-              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('input', { type: 'radio', checked: this.state.do_you_have_any_disabilities_aux_1 === "intellectual_cognitive", onChange: this.setDoYouHaveAnyDisabilitiesAux1, className: 'answers-21', id: '1-whatdeficiency-i', name: 'answers[1[whatdeficiency]]', value: 'intellectual_cognitive' }),
-              'Intelectual/Cognitiva',
-              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('input', { type: 'radio', checked: this.state.do_you_have_any_disabilities_aux_1 === "physical", onChange: this.setDoYouHaveAnyDisabilitiesAux1, className: 'answers-21', id: '1-whatdeficiency-p', name: 'answers[1[whatdeficiency]]', value: 'physical' }),
-              'F\xEDsica',
-              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('input', { type: 'radio', checked: this.state.do_you_have_any_disabilities_aux_1 === "other", onChange: this.setDoYouHaveAnyDisabilitiesAux1, className: 'answers-21', id: '1-whatdeficiency-o', name: 'answers[1[whatdeficiency]]', value: 'other' }),
-              'Outra',
-              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('br', null),
-              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('br', null),
-              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                'label',
-                null,
-                'Especificar:'
-              ),
-              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('br', null),
-              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('input', { type: 'text', type: 'text', value: this.state.whatdeficiency_1, onChange: this.setWhatDeficiency1, placeholder: 'Especificar', className: 'answers-21', id: '1-specify', name: 'answers[1[whatdeficiency]]' }),
-              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('br', null),
-              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('br', null),
-              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                'label',
-                null,
-                'Grupo sangu\xEDneo:'
-              ),
-              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('br', null),
-              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('input', { type: 'text', value: this.state.blood_type_1, onChange: this.setBloodType1, placeholder: 'Grupo sangu\xEDneo', className: 'answers-22', id: '1-bloodtype', name: 'answers[1[bloodtype]]' }),
-              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('br', null),
-              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('br', null),
-              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                'label',
-                null,
-                'Fator RH:'
-              ),
-              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('br', null),
-              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('input', { type: 'text', value: this.state.rh_factor_1, onChange: this.setRhFactor1, placeholder: 'Fator RH', className: 'answers-23', id: '1-rhfactor', name: 'answers[1[rhfactor]]' })
+              'a',
+              { className: 'dropdown-item', href: '#' },
+              'Medicamentos, fitoter\xE1picos, suplementos e vitaminas em uso'
+            ),
+            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+              'a',
+              { className: 'dropdown-item', href: '#' },
+              'Diagn\xF3sticos e interna\xE7\xF5es pr\xE9vios'
+            ),
+            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+              'a',
+              { className: 'dropdown-item', href: '#' },
+              'Cirurgias realizadas'
+            ),
+            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+              'a',
+              { className: 'dropdown-item', href: '#' },
+              'Rea\xE7\xF5es adversas ou alergias a medicamentos'
+            ),
+            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+              'a',
+              { className: 'dropdown-item', href: '#' },
+              'Dados antropom\xE9trico'
+            ),
+            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+              'a',
+              { className: 'dropdown-item', href: '#' },
+              'Protocolo de identifica\xE7\xE3o do idoso vulner\xE1vel'
+            ),
+            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+              'a',
+              { className: 'dropdown-item', href: '#' },
+              'Informa\xE7\xF5es complementares'
+            ),
+            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+              'a',
+              { className: 'dropdown-item', href: '#' },
+              'Avalia\xE7\xE3o ambienta'
+            ),
+            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+              'a',
+              { className: 'dropdown-item', href: '#' },
+              'Quedas'
+            ),
+            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+              'a',
+              { className: 'dropdown-item', href: '#' },
+              'Identifica\xE7\xE3o de dor cr\xF4nica'
+            ),
+            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+              'a',
+              { className: 'dropdown-item', href: '#' },
+              'H\xE1bitos de vida'
             )
           )
-        )
-      ),
-      __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-        'nav',
-        { 'aria-label': 'Dados Pessoais' },
+        ),
         __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-          'ul',
-          { className: 'pagination justify-content-center' },
+          'li',
+          { className: 'nav-item' },
           __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-            'li',
-            { className: 'page-item disabled' },
-            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-              'a',
-              { className: 'page-link', href: '#', tabIndex: '-1' },
-              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('i', { className: 'fa fa-arrow-left', 'aria-hidden': 'true' })
-            )
+            'a',
+            { className: 'nav-link' },
+            'Controle de PA'
+          )
+        ),
+        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+          'li',
+          { className: 'nav-item' },
+          __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+            'a',
+            { className: 'nav-link' },
+            'Controle de glicemia'
+          )
+        ),
+        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+          'li',
+          { className: 'nav-item' },
+          __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+            'a',
+            { className: 'nav-link' },
+            'Calend\xE1rio de vacina\xE7\xE3o'
+          )
+        ),
+        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+          'li',
+          { className: 'nav-item dropdown' },
+          __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+            'a',
+            { className: 'nav-link dropdown-toggle', 'data-toggle': 'dropdown', href: '#', role: 'button', 'aria-haspopup': 'true', 'aria-expanded': 'false' },
+            'Av. de sa\xFAde bucal'
           ),
           __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-            'li',
-            { className: 'page-item' },
+            'div',
+            { className: 'dropdown-menu' },
             __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
               'a',
-              { className: 'page-link', onClick: this.sendForm, href: 'javascript:;' },
-              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('i', { className: 'fa fa-arrow-right', 'aria-hidden': 'true' })
+              { className: 'dropdown-item', href: '#' },
+              'Agenda de consultas e exames'
+            ),
+            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+              'a',
+              { className: 'dropdown-item', href: '#' },
+              'Atualiza\xE7\xF5es da caderneta'
             )
           )
         )
       )
     );
   }
-
-  setName1(evt) {
-    this.setState({ name_1: evt.target.value });
-  }
-
-  setNickName1(evt) {
-    this.setState({ nick_name_1: evt.target.value });
-  }
-
-  setCardNumberCns1(evt) {
-    this.setState({ card_number_cns_1: evt.target.value });
-  }
-
-  setDocumentRg1(evt) {
-    this.setState({ document_rg_1: evt.target.value });
-  }
-
-  setMothersName1(evt) {
-    this.setState({ mothers_name_1: evt.target.value });
-  }
-
-  setDoYouHaveaReligionAux1(evt) {
-    this.setState({ do_you_have_a_religion_aux_1: evt.target.value });
-  }
-
-  setDocumentCpf1(evt) {
-    this.setState({ document_cpf_1: evt.target.value });
-  }
-
-  setCityOfBirth1(evt) {
-    this.setState({ city_of_birth_1: evt.target.value });
-  }
-
-  setCountryOfBirth1(evt) {
-    this.setState({ country_of_birth_1: evt.target.value });
-  }
-
-  setBreedColorAux1(evt) {
-    this.setState({ breed_color_aux_1: evt.target.value });
-  }
-
-  setSexuality(evt) {
-    this.setState({ sexuality_1: evt.target.value });
-  }
-
-  setNationality1(evt) {
-    this.setState({ nationality_1: evt.target.value });
-  }
-
-  setCanYouReadAndWrite1(evt) {
-    this.setState({ can_you_read_and_write_1: evt.target.value });
-  }
-
-  setScholarity1(evt) {
-    this.setState({ scholarity_1: evt.target.value });
-  }
-
-  setBreedColor1(evt) {
-    this.setState({ breed_color_1: evt.target.value });
-  }
-
-  setDoYouHaveaReligion1(evt) {
-    this.setState({ do_you_have_a_religion_1: evt.target.value });
-  }
-
-  setDateOfBirth1(evt) {
-    this.setState({ date_of_birth_1: evt.target.value });
-  }
-
-  setPhoto1(evt) {
-    this.setState({ photo_1: evt.target.value });
-  }
-
-  setMaritalStatus1(evt) {
-    this.setState({ marital_status_1: evt.target.value });
-  }
-
-  setMaritalStatusAux1(evt) {
-    this.setState({ marital_status_aux_1: evt.target.value });
-  }
-
-  setOccupationPrimaryProfession1(evt) {
-    this.setState({ occupation_primary_profession_1: evt.target.value });
-  }
-
-  setBasicHeathUnitThatAttends1(evt) {
-    this.setState({ basic_heath_unit_that_attends_1: evt.target.value });
-  }
-
-  setDoYouHaveAnyMajorAllergies1(evt) {
-    this.setState({ do_you_have_any_major_allergies_1: evt.target.value });
-  }
-
-  setDoYouHaveAnyDisabilities1(evt) {
-    this.setState({ do_you_have_any_disabilities_1: evt.target.value });
-  }
-
-  setDoYouHaveAnyDisabilitiesAux1(evt) {
-    this.setState({ do_you_have_any_disabilities_aux_1: evt.target.value });
-  }
-
-  setWhatDeficiency1(evt) {
-    this.setState({ whatdeficiency_1: evt.target.value });
-  }
-
-  setBloodType1(evt) {
-    this.setState({ blood_type_1: evt.target.value });
-  }
-
-  setRhFactor1(evt) {
-    this.setState({ rh_factor_1: evt.target.value });
-  }
-
 }
 
-/* harmony default export */ __webpack_exports__["a"] = (PersonalData);
+/* harmony default export */ __webpack_exports__["a"] = (CadernetaMenuGuide);
+
+/***/ }),
+/* 37 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react__ = __webpack_require__(1);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_react__);
+
+
+class RadioGroup extends __WEBPACK_IMPORTED_MODULE_0_react__["Component"] {
+
+  render() {
+    return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+      "div",
+      null,
+      __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("br", null),
+      __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+        "label",
+        null,
+        this.props.title
+      ),
+      __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("br", null),
+      __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+        "div",
+        { className: "btn-group", id: this.props.idDiv, "data-toggle": "buttons" },
+        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+          "label",
+          { className: "btn btn-light" },
+          __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("input", { type: this.props.type, name: this.props.name, onChange: this.props.onChange, className: this.props.className, value: this.props.value1, checked: this.props.checked1 }),
+          " ",
+          this.props.optName1
+        ),
+        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+          "label",
+          { className: "btn btn-light" },
+          __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("input", { type: this.props.type, name: this.props.name, onChange: this.props.onChange, className: this.props.className, value: this.props.value2, checked: this.props.checked2 }),
+          " ",
+          this.props.optName2
+        )
+      )
+    );
+  }
+}
+/* unused harmony export default */
+
+
+/***/ }),
+/* 38 */,
+/* 39 */,
+/* 40 */,
+/* 41 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react__ = __webpack_require__(1);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_react__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__utils_parseMask__ = __webpack_require__(42);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__utils_environment__ = __webpack_require__(44);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__utils_string__ = __webpack_require__(45);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__utils_defer__ = __webpack_require__(46);
+var _extends = Object.assign || function (target) {
+  for (var i = 1; i < arguments.length; i++) {
+    var source = arguments[i];for (var key in source) {
+      if (Object.prototype.hasOwnProperty.call(source, key)) {
+        target[key] = source[key];
+      }
+    }
+  }return target;
+};
+
+var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) {
+  return typeof obj;
+} : function (obj) {
+  return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj;
+};
+
+function _objectWithoutProperties(obj, keys) {
+  var target = {};for (var i in obj) {
+    if (keys.indexOf(i) >= 0) continue;if (!Object.prototype.hasOwnProperty.call(obj, i)) continue;target[i] = obj[i];
+  }return target;
+}
+
+function _classCallCheck(instance, Constructor) {
+  if (!(instance instanceof Constructor)) {
+    throw new TypeError("Cannot call a class as a function");
+  }
+}
+
+function _possibleConstructorReturn(self, call) {
+  if (!self) {
+    throw new ReferenceError("this hasn't been initialised - super() hasn't been called");
+  }return call && (typeof call === "object" || typeof call === "function") ? call : self;
+}
+
+function _inherits(subClass, superClass) {
+  if (typeof superClass !== "function" && superClass !== null) {
+    throw new TypeError("Super expression must either be null or a function, not " + typeof superClass);
+  }subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } });if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass;
+}
+
+// https://github.com/sanniassin/react-input-mask
+
+
+
+
+
+
+
+var InputElement = function (_React$Component) {
+  _inherits(InputElement, _React$Component);
+
+  function InputElement(props) {
+    _classCallCheck(this, InputElement);
+
+    var _this = _possibleConstructorReturn(this, (InputElement.__proto__ || Object.getPrototypeOf(InputElement)).call(this, props));
+
+    _initialiseProps.call(_this);
+
+    var mask = props.mask,
+        maskChar = props.maskChar,
+        formatChars = props.formatChars,
+        defaultValue = props.defaultValue,
+        value = props.value,
+        alwaysShowMask = props.alwaysShowMask;
+
+    _this.hasValue = value != null;
+    _this.maskOptions = Object(__WEBPACK_IMPORTED_MODULE_1__utils_parseMask__["a" /* default */])(mask, maskChar, formatChars);
+
+    if (defaultValue == null) {
+      defaultValue = '';
+    }
+    if (value == null) {
+      value = defaultValue;
+    }
+
+    value = _this.getStringValue(value);
+
+    if (_this.maskOptions.mask && (alwaysShowMask || value)) {
+      value = Object(__WEBPACK_IMPORTED_MODULE_3__utils_string__["b" /* formatValue */])(_this.maskOptions, value);
+    }
+
+    _this.value = value;
+    return _this;
+  }
+
+  return InputElement;
+}(__WEBPACK_IMPORTED_MODULE_0_react___default.a.Component);
+
+var _initialiseProps = function _initialiseProps() {
+  var _this2 = this;
+
+  this.lastCursorPos = null;
+  this.focused = false;
+
+  this.componentDidMount = function () {
+    _this2.isAndroidBrowser = Object(__WEBPACK_IMPORTED_MODULE_2__utils_environment__["a" /* isAndroidBrowser */])();
+    _this2.isWindowsPhoneBrowser = Object(__WEBPACK_IMPORTED_MODULE_2__utils_environment__["c" /* isWindowsPhoneBrowser */])();
+    _this2.isAndroidFirefox = Object(__WEBPACK_IMPORTED_MODULE_2__utils_environment__["b" /* isAndroidFirefox */])();
+
+    if (_this2.maskOptions.mask && _this2.getInputValue() !== _this2.value) {
+      _this2.setInputValue(_this2.value);
+    }
+  };
+
+  this.componentWillReceiveProps = function (nextProps) {
+    var oldMaskOptions = _this2.maskOptions;
+
+    _this2.hasValue = nextProps.value != null;
+    _this2.maskOptions = Object(__WEBPACK_IMPORTED_MODULE_1__utils_parseMask__["a" /* default */])(nextProps.mask, nextProps.maskChar, nextProps.formatChars);
+
+    if (!_this2.maskOptions.mask) {
+      _this2.backspaceOrDeleteRemoval = null;
+      _this2.lastCursorPos = null;
+      return;
+    }
+
+    var isMaskChanged = _this2.maskOptions.mask && _this2.maskOptions.mask !== oldMaskOptions.mask;
+    var showEmpty = nextProps.alwaysShowMask || _this2.isFocused();
+    var newValue = _this2.hasValue ? _this2.getStringValue(nextProps.value) : _this2.value;
+
+    if (!oldMaskOptions.mask && !_this2.hasValue) {
+      newValue = _this2.getInputDOMNode().value;
+    }
+
+    if (isMaskChanged || _this2.maskOptions.mask && (newValue || showEmpty)) {
+      newValue = Object(__WEBPACK_IMPORTED_MODULE_3__utils_string__["b" /* formatValue */])(_this2.maskOptions, newValue);
+
+      if (isMaskChanged) {
+        var pos = _this2.lastCursorPos;
+        var filledLen = Object(__WEBPACK_IMPORTED_MODULE_3__utils_string__["c" /* getFilledLength */])(_this2.maskOptions, newValue);
+        if (pos === null || filledLen < pos) {
+          if (Object(__WEBPACK_IMPORTED_MODULE_3__utils_string__["g" /* isFilled */])(_this2.maskOptions, newValue)) {
+            pos = filledLen;
+          } else {
+            pos = _this2.getRightEditablePos(filledLen);
+          }
+          _this2.setCursorPos(pos);
+        }
+      }
+    }
+
+    if (_this2.maskOptions.mask && Object(__WEBPACK_IMPORTED_MODULE_3__utils_string__["f" /* isEmpty */])(_this2.maskOptions, newValue) && !showEmpty && (!_this2.hasValue || !nextProps.value)) {
+      newValue = '';
+    }
+
+    _this2.value = newValue;
+  };
+
+  this.componentDidUpdate = function () {
+    if (_this2.maskOptions.mask && _this2.getInputValue() !== _this2.value) {
+      _this2.setInputValue(_this2.value);
+    }
+  };
+
+  this.isDOMElement = function (element) {
+    return (typeof HTMLElement === 'undefined' ? 'undefined' : _typeof(HTMLElement)) === 'object' ? element instanceof HTMLElement // DOM2
+    : element.nodeType === 1 && typeof element.nodeName === 'string';
+  };
+
+  this.getInputDOMNode = function () {
+    var input = _this2.input;
+    if (!input) {
+      return null;
+    }
+
+    if (_this2.isDOMElement(input)) {
+      return input;
+    }
+
+    // React 0.13
+    return __WEBPACK_IMPORTED_MODULE_0_react___default.a.findDOMNode(input);
+  };
+
+  this.getInputValue = function () {
+    var input = _this2.getInputDOMNode();
+    if (!input) {
+      return null;
+    }
+
+    return input.value;
+  };
+
+  this.setInputValue = function (value) {
+    var input = _this2.getInputDOMNode();
+    if (!input) {
+      return;
+    }
+
+    _this2.value = value;
+    input.value = value;
+  };
+
+  this.getLeftEditablePos = function (pos) {
+    for (var i = pos; i >= 0; --i) {
+      if (!Object(__WEBPACK_IMPORTED_MODULE_3__utils_string__["h" /* isPermanentChar */])(_this2.maskOptions, i)) {
+        return i;
+      }
+    }
+    return null;
+  };
+
+  this.getRightEditablePos = function (pos) {
+    var mask = _this2.maskOptions.mask;
+
+    for (var i = pos; i < mask.length; ++i) {
+      if (!Object(__WEBPACK_IMPORTED_MODULE_3__utils_string__["h" /* isPermanentChar */])(_this2.maskOptions, i)) {
+        return i;
+      }
+    }
+    return null;
+  };
+
+  this.setCursorToEnd = function () {
+    var filledLen = Object(__WEBPACK_IMPORTED_MODULE_3__utils_string__["c" /* getFilledLength */])(_this2.maskOptions, _this2.value);
+    var pos = _this2.getRightEditablePos(filledLen);
+    if (pos !== null) {
+      _this2.setCursorPos(pos);
+    }
+  };
+
+  this.setSelection = function (start) {
+    var len = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 0;
+
+    var input = _this2.getInputDOMNode();
+    if (!input) {
+      return;
+    }
+
+    var end = start + len;
+    if ('selectionStart' in input && 'selectionEnd' in input) {
+      input.selectionStart = start;
+      input.selectionEnd = end;
+    } else {
+      var range = input.createTextRange();
+      range.collapse(true);
+      range.moveStart('character', start);
+      range.moveEnd('character', end - start);
+      range.select();
+    }
+  };
+
+  this.getSelection = function () {
+    var input = _this2.getInputDOMNode();
+    var start = 0;
+    var end = 0;
+
+    if ('selectionStart' in input && 'selectionEnd' in input) {
+      start = input.selectionStart;
+      end = input.selectionEnd;
+    } else {
+      var range = document.selection.createRange();
+      if (range.parentElement() === input) {
+        start = -range.moveStart('character', -input.value.length);
+        end = -range.moveEnd('character', -input.value.length);
+      }
+    }
+
+    return {
+      start: start,
+      end: end,
+      length: end - start
+    };
+  };
+
+  this.getCursorPos = function () {
+    return _this2.getSelection().start;
+  };
+
+  this.setCursorPos = function (pos) {
+    _this2.setSelection(pos, 0);
+
+    Object(__WEBPACK_IMPORTED_MODULE_4__utils_defer__["a" /* default */])(function () {
+      _this2.setSelection(pos, 0);
+    });
+
+    _this2.lastCursorPos = pos;
+  };
+
+  this.isFocused = function () {
+    return _this2.focused;
+  };
+
+  this.getStringValue = function (value) {
+    return !value && value !== 0 ? '' : value + '';
+  };
+
+  this.onKeyDown = function (event) {
+    _this2.backspaceOrDeleteRemoval = null;
+
+    if (typeof _this2.props.onKeyDown === 'function') {
+      _this2.props.onKeyDown(event);
+    }
+
+    var key = event.key,
+        ctrlKey = event.ctrlKey,
+        metaKey = event.metaKey,
+        defaultPrevented = event.defaultPrevented;
+
+    if (ctrlKey || metaKey || defaultPrevented) {
+      return;
+    }
+
+    if (key === 'Backspace' || key === 'Delete') {
+      var selection = _this2.getSelection();
+      var canRemove = key === 'Backspace' && selection.end > 0 || key === 'Delete' && _this2.value.length > selection.start;
+
+      if (!canRemove) {
+        return;
+      }
+
+      _this2.backspaceOrDeleteRemoval = {
+        key: key,
+        selection: _this2.getSelection()
+      };
+    }
+  };
+
+  this.onChange = function (event) {
+    var paste = _this2.paste;
+    var _maskOptions = _this2.maskOptions,
+        mask = _maskOptions.mask,
+        maskChar = _maskOptions.maskChar,
+        lastEditablePos = _maskOptions.lastEditablePos,
+        prefix = _maskOptions.prefix;
+
+    var value = _this2.getInputValue();
+    var oldValue = _this2.value;
+
+    if (paste) {
+      _this2.paste = null;
+      _this2.pasteText(paste.value, value, paste.selection, event);
+      return;
+    }
+
+    var selection = _this2.getSelection();
+    var cursorPos = selection.end;
+    var maskLen = mask.length;
+    var valueLen = value.length;
+    var oldValueLen = oldValue.length;
+
+    var clearedValue;
+    var enteredString;
+
+    if (_this2.backspaceOrDeleteRemoval) {
+      var deleteFromRight = _this2.backspaceOrDeleteRemoval.key === 'Delete';
+      value = _this2.value;
+      selection = _this2.backspaceOrDeleteRemoval.selection;
+      cursorPos = selection.start;
+
+      _this2.backspaceOrDeleteRemoval = null;
+
+      if (selection.length) {
+        value = Object(__WEBPACK_IMPORTED_MODULE_3__utils_string__["a" /* clearRange */])(_this2.maskOptions, value, selection.start, selection.length);
+      } else if (selection.start < prefix.length || !deleteFromRight && selection.start === prefix.length) {
+        cursorPos = prefix.length;
+      } else {
+        var editablePos = deleteFromRight ? _this2.getRightEditablePos(cursorPos) : _this2.getLeftEditablePos(cursorPos - 1);
+
+        if (editablePos !== null) {
+          value = Object(__WEBPACK_IMPORTED_MODULE_3__utils_string__["a" /* clearRange */])(_this2.maskOptions, value, editablePos, 1);
+          cursorPos = editablePos;
+        }
+      }
+    } else if (valueLen > oldValueLen) {
+      var enteredStringLen = valueLen - oldValueLen;
+      var startPos = selection.end - enteredStringLen;
+      enteredString = value.substr(startPos, enteredStringLen);
+
+      if (startPos < lastEditablePos && (enteredStringLen !== 1 || enteredString !== mask[startPos])) {
+        cursorPos = _this2.getRightEditablePos(startPos);
+      } else {
+        cursorPos = startPos;
+      }
+
+      value = value.substr(0, startPos) + value.substr(startPos + enteredStringLen);
+
+      clearedValue = Object(__WEBPACK_IMPORTED_MODULE_3__utils_string__["a" /* clearRange */])(_this2.maskOptions, value, startPos, maskLen - startPos);
+      clearedValue = Object(__WEBPACK_IMPORTED_MODULE_3__utils_string__["e" /* insertString */])(_this2.maskOptions, clearedValue, enteredString, cursorPos);
+
+      value = Object(__WEBPACK_IMPORTED_MODULE_3__utils_string__["e" /* insertString */])(_this2.maskOptions, oldValue, enteredString, cursorPos);
+
+      if (enteredStringLen !== 1 || cursorPos >= prefix.length && cursorPos < lastEditablePos) {
+        cursorPos = Math.max(Object(__WEBPACK_IMPORTED_MODULE_3__utils_string__["c" /* getFilledLength */])(_this2.maskOptions, clearedValue), cursorPos);
+        if (cursorPos < lastEditablePos) {
+          cursorPos = _this2.getRightEditablePos(cursorPos);
+        }
+      } else if (cursorPos < lastEditablePos) {
+        cursorPos++;
+      }
+    } else if (valueLen < oldValueLen) {
+      var removedLen = maskLen - valueLen;
+      enteredString = value.substr(0, selection.end);
+      var clearOnly = enteredString === oldValue.substr(0, selection.end);
+
+      clearedValue = Object(__WEBPACK_IMPORTED_MODULE_3__utils_string__["a" /* clearRange */])(_this2.maskOptions, oldValue, selection.end, removedLen);
+
+      if (maskChar) {
+        value = Object(__WEBPACK_IMPORTED_MODULE_3__utils_string__["e" /* insertString */])(_this2.maskOptions, clearedValue, enteredString, 0);
+      }
+
+      clearedValue = Object(__WEBPACK_IMPORTED_MODULE_3__utils_string__["a" /* clearRange */])(_this2.maskOptions, clearedValue, selection.end, maskLen - selection.end);
+      clearedValue = Object(__WEBPACK_IMPORTED_MODULE_3__utils_string__["e" /* insertString */])(_this2.maskOptions, clearedValue, enteredString, 0);
+
+      if (!clearOnly) {
+        cursorPos = Math.max(Object(__WEBPACK_IMPORTED_MODULE_3__utils_string__["c" /* getFilledLength */])(_this2.maskOptions, clearedValue), cursorPos);
+        if (cursorPos < lastEditablePos) {
+          cursorPos = _this2.getRightEditablePos(cursorPos);
+        }
+      } else if (cursorPos < prefix.length) {
+        cursorPos = prefix.length;
+      }
+    }
+    value = Object(__WEBPACK_IMPORTED_MODULE_3__utils_string__["b" /* formatValue */])(_this2.maskOptions, value);
+
+    _this2.setInputValue(value);
+
+    if (typeof _this2.props.onChange === 'function') {
+      _this2.props.onChange(event);
+    }
+
+    if (_this2.isWindowsPhoneBrowser) {
+      Object(__WEBPACK_IMPORTED_MODULE_4__utils_defer__["a" /* default */])(function () {
+        _this2.setSelection(cursorPos, 0);
+      });
+    } else {
+      _this2.setCursorPos(cursorPos);
+    }
+  };
+
+  this.onFocus = function (event) {
+    _this2.focused = true;
+
+    if (_this2.maskOptions.mask) {
+      if (!_this2.value) {
+        var prefix = _this2.maskOptions.prefix;
+        var value = Object(__WEBPACK_IMPORTED_MODULE_3__utils_string__["b" /* formatValue */])(_this2.maskOptions, prefix);
+        var inputValue = Object(__WEBPACK_IMPORTED_MODULE_3__utils_string__["b" /* formatValue */])(_this2.maskOptions, value);
+
+        // do not use this.getInputValue and this.setInputValue as this.input
+        // can be undefined at this moment if autoFocus attribute is set
+        var isInputValueChanged = inputValue !== event.target.value;
+
+        if (isInputValueChanged) {
+          event.target.value = inputValue;
+        }
+
+        _this2.value = inputValue;
+
+        if (isInputValueChanged && typeof _this2.props.onChange === 'function') {
+          _this2.props.onChange(event);
+        }
+
+        _this2.setCursorToEnd();
+      } else if (Object(__WEBPACK_IMPORTED_MODULE_3__utils_string__["c" /* getFilledLength */])(_this2.maskOptions, _this2.value) < _this2.maskOptions.mask.length) {
+        _this2.setCursorToEnd();
+      }
+    }
+
+    if (typeof _this2.props.onFocus === 'function') {
+      _this2.props.onFocus(event);
+    }
+  };
+
+  this.onBlur = function (event) {
+    _this2.focused = false;
+
+    if (_this2.maskOptions.mask && !_this2.props.alwaysShowMask && Object(__WEBPACK_IMPORTED_MODULE_3__utils_string__["f" /* isEmpty */])(_this2.maskOptions, _this2.value)) {
+      var inputValue = '';
+      var isInputValueChanged = inputValue !== _this2.getInputValue();
+
+      if (isInputValueChanged) {
+        _this2.setInputValue(inputValue);
+      }
+
+      if (isInputValueChanged && typeof _this2.props.onChange === 'function') {
+        _this2.props.onChange(event);
+      }
+    }
+
+    if (typeof _this2.props.onBlur === 'function') {
+      _this2.props.onBlur(event);
+    }
+  };
+
+  this.onPaste = function (event) {
+    if (typeof _this2.props.onPaste === 'function') {
+      _this2.props.onPaste(event);
+    }
+
+    if (_this2.isAndroidBrowser && !event.defaultPrevented) {
+      _this2.paste = {
+        value: _this2.getInputValue(),
+        selection: _this2.getSelection()
+      };
+      _this2.setInputValue('');
+    }
+  };
+
+  this.pasteText = function (value, text, selection, event) {
+    var cursorPos = selection.start;
+    if (selection.length) {
+      value = Object(__WEBPACK_IMPORTED_MODULE_3__utils_string__["a" /* clearRange */])(_this2.maskOptions, value, cursorPos, selection.length);
+    }
+    var textLen = Object(__WEBPACK_IMPORTED_MODULE_3__utils_string__["d" /* getInsertStringLength */])(_this2.maskOptions, value, text, cursorPos);
+    value = Object(__WEBPACK_IMPORTED_MODULE_3__utils_string__["e" /* insertString */])(_this2.maskOptions, value, text, cursorPos);
+    cursorPos += textLen;
+    cursorPos = _this2.getRightEditablePos(cursorPos) || cursorPos;
+
+    if (value !== _this2.getInputValue()) {
+      _this2.setInputValue(value);
+      if (event && typeof _this2.props.onChange === 'function') {
+        _this2.props.onChange(event);
+      }
+    }
+
+    _this2.setCursorPos(cursorPos);
+  };
+
+  this.render = function () {
+    var _props = _this2.props,
+        mask = _props.mask,
+        alwaysShowMask = _props.alwaysShowMask,
+        maskChar = _props.maskChar,
+        formatChars = _props.formatChars,
+        props = _objectWithoutProperties(_props, ['mask', 'alwaysShowMask', 'maskChar', 'formatChars']);
+
+    if (_this2.maskOptions.mask) {
+      if (!props.disabled && !props.readOnly) {
+        var handlersKeys = ['onChange', 'onKeyDown', 'onPaste'];
+        handlersKeys.forEach(function (key) {
+          props[key] = _this2[key];
+        });
+      }
+
+      if (props.value != null) {
+        props.value = _this2.value;
+      }
+    }
+
+    return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('input', _extends({ ref: function ref(_ref) {
+        return _this2.input = _ref;
+      } }, props, { onFocus: _this2.onFocus, onBlur: _this2.onBlur }));
+  };
+};
+
+/* harmony default export */ __webpack_exports__["a"] = (InputElement);
+
+/***/ }),
+/* 42 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__constants__ = __webpack_require__(43);
+
+
+/* harmony default export */ __webpack_exports__["a"] = (function (mask, maskChar, charsRules) {
+  if (maskChar === undefined) {
+    maskChar = __WEBPACK_IMPORTED_MODULE_0__constants__["b" /* defaultMaskChar */];
+  }
+  if (charsRules == null) {
+    charsRules = __WEBPACK_IMPORTED_MODULE_0__constants__["a" /* defaultCharsRules */];
+  }
+
+  if (!mask || typeof mask !== 'string') {
+    return {
+      maskChar: maskChar,
+      charsRules: charsRules,
+      mask: null,
+      prefix: null,
+      lastEditablePos: null,
+      permanents: []
+    };
+  }
+  var str = '';
+  var prefix = '';
+  var permanents = [];
+  var isPermanent = false;
+  var lastEditablePos = null;
+
+  mask.split('').forEach(function (character) {
+    if (!isPermanent && character === '\\') {
+      isPermanent = true;
+    } else {
+      if (isPermanent || !charsRules[character]) {
+        permanents.push(str.length);
+        if (str.length === permanents.length - 1) {
+          prefix += character;
+        }
+      } else {
+        lastEditablePos = str.length + 1;
+      }
+      str += character;
+      isPermanent = false;
+    }
+  });
+
+  return {
+    maskChar: maskChar,
+    charsRules: charsRules,
+    prefix: prefix,
+    mask: str,
+    lastEditablePos: lastEditablePos,
+    permanents: permanents
+  };
+});
+
+/***/ }),
+/* 43 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return defaultCharsRules; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "b", function() { return defaultMaskChar; });
+var defaultCharsRules = {
+  '9': '[0-9]',
+  'a': '[A-Za-z]',
+  '*': '[A-Za-z0-9]'
+};
+
+var defaultMaskChar = '_';
+
+/***/ }),
+/* 44 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (immutable) */ __webpack_exports__["a"] = isAndroidBrowser;
+/* harmony export (immutable) */ __webpack_exports__["c"] = isWindowsPhoneBrowser;
+/* harmony export (immutable) */ __webpack_exports__["b"] = isAndroidFirefox;
+/* unused harmony export isIOS */
+function isAndroidBrowser() {
+  var windows = new RegExp('windows', 'i');
+  var firefox = new RegExp('firefox', 'i');
+  var android = new RegExp('android', 'i');
+  var ua = navigator.userAgent;
+  return !windows.test(ua) && !firefox.test(ua) && android.test(ua);
+}
+
+function isWindowsPhoneBrowser() {
+  var windows = new RegExp('windows', 'i');
+  var phone = new RegExp('phone', 'i');
+  var ua = navigator.userAgent;
+  return windows.test(ua) && phone.test(ua);
+}
+
+function isAndroidFirefox() {
+  var windows = new RegExp('windows', 'i');
+  var firefox = new RegExp('firefox', 'i');
+  var android = new RegExp('android', 'i');
+  var ua = navigator.userAgent;
+  return !windows.test(ua) && firefox.test(ua) && android.test(ua);
+}
+
+function isIOS() {
+  var windows = new RegExp('windows', 'i');
+  var ios = new RegExp('(ipod|iphone|ipad)', 'i');
+  var ua = navigator.userAgent;
+  return !windows.test(ua) && ios.test(ua);
+}
+
+/***/ }),
+/* 45 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (immutable) */ __webpack_exports__["h"] = isPermanentChar;
+/* unused harmony export isAllowedChar */
+/* harmony export (immutable) */ __webpack_exports__["f"] = isEmpty;
+/* harmony export (immutable) */ __webpack_exports__["c"] = getFilledLength;
+/* harmony export (immutable) */ __webpack_exports__["g"] = isFilled;
+/* harmony export (immutable) */ __webpack_exports__["b"] = formatValue;
+/* harmony export (immutable) */ __webpack_exports__["a"] = clearRange;
+/* harmony export (immutable) */ __webpack_exports__["e"] = insertString;
+/* harmony export (immutable) */ __webpack_exports__["d"] = getInsertStringLength;
+function isPermanentChar(maskOptions, pos) {
+  return maskOptions.permanents.indexOf(pos) !== -1;
+}
+
+function isAllowedChar(maskOptions, pos, character) {
+  var mask = maskOptions.mask,
+      charsRules = maskOptions.charsRules;
+
+  if (!character) {
+    return false;
+  }
+
+  if (isPermanentChar(maskOptions, pos)) {
+    return mask[pos] === character;
+  }
+
+  var ruleChar = mask[pos];
+  var charRule = charsRules[ruleChar];
+
+  return new RegExp(charRule).test(character);
+}
+
+function isEmpty(maskOptions, value) {
+  return value.split('').every(function (character, i) {
+    return isPermanentChar(maskOptions, i) || !isAllowedChar(maskOptions, i, character);
+  });
+}
+
+function getFilledLength(maskOptions, value) {
+  var maskChar = maskOptions.maskChar,
+      prefix = maskOptions.prefix;
+
+  if (!maskChar) {
+    while (value.length > prefix.length && isPermanentChar(maskOptions, value.length - 1)) {
+      value = value.slice(0, value.length - 1);
+    }
+    return value.length;
+  }
+
+  var filledLength = prefix.length;
+  for (var i = value.length; i >= prefix.length; i--) {
+    var character = value[i];
+    var isEnteredCharacter = !isPermanentChar(maskOptions, i) && isAllowedChar(maskOptions, i, character);
+    if (isEnteredCharacter) {
+      filledLength = i + 1;
+      break;
+    }
+  }
+
+  return filledLength;
+}
+
+function isFilled(maskOptions, value) {
+  return getFilledLength(maskOptions, value) === maskOptions.mask.length;
+}
+
+function formatValue(maskOptions, value) {
+  var maskChar = maskOptions.maskChar,
+      mask = maskOptions.mask,
+      prefix = maskOptions.prefix;
+
+  if (!maskChar) {
+    value = insertString(maskOptions, '', value, 0);
+    value = value.slice(0, getFilledLength(maskOptions, value));
+
+    if (value.length < prefix.length) {
+      value = prefix;
+    }
+
+    return value;
+  }
+
+  if (value) {
+    var emptyValue = formatValue(maskOptions, '');
+    return insertString(maskOptions, emptyValue, value, 0);
+  }
+
+  for (var i = 0; i < mask.length; i++) {
+    if (isPermanentChar(maskOptions, i)) {
+      value += mask[i];
+    } else {
+      value += maskChar;
+    }
+  }
+
+  return value;
+}
+
+function clearRange(maskOptions, value, start, len) {
+  var end = start + len;
+  var maskChar = maskOptions.maskChar,
+      mask = maskOptions.mask,
+      prefix = maskOptions.prefix;
+
+  var arrayValue = value.split('');
+
+  if (!maskChar) {
+    start = Math.max(prefix.length, start);
+    arrayValue.splice(start, end - start);
+    value = arrayValue.join('');
+
+    return formatValue(maskOptions, value);
+  }
+
+  return arrayValue.map(function (character, i) {
+    if (i < start || i >= end) {
+      return character;
+    }
+    if (isPermanentChar(maskOptions, i)) {
+      return mask[i];
+    }
+    return maskChar;
+  }).join('');
+}
+
+function insertString(maskOptions, value, insertStr, insertPos) {
+  var mask = maskOptions.mask,
+      maskChar = maskOptions.maskChar,
+      prefix = maskOptions.prefix;
+
+  var arrayInsertStr = insertStr.split('');
+  var isInputFilled = isFilled(maskOptions, value);
+
+  var isUsablePosition = function isUsablePosition(pos, character) {
+    return !isPermanentChar(maskOptions, pos) || character === mask[pos];
+  };
+  var isUsableCharacter = function isUsableCharacter(character, pos) {
+    return !maskChar || !isPermanentChar(maskOptions, pos) || character !== maskChar;
+  };
+
+  if (!maskChar && insertPos > value.length) {
+    value += mask.slice(value.length, insertPos);
+  }
+
+  arrayInsertStr.every(function (insertCharacter) {
+    while (!isUsablePosition(insertPos, insertCharacter)) {
+      if (insertPos >= value.length) {
+        value += mask[insertPos];
+      }
+
+      if (!isUsableCharacter(insertCharacter, insertPos)) {
+        return true;
+      }
+
+      insertPos++;
+
+      // stop iteration if maximum value length reached
+      if (insertPos >= mask.length) {
+        return false;
+      }
+    }
+
+    var isAllowed = isAllowedChar(maskOptions, insertPos, insertCharacter) || insertCharacter === maskChar;
+    if (!isAllowed) {
+      return true;
+    }
+
+    if (insertPos < value.length) {
+      if (maskChar || isInputFilled || insertPos < prefix.length) {
+        value = value.slice(0, insertPos) + insertCharacter + value.slice(insertPos + 1);
+      } else {
+        value = value.slice(0, insertPos) + insertCharacter + value.slice(insertPos);
+        value = formatValue(maskOptions, value);
+      }
+    } else if (!maskChar) {
+      value += insertCharacter;
+    }
+
+    insertPos++;
+
+    // stop iteration if maximum value length reached
+    return insertPos < mask.length;
+  });
+
+  return value;
+}
+
+function getInsertStringLength(maskOptions, value, insertStr, insertPos) {
+  var mask = maskOptions.mask,
+      maskChar = maskOptions.maskChar;
+
+  var arrayInsertStr = insertStr.split('');
+  var initialInsertPos = insertPos;
+
+  var isUsablePosition = function isUsablePosition(pos, character) {
+    return !isPermanentChar(maskOptions, pos) || character === mask[pos];
+  };
+
+  arrayInsertStr.every(function (insertCharacter) {
+    while (!isUsablePosition(insertPos, insertCharacter)) {
+      insertPos++;
+
+      // stop iteration if maximum value length reached
+      if (insertPos >= mask.length) {
+        return false;
+      }
+    }
+
+    var isAllowed = isAllowedChar(maskOptions, insertPos, insertCharacter) || insertCharacter === maskChar;
+
+    if (isAllowed) {
+      insertPos++;
+    }
+
+    // stop iteration if maximum value length reached
+    return insertPos < mask.length;
+  });
+
+  return insertPos - initialInsertPos;
+}
+
+/***/ }),
+/* 46 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony default export */ __webpack_exports__["a"] = (function (fn) {
+            var defer = window.requestAnimationFrame || window.webkitRequestAnimationFrame || window.mozRequestAnimationFrame || function () {
+                        return setTimeout(fn, 0);
+            };
+
+            return defer(fn);
+});
 
 /***/ })
 /******/ ]);

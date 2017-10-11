@@ -12,19 +12,19 @@ class CadernetaMenuGuide extends React.Component {
       istoggle: false,
       num: 0
     }
-    this.setVisibility = this.setVisibility.bind(this);
+    // this.setVisibility = this.setVisibility.bind(this);
   }
 
-  setVisibility() {
-    const count = this.state.num;
-    this.setState({num: count+1});
+  // setVisibility() {
+  //   const count = this.state.num;
+  //   this.setState({num: count+1});
 
-    if ((this.state.num & 1) == 0) {
-      this.setState({istoggle: true}); 
-    } else {
-      this.setState({istoggle: false});
-    }
-  }
+  //   if ((this.state.num & 1) == 0) {
+  //     this.setState({istoggle: true}); 
+  //   } else {
+  //     this.setState({istoggle: false});
+  //   }
+  // }
 
   render () {
     return (

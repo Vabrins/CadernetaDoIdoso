@@ -1,6 +1,7 @@
 import React from 'react';
 import $ from 'jquery';
-import SideMenu from './SideMenu';
+import RadioGroup from './RadioGroup';
+import InputMask from 'react-input-mask';
 
 class PersonalData extends React.Component {
   
@@ -84,7 +85,7 @@ class PersonalData extends React.Component {
 
   sendForm(evt) {
     evt.preventDefault();
-    // console.log('You have selected:', this.state.sexuality_1);
+    console.log('You have selected:', this.state.document_cpf_1);
 
     $.ajax({
       url: "http://127.0.0.1:8000/api/v1/personaldata",
@@ -125,10 +126,10 @@ class PersonalData extends React.Component {
                     </div>
                     <br/>
                     <label>Documento de identidade </label><br/>
-                    <input type="text" value={this.state.document_rg_1} onChange={this.setDocumentRg1} placeholder="Documento de identidade" className="answers-5" id="1-document" name="answers[1[Document2]]" maxLength="12" />
+                    <InputMask mask="99.999.999-99" maskChar=" " type="text" value={this.state.document_rg_1} onChange={this.setDocumentRg1} placeholder="Documento de identidade" className="answers-5" id="1-document" name="answers[1[Document2]]" />
                     <br/><br/>
                     <label>CPF</label><br/>
-                    <input type="text" value={this.state.document_cpf_1} onChange={this.setDocumentCpf1} placeholder="CPF" className="answers-5" id="1-document1" name="answers[1[Document1]]" maxLength="14" />
+                    <InputMask mask="99.999.999-9" type="text" value={this.state.document_cpf_1} onChange={this.setDocumentCpf1} placeholder="CPF" className="answers-5" id="1-document1" name="answers[1[Document1]]" />
                     <br/><br/>
                     <label>Nome completo da mãe</label><br/>
                     <input type="text" value={this.state.mothers_name_1} onChange={this.setMothersName1} placeholder="Nome completo da mãe" className="answers-6" id="1-monthersname" name="answers[1[monthersname]]" maxLength="50" />
@@ -152,8 +153,8 @@ class PersonalData extends React.Component {
                     <input type="text" value={this.state.country_of_birth_1} onChange={this.setCountryOfBirth1}  placeholder="País de nascimento" className="answers-10" id="1-birthparents" name="answers[1[birthparents]]" maxLength="30" />
                     <br/>
                     <label>Sabe ler e escrever? </label><br/>
-                    <input type="radio" checked={this.state.can_you_read_and_write_1 === 'y'} onChange={this.setCanYouReadAndWrite1} className="answers-11" id="1-readwrite-y" name="answers[1[readwrite]]" value="y" /> Sim
-                    <input type="radio" checked={this.state.can_you_read_and_write_1 === 'n'} onChange={this.setCanYouReadAndWrite1} className="answers-11" id="1-readwrite-n" name="answers[1[readwrite]]" value="n" /> Não
+                    <input type="radio" checked={this.state.can_you_read_and_write_1 === '1'} onChange={this.setCanYouReadAndWrite1} className="answers-11" id="1-readwrite-y" name="answers[1[readwrite]]" value="1" /> Sim
+                    <input type="radio" checked={this.state.can_you_read_and_write_1 === '0'} onChange={this.setCanYouReadAndWrite1} className="answers-11" id="1-readwrite-n" name="answers[1[readwrite]]" value="0" /> Não
                     <br/><br/>
                   </fieldset>
                 </div>
@@ -186,25 +187,26 @@ class PersonalData extends React.Component {
                     <label>OCUPAÇÃO/OCUPAÇÃO PROFISSIONAL:</label><br/>
                     <input type="text"  value={this.state.occupation_primary_profession_1} onChange={this.setOccupationPrimaryProfession1} placeholder="Ocupação/profissão principal" className="answers-16" id="1-primaryprofession" name="answers[1[primaryprofession]]" />
                     <br/><br/>
-                    <label>Situação conjugal:</label><br/>
+                    <label>Situação conjugal</label><br/>
                     <input type="radio" checked={this.state.marital_status_1 === "notmarried"} onChange={this.setMaritalStatus1} className="answers-17" id="1-maritalstatus-s" name="answers[1[maritalstatus]]" value="notmarried" /> Solteiro(a)
                     <input type="radio" checked={this.state.marital_status_1 === "married"} onChange={this.setMaritalStatus1} className="answers-17" id="1-maritalstatus-m" name="answers[1[maritalstatus]]" value="married" /> Casado(a)/convivio com parceiro(a)
                     <input type="radio" checked={this.state.marital_status_1 === "divorced"} onChange={this.setMaritalStatus1} className="answers-17" id="1-maritalstatus-d" name="answers[1[maritalstatus]]" value="divorced" /> Divorciado(a)/separado(a)
                     <input type="radio" checked={this.state.marital_status_1 === "widower"} onChange={this.setMaritalStatus1} className="answers-17" id="1-maritalstatus-w" name="answers[1[maritalstatus]]" value="widower" /> Viúvo(a)
                     <input type="radio" checked={this.state.marital_status_1 === "Other"} onChange={this.setMaritalStatus1} className="answers-17" id="1-maritalstatus-o" name="answers[1[maritalstatus]]" value="Other" /> Outra
-                    <input type="text"  value={this.state.marital_status_aux_1} onChange={this.setMaritalStatusAux1} placeholder=" Desde quando(ano)?" className="answers-17" id="1-maritalstatus-sw" name="answers[1[maritalstatus]]" />
+                    <input type="text"  value={this.state.marital_status_aux_1} onChange={this.setMaritalStatusAux1} placeholder=" Desde quando(ano)?" className="answers-17" id="1-maritalstatus-sw" name="answers[1[maritalstatus]]" maxLength="50" />
                     <br/><br/>
-                    <label>Unidade básica de súade que frequenta:</label><br/>
-                    <input type="text"  value={this.state.basic_heath_unit_that_attends_1} onChange={this.setBasicHeathUnitThatAttends1} placeholder="Unidade básica de súade que frequenta" className="answers-18" id="1-Basic unit" name="answers[1[Basicunit]]" />
+                    <label>Unidade básica de súade que frequenta</label><br/>
+                    <input type="text"  value={this.state.basic_heath_unit_that_attends_1} onChange={this.setBasicHeathUnitThatAttends1} placeholder="Unidade básica de súade que frequenta" className="answers-18" id="1-Basic unit" name="answers[1[Basicunit]]" maxLength="30" />
                     <br/><br/>
-                    <label>Tem alguma alergia de maior gravidade? Especificar:</label><br/>
-                    <input type="text"  value={this.state.do_you_have_any_major_allergies_1} onChange={this.setDoYouHaveAnyMajorAllergies1} placeholder="alergia de maior gravidade?" className="answers-19" id="1-Major allergy" name="answers[1[maritalstatus]]" />
+                    <label>Tem alguma alergia de maior gravidade? Especificar</label><br/>
+                    <input type="text"  value={this.state.do_you_have_any_major_allergies_1} onChange={this.setDoYouHaveAnyMajorAllergies1} placeholder="alergia de maior gravidade?" className="answers-19" id="1-Major allergy" name="answers[1[maritalstatus]]" maxLength="50" />
                     <br/><br/>
-                    <label>Tem alguma deficiência? :</label><br/>
+                    <label>Tem alguma deficiência? </label><br/>
                     <input type="radio" checked={this.state.do_you_have_any_disabilities_1 === "1"} onChange={this.setDoYouHaveAnyDisabilities1} className="answers-20" id="1-deficiency-y" name="answers[1[deficiency]]" value="1" /> Sim
                     <input type="radio" checked={this.state.do_you_have_any_disabilities_1 === "0"} onChange={this.setDoYouHaveAnyDisabilities1} className="answers-20" id="1-deficiency-n" name="answers[1[deficiency]]" value="0" /> Não
+                    {/*<RadioGroup title="Tem alguma deficiência?" checked1={this.state.do_you_have_any_disabilities_1 === "1"} checked2={this.state.do_you_have_any_disabilities_1 === "0"} onChange={this.setDoYouHaveAnyDisabilities1} className="answers-20" name="answers[1[deficiency]]" value1="1" value2="0" optName1="Sim" optName2="Não" idDiv="" type="radio" />*/}
                     <br/><br/>
-                    <label>Qual? :</label><br/>
+                    <label>Qual? </label><br/>
                     <input type="radio"  checked={this.state.do_you_have_any_disabilities_aux_1 === "auditory"} onChange={this.setDoYouHaveAnyDisabilitiesAux1} className="answers-21" id="1-whatdeficiency-a" name="answers[1[whatdeficiency]]" value="auditory" />Auditiva
                     <input type="radio"  checked={this.state.do_you_have_any_disabilities_aux_1 === "visual"} onChange={this.setDoYouHaveAnyDisabilitiesAux1} className="answers-21" id="1-whatdeficiency-v" name="answers[1[whatdeficiency]]" value="visual" />Visual
                     <input type="radio"  checked={this.state.do_you_have_any_disabilities_aux_1 === "intellectual_cognitive"} onChange={this.setDoYouHaveAnyDisabilitiesAux1} className="answers-21" id="1-whatdeficiency-i" name="answers[1[whatdeficiency]]" value="intellectual_cognitive" />Intelectual/Cognitiva
@@ -212,17 +214,17 @@ class PersonalData extends React.Component {
                     <input type="radio"  checked={this.state.do_you_have_any_disabilities_aux_1 === "other"} onChange={this.setDoYouHaveAnyDisabilitiesAux1} className="answers-21" id="1-whatdeficiency-o" name="answers[1[whatdeficiency]]" value="other" />Outra
                     <br/>
                     <br/>
-                    <label>Especificar:</label><br/>
-                    <input type="text" type="text"  value={this.state.whatdeficiency_1} onChange={this.setWhatDeficiency1} placeholder="Especificar" className="answers-21" id="1-specify" name="answers[1[whatdeficiency]]" />
+                    <label>Especificar</label><br/>
+                    <input type="text" type="text"  value={this.state.whatdeficiency_1} onChange={this.setWhatDeficiency1} placeholder="Especificar" className="answers-21" id="1-specify" name="answers[1[whatdeficiency]]" maxLength="30" />
                     <br/>
                     <br/>
-                    <label>Grupo sanguíneo:</label><br/>
-                    <input type="text"  value={this.state.blood_type_1} onChange={this.setBloodType1} placeholder="Grupo sanguíneo" className="answers-22" id="1-bloodtype" name="answers[1[bloodtype]]" />
+                    <label>Grupo sanguíneo</label><br/>
+                    <input type="text"  value={this.state.blood_type_1} onChange={this.setBloodType1} placeholder="Grupo sanguíneo" className="answers-22" id="1-bloodtype" name="answers[1[bloodtype]]" maxLength="30" />
                     <br/>
                     <br/>
-                    <label>Fator RH:</label>
+                    <label>Fator RH</label>
                     <br/>
-                    <input type="text"  value={this.state.rh_factor_1} onChange={this.setRhFactor1} placeholder="Fator RH" className="answers-23" id="1-rhfactor" name="answers[1[rhfactor]]" />
+                    <input type="text"  value={this.state.rh_factor_1} onChange={this.setRhFactor1} placeholder="Fator RH" className="answers-23" id="1-rhfactor" name="answers[1[rhfactor]]" maxLength="50" />
                   </fieldset>
                 </div>
               </div>
