@@ -32,7 +32,7 @@ Route::group(['prefix' => '/v1'], function () {
 	Route::resource('/medicinesherbalremedies', 'MedicinesHerbalRemediesController');
 	Route::resource('/oralhealthassessment', 'OralHealthAssessmentController');
 	Route::resource('/personaldata', 'PersonalDataController');
-	Route::resource('/personalreferences', 'PersonalReferencesController');
+	Route::resource('/personsreferences', 'PersonsReferencesController');
 	Route::resource('/pressurecontrol', 'PressureControlController');
 	Route::resource('/reactionorallergy', 'ReactionOrAllergyController');
 	Route::resource('/residentialaddress', 'ResidentialAddressController');

@@ -196,7 +196,7 @@
 						<br/>
 						<input type="text"  placeholder="Fator RH" className="answers-23" id="1-rhfactor" name="answers[1[rhfactor]]" />
 
-						<h2>ENDEREÇO RESIDENCIAL</h2>
+						<h2>1.A ENDEREÇO RESIDENCIAL</h2>
 						<label>Rua avenida praça</label><br/>
 						<input type="text"  placeholder="Rua avenida praça" className="answers-24" id="1-street" name="answers[1[street]]" />
 						<br/><br/>
@@ -289,8 +289,11 @@
 						<input type="date" className="answers-45" id="1.1-dateofbirth" name="answers[1.1[dateofbirt]]"  />
 						<br/><br/>
 						<label>Vínculo</label><br/>
-						<input type="text" placeholder="Vínculo" className="answers-46" id="1.1-Link" name="answers[1.1[Link]]"  />
+						<input type="text" placeholder="Vínculo" className="answers-46" id="1.1-Link" name="answers[1.1[link]]"  />
 						<br/><br/>
+						<label>Endereço</label><br/>
+	                    <input type="text" placeholder="Endereço" className="answers-47a" id="1.1-address" name="answers[1.1[address]]" maxLength="50" />
+	                    <br/><br/>
 						<label>Telefone</label><br/>
 						<input type="telephone" className="answers-47" id="1.1-telephone" name="answers[1.1[telephone]]"  />
 						<br/><br/>
@@ -308,17 +311,27 @@
 						<h2>AVALIAÇÃO DA PESSOA IDOSA</h2>
 						<br/><br/>
 						<label>Nome do medicamento, do fitoterápico, do suplemento ou da vitamina e sua concentração</label><br/>
-						<input type="text" className="answers-51" id="2.1-supplement" name="answers[1.1[supplement]]"  />
+						<input type="text" className="answers-51" id="2.1-supplement" name="answers[2.1[supplement]]"  />
 						<br/><br/>
 						<label>Dose e frequência</label><br/>
-						<input type="text" className="answers-52" id="2.1-dose" name="answers[1.1[dose]]"  />
+						<input type="text" className="answers-52" id="2.1-dose" name="answers[2.1[dose]]"  />
 						<br/><br/>
 						<label>Data de início ou tempo de uso</label><br/>
-						<input type="text" className="answers-53" id="2.1-startdate" name="answers[1.1[startdate]]"  />
+						<input type="text" className="answers-53" id="2.1-startdate" name="answers[2.1[startdate]]"  />
 						<br/><br/>
 						<label>Uso concomitante de 5 ou mais medicamentos? </label><br/>
-						<input type="radio" className="answers-54" id="2.1-livespeople-y" name="answers[1.1[livespeople]]" value="y"  />Sim
-						<input type="radio" className="answers-54" id="2.1-medicines-n" name="answers[1.1[medicines]]" value="n"  />Não
+						<input type="radio" className="answers-54" id="2.1-medicines-y" name="answers[2.1[medicines]]" value="1"  />Sim
+						<input type="radio" className="answers-54" id="2.1-medicines-n" name="answers[2.1[medicines]]" value="0"  />Não
+						<br/><br/>
+						<label>Foi prescrito por algum profissional de saúde? Qual?</label><br/>
+						<input type="text" className="answers-54a" id="2.1-doctor" name="answers[2.1[doctor]]"  />
+						<br/><br/>
+						<label>Suspensão:</label><br/>
+						<input type="date" className="answers-55a" id="2.1-suspension" name="answers[2.1[suspension]]"  />
+						<input type="text" className="answers-55a" id="2.1-suspension" name="answers[2.1[suspension]]"  />
+						<br/><br/>
+						
+
 
 
 						<h2> DIAGNÓSTICOS E INTERNAÇÕES PRÉVIOS </h2>
@@ -409,8 +422,8 @@
 						<input type="text"  maxLength="5" className="answers-76" id="2.5-pp" name="answers[2.5[pp]]"  />
 						<br/><br/>
 						<label>Você apresentou perda de peso não intencional* de, no mínimo, 4,5 kg ou de 5% do seu peso corporal no último ano? </label><br/>
-						<input type="radio" className="answers-77" id="2.5-weightloss-y" name="answers[2.5[weightloss]]" value="y"  />Sim
-						<input type="radio" className="answers-77" id="2.5-weightloss-n" name="answers[2.5[weightloss]]" value="n"  />Não
+						<input type="radio" className="answers-77" id="2.5-weightloss-1" name="answers[2.5[weightloss]]" value="1"  />Sim
+						<input type="radio" className="answers-77" id="2.5-weightloss-0" name="answers[2.5[weightloss]]" value="0"  />Não
 						<br/><br/>
 
 						<h2> 2.6 PROTOCOLO DE IDENTIFICAÇÃO DO IDOSO VULNERÁVEL (VES-13 </h2>
