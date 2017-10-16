@@ -35,7 +35,7 @@ class Controller extends BaseController
      */
     public function create()
     {
-        //
+        echo json_encode("aquiii");
     }
 
     /**
@@ -46,7 +46,7 @@ class Controller extends BaseController
      */
     public function store(Request $request)
     {
-        
+        echo json_encode("aquiii");
     }
 
     /**

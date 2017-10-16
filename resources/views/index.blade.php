@@ -19,129 +19,7 @@
     <link rel="stylesheet" href="{{ asset('/css/global.css') }}">
   </head>
   <body class="fixed-nav sticky-footer bg-dark " id="page-top">
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" id="mainNav">
-      <a class="navbar-brand" href="blank.html">Caderneta Digital do Idoso</a>    
-      <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarResponsive">
-        <div id="sidemenu"></div>
-        <ul class="navbar-nav navbar-sidenav" id="exampleAccordion">
-          <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Formulário">
-            <a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#collapseMulti" data-parent="#exampleAccordion">
-            <i class="fa fa-fw fa-stethoscope"></i>
-            <span class="nav-link-text">Formulário</span>
-            </a>
-            <ul class="sidenav-second-level collapse" id="collapseMulti">
-              <li>
-                <a href="#">Dados Pessoais</a>
-              </li>
-              <li>
-                <a class="nav-link-collapse collapsed" data-toggle="collapse" href="#item-elderly_evaluete">Avaliação da pessoa idosa</a>
-                <ul class="sidenav-third-level collapse" id="item-elderly_evaluete">
-                  <li>
-                    <a href="#">2.1 Medicamentos, fitoterápicos, suplementos e vitaminas em uso</a>
-                  </li>
-                  <li>
-                    <a href="#">2.2 Diagnósticos e internações prévios</a>
-                  </li>
-                  <li>
-                    <a href="#">2.3 Cirurgias realizadas</a>
-                  </li>
-                  <li>
-                    <a href="#">2.4 Reações adversas ou alergias a medicamentos</a>
-                  </li>
-                  <li>
-                    <a href="#">2.5 Dados antropométrico</a>
-                  </li>
-                  <li>
-                    <a href="#">2.6 Protocolo de identificação do idoso vulnerável (VES-13)</a>
-                  </li>
-                  <li>
-                    <a href="#">2.7 Informações complementares </a>
-                  </li>
-                  <li>
-                    <a href="#">2.8 Avaliação ambienta</a>
-                  </li>
-                  <li>
-                    <a href="#">2.9 Quedas</a>
-                  </li>
-                  <li>
-                    <a href="#">2.10 Identificação de dor crônica</a>
-                  </li>
-                  <li>
-                    <a href="#">2.11 Hábitos de vida</a>
-                  </li>
-                </ul>
-              </li>
-              <li>
-                <a href="#">Controle de pressão arterial</a>
-              </li>
-              <li>
-                <a href="#">Controle de glicemia</a>
-              </li>
-              <li>
-                <a href="#">Calendário de vacinação</a>
-              </li>
-              <li>
-                <a class="nav-link-collapse collapsed" data-toggle="collapse" href="#item-schedule">Avaliação de saúde bucal</a>
-                <ul class="sidenav-third-level collapse" id="item-schedule">
-                  <li>
-                    <a href="#">Agenda de consultas e exames</a>
-                  </li>
-                  <li>
-                    <a href="#">Atualizações da caderneta</a>
-                  </li>
-                </ul>
-              </li>
-            </ul>
-          </li>
-          <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Listagens">
-            <a class="nav-link" href="#">
-            <i class="fa fa-fw fa-list-alt"></i>
-            <span class="nav-link-text">Listagens</span>
-            </a>
-          </li>
-          <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Resultados">
-            <a class="nav-link" href="#">
-            <i class="fa fa-fw fa-area-chart"></i>
-            <span class="nav-link-text">Resultados</span>
-            </a>
-          </li>
-          <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Sobre">
-            <a class="nav-link" href="#">
-            <i class="fa fa-fw fa-question-circle-o"></i>
-            <span class="nav-link-text">Sobre</span>
-            </a>
-          </li>
-        </ul>
-        <ul class="navbar-nav sidenav-toggler">
-          <li class="nav-item">
-            <a class="nav-link text-center" id="sidenavToggler">
-            <i class="fa fa-fw fa-angle-left"></i>
-            </a>
-          </li>
-        </ul>
-        <ul class="navbar-nav ml-auto">
-          <li class="nav-item">
-            <form class="form-inline my-2 my-lg-0 mr-lg-2">
-              <div class="input-group">
-                <input class="form-control" type="text" placeholder="Procurar por..." />
-                <span class="input-group-btn">
-                <button class="btn btn-primary" type="button">
-                <i class="fa fa-search"></i>
-                </button>
-                </span>
-              </div>
-            </form>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" data-toggle="modal" data-target="#exampleModal">
-            <i class="fa fa-fw fa-sign-out"></i>Sair</a>
-          </li>
-        </ul>
-      </div>
-    </nav>
+
     <div class="content-wrapper">
       <div id="app" class="container-fluid"></div>
       <footer class="sticky-footer">
@@ -165,10 +43,10 @@
               <span aria-hidden="true">×</span>
               </button>
             </div>
-            <div class="modal-body">Você tem certeza que quer sair?</div>
+            <div class="modal-body">Você tem certeza que quer sair? <br/> Dados não salvos serão perdidos.</div>
             <div class="modal-footer">
               <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancelar</button>
-              <a class="btn btn-primary" href="login.html">Sair</a>
+              <a class="btn btn-primary" href="/">Sair</a>
             </div>
           </div>
         </div>
@@ -182,6 +60,7 @@
       <!-- Core plugin JavaScript-->
       <script src="{{ asset('/js/jquery.easing.min.js') }}"></script>
       <!-- Custom scripts for all pages-->
+      <script src="{{ asset('/js/chart.js/Chart.min.js') }}"></script>
       <script src="{{ asset('/js/sb-admin.min.js') }}"></script>
     </div>
   </body>

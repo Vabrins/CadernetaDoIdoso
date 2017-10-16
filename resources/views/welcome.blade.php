@@ -9,7 +9,7 @@
 
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Raleway:100,600" rel="stylesheet" type="text/css">
-
+        <link rel='stylesheet' type='text/css' href='https://fonts.googleapis.com/css?family=Open+Sans:100,200,300,500'>
         <!-- Styles -->
         <style>
             html, body {
@@ -50,7 +50,7 @@
             }
 
             .links > a {
-                color: #636b6f;
+                color: #FFF;
                 padding: 0 25px;
                 font-size: 12px;
                 font-weight: 600;
@@ -63,8 +63,10 @@
                 margin-bottom: 30px;
             }
         </style>
+        <!-- General styles -->
+        <link rel="stylesheet" href="{{ asset('/css/global.css') }}">
     </head>
-    <body>
+    <body id="welcome">
         <div class="flex-center position-ref full-height">
             @if (Route::has('login'))
                 <div class="top-right links">
@@ -78,14 +80,13 @@
             @endif
 
             <div class="content">
-                <p>hello final project!</p>
-                <div class="title m-b-md">
+                <div class="title m-b-md content-title">
                     Caderneta do Idoso
                 </div>
 
                 <div class="links">
-                    <a href="{{ url('/index') }}">Formulário de questões</a>
-                    <a href="https://github.com/Vabrins/CadernetaDoIdoso">GitHub</a>
+                    <a class="links-item" href="{{ url('/index') }}">Formulário de questões</a>
+                    <a class="links-item" href="https://github.com/Vabrins/CadernetaDoIdoso">GitHub</a>
                 </div>
             </div>
         </div>

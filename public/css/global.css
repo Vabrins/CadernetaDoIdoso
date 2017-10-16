@@ -14,3 +14,18 @@ ul .dropdown .dropdown-toggle {
 fieldset {
     margin-top: 10px;
 }
+#welcome {
+    background-image: url('../images/idoso.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+.content-title {
+    font-weight: 100;
+    color: #FEFEFE;
+    background-color: #CCCCCC;
+}
+.links-item {
+    color: #FEFEFE !important;
+    background-color: #333333;
+}
