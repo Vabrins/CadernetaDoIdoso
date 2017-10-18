@@ -12,7 +12,6 @@ class Home extends React.Component {
     this.state = {}
   }
 
-
   render () {
     return (
       <div className="jumbotron">
