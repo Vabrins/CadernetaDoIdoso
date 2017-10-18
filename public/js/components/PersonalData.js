@@ -1,6 +1,29 @@
 import React from 'react';
 import $ from 'jquery';
-import SideMenu from './SideMenu';
+import InputMask from 'react-input-mask';
+import {RadioButton, RadioButtonGroup} from 'material-ui/RadioButton';
+import TextField from 'material-ui/TextField';
+import {lightBlack, red700} from 'material-ui/styles/colors';
+import errorHandler from './errorHandler';
+
+  const styles = {
+    block: {
+      maxWidth: 250,
+    },
+    radioButton: {
+      marginBottom: 16,
+    },
+    errorStyle: {
+      color: red700,
+    },
+    underlineStyle: {
+      borderColor: lightBlack,
+    },
+    floatingLabelFocusStyle: {
+      color: lightBlack,
+    },
+  };
+
 
 class PersonalData extends React.Component {
   
