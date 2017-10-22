@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
+use HipsterJazzbo\Landlord\Facades\Landlord;
 
 class ElderlyDataController extends Controller
 {
@@ -9,6 +10,7 @@ class ElderlyDataController extends Controller
     public function __construct(){
         $this->model = 'App\\'.str_replace('Controller', '', class_basename(get_called_class())
         );
+        Landlord::addTenant('id_elderly', 1);
     }
 
     /**
