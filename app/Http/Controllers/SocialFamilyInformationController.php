@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-class SocialFamilyInformationController extends Controller
+class SocialFamilyInformationController extends ElderlyDataController
 {
     
 }

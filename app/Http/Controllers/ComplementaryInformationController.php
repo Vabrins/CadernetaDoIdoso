@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-class ComplementaryInformationController extends Controller
+class ComplementaryInformationController extends ElderlyDataController
 {
     
 }

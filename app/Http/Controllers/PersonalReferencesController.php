@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-class PersonalReferencesController extends Controller
+class PersonalReferencesController extends ElderlyDataController
 {
     
 }

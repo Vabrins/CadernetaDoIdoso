@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-class IdentificationChronicPainController extends Controller
+class IdentificationChronicPainController extends ElderlyDataController
 {
     
 }
