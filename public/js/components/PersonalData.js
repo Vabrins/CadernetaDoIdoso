@@ -1,6 +1,28 @@
 import React from 'react';
 import $ from 'jquery';
-import SideMenu from './SideMenu';
+import InputMask from 'react-input-mask';
+import {RadioButton, RadioButtonGroup} from 'material-ui/RadioButton';
+import TextField from 'material-ui/TextField';
+import {lightBlack, red700} from 'material-ui/styles/colors';
+import errorHandler from './errorHandler';
+
+  const styles = {
+    block: {
+      maxWidth: 250,
+    },
+    radioButton: {
+      marginBottom: 16,
+    },
+    errorStyle: {
+      color: red700,
+    },
+    underlineStyle: {
+      borderColor: lightBlack,
+    },
+    floatingLabelFocusStyle: {
+      color: lightBlack,
+    },
+  };
 
 class PersonalData extends React.Component {
   
@@ -84,7 +106,7 @@ class PersonalData extends React.Component {
 
   sendForm(evt) {
     evt.preventDefault();
-    // console.log('You have selected:', this.state.sexuality_1);
+    // console.log('You have selected:', this.state.name_1);
 
     $.ajax({
       url: "http://127.0.0.1:8000/api/v1/personaldata",
@@ -97,8 +119,13 @@ class PersonalData extends React.Component {
         console.log("enviado com sucesso");
       },
       error: function(response){
-        console.log("erro");
         console.log(response);
+        if(response.status === 400) {
+          new errorHandler().getErrors(response.responseJSON);
+        }
+        if(response.status === 500) {
+          new errorHandler().getErrors(response.responseJSON);
+        }
       }.bind(this)
     });
   }
@@ -110,28 +137,21 @@ class PersonalData extends React.Component {
               <div className="row">
                 <div className="col">
                   <fieldset>
-                    <label>Nome</label><br/>
-                    <input type="text" value={this.state.name_1} onChange={this.setName1} placeholder="Nome" className="answers-1" id="1-name" name="answers[1[name]]" maxLength="50" />
-                    <br/><br/>
-                    <label>Apelido/Nome Social</label><br/>
-                    <input type="text" value={this.state.nick_name_1} onChange={this.setNickName1} placeholder="Apelido/Nome Social" className="answers-2" id="1-nickname" name="answers[1[nickname]]" maxLength="50" />
-                    <br/><br/>
-                    <label>Nº do cartão SUS </label><br/>
-                    <input type="text" value={this.state.card_number_cns_1} onChange={this.setCardNumberCns1} placeholder="Nº do cartão SUS " className="answers-3" id="1-cardnumber" name="answers[1[cardnumber]]" maxLength="11" />
+                    <TextField hintText="Nome" floatingLabelText="Nome" value={this.state.name_1} onChange={this.setName1} className="answers-1" id="1-name" name="answers[1[name]]" maxLength="50" underlineFocusStyle={styles.underlineStyle} floatingLabelFocusStyle={styles.floatingLabelFocusStyle} />
+                    <br/>
+                    <TextField hintText="Apelido/Nome Social" floatingLabelText="Apelido/Nome Social" value={this.state.nick_name_1} onChange={this.setNickName1} className="answers-2" id="1-nickname" name="answers[1[nickname]]" maxLength="50" underlineFocusStyle={styles.underlineStyle} floatingLabelFocusStyle={styles.floatingLabelFocusStyle} />
+                    <br/>
+                    <TextField hintText="Nº do cartão SUS " floatingLabelText="Nº do cartão SUS " value={this.state.card_number_cns_1} onChange={this.setCardNumberCns1} className="answers-3" id="1-cardnumber" name="answers[1[cardnumber]]" maxLength="11" underlineFocusStyle={styles.underlineStyle} floatingLabelFocusStyle={styles.floatingLabelFocusStyle} />
                     <br/><br/>
                     <div className="form-group">
                       <label htmlFor="exampleFormControlFile1">Foto</label>
                       <input type="file" value={this.state.photo_1} onChange={this.setPhoto1} className="form-control-file 1-photo" name="answers[1[photo]]" id="exampleFormControlFile1" maxLength="255"/>
                     </div>
+                    <TextField hintText="Documento de identidade" floatingLabelText="Documento de identidade" type="text" value={this.state.document_rg_1} onChange={this.setDocumentRg1} className="answers-5" id="1-document" name="answers[1[Document2]]" underlineFocusStyle={styles.underlineStyle} floatingLabelFocusStyle={styles.floatingLabelFocusStyle} maxLength="9"/>
                     <br/>
-                    <label>Documento de identidade </label><br/>
-                    <input type="text" value={this.state.document_rg_1} onChange={this.setDocumentRg1} placeholder="Documento de identidade" className="answers-5" id="1-document" name="answers[1[Document2]]" maxLength="12" />
-                    <br/><br/>
-                    <label>CPF</label><br/>
-                    <input type="text" value={this.state.document_cpf_1} onChange={this.setDocumentCpf1} placeholder="CPF" className="answers-5" id="1-document1" name="answers[1[Document1]]" maxLength="14" />
-                    <br/><br/>
-                    <label>Nome completo da mãe</label><br/>
-                    <input type="text" value={this.state.mothers_name_1} onChange={this.setMothersName1} placeholder="Nome completo da mãe" className="answers-6" id="1-monthersname" name="answers[1[monthersname]]" maxLength="50" />
+                    <TextField hintText="CPF" floatingLabelText="CPF" type="text" value={this.state.document_cpf_1} onChange={this.setDocumentCpf1} className="answers-5" id="1-document1" name="answers[1[Document1]]" underlineFocusStyle={styles.underlineStyle} floatingLabelFocusStyle={styles.floatingLabelFocusStyle} maxLength="11"/>
+                    <br/>
+                    <TextField hintText="Nome completo da mãe" floatingLabelText="Nome completo da mãe" value={this.state.mothers_name_1} onChange={this.setMothersName1} className="answers-6" id="1-monthersname" name="answers[1[monthersname]]" maxLength="50" underlineFocusStyle={styles.underlineStyle} floatingLabelFocusStyle={styles.floatingLabelFocusStyle} />
                     <br/><br/>
                     <label>Data de nascimento</label><br/>
                     <input type="date" value={this.state.date_of_birth_1} onChange={this.setDateOfBirth1} placeholder="Data de nascimento" className="answers-7" id="1-dateofbirth" name="answers[1[dateofbirth]]"/>
@@ -139,26 +159,25 @@ class PersonalData extends React.Component {
                     <label>Sexo</label><br/>
                     <input type="radio" checked={this.state.sexuality_1 === 'F'} onChange={this.setSexuality} className="answers-8" id="1-sexuality-f" name="answers[1[sexuality]]" value="F" /> Feminino
                     <input type="radio" checked={this.state.sexuality_1 === 'M'} onChange={this.setSexuality} className="answers-8" id="1-sexuality-m" name="answers[1[sexuality]]" value="M" />Masculino
-                    <br/><br/>
-                    <label>Município de nascimento/UF</label><br/>
-                    <input type="text" value={this.state.city_of_birth_1} onChange={this.setCityOfBirth1}  placeholder="Município de nascimento/UF" className="answers-9" id="1-cityofbirth" name="answers[1[cityofbirth]]" maxLength="2" />
+                    <br/>
+                    <TextField hintText="Município de nascimento/UF" floatingLabelText="Município de nascimento/UF" value={this.state.city_of_birth_1} onChange={this.setCityOfBirth1} className="answers-9" id="1-cityofbirth" name="answers[1[cityofbirth]]" maxLength="2" underlineFocusStyle={styles.underlineStyle} floatingLabelFocusStyle={styles.floatingLabelFocusStyle} />
                     <br/><br/>
                     <label>Nacionalidade</label><br/>
                     <input type="radio" checked={this.state.nationality_1 === 'brasileira'} onChange={this.setNationality1} className="answers-10" id="1-nationality" name="answers[1[nationality]]" value="brasileira" /> Brasileira
                     <input type="radio" checked={this.state.nationality_1 === 'naturalizado'} onChange={this.setNationality1} className="answers-10" id="1-nationality" name="answers[1[nationality]]" value="naturalizado"/>Naturalizado
                     <input type="radio" checked={this.state.nationality_1 === 'estrageira'} onChange={this.setNationality1} className="answers-10" id="1-nationality" name="answers[1[nationality]]" value="estrageira" />Estrageira
-                    <br/><br/>
-                    <label>País de nascimento</label><br/>
-                    <input type="text" value={this.state.country_of_birth_1} onChange={this.setCountryOfBirth1}  placeholder="País de nascimento" className="answers-10" id="1-birthparents" name="answers[1[birthparents]]" maxLength="30" />
+                    <br/>
+                    <TextField hintText="País de nascimento" floatingLabelText="País de nascimento" value={this.state.country_of_birth_1} onChange={this.setCountryOfBirth1} className="answers-10" id="1-birthparents" name="answers[1[birthparents]]" maxLength="30" underlineFocusStyle={styles.underlineStyle} floatingLabelFocusStyle={styles.floatingLabelFocusStyle} />
                     <br/>
                     <label>Sabe ler e escrever? </label><br/>
-                    <input type="radio" checked={this.state.can_you_read_and_write_1 === 'y'} onChange={this.setCanYouReadAndWrite1} className="answers-11" id="1-readwrite-y" name="answers[1[readwrite]]" value="y" /> Sim
-                    <input type="radio" checked={this.state.can_you_read_and_write_1 === 'n'} onChange={this.setCanYouReadAndWrite1} className="answers-11" id="1-readwrite-n" name="answers[1[readwrite]]" value="n" /> Não
+                    <input type="radio" checked={this.state.can_you_read_and_write_1 === '1'} onChange={this.setCanYouReadAndWrite1} className="answers-11" id="1-readwrite-y" name="answers[1[readwrite]]" value="1" /> Sim
+                    <input type="radio" checked={this.state.can_you_read_and_write_1 === '0'} onChange={this.setCanYouReadAndWrite1} className="answers-11" id="1-readwrite-n" name="answers[1[readwrite]]" value="0" /> Não
                     <br/><br/>
                   </fieldset>
                 </div>
                 <div className="col">
                   <fieldset>
+                    <br/>
                     <label>Escolaridade</label><br/>
                     <input type="radio" checked={this.state.scholarity_1 === 'nothing'} onChange={this.setScholarity1} className="answers-12" id="1-sholarity-n" name="answers[1[scholarity]]" value="nothing" />nenhuma
                     <input type="radio" checked={this.state.scholarity_1 === 'from1to3years'} onChange={this.setScholarity1} className="answers-12" id="1-sholarity-1/3" name="answers[1[scholarity]]" value="from1to3years" />
@@ -175,54 +194,44 @@ class PersonalData extends React.Component {
                     <input type="radio" checked={this.state.breed_color_1 === 'yellow'} onChange={this.setBreedColor1} className="answers-13" id="1-breedcolor-yellow"  name="answers[1[breedcolor]]" value="yellow" />Amarela
                     <input type="radio" checked={this.state.breed_color_1 === 'undeclared'} onChange={this.setBreedColor1} className="answers-13" id="1-breedcolor-undeclared" name="answers[1[breedcolor]]" value="undeclared" /> Não declarada
                     <br/>
-                    <input type="text" value={this.state.breed_color_aux_1} onChange={this.setBreedColorAux1} placeholder="Qual etnia" className="answers-13" id="1-breedcolor-what" name="answers[1[breedcolor_aux]]" maxLength="30" />
+                    <TextField hintText="Qual etnia?" floatingLabelText="Qual etnia?" value={this.state.breed_color_aux_1} onChange={this.setBreedColorAux1} className="answers-13" id="1-breedcolor-what" name="answers[1[breedcolor_aux]]" maxLength="30" underlineFocusStyle={styles.underlineStyle} floatingLabelFocusStyle={styles.floatingLabelFocusStyle} />
                     <br/><br/>
                     <label>Tem religião?</label><br/>
                     <input type="radio" checked={this.state.do_you_have_a_religion_1 === 'y'} onChange={this.setDoYouHaveaReligion1} className="answers-14" id="1-religion-y" name="answers[1[religion]]" value="y" />Sim
                     <input type="radio" checked={this.state.do_you_have_a_religion_1 === 'n'} onChange={this.setDoYouHaveaReligion1} className="answers-14" id="1-religion-n" name="answers[1[religion]]" value="n" />Não
                     <br/>
-                    <input type="text" value={this.state.do_you_have_a_religion_aux_1} onChange={this.setDoYouHaveaReligionAux1} placeholder="Qual?" className="answers-14" id="1-religion-w" name="answers[1[religion]]" maxLength="20" />
-
-                    <label>OCUPAÇÃO/OCUPAÇÃO PROFISSIONAL:</label><br/>
-                    <input type="text"  value={this.state.occupation_primary_profession_1} onChange={this.setOccupationPrimaryProfession1} placeholder="Ocupação/profissão principal" className="answers-16" id="1-primaryprofession" name="answers[1[primaryprofession]]" />
-                    <br/><br/>
-                    <label>Situação conjugal:</label><br/>
+                    <TextField hintText="Qual?" floatingLabelText="Qual?" value={this.state.do_you_have_a_religion_aux_1} onChange={this.setDoYouHaveaReligionAux1} className="answers-14" id="1-religion-w" name="answers[1[religion]]" maxLength="20" underlineFocusStyle={styles.underlineStyle} floatingLabelFocusStyle={styles.floatingLabelFocusStyle} />
+                    <br/>
+                    <TextField hintText="Ocupação/Profissional" floatingLabelText="Ocupação/Profissional"  value={this.state.occupation_primary_profession_1} onChange={this.setOccupationPrimaryProfession1} className="answers-16" id="1-primaryprofession" name="answers[1[primaryprofession]]" underlineFocusStyle={styles.underlineStyle} floatingLabelFocusStyle={styles.floatingLabelFocusStyle} />
+                    <br/>
+                    <label>Situação conjugal</label><br/>
                     <input type="radio" checked={this.state.marital_status_1 === "notmarried"} onChange={this.setMaritalStatus1} className="answers-17" id="1-maritalstatus-s" name="answers[1[maritalstatus]]" value="notmarried" /> Solteiro(a)
                     <input type="radio" checked={this.state.marital_status_1 === "married"} onChange={this.setMaritalStatus1} className="answers-17" id="1-maritalstatus-m" name="answers[1[maritalstatus]]" value="married" /> Casado(a)/convivio com parceiro(a)
                     <input type="radio" checked={this.state.marital_status_1 === "divorced"} onChange={this.setMaritalStatus1} className="answers-17" id="1-maritalstatus-d" name="answers[1[maritalstatus]]" value="divorced" /> Divorciado(a)/separado(a)
                     <input type="radio" checked={this.state.marital_status_1 === "widower"} onChange={this.setMaritalStatus1} className="answers-17" id="1-maritalstatus-w" name="answers[1[maritalstatus]]" value="widower" /> Viúvo(a)
                     <input type="radio" checked={this.state.marital_status_1 === "Other"} onChange={this.setMaritalStatus1} className="answers-17" id="1-maritalstatus-o" name="answers[1[maritalstatus]]" value="Other" /> Outra
-                    <input type="text"  value={this.state.marital_status_aux_1} onChange={this.setMaritalStatusAux1} placeholder=" Desde quando(ano)?" className="answers-17" id="1-maritalstatus-sw" name="answers[1[maritalstatus]]" />
+                    <TextField hintText="Desde quando? Ano." floatingLabelText="Desde quando? Ano."  value={this.state.marital_status_aux_1} onChange={this.setMaritalStatusAux1} className="answers-17" id="1-maritalstatus-sw" name="answers[1[maritalstatus]]" maxLength="5" underlineFocusStyle={styles.underlineStyle} floatingLabelFocusStyle={styles.floatingLabelFocusStyle} />
+                    <br/>
+                    <TextField hintText="Unidade básica de saúde que frequenta" floatingLabelText="Unidade básica de saúde que frequenta"  value={this.state.basic_heath_unit_that_attends_1} onChange={this.setBasicHeathUnitThatAttends1} className="answers-18" id="1-Basic unit" name="answers[1[Basicunit]]" maxLength="30" underlineFocusStyle={styles.underlineStyle} floatingLabelFocusStyle={styles.floatingLabelFocusStyle} />
+                    <br/>
+                    <TextField hintText="Especificar" floatingLabelText="Tem alguma alergia de maior gravidade?"  value={this.state.do_you_have_any_major_allergies_1} onChange={this.setDoYouHaveAnyMajorAllergies1} className="answers-19" id="1-Major allergy" name="answers[1[maritalstatus]]" maxLength="50" underlineFocusStyle={styles.underlineStyle} floatingLabelFocusStyle={styles.floatingLabelFocusStyle} />
                     <br/><br/>
-                    <label>Unidade básica de súade que frequenta:</label><br/>
-                    <input type="text"  value={this.state.basic_heath_unit_that_attends_1} onChange={this.setBasicHeathUnitThatAttends1} placeholder="Unidade básica de súade que frequenta" className="answers-18" id="1-Basic unit" name="answers[1[Basicunit]]" />
-                    <br/><br/>
-                    <label>Tem alguma alergia de maior gravidade? Especificar:</label><br/>
-                    <input type="text"  value={this.state.do_you_have_any_major_allergies_1} onChange={this.setDoYouHaveAnyMajorAllergies1} placeholder="alergia de maior gravidade?" className="answers-19" id="1-Major allergy" name="answers[1[maritalstatus]]" />
-                    <br/><br/>
-                    <label>Tem alguma deficiência? :</label><br/>
+                    <label>Tem alguma deficiência? </label><br/>
                     <input type="radio" checked={this.state.do_you_have_any_disabilities_1 === "1"} onChange={this.setDoYouHaveAnyDisabilities1} className="answers-20" id="1-deficiency-y" name="answers[1[deficiency]]" value="1" /> Sim
                     <input type="radio" checked={this.state.do_you_have_any_disabilities_1 === "0"} onChange={this.setDoYouHaveAnyDisabilities1} className="answers-20" id="1-deficiency-n" name="answers[1[deficiency]]" value="0" /> Não
                     <br/><br/>
-                    <label>Qual? :</label><br/>
+                    <label>Qual? </label><br/>
                     <input type="radio"  checked={this.state.do_you_have_any_disabilities_aux_1 === "auditory"} onChange={this.setDoYouHaveAnyDisabilitiesAux1} className="answers-21" id="1-whatdeficiency-a" name="answers[1[whatdeficiency]]" value="auditory" />Auditiva
                     <input type="radio"  checked={this.state.do_you_have_any_disabilities_aux_1 === "visual"} onChange={this.setDoYouHaveAnyDisabilitiesAux1} className="answers-21" id="1-whatdeficiency-v" name="answers[1[whatdeficiency]]" value="visual" />Visual
                     <input type="radio"  checked={this.state.do_you_have_any_disabilities_aux_1 === "intellectual_cognitive"} onChange={this.setDoYouHaveAnyDisabilitiesAux1} className="answers-21" id="1-whatdeficiency-i" name="answers[1[whatdeficiency]]" value="intellectual_cognitive" />Intelectual/Cognitiva
                     <input type="radio"  checked={this.state.do_you_have_any_disabilities_aux_1 === "physical"} onChange={this.setDoYouHaveAnyDisabilitiesAux1} className="answers-21" id="1-whatdeficiency-p" name="answers[1[whatdeficiency]]" value="physical" />Física
                     <input type="radio"  checked={this.state.do_you_have_any_disabilities_aux_1 === "other"} onChange={this.setDoYouHaveAnyDisabilitiesAux1} className="answers-21" id="1-whatdeficiency-o" name="answers[1[whatdeficiency]]" value="other" />Outra
                     <br/>
+                    <TextField hintText="Especificar" floatingLabelText="Especificar" type="text"  value={this.state.whatdeficiency_1} onChange={this.setWhatDeficiency1} className="answers-21" id="1-specify" name="answers[1[whatdeficiency]]" maxLength="30" underlineFocusStyle={styles.underlineStyle} floatingLabelFocusStyle={styles.floatingLabelFocusStyle} />
                     <br/>
-                    <label>Especificar:</label><br/>
-                    <input type="text" type="text"  value={this.state.whatdeficiency_1} onChange={this.setWhatDeficiency1} placeholder="Especificar" className="answers-21" id="1-specify" name="answers[1[whatdeficiency]]" />
+                    <TextField hintText="Grupo sanguíneo" floatingLabelText="Grupo sanguíneo"  value={this.state.blood_type_1} onChange={this.setBloodType1} className="answers-22" id="1-bloodtype" name="answers[1[bloodtype]]" maxLength="30" underlineFocusStyle={styles.underlineStyle} floatingLabelFocusStyle={styles.floatingLabelFocusStyle} />
                     <br/>
-                    <br/>
-                    <label>Grupo sanguíneo:</label><br/>
-                    <input type="text"  value={this.state.blood_type_1} onChange={this.setBloodType1} placeholder="Grupo sanguíneo" className="answers-22" id="1-bloodtype" name="answers[1[bloodtype]]" />
-                    <br/>
-                    <br/>
-                    <label>Fator RH:</label>
-                    <br/>
-                    <input type="text"  value={this.state.rh_factor_1} onChange={this.setRhFactor1} placeholder="Fator RH" className="answers-23" id="1-rhfactor" name="answers[1[rhfactor]]" />
+                    <TextField hintText="Fator RH" floatingLabelText="Fator RH"  value={this.state.rh_factor_1} onChange={this.setRhFactor1} className="answers-23" id="1-rhfactor" name="answers[1[rhfactor]]" maxLength="50" underlineFocusStyle={styles.underlineStyle} floatingLabelFocusStyle={styles.floatingLabelFocusStyle} />
                   </fieldset>
                 </div>
               </div>
