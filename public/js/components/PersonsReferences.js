@@ -2,7 +2,7 @@ import React from 'react';
 import $ from 'jquery';
 import SideMenu from './SideMenu';
 
-class PersonalData extends React.Component {
+class PersonsReferences extends React.Component {
   
   constructor (props) {
     super(props);
@@ -14,9 +14,8 @@ class PersonalData extends React.Component {
     this.setLink11 = this.setLink11.bind(this);
     this.setAddress11 = this.setAddress11.bind(this);
     this.setTelephone11 = this.setTelephone11.bind(this);
-    this.setCellPhone11 = this.setCellPhone11.bind(this);
-    this.setDoesThisPersonLiveWithYou11 = this.setDoesThisPersonLiveWithYou11.bind(this);
-    this.setDateOfThisinformation11 = this.setDateOfThisinformation11.bind(this);
+    this.setLivesPeople11 = this.setLivesPeople11.bind(this);
+    this.setData11 = this.setData11.bind(this);
   }
 
   componentWillMount() {

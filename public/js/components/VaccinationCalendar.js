@@ -2,7 +2,7 @@ import React from 'react';
 import $ from 'jquery';
 import SideMenu from './SideMenu';
 
-class PersonalData extends React.Component {
+class VaccinationCalendar extends React.Component {
   
   constructor (props) {
     super(props);
@@ -89,6 +89,10 @@ class PersonalData extends React.Component {
     )
   }
 
+  setName211c(evt) {
+    this.setState({name_2_11c: evt.target.value});
+  }
+
   setFasting211b(evt) {
     this.setState({name_2_11c: evt.target.value});  
   }
@@ -110,4 +114,4 @@ class PersonalData extends React.Component {
   }
 }
 
-export default PersonsReferences
+export default VaccinationCalendar

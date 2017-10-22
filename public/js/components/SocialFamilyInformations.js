@@ -2,7 +2,7 @@ import React from 'react';
 import $ from 'jquery';
 import SideMenu from './SideMenu';
 
-class PersonalData extends React.Component {
+class SocialFamilyInformation extends React.Component {
   
   constructor (props) {
     super(props);
@@ -65,7 +65,7 @@ class PersonalData extends React.Component {
                 <fieldset>
                 <label>Você mora sozinho(a)?</label><br/>
                 <input type="radio" value={this.state.livingalone_1_b} onChange={this.setLivingAlone1b} className="answers-32" id="1.b-livingalone-y" name="answers[1.b[livingalone]]" value="1" />Sim
-                <input type="radio" value={this.state.livingalone _1_b} onChange={this.setLivingAlone1b} className="answers-32" id="1.b-livingalone-n" name="answers[1.b[livingalone]]" value="0" />Não
+                <input type="radio" value={this.state.livingalone_1_b} onChange={this.setLivingAlone1b} className="answers-32" id="1.b-livingalone-n" name="answers[1.b[livingalone]]" value="0" />Não
                 <br/><br/>
                 <label>Você mora com familiares?</label><br/>
                 <input type="radio" value={this.state.livefamily_1_b} onChange={this.setLiveFamily1b} className="answers-33" id="1.b-livefamily-y" name="answers[1.b[livefamily]]" value="1" />Sim
@@ -94,7 +94,7 @@ class PersonalData extends React.Component {
                 <label>Você tem fácil acesso aos serviços de farmácia, padaria ou supermercado?</label><br/>
                 <input type="radio" value={this.state.access_1_b} onChange={this.setAccess1b} className="answers-38" id="1.b-access-y" name="answers[1.b[access]]" value="1" />Sim
                 <input type="radio" value={this.state.access_1_b} onChange={this.setAccess1b} className="answers-38" id="1.b-access-n" name="answers[1.b[access]]" value="0" />Não
-                <br/><br/1
+                <br/><br/>
                 <label>Você tem fácil acesso a transporte? </label><br/>
                 <input type="radio" value={this.state.transport_1_b} onChange={this.seTransport1b} className="answers-39" id="1.b-transport-y" name="answers[1.b[transport]]" value="1" />Sim
                 <input type="radio" value={this.state.transport_1_b} onChange={this.seTransport1b} className="answers-39" id="1.b-transport-n" name="answers[1.b[transport]]" value="0" />Não
@@ -159,11 +159,6 @@ class PersonalData extends React.Component {
   setMonitoring1b(evt) {
     this.setState({monitoring_1_b: evt.target.value});  
   }
-
-  setMonitoring1b(evt) {
-    this.setState({county_1_b: evt.target.value});  
-  }
-
   
   setCounty1b(evt) {
     this.setState({county_1_b: evt.target.value}); 
@@ -190,9 +185,17 @@ class PersonalData extends React.Component {
   }
 
   setBolsaFamilia1b(evt) {
-    this.setState({bolsafamilia_1_b: evt.target.value}); 
+    this.setState({bolsafamilia_1_b: evt.target.value});
+  }
+
+  seTransport1b(evt) {
+    this.setState({transport_1_b: evt.target.value});
+  }
+
+  setWork1b(evt) {
+    this.setState({work_1_b: evt.target.value});
   }
 
 }
 
-export default PersonsReferences
+export default SocialFamilyInformation
