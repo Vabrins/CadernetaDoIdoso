@@ -2,7 +2,7 @@ import React from 'react';
 import $ from 'jquery';
 import SideMenu from './SideMenu';
 
-class PersonalData extends React.Component {
+class ConsultationExamination extends React.Component {
   
   constructor (props) {
     super(props);
@@ -111,4 +111,4 @@ class PersonalData extends React.Component {
 
 }
 
-export default PersonsReferences
+export default ConsultationExamination

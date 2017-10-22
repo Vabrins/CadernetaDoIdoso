@@ -2,7 +2,7 @@ import React from 'react';
 import $ from 'jquery';
 import SideMenu from './SideMenu';
 
-class PersonalData extends React.Component {
+class BloodPressureControls extends React.Component {
   
   constructor (props) {
     super(props);
@@ -85,4 +85,4 @@ class PersonalData extends React.Component {
   }
 }
 
-export default PersonsReferences
+export default BloodPressureControls

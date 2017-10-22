@@ -4,8 +4,32 @@ import Listings from './Listings';
 import Results from './Results';
 import About from './About';
 import Home from './Home';
-import PersonalData from './PersonalData';
 import CadernetaMenuGuide from './CadernetaMenuGuide';
+
+import PersonalData from './PersonalData';
+import PersonsReferences from './PersonsReferences';
+import ResidentialAddress from './ResidentialAddress';
+import SocialFamilyInformations from './SocialFamilyInformations';
+import MedicinesHerbalRemedies from './MedicinesHerbalRemedies';
+import DiagnosisPreviousHospitalization from './DiagnosisPreviousHospitalization';
+import SurgeriesPerformed from './SurgeriesPerformed';
+import ReactionOrAllergy from './ReactionOrAllergy';
+import AnthropometricData from './AnthropometricData';
+import VulnerableElderly from './VulnerableElderly';
+// Disabilities
+import ComplementaryInformation from './ComplementaryInformation';
+import EnvironmentalAssessment from './EnvironmentalAssessment';
+import Falls from './Falls';
+import IdentificationChronicPain from './IdentificationChronicPain';
+import IdentificationChronicPainB from './IdentificationChronicPainB';
+import LivingHabits from './LivingHabits';
+import BloodPressureControls from './BloodPressureControls';
+import BloodGlucoseControls from './BloodGlucoseControls';
+import VaccinationCalendar from './VaccinationCalendar';
+import OralHealthAssessment from './OralHealthAssessment';
+import DentalProsthesis from './DentalProsthesis';
+import ConsultationExamination from './ConsultationExamination';
+
 
 class App extends React.Component {
   constructor (props) {
@@ -35,62 +59,80 @@ class App extends React.Component {
                       <Link exact="true" to="/personaldata">Dados Pessoais</Link>
                     </li>
                     <li>
+                      <Link exact="true" to="/personsreferences">Pessoas de referência</Link>
+                    </li>
+                    <li>
+                      <Link exact="true" to="/residentialaddress">Endereço</Link>
+                    </li>
+                    <li>
+                      <Link exact="true" to="/socialfamilyinformations">Informações Sociais e Familiares</Link>
+                    </li>
+                    <li>
                       <a className="nav-link-collapse collapsed" data-toggle="collapse" href="#item-elderly_evaluete">Avaliação da pessoa idosa</a>
                       <ul className="sidenav-third-level collapse" id="item-elderly_evaluete">
                         <li>
-                          <a href="#">2.1 Medicamentos, fitoterápicos, suplementos e vitaminas em uso</a>
+                          <Link exact="true" to="/medicinesherbalremedies">2.1 Medicamentos, fitoterápicos, suplementos e vitaminas em uso</Link>
                         </li>
                         <li>
-                          <a href="#">2.2 Diagnósticos e internações prévios</a>
+                          <Link exact="true" to="/diagnosisprevioushospitalization">2.2 Diagnósticos e internações prévios</Link>
                         </li>
                         <li>
-                          <a href="#">2.3 Cirurgias realizadas</a>
+                          <Link exact="true" to="/surgeriesperformed">2.3 Cirurgias realizadas</Link>
                         </li>
                         <li>
-                          <a href="#">2.4 Reações adversas ou alergias a medicamentos</a>
+                          <Link exact="true" to="/reactionorallergy">2.4 Reações adversas ou alergias a medicamentos</Link>
                         </li>
                         <li>
-                          <a href="#">2.5 Dados antropométrico</a>
+                          <Link exact="true" to="/anthropometricdata">2.5 Dados antropométrico</Link>
                         </li>
                         <li>
-                          <a href="#">2.6 Protocolo de identificação do idoso vulnerável (VES-13)</a>
+                          <Link exact="true" to="/vulnerableelderly">2.6 Protocolo de identificação do idoso vulnerável (VES-13)</Link>
                         </li>
                         <li>
-                          <a href="#">2.7 Informações complementares </a>
+                          <Link exact="true" to="/disabilities">Incapacidades</Link>
                         </li>
                         <li>
-                          <a href="#">2.8 Avaliação ambienta</a>
+                          <Link exact="true" to="/complementaryinformation">2.7 Informações complementares </Link>
                         </li>
                         <li>
-                          <a href="#">2.9 Quedas</a>
+                          <Link exact="true" to="/environmentalassessment">2.8 Avaliação ambienta</Link>
                         </li>
                         <li>
-                          <a href="#">2.10 Identificação de dor crônica</a>
+                          <Link exact="true" to="/falls">2.9 Quedas</Link>
                         </li>
                         <li>
-                          <a href="#">2.11 Hábitos de vida</a>
+                          <Link exact="true" to="/identificationchronicpain">2.10 Identificação de dor crônica</Link>
+                        </li>
+                        <li>
+                          <Link exact="true" to="/identificationchronicpainb">2.10 Itensidade da dor</Link>
+                        </li>
+                        <li>
+                          <Link exact="true" to="/livinghabits">2.11 Hábitos de vida</Link>
                         </li>
                       </ul>
                     </li>
                     <li>
-                      <a href="#">Controle de pressão arterial</a>
+                      <Link exact="true" to="/bloodpressurecontrols">Controle de pressão arterial</Link>
                     </li>
                     <li>
-                      <a href="#">Controle de glicemia</a>
+                      <Link exact="true" to="/bloodglucosecontrols">Controle de glicemia</Link>
                     </li>
                     <li>
-                      <a href="#">Calendário de vacinação</a>
+                      <Link exact="true" to="/vaccinationcalendar">Calendário de vacinação</Link>
                     </li>
                     <li>
-                      <a className="nav-link-collapse collapsed" data-toggle="collapse" href="#item-schedule">Avaliação de saúde bucal</a>
+                      <a className="nav-link-collapse collapsed" data-toggle="collapse" href="#item-schedule">Saúde bucal</a>
                       <ul className="sidenav-third-level collapse" id="item-schedule">
                         <li>
-                          <a href="#">Agenda de consultas e exames</a>
+                          <Link exact="true" to="/oralhealthassessment">Avaliação</Link>
                         </li>
                         <li>
-                          <a href="#">Atualizações da caderneta</a>
+                          <Link exact="true" to="/dentalprosthesis">Próteses</Link>
                         </li>
                       </ul>
+                    </li>
+                    <li>
+                      <Link exact="true" to="/consultationexamination">Agenda Consultas e Exames</Link>
                     </li>
                   </ul>
                 </li>
@@ -150,11 +192,35 @@ class App extends React.Component {
               </div>
             </div>
           </div>
+            {/*App Routes*/}
             <Route path="/index" component={Home} />
             <Route path="/listings" component={Listings} />
             <Route path="/results" component={Results} />
             <Route path="/about" component={About} />
+            {/*Evaluation Forms Routes*/}
             <Route path="/personaldata" component={PersonalData} />
+            <Route path="/personsreferences" component={PersonsReferences} />
+            <Route path="/residentialaddress" component={ResidentialAddress} />
+            <Route path="/socialfamilyinformations" component={SocialFamilyInformations} />
+            <Route path="/medicinesherbalremedies" component={MedicinesHerbalRemedies} />
+            <Route path="/diagnosisprevioushospitalization" component={DiagnosisPreviousHospitalization} />
+            <Route path="/surgeriesperformed" component={SurgeriesPerformed} />
+            <Route path="/reactionorallergy" component={ReactionOrAllergy} />
+            <Route path="/anthropometricdata" component={AnthropometricData} />
+            <Route path="/vulnerableelderly" component={VulnerableElderly} />
+            {/*<Route path="/disabilities" component="" />*/}
+            <Route path="/complementaryinformation" component={ComplementaryInformation} />
+            <Route path="/environmentalassessment" component={EnvironmentalAssessment} />
+            <Route path="/falls" component={Falls} />
+            <Route path="/identificationchronicpain" component={IdentificationChronicPain} />
+            <Route path="/identificationchronicpainb" component={IdentificationChronicPainB} />
+            <Route path="/livinghabits" component={LivingHabits} />
+            <Route path="/bloodpressurecontrols" component={BloodPressureControls} />
+            <Route path="/bloodglucosecontrols" component={BloodGlucoseControls} />
+            <Route path="/vaccinationcalendar" component={VaccinationCalendar} />
+            <Route path="/oralhealthassessment" component={OralHealthAssessment} />
+            <Route path="/dentalprosthesis" component={DentalProsthesis} />
+            <Route path="/consultationexamination" component={ConsultationExamination} />
         </div>
       </Router>
     )

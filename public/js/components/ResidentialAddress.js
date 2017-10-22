@@ -2,7 +2,7 @@ import React from 'react';
 import $ from 'jquery';
 import SideMenu from './SideMenu';
 
-class PersonalData extends React.Component {
+class ResidentialAddress extends React.Component {
   
   constructor (props) {
     super(props);
@@ -147,7 +147,7 @@ class PersonalData extends React.Component {
 
   setTelePhone1a(evt) {
     this.setState({telephone_1_a: evt.target.value}); 
-  }
+  }  
 
   setCellPhone1a(evt) {
     this.setState({cell_phone_1_a: evt.target.value}); 
@@ -159,4 +159,4 @@ class PersonalData extends React.Component {
 
 }
 
-export default PersonsReferences
+export default ResidentialAddress

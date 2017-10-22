@@ -2,7 +2,7 @@ import React from 'react';
 import $ from 'jquery';
 import SideMenu from './SideMenu';
 
-class PersonalData extends React.Component {
+class LivingHabits extends React.Component {
   
   constructor (props) {
     super(props);
@@ -246,9 +246,13 @@ class PersonalData extends React.Component {
   }
 
   setDrinkMorning211(evt) {
-    this.setState({drinkmorning_2_11: evt.target.value});  
+    this.setState({drinkmorning_2_11: evt.target.value});
+  }
+
+  setSuspendAlcohol211(evt) {    
+    this.setState({suspendalcohol_2_11: evt.target.value});
   }
 
 }
 
-export default PersonsReferences
+export default LivingHabits
