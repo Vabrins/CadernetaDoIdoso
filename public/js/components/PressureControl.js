@@ -15,7 +15,7 @@ class PersonalData extends React.Component {
 
   componentWillMount() {
     $.ajax({
-      url: "http://127.0.0.1:8000/api/v1/bloodpressurecontrols",
+      url: "http://127.0.0.1:8000/api/v1/pressurecontrol",
       dataType: "json",
       method: "GET",
       success:function(response){
@@ -28,7 +28,7 @@ class PersonalData extends React.Component {
     evt.preventDefault();
 
     $.ajax({
-      url: "http://127.0.0.1:8000/api/v1/bloodpressurecontrols",
+      url: "http://127.0.0.1:8000/api/v1/pressurecontrol",
       contentType: 'application/json',
       dataType: 'json',
       method: "POST",
@@ -47,7 +47,7 @@ class PersonalData extends React.Component {
  render () {
   return (
           <div className="container" >
-            <form id="bloodpressurecontrols" method="post">
+            <form id="pressurecontrol" method="post">
               <div className="row">
                 <div className="col">
                   <fieldset>

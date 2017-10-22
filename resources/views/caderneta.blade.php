@@ -449,6 +449,28 @@
 						<input type="text" className="answers-83" id="2.6-domestic" name="answers[2.6[domestic]]"  />
 						<br/><br/>
 
+						<h2> 2.6a INCAPACIDADES </h2>
+						<label>Por causa de sua saúde ou condição física, você deixou de fazer compras?  </label><br/>
+						<input type="radio" id="2.6a-stopshopping-y" name="answers[2.6a[stopshopping]]" value="1"  />Sim
+						<input type="radio" id="2.6a-stopshopping-n" name="answers[2.6a[stopshopping]]" value="0"  />Não
+						<br/><br/>
+						<label>Por causa de sua saúde ou condição física, você deixou de controlar seu dinheiro, seus gastos ou de pagar suas contas? </label><br/>
+						<input type="radio" id="2.6a-stopmoney-y" name="answers[2.6a[stopmoney]]" value="1"  />Sim
+						<input type="radio" id="2.6a-stopmoney-n" name="answers[2.6a[stopmoney]]" value="0"  />Não
+						<br/><br/>
+						<label>Por causa de sua saúde ou condição física, você deixou de caminhar dentro de casa? </label><br/>
+						<input type="radio" id="2.6a-stopwalking-y" name="answers[2.6a[stopwalking]]" value="1"  />Sim
+						<input type="radio" id="2.6a-stopwalking-n" name="answers[2.6a[stopwalking]]" value="0"  />Não
+						<br/><br/>
+						<h2> HUMOR </h2>
+						<label>Por causa de sua saúde ou condição física, você deixou de realizar tarefas domésticas leves,como lavar louça ou fazer limpeza leve? </label><br/>
+						<input type="radio" id="2.6a-stopdoing-y" name="answers[2.6a[stopdoing]]" value="1"  />Sim
+						<input type="radio" id="2.6a-stopdoing-n" name="answers[2.6a[stopdoing]]" value="0"  />Não
+						<br/><br/>
+						<label>Por causa de sua saúde ou condição física, você deixou de tomar banho sozinho(a)? </label><br/>
+						<input type="radio" id="2.6a-stopshowers-y" name="answers[2.6a[stopshowers]]" value="1"  />Sim
+						<input type="radio" id="2.6a-stopshowers-n" name="answers[2.6a[stopshowers]]" value="0"  />Não
+						<br/><br/>
 
 						<h2> 2.7 INFORMAÇÕES COMPLEMENTARES </h2>
 						<h2> COGNIÇÃO </h2>

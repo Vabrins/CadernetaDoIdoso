@@ -40,6 +40,8 @@ Route::group(['prefix' => '/v1'], function () {
 	Route::resource('/surgeriesperformed', 'SurgeriesPerformedController');
 	Route::resource('/vaccinationcalendar', 'VaccinationCalendarController');
 	Route::resource('/vulnerableelderly', 'VulnerableElderlyController');
+	Route::resource('/disabilities', 'DisabilitiesController');
+	Route::resource('/falls', 'FallsController');
 	Route::resource('/elderly', 'ElderlyController');
 	Route::resource('/company', 'CompanyController');
 });
