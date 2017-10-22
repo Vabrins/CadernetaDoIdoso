@@ -7,9 +7,8 @@ class PersonalData extends React.Component {
   constructor (props) {
     super(props);
 
-    this.state = {persons_references : [], id_historys:'1', id_elderlies:'1', health_2_6:'' , crouch_2_6:'', tocharge_2_6:'', arms_2_6:'', write_2_6:'', walk_2_6:'', domestic_2_6:''};
+    this.state = {persons_references : [], id_historys:'1', id_elderlies:'1', crouch_2_6:'', tocharge_2_6:'', arms_2_6:'', write_2_6:'', walk_2_6:'', domestic_2_6:''};
     this.sendForm = this.sendForm.bind(this);
-    this.setHealth26 = this.setHealth26.bind(this);
     this.setCrouch26 = this.setCrouch26.bind(this);
     this.setTocharge26 = this.setTocharge26.bind(this);
     this.setArms26 = this.setArms26.bind(this);
@@ -56,9 +55,6 @@ class PersonalData extends React.Component {
               <div className="row">
                 <div className="col">
                   <fieldset>
-                  <label>Em geral, comparando-se com outras pessoas da sua idade, você diria que sua saúde é:</label><br/>
-                  <input type="text" value={this.state.health_2_6} onChange={this.setHealth26} className="answers-78a" id="2.6-health" name="answers[2.6[health]]"  />
-                  <br/><br/>
                   <label>Curvar-se, agachar ou ajoelhar-se</label><br/>
                   <input type="text" value={this.state.crouch_2_6} onChange={this.setCrouch26} className="answers-78" id="2.6-crouch" name="answers[2.6[crouch]]"  />
                   <br/><br/>
@@ -96,10 +92,6 @@ class PersonalData extends React.Component {
     )
   }
 
-  setHealth26(evt) {
-    this.setState({health_2_6: evt.target.value});  
-  }
-  
   setCrouch26(evt) {
     this.setState({crouch_2_6: evt.target.value});  
   }

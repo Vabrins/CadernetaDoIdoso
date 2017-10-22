@@ -365,7 +365,7 @@
 						<input type="text"  maxLength="5" className="answers-63" id="2.2-insufficiency" name="answers[2.2[insufficiency]]"  />
 						<br/><br/>
 						<label>Úlcera péptica</label><br/>
-						<input type="text"  maxLength="5" className="answers-64" id="2.2-Ulcer" name="answers[2.2[ulcer]]"  />
+						<input type="text"  maxLength="5" className="answers-64" id="2.2-Ulcer" name="answers[2.2[Ulcer]]"  />
 						<br/><br/>
 
 						<h2> CONDIÇÕES FREQUENTES </h2>
@@ -427,9 +427,6 @@
 						<br/><br/>
 
 						<h2> 2.6 PROTOCOLO DE IDENTIFICAÇÃO DO IDOSO VULNERÁVEL (VES-13 </h2>
-						<label>Em geral, comparando-se com outras pessoas da sua idade, você diria que sua saúde é:</label><br/>
-						<input type="text" className="answers-78a" id="2.6-health" name="answers[2.6[health]]"  />
-						<br/><br/>
 						<label>Curvar-se, agachar ou ajoelhar-se</label><br/>
 						<input type="text" className="answers-78" id="2.6-crouch" name="answers[2.6[crouch]]"  />
 						<br/><br/>
@@ -440,7 +437,7 @@
 						<input type="text" className="answers-80" id="2.6-arms" name="answers[2.6[arms]]"  />
 						<br/><br/>
 						<label>Escrever ou manusear e segurar pequenos objetos</label><br/>
-						<input type="text" className="answers-81" id="2.6-write" name="answers[2.6[Write]]"  />
+						<input type="text" className="answers-81" id="2.6-Write" name="answers[2.6[Write]]"  />
 						<br/><br/>
 						<label>Andar 400 metros (aproximadamente quatro quarteirões)</label><br/>
 						<input type="text" className="answers-82" id="2.6-walk" name="answers[2.6[walk]]"  />
@@ -509,17 +506,17 @@
 						<br/><br/>
 						<h2> Cozinha e quarto </h2>
 						<label>Armários baixos, sem necessidade do uso de escada  </label><br/>
-						<input type="radio" className="answers-96" id="2.8-cabinets-y" name="answers[2.8[cabinets]]" value="y"  />Sim
-						<input type="radio" className="answers-96" id="2.8-cabinets-n" name="answers[2.8[cabinets]]" value="n"  />Não
+						<input type="radio" className="answers-96" id="2.8-Cabinets-y" name="answers[2.8[Cabinets]]" value="y"  />Sim
+						<input type="radio" className="answers-96" id="2.8-Cabinets-n" name="answers[2.8[Cabinets]]" value="n"  />Não
 						<br/><br/>
 						<h2> Escada </h2>
 						<label>Piso antiderrapante  </label><br/>
-						<input type="radio" className="answers-97" id="2.8-nonslipfloor-y" name="answers[2.8[nonslipfloor]]" value="y"  />Sim
-						<input type="radio" className="answers-97" id="2.8-nonslipfloor-n" name="answers[2.8[nonslipfloor]]" value="n"  />Não
+						<input type="radio" className="answers-97" id="2.8-Nonslipfloor-y" name="answers[2.8[Nonslipfloor]]" value="y"  />Sim
+						<input type="radio" className="answers-97" id="2.8-Nonslipfloor-n" name="answers[2.8[Nonslipfloor]]" value="n"  />Não
 						<br/><br/>
 						<label>Corrimão dos dois lados e firme </label><br/>
-						<input type="radio" className="answers-98" id="2.8-handrail-y" name="answers[2.8[handrail]]" value="y"  />Sim
-						<input type="radio" className="answers-98" id="2.8-handrail-n" name="answers[2.8[handrail]]" value="n"  />Não
+						<input type="radio" className="answers-98" id="2.8-Handrail-y" name="answers[2.8[Handrail]]" value="y"  />Sim
+						<input type="radio" className="answers-98" id="2.8-Handrail-n" name="answers[2.8[Handrail]]" value="n"  />Não
 						<br/><br/>
 
 						<h2> 2.9 QUEDAS </h2>
@@ -527,12 +524,10 @@
 						<input type="text" maxLength="12" className="answers-99" id="2.9-falldate" name="answers[2.9[falldate]]"  />
 						<br/><br/>
 						<label>Qual foi o local da queda?</label><br/>
-						<input type="radio" className="answers-100" id="2.9-localfall-y" name="answers[2.9[localfall]]" value="y"  />Dentro de casa
-						<input type="radio" className="answers-100" id="2.9-localfall-n" name="answers[2.9[localfall]]" value="n"  />Fora de casa
+						<input type="radio" className="answers-100" id="2.9-localfall-i" name="answers[2.9[localfall]]" value="y"  />Dentro de casa
+						<input type="radio" className="answers-100" id="2.9-localfall-o" name="answers[2.9[localfall]]" value="n"  />Fora de casa
 						<br/><br/>
 						<label>A queda causou alguma fratura?</label><br/>
-						<input type="radio" className="answers-101" id="2.9a-fracture-y" name="answers[2.9[fracture]]" value="y"  />Sim
-						<input type="radio" className="answers-101" id="2.9a-fracture-n" name="answers[2.9[fracture]]" value="n"  />Não
 						<input type="text" className="answers-101" id="2.9-fracture" name="answers[2.9[fracture]]"  />
 						<br/><br/>
 						<label>Você parou de realizar alguma atividade por medo de cair novamente?</label><br/>
@@ -562,13 +557,11 @@
 						<label>Data</label><br/>
 						<input type="date" className="answers-108" id="2.10b-data" name="answers[2.10b[data]]"  /><br/>
 						<br/><br/>
-						<label>Local da dor</label><br/>
-						<input type="text"  className="answers-109a" id="2.10b-placeofpain" name="answers[2.10b[placeofpain]]"  />
 						<label>Intensidade da dor</label><br/>
-						<input type="number"  className="answers-109" id="2.10b-intensityofpain" name="answers[2.10b[intensityofpain]]"  />
+						<input type="number"  className="answers-109" id="2.10b-intensityofpain" name="answers[2.10b[crouch]]"  />
 						<br/><br/>
 
-						<h2> 2.11 HÁBITOS DE VIDA </h2>	
+						<h2> 2.11 HÁBITOS DE VIDA </h2>
 						<h2> Identificação de hábitos de vida </h2>
 						<h2> Interesse social e lazer </h2>
 						<label>Você frequenta centros-dia, clubes ou grupos de convivência? </label><br/>
