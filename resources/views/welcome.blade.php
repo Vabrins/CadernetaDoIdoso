@@ -68,26 +68,24 @@
     </head>
     <body id="welcome">
         <div class="flex-center position-ref full-height">
-            @if (Route::has('login'))
-                <div class="top-right links">
-                    @auth
-                        <a href="{{ url('/home') }}">Home</a>
-                    @else
-                        <a href="{{ route('login') }}">Login</a>
-                        <a href="{{ route('register') }}">Registre-se</a>
-                    @endauth
-                </div>
-            @endif
+            <div class="top-right links">
+                    <a href="https://github.com/Vabrins/CadernetaDoIdoso">GitHub</a>
+            </div>
 
             <div class="content">
                 <div class="title m-b-md content-title">
                     Caderneta do Idoso
                 </div>
-
-                <div class="links">
-                    <a class="links-item" href="{{ url('/index') }}">Formulário de questões</a>
-                    <a class="links-item" href="https://github.com/Vabrins/CadernetaDoIdoso">GitHub</a>
-                </div>
+                @if (Route::has('login'))
+                    <div class="links">
+                        @auth
+                            <a href="{{ url('/index') }}">Acesso a Caderneta Digital</a>
+                        @else
+                            <a class="links-item" href="{{ route('login') }}">Entrar</a>
+                            <a class="links-item" href="{{ route('register') }}">Registre-se</a>
+                        @endauth
+                    </div>
+                @endif
             </div>
         </div>
     </body>

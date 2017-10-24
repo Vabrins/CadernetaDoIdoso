@@ -16,15 +16,15 @@ import SurgeriesPerformed from './SurgeriesPerformed';
 import ReactionOrAllergy from './ReactionOrAllergy';
 import AnthropometricData from './AnthropometricData';
 import VulnerableElderly from './VulnerableElderly';
-// Disabilities
+import Disabilities from './Disabilities';
 import ComplementaryInformation from './ComplementaryInformation';
 import EnvironmentalAssessment from './EnvironmentalAssessment';
 import Falls from './Falls';
 import IdentificationChronicPain from './IdentificationChronicPain';
 import IdentificationChronicPainB from './IdentificationChronicPainB';
 import LivingHabits from './LivingHabits';
-import BloodPressureControls from './BloodPressureControls';
-import BloodGlucoseControls from './BloodGlucoseControls';
+import PressureControl from './PressureControl';
+import GlucoseControl from './GlucoseControl';
 import VaccinationCalendar from './VaccinationCalendar';
 import OralHealthAssessment from './OralHealthAssessment';
 import DentalProsthesis from './DentalProsthesis';
@@ -112,10 +112,10 @@ class App extends React.Component {
                       </ul>
                     </li>
                     <li>
-                      <Link exact="true" to="/bloodpressurecontrols">Controle de pressão arterial</Link>
+                      <Link exact="true" to="/pressurecontrol">Controle de pressão arterial</Link>
                     </li>
                     <li>
-                      <Link exact="true" to="/bloodglucosecontrols">Controle de glicemia</Link>
+                      <Link exact="true" to="/glucosecontrol">Controle de glicemia</Link>
                     </li>
                     <li>
                       <Link exact="true" to="/vaccinationcalendar">Calendário de vacinação</Link>
@@ -192,12 +192,12 @@ class App extends React.Component {
               </div>
             </div>
           </div>
-            {/*App Routes*/}
+          {/*App Routes*/}
             <Route path="/index" component={Home} />
             <Route path="/listings" component={Listings} />
             <Route path="/results" component={Results} />
             <Route path="/about" component={About} />
-            {/*Evaluation Forms Routes*/}
+          {/*Evaluation Forms Routes*/}
             <Route path="/personaldata" component={PersonalData} />
             <Route path="/personsreferences" component={PersonsReferences} />
             <Route path="/residentialaddress" component={ResidentialAddress} />
@@ -208,15 +208,15 @@ class App extends React.Component {
             <Route path="/reactionorallergy" component={ReactionOrAllergy} />
             <Route path="/anthropometricdata" component={AnthropometricData} />
             <Route path="/vulnerableelderly" component={VulnerableElderly} />
-            {/*<Route path="/disabilities" component="" />*/}
+            <Route path="/disabilities" component={Disabilities} />
             <Route path="/complementaryinformation" component={ComplementaryInformation} />
             <Route path="/environmentalassessment" component={EnvironmentalAssessment} />
             <Route path="/falls" component={Falls} />
             <Route path="/identificationchronicpain" component={IdentificationChronicPain} />
             <Route path="/identificationchronicpainb" component={IdentificationChronicPainB} />
             <Route path="/livinghabits" component={LivingHabits} />
-            <Route path="/bloodpressurecontrols" component={BloodPressureControls} />
-            <Route path="/bloodglucosecontrols" component={BloodGlucoseControls} />
+            <Route path="/pressurecontrol" component={PressureControl} />
+            <Route path="/glucosecontrol" component={GlucoseControl} />
             <Route path="/vaccinationcalendar" component={VaccinationCalendar} />
             <Route path="/oralhealthassessment" component={OralHealthAssessment} />
             <Route path="/dentalprosthesis" component={DentalProsthesis} />
