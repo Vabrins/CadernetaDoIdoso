@@ -46,9 +46,16 @@
             <div class="modal-body">Você tem certeza que quer sair? <br/> Dados não salvos serão perdidos.</div>
             <div class="modal-footer">
               <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancelar</button>
-              <a class="btn btn-primary" href="/">Sair</a>
+              <a class="btn btn-primary" href="{{ route('logout') }}"
+                                            onclick="event.preventDefault();
+                                                     document.getElementById('logout-form').submit();">
+              Sair
+            </a>
             </div>
           </div>
+          <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+            {{ csrf_field() }}
+          </form>
         </div>
       </div>
       <!-- React components modules -->
