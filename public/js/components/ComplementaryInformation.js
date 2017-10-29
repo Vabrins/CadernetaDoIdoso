@@ -7,13 +7,19 @@ class ComplementaryInformation extends React.Component {
   constructor (props) {
     super(props);
 
-    this.state = {persons_references : [], id_historys:'1', id_elderlies:'1', forgotten_2_7:'', lastmonths_2_7:'', activity_2_7:'', sad_2_7:'', pleasure_2_7:''};
+    this.state = {persons_references : [], id_historys:'1', id_elderlies:'1',
+    some_family_mem_fri_said_that_are_get_forg_2_7:'',
+    forgetfulness_is_getting_worse_in_last_months_2_7:'',
+    forgetfulness_is_preventing_of_some_daily_activity_2_7:'', 
+    in_the_last_mon_were_dismayed_sad_hop_2_7:'', 
+    in_the_last_mon_lost_int_pleas_act_form_pleas_2_7:''};
+
     this.sendForm = this.sendForm.bind(this);
-    this.setForgotten27 = this.setForgotten27.bind(this);
-    this.setLastmonths27 = this.setLastmonths27.bind(this);
-    this.setActivity27 = this.setActivity27.bind(this);
-    this.setSad27 = this.setSad27.bind(this);
-    this.setPleasure27 = this.setPleasure27.bind(this);
+    this.setSomeFamilyMemFriSaidThatAreGetForg27 = this.setSomeFamilyMemFriSaidThatAreGetForg27.bind(this);
+    this.setForgetfulnessIsGettingWorseInLastMonths27 = this.setForgetfulnessIsGettingWorseInLastMonths27.bind(this);
+    this.setForgetfulnessIsPreventingOfSomeDailyActivity27 = this.setForgetfulnessIsPreventingOfSomeDailyActivity27.bind(this);
+    this.setInTheLastMonWereDismayedSadHop27 = this.setInTheLastMonWereDismayedSadHop27.bind(this);
+    this.setInTheLastMonLostIntPleasActFormPleas27 = this.setInTheLastMonLostIntPleasActFormPleas27.bind(this);
   }
 
   componentWillMount() {
@@ -56,25 +62,25 @@ class ComplementaryInformation extends React.Component {
                   <fieldset>
                   <h2> COGNIÇÃO </h2>
                   <label>Algum familiar ou amigo(a) falou que você está ficando esquecido(a)?  </label><br/>
-                  <input type="radio"  value={this.state.forgotten_2_7} onChange={this.setForgotten27} className="answers-84" id="2.7-forgotten-y" name="answers[2.7[forgotten]]" value="1"  />Sim
-                  <input type="radio"  value={this.state.forgotten_2_7} onChange={this.setForgotten27} className="answers-84" id="2.7-forgotten-n" name="answers[2.7[forgotten]]" value="0"  />Não
+                  <input type="radio"  checked={this.state.some_family_mem_fri_said_that_are_get_forg_2_7 === '1'} onChange={this.setSomeFamilyMemFriSaidThatAreGetForg27} className="answers-84" id="2.7-some_family_mem_fri_said_that_are_get_forg-y" name="answers[2.7[some_family_mem_fri_said_that_are_get_forg]]" value="1"  />Sim
+                  <input type="radio"  checked={this.state.some_family_mem_fri_said_that_are_get_forg_2_7 === '0'} onChange={this.setSomeFamilyMemFriSaidThatAreGetForg27} className="answers-84" id="2.7-some_family_mem_fri_said_that_are_get_forg-n" name="answers[2.7[some_family_mem_fri_said_that_are_get_forg]]" value="0"  />Não
                   <br/><br/>
                   <label>O esquecimento está piorando nos últimos meses?  </label><br/>
-                  <input type="radio"  value={this.state.lastmonths_2_7} onChange={this.setLastmonths27} className="answers-85" id="2.7-lastmonths-y" name="answers[2.7[lastmonths]]" value="1"  />Sim
-                  <input type="radio"  value={this.state.lastmonths_2_7} onChange={this.setLastmonths27} className="answers-85" id="2.7-lastmonths-n" name="answers[2.7[lastmonths]]" value="0"  />Não
+                  <input type="radio"  checked={this.state.forgetfulness_is_getting_worse_in_last_months_2_7 === '1'} onChange={this.setForgetfulnessIsGettingWorseInLastMonths27} className="answers-85" id="2.7-forgetfulness_is_getting_worse_in_last_months-y" name="answers[2.7[forgetfulness_is_getting_worse_in_last_months]]" value="1"  />Sim
+                  <input type="radio"  checked={this.state.forgetfulness_is_getting_worse_in_last_months_2_7 === '0'} onChange={this.setForgetfulnessIsGettingWorseInLastMonths27} className="answers-85" id="2.7-forgetfulness_is_getting_worse_in_last_months-n" name="answers[2.7[forgetfulness_is_getting_worse_in_last_months]]" value="0"  />Não
                   <br/><br/>
                   <label>O esquecimento está impedindo a realização de alguma atividade do cotidiano?  </label><br/>
-                  <input type="radio"  value={this.state.activity_2_7} onChange={this.setActivity27} className="answers-86" id="2.7-activity-y" name="answers[2.7[activity]]" value="1"  />Sim
-                  <input type="radio"  value={this.state.activity_2_7} onChange={this.setActivity27} className="answers-86" id="2.7-activity-n" name="answers[2.7[activity]]" value="0"  />Não
+                  <input type="radio"  checked={this.state.forgetfulness_is_preventing_of_some_daily_activity_2_7 === '1'} onChange={this.setForgetfulnessIsPreventingOfSomeDailyActivity27} className="answers-86" id="2.7-forgetfulness_is_preventing_of_some_daily_activity-y" name="answers[2.7[forgetfulness_is_preventing_of_some_daily_activity]]" value="1"  />Sim
+                  <input type="radio"  checked={this.state.forgetfulness_is_preventing_of_some_daily_activity_2_7 === '0'} onChange={this.setForgetfulnessIsPreventingOfSomeDailyActivity27} className="answers-86" id="2.7-forgetfulness_is_preventing_of_some_daily_activity-n" name="answers[2.7[forgetfulness_is_preventing_of_some_daily_activity]]" value="0"  />Não
                   <br/><br/>
                   <h2> HUMOR </h2>
                   <label>No último mês, você ficou com desânimo, tristeza ou desesperança? </label><br/>
-                  <input type="radio"  value={this.state.sad_2_7} onChange={this.setSad27} className="answers-87" id="2.7-sad-y" name="answers[2.7[sad]]" value="1"  />Sim
-                  <input type="radio"  value={this.state.sad_2_7} onChange={this.setSad27} className="answers-87" id="2.7-sad-n" name="answers[2.7[sad]]" value="0"  />Não
+                  <input type="radio"  checked={this.state.in_the_last_mon_were_dismayed_sad_hop_2_7 === '1'} onChange={this.setInTheLastMonWereDismayedSadHop27} className="answers-87" id="2.7-in_the_last_mon_were_dismayed_sad_hop-y" name="answers[2.7[in_the_last_mon_were_dismayed_sad_hop]]" value="1"  />Sim
+                  <input type="radio"  checked={this.state.in_the_last_mon_were_dismayed_sad_hop_2_7 === '0'} onChange={this.setInTheLastMonWereDismayedSadHop27} className="answers-87" id="2.7-in_the_last_mon_were_dismayed_sad_hop-n" name="answers[2.7[in_the_last_mon_were_dismayed_sad_hop]]" value="0"  />Não
                   <br/><br/>
                   <label>No último mês, você perdeu o interesse ou o prazer por atividades anteriormente prazerosas? </label><br/>
-                  <input type="radio"  value={this.state.pleasure_2_7} onChange={this.setPleasure27} className="answers-88" id="2.7-pleasure-y" name="answers[2.7[pleasure]]" value="1"  />Sim
-                  <input type="radio"  value={this.state.pleasure_2_7} onChange={this.setPleasure27} className="answers-88" id="2.7-pleasure-n" name="answers[2.7[pleasure]]" value="0"  />Não
+                  <input type="radio"  checked={this.state.in_the_last_mon_lost_int_pleas_act_form_pleas_2_7 === '1'} onChange={this.setInTheLastMonLostIntPleasActFormPleas27} className="answers-88" id="2.7-in_the_last_mon_lost_int_pleas_act_form_pleas-y" name="answers[2.7[in_the_last_mon_lost_int_pleas_act_form_pleas]]" value="1"  />Sim
+                  <input type="radio"  checked={this.state.in_the_last_mon_lost_int_pleas_act_form_pleas_2_7 === '0'} onChange={this.setInTheLastMonLostIntPleasActFormPleas27} className="answers-88" id="2.7-in_the_last_mon_lost_int_pleas_act_form_pleas-n" name="answers[2.7[in_the_last_mon_lost_int_pleas_act_form_pleas]]" value="0"  />Não
                   <br/><br/>
                   </fieldset>
                 </div>
@@ -95,24 +101,24 @@ class ComplementaryInformation extends React.Component {
     )
   }
 
-  setForgotten27(evt) {
-    this.setState({forgotten_2_7: evt.target.value});  
+  setSomeFamilyMemFriSaidThatAreGetForg27(evt) {
+    this.setState({some_family_mem_fri_said_that_are_get_forg_2_7: evt.target.value});  
   }
 
-  setLastmonths27(evt) {
-    this.setState({lastmonths_2_7: evt.target.value});  
+  setForgetfulnessIsGettingWorseInLastMonths27(evt) {
+    this.setState({forgetfulness_is_getting_worse_in_last_months_2_7: evt.target.value});  
   }
 
-  setActivity27(evt) {
-    this.setState({activity_2_7: evt.target.value});  
+  setForgetfulnessIsPreventingOfSomeDailyActivity27(evt) {
+    this.setState({forgetfulness_is_preventing_of_some_daily_activity_2_7: evt.target.value});  
   }
 
-  setSad27(evt) {
-    this.setState({sad_2_7: evt.target.value});  
+  setInTheLastMonWereDismayedSadHop27(evt) {
+    this.setState({in_the_last_mon_were_dismayed_sad_hop_2_7: evt.target.value});  
   }
 
-  setPleasure27(evt) {
-    this.setState({pleasure_2_7: evt.target.value});  
+  setInTheLastMonLostIntPleasActFormPleas27(evt) {
+    this.setState({in_the_last_mon_lost_int_pleas_act_form_pleas_2_7: evt.target.value});  
   }
 
 }

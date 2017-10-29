@@ -7,10 +7,10 @@ class VaccinationCalendar extends React.Component {
   constructor (props) {
     super(props);
 
-    this.state = {persons_references : [], id_historys:'1', id_elderlies:'1', name_2_11c:'', data_2_11c:'', lot_2_11c:'', signature_2_11c:'', dose_2_11c:''};
+    this.state = {persons_references : [], id_historys:'1', id_elderlies:'1', name_2_11c:'', date_2_11c:'', lot_2_11c:'', signature_2_11c:'', dose_2_11c:''};
     this.sendForm = this.sendForm.bind(this);
     this.setName211c = this.setName211c.bind(this);
-    this.setData211c = this.setData211c.bind(this);
+    this.setDate211c = this.setDate211c.bind(this);
     this.setLot211c = this.setLot211c.bind(this);
     this.setSignature211c = this.setSignature211c.bind(this);
     this.setDose211c = this.setDose211c.bind(this);
@@ -59,7 +59,7 @@ class VaccinationCalendar extends React.Component {
                   <input type="text"  value={this.state.name_2_11c} onChange={this.setName211c} className="answers-134" id="2.11c-name" name="answers[2.11c[name]]"  />
                   <br/><br/>
                   <label>Data</label><br/>
-                  <input type="date" value={this.state.data_2_11c} onChange={this.setData211c} className="answers-135" id="2.11c-data" name="answers[2.11c[data]]"  />
+                  <input type="date" value={this.state.date_2_11c} onChange={this.setDate211c} className="answers-135" id="2.11c-date" name="answers[2.11c[date]]"  />
                   <br/><br/>
                   <label>Lote</label><br/>
                   <input type="text"  value={this.state.lot_2_11c} onChange={this.setLot211c} className="answers-136" id="2.11c-lot" name="answers[2.11c[lot]]"  />
@@ -97,8 +97,8 @@ class VaccinationCalendar extends React.Component {
     this.setState({name_2_11c: evt.target.value});  
   }
 
-  setData211c(evt) {
-    this.setState({data_2_11c: evt.target.value});  
+  setDate211c(evt) {
+    this.setState({date_2_11c: evt.target.value});  
   }
 
   setLot211c(evt) {
