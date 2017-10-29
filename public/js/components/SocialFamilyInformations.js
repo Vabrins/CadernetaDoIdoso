@@ -46,9 +46,9 @@ class SocialFamilyInformation extends React.Component {
       method: "POST",
       data: JSON.stringify({ test: this.state }),
       success: function(response){
-        console.log(response); 
+        console.log(response); 
         console.log("enviado com sucesso");
-      }, 
+      }, 
       error: function(response){
         console.log("erro");
         console.log(response);
