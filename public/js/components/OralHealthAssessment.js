@@ -7,24 +7,41 @@ class OralHealthAssessment extends React.Component {
   constructor (props) {
     super(props);
 
-    this.state = {persons_references : [], id_historys:'1', id_elderlies:'1', alcohol_2_11d:'', smoke_2_11d:'', mucosalinjury_2_11d:'', drymouth_2_11d:'', whitetongue_2_11d:'', oralcandidiasis_2_11d:'', halitosis_2_11d:'', bacterialplaque_2_11d:'', residualroots_2_11d:'', gingivitis_2_11d:'', periodontitis_2_11d:'', caries_2_11d:'', dentalloss_2_11d:'', healthunit_2_11d:'', homecare_2_11d:'', dentalspecialties_2_11d:''};
+    this.state = {persons_references : [], id_historys:'1', id_elderlies:'1', 
+    alcohol_2_11d:'', 
+    smoke_2_11d:'', 
+    presence_of_lesion_on_the_buccal_mucosa_2_11d:'', 
+    dry_mouth_2_11d:'', 
+    white_tongue_2_11d:'', 
+    presence_of_lesion_on_the_buccal_mucosa_2_11d:'', 
+    presence_of_halitosis_2_11d:'', 
+    presence_of_bacterial_plaque_2_11d:'', 
+    plate_retentive_factors_2_11d:'', 
+    obvious_presence_of_gingivitis_2_11d:'', 
+    obvious_presence_of_periodontitis_2_11d:'', 
+    presence_of_caries_2_11d:'', 
+    dental_loss_in_last_year_2_11d:'', 
+    attendance_at_the_health_unit_2_11d:'', 
+    home_service_2_11d:'', 
+    forwarding_for_specialties_dental_2_11d:''};
+
     this.sendForm = this.sendForm.bind(this);
     this.setAlcohol211d = this.setAlcohol211d.bind(this);
     this.setSmoke211d = this.setSmoke211d.bind(this);
-    this.setMucosalInjury211d = this.setMucosalInjury211d.bind(this);
+    this.setPresenceOfLesionOnTheBuccalMucosa211d = this.setPresenceOfLesionOnTheBuccalMucosa211d.bind(this);
     this.setDrymouth211d = this.setDrymouth211d.bind(this);
     this.setWhiteTongue211d = this.setWhiteTongue211d.bind(this);
-    this.setOralCandidiasis211d = this.setOralCandidiasis211d.bind(this);
-    this.setHalitosis211d = this.setHalitosis211d.bind(this);
-    this.setBacterialPlaque211d = this.setBacterialPlaque211d.bind(this);
-    this.setResidualRoots211d = this.setResidualRoots211d.bind(this);
-    this.setGingivitis211d = this.setGingivitis211d.bind(this);
-    this.setPeriodontitis211d = this.setPeriodontitis211d.bind(this);
-    this.setCaries211d = this.setCaries211d.bind(this);
-    this.setDentalLoss211d = this.setDentalLoss211d.bind(this);
-    this.setHealtHunit211d = this.setHealtHunit211d.bind(this);
-    this.setHomeCare211d = this.setHomeCare211d.bind(this);
-    this.setDentalSpecialTies211d = this.setDentalSpecialTies211d.bind(this);
+    this.setPresenceOfLesionOnTheBuccalMucosa211d = this.setPresenceOfLesionOnTheBuccalMucosa211d.bind(this);
+    this.setPresenceOfHalitosis211d = this.setPresenceOfHalitosis211d.bind(this);
+    this.setPresenceOfBacterialPlaque211d = this.setPresenceOfBacterialPlaque211d.bind(this);
+    this.setPlateRetentiveFactors211d = this.setPlateRetentiveFactors211d.bind(this);
+    this.setObviousPresenceOfGingivitis211d = this.setObviousPresenceOfGingivitis211d.bind(this);
+    this.setObviousPresenceOfPeriodontitis211d = this.setObviousPresenceOfPeriodontitis211d.bind(this);
+    this.setPresenceOfCaries211d = this.setPresenceOfCaries211d.bind(this);
+    this.setDentalLossInLastYear211d = this.setDentalLossInLastYear211d.bind(this);
+    this.setAttendanceAtTheHealthUnit211d = this.setAttendanceAtTheHealthUnit211d.bind(this);
+    this.setHomeService211d = this.setHomeService211d.bind(this);
+    this.setForwardingForSpecialtiesDental211d = this.setForwardingForSpecialtiesDental211d.bind(this);
   }
 
   componentWillMount() {
@@ -68,70 +85,70 @@ class OralHealthAssessment extends React.Component {
                   <h2>AVALIAÇÃO DE SAÚDE BUCAL </h2>
                   <h2> HÁBITOS </h2>
                   <label>Álcool</label><br/>
-                  <input type="radio" value={this.state.alcohol_2_11d} onChange={this.setAlcohol211d} className="answers-139" id="2.11d-Alcohol-y" name="answers[2.11d[Alcohol]]" value="y"  />Sim
-                  <input type="radio" value={this.state.alcohol_2_11d} onChange={this.setAlcohol211d} className="answers-139" id="2.11d-Alcohol-n" name="answers[2.11d[Alcohol]]" value="n"  />Não
+                  <input type="radio" checked={this.state.alcohol_2_11d === '1'} onChange={this.setAlcohol211d} className="answers-139" id="2.11d-Alcohol-y" name="answers[2.11d[Alcohol]]" value="1"  />Sim
+                  <input type="radio" checked={this.state.alcohol_2_11d === '0'} onChange={this.setAlcohol211d} className="answers-139" id="2.11d-Alcohol-n" name="answers[2.11d[Alcohol]]" value="0"  />Não
                   <br/><br/>
                   <label>Fumo</label><br/>
-                  <input type="radio" value={this.state.smoke_2_11d} onChange={this.setSmoke211d} className="answers-140" id="2.11d-smoke-y" name="answers[2.11d[smoke]]" value="y"  />Sim
-                  <input type="radio" value={this.state.smoke_2_11d} onChange={this.setSmoke211d} className="answers-140" id="2.11d-smoke-n" name="answers[2.11d[smoke]]" value="n"  />Não
+                  <input type="radio" checked={this.state.smoke_2_11d === '1'} onChange={this.setSmoke211d} className="answers-140" id="2.11d-smoke-y" name="answers[2.11d[smoke]]" value="1"  />Sim
+                  <input type="radio" checked={this.state.smoke_2_11d === '0'} onChange={this.setSmoke211d} className="answers-140" id="2.11d-smoke-n" name="answers[2.11d[smoke]]" value="0"  />Não
                   <br/><br/>
                   <h2> ALTERAÇÕES OU LESÕES DE MUCOSA </h2>
                   <label>Presença de lesão na mucosa bucal </label><br/>
-                  <input type="radio" value={this.state.mucosalinjury_2_11d} onChange={this.setMucosalInjury211d} className="answers-141" id="2.11d-mucosalinjury-y" name="answers[2.11d[mucosalinjury]]" value="y"  />Sim
-                  <input type="radio" value={this.state.mucosalinjury_2_11d} onChange={this.setMucosalInjury211d} className="answers-141" id="2.11d-mucosalinjury-n" name="answers[2.11d[mucosalinjury]]" value="n"  />Não
+                  <input type="radio" checked={this.state.presence_of_lesion_on_the_buccal_mucosa_2_11d === '1'} onChange={this.setPresenceOfLesionOnTheBuccalMucosa211d} className="answers-141" id="2.11d-presence_of_lesion_on_the_buccal_mucosa-y" name="answers[2.11d[presence_of_lesion_on_the_buccal_mucosa]]" value="1"  />Sim
+                  <input type="radio" checked={this.state.presence_of_lesion_on_the_buccal_mucosa_2_11d === '0'} onChange={this.setPresenceOfLesionOnTheBuccalMucosa211d} className="answers-141" id="2.11d-presence_of_lesion_on_the_buccal_mucosa-n" name="answers[2.11d[presence_of_lesion_on_the_buccal_mucosa]]" value="0"  />Não
                   <br/><br/>
                   <label>Boca seca (xerostomia – falta de saliva)</label><br/>
-                  <input type="radio" value={this.state.drymouth_2_11d} onChange={this.setDrymouth211d} className="answers-142" id="2.11d-drymouth-y" name="answers[2.11d[drymouth]]" value="y"  />Sim
-                  <input type="radio" value={this.state.drymouth_2_11d} onChange={this.setDrymouth211d} className="answers-142" id="2.11d-drymouth-n" name="answers[2.11d[drymouth]]" value="n"  />Não
+                  <input type="radio" checked={this.state.drymouth_2_11d === '1'} onChange={this.setDrymouth211d} className="answers-142" id="2.11d-drymouth-y" name="answers[2.11d[drymouth]]" value="1"  />Sim
+                  <input type="radio" checked={this.state.drymouth_2_11d === '0'} onChange={this.setDrymouth211d} className="answers-142" id="2.11d-drymouth-n" name="answers[2.11d[drymouth]]" value="0"  />Não
                   <br/><br/>
                   <label>Presença de língua saburrosa (língua branca)</label><br/>
-                  <input type="radio" value={this.state.whitetongue_2_11d} onChange={this.setWhiteTongue211d} className="answers-143" id="2.11d-whitetongue-y" name="answers[2.11d[whitetongue]]" value="y"  />Sim
-                  <input type="radio" value={this.state.whitetongue_2_11d} onChange={this.setWhiteTongue211d} className="answers-143" id="2.11d-whitetongue-n" name="answers[2.11d[whitetongue]]" value="n"  />Não
+                  <input type="radio" checked={this.state.whitetongue_2_11d === '1'} onChange={this.setWhiteTongue211d} className="answers-143" id="2.11d-whitetongue-y" name="answers[2.11d[whitetongue]]" value="1"  />Sim
+                  <input type="radio" checked={this.state.whitetongue_2_11d === '0'} === '0' onChange={this.setWhiteTongue211d} className="answers-143" id="2.11d-whitetongue-n" name="answers[2.11d[whitetongue]]" value="0"  />Não
                   <br/><br/>
                   <label>Presença de candidíase bucal</label><br/>
-                  <input type="radio" value={this.state.oralcandidiasis_2_11d} onChange={this.setOralCandidiasis211d} className="answers-144" id="2.11d-oralcandidiasis-y" name="answers[2.11d[oralcandidiasis]]" value="y"  />Sim
-                  <input type="radio" value={this.state.oralcandidiasis_2_11d} onChange={this.setOralCandidiasis211d} className="answers-144" id="2.11d-oralcandidiasis-n" name="answers[2.11d[oralcandidiasis]]" value="n"  />Não
+                  <input type="radio" checked={this.state.presence_of_lesion_on_the_buccal_mucosa_2_11d === '1'} onChange={this.setPresenceOfLesionOnTheBuccalMucosa211d} className="answers-144" id="2.11d-presence_of_lesion_on_the_buccal_mucosa-y" name="answers[2.11d[presence_of_lesion_on_the_buccal_mucosa]]" value="1"  />Sim
+                  <input type="radio" checked={this.state.presence_of_lesion_on_the_buccal_mucosa_2_11d === '0'} onChange={this.setPresenceOfLesionOnTheBuccalMucosa211d} className="answers-144" id="2.11d-presence_of_lesion_on_the_buccal_mucosa-n" name="answers[2.11d[presence_of_lesion_on_the_buccal_mucosa]]" value="0"  />Não
                   <br/><br/>
                   <label>Presença de halitose</label><br/>
-                  <input type="radio" value={this.state.halitosis_2_11d} onChange={this.setHalitosis211d} className="answers-145" id="2.11d-halitosis-y" name="answers[2.11d[halitosis]]" value="y"  />Sim
-                  <input type="radio" value={this.state.halitosis_2_11d} onChange={this.setHalitosis211d} className="answers-145" id="2.11d-halitosis-n" name="answers[2.11d[halitosis]]" value="n"  />Não
+                  <input type="radio" checked={this.state.presence_of_halitosis_2_11d === '1'} onChange={this.setPresenceOfHalitosis211d} className="answers-145" id="2.11d-presence_of_halitosis-y" name="answers[2.11d[presence_of_halitosis]]" value="1"  />Sim
+                  <input type="radio" checked={this.state.presence_of_halitosis_2_11d === '0'} onChange={this.setPresenceOfHalitosis211d} className="answers-145" id="2.11d-presence_of_halitosis-n" name="answers[2.11d[presence_of_halitosis]]" value="0"  />Não
                   <br/><br/>
                   <h2> CÁRIE DENTÁRIA E DOENÇA PERIODONTAL </h2>
                   <label>Presença de placa bacteriana (biofilme dental)</label><br/>
-                  <input type="radio" value={this.state.bacterialplaque_2_11d} onChange={this.setBacterialPlaque211d} className="answers-146" id="2.11d-bacterialplaque-y" name="answers[2.11d[bacterialplaque]]" value="y"  />Sim
-                  <input type="radio" value={this.state.bacterialplaque_2_11d} onChange={this.setBacterialPlaque211d} className="answers-146" id="2.11d-bacterialplaque-n" name="answers[2.11d[bacterialplaque]]" value="n"  />Não
+                  <input type="radio" checked={this.state.presence_of_bacterial_plaque_2_11d === '1'} onChange={this.setPresenceOfBacterialPlaque211d} className="answers-146" id="2.11d-presence_of_bacterial_plaque-y" name="answers[2.11d[presence_of_bacterial_plaque]]" value="1"  />Sim
+                  <input type="radio" checked={this.state.presence_of_bacterial_plaque_2_11d === '0'} onChange={this.setPresenceOfBacterialPlaque211d} className="answers-146" id="2.11d-presence_of_bacterial_plaque-n" name="answers[2.11d[presence_of_bacterial_plaque]]" value="0"  />Não
                   <br/><br/>
                   <label>Fatores retentivos de placa (raízes residuais, cálculo)</label><br/>
-                  <input type="radio" value={this.state.residualroots_2_11d} onChange={this.setResidualRoots211d} className="answers-147" id="2.11d-residualroots-y" name="answers[2.11d[residualroots]]" value="y"  />Sim
-                  <input type="radio" value={this.state.residualroots_2_11d} onChange={this.setResidualRoots211d} className="answers-147" id="2.11d-residualroots-n" name="answers[2.11d[residualroots]]" value="n"  />Não
+                  <input type="radio" checked={this.state.plate_retentive_factors_2_11d === '1'} onChange={this.setPlateRetentiveFactors211d} className="answers-147" id="2.11d-plate_retentive_factors-y" name="answers[2.11d[plate_retentive_factors]]" value="1"  />Sim
+                  <input type="radio" checked={this.state.plate_retentive_factors_2_11d === '0'} onChange={this.setPlateRetentiveFactors211d} className="answers-147" id="2.11d-plate_retentive_factors-n" name="answers[2.11d[plate_retentive_factors]]" value="0"  />Não
                   <br/><br/>
                   <label>Presença evidente de gengivite/sangramento gengival</label><br/>
-                  <input type="radio" value={this.state.gingivitis_2_11d} onChange={this.setGingivitis211d} className="answers-148" id="2.11d-gingivitis-y" name="answers[2.11d[gingivitis]]" value="y"  />Sim
-                  <input type="radio" value={this.state.gingivitis_2_11d} onChange={this.setGingivitis211d} className="answers-148" id="2.11d-gingivitis-n" name="answers[2.11d[gingivitis]]" value="n"  />Não
+                  <input type="radio" checked={this.state.obvious_presence_of_gingivitis_2_11d === '1'} onChange={this.setObviousPresenceOfGingivitis211d} className="answers-148" id="2.11d-obvious_presence_of_gingivitis-y" name="answers[2.11d[obvious_presence_of_gingivitis]]" value="1"  />Sim
+                  <input type="radio" checked={this.state.obvious_presence_of_gingivitis_2_11d === '0'} onChange={this.setObviousPresenceOfGingivitis211d} className="answers-148" id="2.11d-obvious_presence_of_gingivitis-n" name="answers[2.11d[obvious_presence_of_gingivitis]]" value="0"  />Não
                   <br/><br/>
                   <label>Presença evidente de periodontite/perda óssea</label><br/>
-                  <input type="radio" value={this.state.periodontitis_2_11d} onChange={this.setPeriodontitis211d} className="answers-149" id="2.11d-periodontitis-y" name="answers[2.11d[periodontitis]]" value="y"  />Sim
-                  <input type="radio" value={this.state.periodontitis_2_11d} onChange={this.setPeriodontitis211d} className="answers-149" id="2.11d-periodontitis-n" name="answers[2.11d[periodontitis]]" value="n"  />Não
+                  <input type="radio" checked={this.state.obvious_presence_of_periodontitis_2_11d === '1'} onChange={this.setObviousPresenceOfPeriodontitis211d} className="answers-149" id="2.11d-obvious_presence_of_periodontitis-y" name="answers[2.11d[obvious_presence_of_periodontitis]]" value="1"  />Sim
+                  <input type="radio" checked={this.state.obvious_presence_of_periodontitis_2_11d === '0'} onChange={this.setObviousPresenceOfPeriodontitis211d} className="answers-149" id="2.11d-obvious_presence_of_periodontitis-n" name="answers[2.11d[obvious_presence_of_periodontitis]]" value="0"  />Não
                   <br/><br/>
                   <label>Presença de cárie</label><br/>
-                  <input type="radio" value={this.state.caries_2_11d} onChange={this.setCaries211d} className="answers-150" id="2.11d-caries-y" name="answers[2.11d[caries]]" value="y"  />Sim
-                  <input type="radio" value={this.state.caries_2_11d} onChange={this.setCaries211d} className="answers-150" id="2.11d-caries-n" name="answers[2.11d[caries]]" value="n"  />Não
+                  <input type="radio" value={this.state.presence_of_caries_2_11d === '1'} onChange={this.setPresenceOfCaries211d} className="answers-150" id="2.11d-presence_of_caries-y" name="answers[2.11d[presence_of_caries]]" value="1"  />Sim
+                  <input type="radio" value={this.state.presence_of_caries_2_11d === '0'} onChange={this.setPresenceOfCaries211d} className="answers-150" id="2.11d-presence_of_caries-n" name="answers[2.11d[presence_of_caries]]" value="0"  />Não
                   <br/><br/>
                   <label>Perda dental no último ano</label><br/>
-                  <input type="radio" value={this.state.dentalloss_2_11d} onChange={this.setDentalLoss211d} className="answers-151" id="2.11d-dentalloss-y" name="answers[2.11d[dentalloss]]" value="y"  />Sim
-                  <input type="radio" value={this.state.dentalloss_2_11d} onChange={this.setDentalLoss211d} className="answers-151" id="2.11d-dentalloss-n" name="answers[2.11d[dentalloss]]" value="n"  />Não
+                  <input type="radio" value={this.state.dental_loss_in_last_year_2_11d === '1'} onChange={this.setDentalLossInLastYear211d} className="answers-151" id="2.11d-dental_loss_in_last_year-y" name="answers[2.11d[dental_loss_in_last_year]]" value="1"  />Sim
+                  <input type="radio" value={this.state.dental_loss_in_last_year_2_11d === '0'} onChange={this.setDentalLossInLastYear211d} className="answers-151" id="2.11d-dental_loss_in_last_year-n" name="answers[2.11d[dental_loss_in_last_year]]" value="0"  />Não
                   <br/><br/>
                   <h2> CONSULTA CLÍNICA(EQUIPE DE SAÚDE BUCAL </h2>
                   <label>Atendimento na unidade de saúde</label><br/>
-                  <input type="radio" value={this.state.healthunit_2_11d} onChange={this.setHealtHunit211d} className="answers-152" id="2.11d-healthunit-y" name="answers[2.11d[healthunit]]" value="y"  />Sim
-                  <input type="radio" value={this.state.healthunit_2_11d} onChange={this.setHealtHunit211d} className="answers-152" id="2.11d-healthunit-n" name="answers[2.11d[healthunit]]" value="n"  />Não
+                  <input type="radio" value={this.state.attendance_at_the_health_unit_2_11d === '1'} onChange={this.setAttendanceAtTheHealthUnit211d} className="answers-152" id="2.11d-attendance_at_the_health_unit-y" name="answers[2.11d[attendance_at_the_health_unit]]" value="1"  />Sim
+                  <input type="radio" value={this.state.attendance_at_the_health_unit_2_11d === '0'} onChange={this.setAttendanceAtTheHealthUnit211d} className="answers-152" id="2.11d-attendance_at_the_health_unit-n" name="answers[2.11d[attendance_at_the_health_unit]]" value="0"  />Não
                   <br/><br/>
                   <label>Atendimento no domicílio</label><br/>
-                  <input type="radio" value={this.state.homecare_2_11d} onChange={this.setHomeCare211d} className="answers-153" id="2.11d-homecare-y" name="answers[2.11d[homecare]]" value="y"  />Sim
-                  <input type="radio" value={this.state.homecare_2_11d} onChange={this.setHomeCare211d} className="answers-153" id="2.11d-homecare-n" name="answers[2.11d[homecare]]" value="n"  />Não
+                  <input type="radio" value={this.state.home_service_2_11d === '1'} onChange={this.setHomeService211d} className="answers-153" id="2.11d-home_service-y" name="answers[2.11d[home_service]]" value="1"  />Sim
+                  <input type="radio" value={this.state.home_service_2_11d === '0'} onChange={this.setHomeService211d} className="answers-153" id="2.11d-home_service-n" name="answers[2.11d[home_service]]" value="0"  />Não
                   <br/><br/>
                   <label>Encaminhamento para especialidades odontológicas</label><br/>
-                  <input type="text"  value={this.state.dentalspecialties_2_11d} onChange={this.setDentalSpecialTies211d} maxLength="2" className="answers-154" id="2.11d-dentalspecialties" name="answers[2.11d[dentalspecialties]]"  />
+                  <input type="text"  value={this.state.forwarding_for_specialties_dental_2_11d} onChange={this.setForwardingForSpecialtiesDental211d} maxLength="2" className="answers-154" id="2.11d-forwarding_for_specialties_dental" name="answers[2.11d[forwarding_for_specialties_dental]]"  />
                   <br/><br/>
                   </fieldset>
                 </div>
@@ -160,8 +177,8 @@ class OralHealthAssessment extends React.Component {
     this.setState({smoke_2_11d: evt.target.value});  
   }
 
-  setMucosalInjury211d(evt) {
-    this.setState({mucosalinjury_2_11d: evt.target.value});  
+  setPresenceOfLesionOnTheBuccalMucosa211d(evt) {
+    this.setState({presence_of_lesion_on_the_buccal_mucosa_2_11d: evt.target.value});  
   }
 
   setDrymouth211d(evt) {
@@ -172,48 +189,48 @@ class OralHealthAssessment extends React.Component {
     this.setState({whitetongue_2_11d: evt.target.value});  
   }
 
-  setOralCandidiasis211d(evt) {
-    this.setState({oralcandidiasis_2_11d: evt.target.value});  
+  setPresenceOfLesionOnTheBuccalMucosa211d(evt) {
+    this.setState({presence_of_lesion_on_the_buccal_mucosa_2_11d: evt.target.value});  
   }
 
-  setHalitosis211d(evt) {
-    this.setState({halitosis_2_11d: evt.target.value});  
+  setPresenceOfHalitosis211d(evt) {
+    this.setState({presence_of_halitosis_2_11d: evt.target.value});  
   }
 
-  setBacterialPlaque211d(evt) {
-    this.setState({bacterialplaque_2_11d: evt.target.value});  
+  setPresenceOfBacterialPlaque211d(evt) {
+    this.setState({presence_of_bacterial_plaque_2_11d: evt.target.value});  
   }
 
-  setResidualRoots211d(evt) {
-    this.setState({residualroots_2_11d: evt.target.value});  
+  setPlateRetentiveFactors211d(evt) {
+    this.setState({plate_retentive_factors_2_11d: evt.target.value});  
   }
 
-  setGingivitis211d(evt) {
-    this.setState({gingivitis_2_11d: evt.target.value});  
+  setObviousPresenceOfGingivitis211d(evt) {
+    this.setState({obvious_presence_of_gingivitis_2_11d: evt.target.value});  
   }
 
-  setPeriodontitis211d(evt) {
-    this.setState({periodontitis_2_11d: evt.target.value});  
+  setObviousPresenceOfPeriodontitis211d(evt) {
+    this.setState({obvious_presence_of_periodontitis_2_11d: evt.target.value});  
   }
 
-  setCaries211d(evt) {
-    this.setState({caries_2_11d: evt.target.value});  
+  setPresenceOfCaries211d(evt) {
+    this.setState({presence_of_caries_2_11d: evt.target.value});  
   }
 
-  setDentalLoss211d(evt) {
-    this.setState({dentalloss_2_11d: evt.target.value});  
+  setDentalLossInLastYear211d(evt) {
+    this.setState({dental_loss_in_last_year_2_11d: evt.target.value});  
   }
 
-  setHealtHunit211d(evt) {
-    this.setState({healthunit_2_11d: evt.target.value});  
+  setAttendanceAtTheHealthUnit211d(evt) {
+    this.setState({attendance_at_the_health_unit_2_11d: evt.target.value});  
   }
 
-  setHomeCare211d(evt) {
-    this.setState({homecare_2_11d: evt.target.value});  
+  setHomeService211d(evt) {
+    this.setState({home_service_2_11d: evt.target.value});  
   }
 
-  setDentalSpecialTies211d(evt) {
-    this.setState({dentalspecialties_2_11d: evt.target.value});  
+  setForwardingForSpecialtiesDental211d(evt) {
+    this.setState({forwarding_for_specialties_dental_2_11d: evt.target.value});  
   }
 
 }

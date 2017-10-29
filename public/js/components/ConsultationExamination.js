@@ -7,10 +7,11 @@ class ConsultationExamination extends React.Component {
   constructor (props) {
     super(props);
 
-    this.state = {persons_references : [], id_historys:'1', id_elderlies:'1', data_2_11e:'', hour_2_11e:'', local_2_11e:'', exam_2_11e:'', professionalname_2_11e:''};
+    this.state = {persons_references : [], id_historys:'1', id_elderlies:'1', data_2_11e:'', hour_2_11e:'', place_2_11e:'', local_2_11e:'', query_exam_2_11_e:'', professionalname_2_11e:''};
     this.sendForm = this.sendForm.bind(this);
     this.setData211e = this.setData211e.bind(this);
     this.setHour211e = this.setHour211e.bind(this);
+    this.setPlace211e = this.setPlace211e.bind(this);
     this.setLocal211e = this.setLocal211e.bind(this);
     this.setExam211e = this.setExam211e.bind(this);
     this.setProfessionalName211e = this.setProfessionalName211e.bind(this);
@@ -65,7 +66,7 @@ class ConsultationExamination extends React.Component {
                   <input type="text"  value={this.state.local_2_11e} onChange={this.setLocal211e} maxLength="5" className="answers-174" id="2.11e-local" name="answers[2.11e[local]]"  />
                   <br/><br/>
                   <label>Consulta/exame</label><br/>
-                  <input type="text"  value={this.state.exam_2_11e} onChange={this.setExam211e} maxLength="5" className="answers-175" id="2.11e-exam" name="answers[2.11e[exam]]"  />
+                  <input type="text"  value={this.state.query_exam_2_11_e} onChange={this.setExam211e} maxLength="5" className="answers-175" id="2.11e-exam" name="answers[2.11e[exam]]"  />
                   <br/><br/>
                   <label>Nome do profissional</label><br/>
                   <input type="text"  value={this.state.professionalname_2_11e} onChange={this.setProfessionalName211e} maxLength="5" className="answers-176" id="2.11e-professionalname" name="answers[2.11e[professionalname]]"  />
@@ -102,7 +103,7 @@ class ConsultationExamination extends React.Component {
   }
 
   setExam211e(evt) {
-    this.setState({exam_2_11e: evt.target.value});  
+    this.setState({query_exam_2_11_e: evt.target.value});  
   }
 
   setProfessionalName211e(evt) {

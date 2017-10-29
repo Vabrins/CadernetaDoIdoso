@@ -7,19 +7,31 @@ class EnvironmentalAssessment extends React.Component {
   constructor (props) {
     super(props);
 
-    this.state = {persons_references : [], id_historys:'1', id_elderlies:'1', locomotion_2_8:'', supportbars_2_8:'', carpet_2_8:'', lighting_2_8:'', switches_2_8:'', shower_2_8:'', openingbox_2_8:'', cabinets_2_8:'', nonslipfloor_2_8:'', handrail_2_8:''};
+    this.state = {persons_references : [], id_historys:'1', id_elderlies:'1', 
+    unimpeded_walking_areas_2_8:'',
+    presence_of_support_bars_2_8:'', 
+    uniform_floors_and_carpets_well_fixed_2_8:'', 
+    enough_lighting_brighten_inside_each_room_including_steps_2_8:'', 
+    switches_accessible_at_the_entrance_two_rooms_2_8:'', 
+    shower_area_with_non_slip_2_8:'', 
+    box_with_easy_opening_or_presence_of_firm_curtain_2_8:'', 
+    low_cabinets_no_need_for_use_of_stairs_2_8:'', 
+    non_slip_floor_2_8:'', 
+    double_sided_and_firm_handrail_2_8:''};
+
+
     this.sendForm = this.sendForm.bind(this);
-    this.setLocomotion28 = this.setLocomotion28.bind(this);
-    this.setSupportBars28 = this.setSupportBars28.bind(this);
-    this.setCarpet28 = this.setCarpet28.bind(this);
-    this.setLighting28 = this.setLighting28.bind(this);
-    this.setSwitches28 = this.setSwitches28.bind(this);
-    this.setShower28 = this.setShower28.bind(this);
-    this.setOpeningBox28 = this.setOpeningBox28.bind(this);
-    this.setCabinets28 = this.setCabinets28.bind(this);
-    this.setSwitches28 = this.setSwitches28.bind(this);
-    this.setNonslipFloor28 = this.setNonslipFloor28.bind(this);
-    this.setHandrail28 = this.setHandrail28.bind(this);
+    this.setUnimpededWalkingAreas28 = this.setUnimpededWalkingAreas28.bind(this);
+    this.setPresenceOfSupportBars28 = this.setPresenceOfSupportBars28.bind(this);
+    this.setUniformFloorsAndCarpetsWellFixed28 = this.setUniformFloorsAndCarpetsWellFixed28.bind(this);
+    this.setEnoughLightingBrightenInsideEachRoomIncludingSteps28 = this.setEnoughLightingBrightenInsideEachRoomIncludingSteps28.bind(this);
+    this.setSwitchesAccessibleAtTheEntranceTwoRooms28 = this.setSwitchesAccessibleAtTheEntranceTwoRooms28.bind(this);
+    this.setShowerAreaWithNonSlip28 = this.setShowerAreaWithNonSlip28-slip28.bind(this);
+    this.setBoxWithEasyOpeningOrPresenceOfFirmCurtain28 = this.setBoxWithEasyOpeningOrPresenceOfFirmCurtain28.bind(this);
+    this.setLowCabinetsNoNeedForUseOfStairs28 = this.setLowCabinetsNoNeedForUseOfStairs28.bind(this);
+    this.setSwitchesAccessibleAtTheEntranceTwoRooms28 = this.setSwitchesAccessibleAtTheEntranceTwoRooms28.bind(this);
+    this.setNonSlipFloor28 = this.setNonSlipFloor28.bind(this);
+    this.setDoubleSidedAndFirmHandrail28 = this.setDoubleSidedAndFirmHandrail28.bind(this);
   }
 
   componentWillMount() {
@@ -62,48 +74,48 @@ class EnvironmentalAssessment extends React.Component {
                   <fieldset>
                   <h2> Áreas de locomoção </h2>
                   <label>Áreas de locomoção desimpedidas </label><br/>
-                  <input type="radio" value={this.state.locomotion_2_8} onChange={this.setLocomotion28} className="answers-89" id="2.8-locomotion-y" name="answers[2.8[locomotion]]" value="y"  />Sim
-                  <input type="radio" value={this.state.locomotion_2_8} onChange={this.setLocomotion28} className="answers-89" id="2.8-locomotion-n" name="answers[2.8[locomotion]]" value="n"  />Não
+                  <input type="radio" checked={this.state.unimpeded_walking_areas_2_8 === '1'} onChange={this.setUnimpededWalkingAreas28} className="answers-89" id="2.8-unimpeded_walking_areas-y" name="answers[2.8[unimpeded_walking_areas]]" value="1"  />Sim
+                  <input type="radio" checked={this.state.unimpeded_walking_areas_2_8 === '0'} onChange={this.setUnimpededWalkingAreas28} className="answers-89" id="2.8-unimpeded_walking_areas-n" name="answers[2.8[unimpeded_walking_areas]]" value="0"  />Não
                   <br/><br/>
                   <label>Presença de barras de apoio  </label><br/>
-                  <input type="radio" value={this.state.supportbars_2_8} onChange={this.setSupportBars28} className="answers-90" id="2.8-supportbars-y" name="answers[2.8[supportbars]]" value="y"  />Sim
-                  <input type="radio" value={this.state.supportbars_2_8} onChange={this.setSupportBars28} className="answers-90" id="2.8-supportbars-n" name="answers[2.8[supportbars]]" value="n"  />Não
+                  <input type="radio" checked={this.state.presence_of_support_bars_2_8 === '1'} onChange={this.setPresenceOfSupportBars28} className="answers-90" id="2.8-presence_of_support_bars-y" name="answers[2.8[presence_of_support_bars]]" value="1"  />Sim
+                  <input type="radio" checked={this.state.presence_of_support_bars_2_8 === '0'} onChange={this.setPresenceOfSupportBars28} className="answers-90" id="2.8-presence_of_support_bars-n" name="answers[2.8[presence_of_support_bars]]" value="0"  />Não
                   <br/><br/>
                   <label>Pisos uniformes e tapetes bem fixos  </label><br/>
-                  <input type="radio" value={this.state.carpet_2_8} onChange={this.setForgotten27} className="answers-91" id="2.8-carpet-y" name="answers[2.8[carpet]]" value="y"  />Sim
-                  <input type="radio" value={this.state.carpet_2_8} onChange={this.setForgotten27} className="answers-91" id="2.8-carpet-n" name="answers[2.8[carpet]]" value="n"  />Não
+                  <input type="radio" checked={this.state.uniform_floors_and_carpets_well_fixed_2_8 === '1'} onChange={this.setUniformFloorsAndCarpetsWellFixed28} className="answers-91" id="2.8-uniform_floors_and_carpets_well_fixed-y" name="answers[2.8[uniform_floors_and_carpets_well_fixed]]" value="1"  />Sim
+                  <input type="radio" checked={this.state.uniform_floors_and_carpets_well_fixed_2_8 === '0'} onChange={this.setUniformFloorsAndCarpetsWellFixed28} className="answers-91" id="2.8-uniform_floors_and_carpets_well_fixed-n" name="answers[2.8[uniform_floors_and_carpets_well_fixed]]" value="0"  />Não
                   <br/><br/>
                   <h2> Iluminação </h2>
                   <label>Presença de iluminação suficiente para clarear todo o interior de cada cômodo, incluindo degraus</label><br/>
-                  <input type="radio" value={this.state.lighting_2_8} onChange={this.setLighting28} className="answers-92" id="2.8-lighting-y" name="answers[2.8[lighting]]" value="y"  />Sim
-                  <input type="radio" value={this.state.lighting_2_8} onChange={this.setLighting28} className="answers-92" id="2.8-lighting-n" name="answers[2.8[lighting]]" value="n"  />Não
+                  <input type="radio" checked={this.state.enough_lighting_brighten_inside_each_room_including_steps_2_8 === '1'} onChange={this.setEnoughLightingBrightenInsideEachRoomIncludingSteps28} className="answers-92" id="2.8-enough_lighting_brighten_inside_each_room_including_steps-y" name="answers[2.8[enough_lighting_brighten_inside_each_room_including_steps]]" value="1"  />Sim
+                  <input type="radio" checked={this.state.enough_lighting_brighten_inside_each_room_including_steps_2_8 === '0'} onChange={this.setEnoughLightingBrightenInsideEachRoomIncludingSteps28} className="answers-92" id="2.8-enough_lighting_brighten_inside_each_room_including_steps-n" name="answers[2.8[enough_lighting_brighten_inside_each_room_including_steps]]" value="0"  />Não
                   <br/><br/>
                   <label>Interruptores acessíveis na entrada dos cômodos  </label><br/>
-                  <input type="radio" value={this.state.switches_2_8} onChange={this.setSwitches28} className="answers-93" id="2.8-Switches-y" name="answers[2.8[Switches]]" value="y"  />Sim
-                  <input type="radio" value={this.state.switches_2_8} onChange={this.setSwitches28} className="answers-93" id="2.8-Switches-n" name="answers[2.8[Switches]]" value="n"  />Não
+                  <input type="radio" checked={this.state.switches_accessible_at_the_entrance_two_rooms_2_8 === '1'} onChange={this.setSwitchesAccessibleAtTheEntranceTwoRooms28} className="answers-93" id="2.8-switches_accessible_at_the_entrance_two_rooms-y" name="answers[2.8[switches_accessible_at_the_entrance_two_rooms]]" value="1"  />Sim
+                  <input type="radio" checked={this.state.switches_accessible_at_the_entrance_two_rooms_2_8 === '0'} onChange={this.setSwitchesAccessibleAtTheEntranceTwoRooms28} className="answers-93" id="2.8-switches_accessible_at_the_entrance_two_rooms-n" name="answers[2.8[switches_accessible_at_the_entrance_two_rooms]]" value="0"  />Não
                   <br/><br/>
                   <h2> Banheiro </h2>
                   <label>Área do chuveiro com antiderrapante  </label><br/>
-                  <input type="radio" value={this.state.shower_2_8} onChange={this.setShower28} className="answers-94" id="2.8-shower-y" name="answers[2.8[shower]]" value="y"  />Sim
-                  <input type="radio" value={this.state.shower_2_8} onChange={this.setShower28} className="answers-94" id="2.8-shower-n" name="answers[2.8[shower]]" value="n"  />Não
+                  <input type="radio" checked={this.state.shower_area_with_non-slip_2_8 === '1'} onChange={this.setShowerAreaWithNonSlip28} className="answers-94" id="2.8-shower_area_with_non-slip-y" name="answers[2.8[shower_area_with_non-slip]]" value="1"  />Sim
+                  <input type="radio" checked={this.state.shower_area_with_non-slip_2_8 === '0'} onChange={this.setShowerAreaWithNonSlip28} className="answers-94" id="2.8-shower_area_with_non-slip-n" name="answers[2.8[shower_area_with_non-slip]]" value="0"  />Não
                   <br/><br/>
                   <label>Box com abertura fácil ou presença de cortina bem firme </label><br/>
-                  <input type="radio" value={this.state.openingbox_2_8} onChange={this.setOpeningBox28} className="answers-95" id="2.8-openingbox-y" name="answers[2.8[openingbox]]" value="y"  />Sim
-                  <input type="radio" value={this.state.openingbox_2_8} onChange={this.setOpeningBox28} className="answers-95" id="2.8-openingbox-n" name="answers[2.8[openingbox]]" value="n"  />Não
+                  <input type="radio" checked={this.state.box_with_easy_opening_or_presence_of_firm_curtain_2_8 === '1'} onChange={this.setBoxWithEasyOpeningOrPresenceOfFirmCurtain28} className="answers-95" id="2.8-box_with_easy_opening_or_presence_of_firm_curtain-y" name="answers[2.8[box_with_easy_opening_or_presence_of_firm_curtain]]" value="1"  />Sim
+                  <input type="radio" checked={this.state.box_with_easy_opening_or_presence_of_firm_curtain_2_8 === '0'} onChange={this.setBoxWithEasyOpeningOrPresenceOfFirmCurtain28} className="answers-95" id="2.8-box_with_easy_opening_or_presence_of_firm_curtain-n" name="answers[2.8[box_with_easy_opening_or_presence_of_firm_curtain]]" value="0"  />Não
                   <br/><br/>
                   <h2> Cozinha e quarto </h2>
                   <label>Armários baixos, sem necessidade do uso de escada  </label><br/>
-                  <input type="radio" value={this.state.cabinets_2_8} onChange={this.setCabinets28} className="answers-96" id="2.8-cabinets-y" name="answers[2.8[cabinets]]" value="y"  />Sim
-                  <input type="radio" value={this.state.cabinets_2_8} onChange={this.setCabinets28} className="answers-96" id="2.8-cabinets-n" name="answers[2.8[cabinets]]" value="n"  />Não
+                  <input type="radio" checked={this.state.low_cabinets_no_need_for_use_of_stairs_2_8 === '1'} onChange={this.setLowCabinetsNoNeedForUseOfStairs28} className="answers-96" id="2.8-low_cabinets_no_need_for_use_of_stairs-y" name="answers[2.8[low_cabinets_no_need_for_use_of_stairs]]" value="1"  />Sim
+                  <input type="radio" checked={this.state.low_cabinets_no_need_for_use_of_stairs_2_8 === '0'} onChange={this.setLowCabinetsNoNeedForUseOfStairs28} className="answers-96" id="2.8-low_cabinets_no_need_for_use_of_stairs-n" name="answers[2.8[low_cabinets_no_need_for_use_of_stairs]]" value="0"  />Não
                   <br/><br/>
                   <h2> Escada </h2>
                   <label>Piso antiderrapante  </label><br/>
-                  <input type="radio" value={this.state.nonslipfloor_2_8} onChange={this.setNonslipFloor28} className="answers-97" id="2.8-nonslipfloor-y" name="answers[2.8[nonslipfloor]]" value="y"  />Sim
-                  <input type="radio" value={this.state.nonslipfloor_2_8} onChange={this.setNonslipFloor28} className="answers-97" id="2.8-nonslipfloor-n" name="answers[2.8[nonslipfloor]]" value="n"  />Não
+                  <input type="radio" checked={this.state.non_slip_floor_2_8 === '1'} onChange={this.setNonSlipFloor28} className="answers-97" id="2.8-non_slip_floor-y" name="answers[2.8[non_slip_floor]]" value="1"  />Sim
+                  <input type="radio" checked={this.state.non_slip_floor_2_8 === '0'} onChange={this.setNonSlipFloor28} className="answers-97" id="2.8-non_slip_floor-n" name="answers[2.8[non_slip_floor]]" value="0"  />Não
                   <br/><br/>
                   <label>Corrimão dos dois lados e firme </label><br/>
-                  <input type="radio" value={this.state.forgotten_2_7} onChange={this.setHandrail28} className="answers-98" id="2.8-handrail-y" name="answers[2.8[handrail]]" value="y"  />Sim
-                  <input type="radio" value={this.state.forgotten_2_7} onChange={this.setHandrail28} className="answers-98" id="2.8-handrail-n" name="answers[2.8[handrail]]" value="n"  />Não
+                  <input type="radio" checked={this.state.double_sided_and_firm_handrail_2_8 === '1'} onChange={this.setDoubleSidedAndFirmHandrail28} className="answers-98" id="2.8-double_sided_and_firm_handrail-y" name="answers[2.8[double_sided_and_firm_handrail]]" value="1"  />Sim
+                  <input type="radio" checked={this.state.double_sided_and_firm_handrail_2_8 === '0'} onChange={this.setDoubleSidedAndFirmHandrail28} className="answers-98" id="2.8-double_sided_and_firm_handrail-n" name="answers[2.8[double_sided_and_firm_handrail]]" value="0"  />Não
                   <br/><br/>
                   </fieldset>
                 </div>
@@ -124,44 +136,44 @@ class EnvironmentalAssessment extends React.Component {
     )
   }
 
-  setLocomotion28(evt) {
-    this.setState({locomotion_2_8: evt.target.value});  
+  setUnimpededWalkingAreas28(evt) {
+    this.setState({unimpeded_walking_areas_2_8: evt.target.value});  
   }
 
-  setSupportBars28(evt) {
-    this.setState({supportbars_2_8: evt.target.value});  
+  setPresenceOfSupportBars28(evt) {
+    this.setState({presence_of_support_bars_2_8: evt.target.value});  
   }
 
-  setCarpet28(evt) {
-    this.setState({carpet_2_8: evt.target.value});  
+  setUniformFloorsAndCarpetsWellFixed28(evt) {
+    this.setState({uniform_floors_and_carpets_well_fixed_2_8: evt.target.value});  
   }
 
-  setLighting28(evt) {
-    this.setState({lighting_2_8: evt.target.value});  
+  setEnoughLightingBrightenInsideEachRoomIncludingSteps28(evt) {
+    this.setState({enough_lighting_brighten_inside_each_room_including_steps_2_8: evt.target.value});  
   }
 
-  setSwitches28(evt) {
-    this.setState({switches_2_8: evt.target.value});  
+  setSwitchesAccessibleAtTheEntranceTwoRooms28(evt) {
+    this.setState({switches_accessible_at_the_entrance_two_rooms_2_8: evt.target.value});  
   }
 
-   setShower28(evt) {
-    this.setState({shower_2_8: evt.target.value});  
+   setShowerAreaWithNonSlip28(evt) {
+    this.setState({shower_area_with_non_slip_2_8: evt.target.value});  
   }
 
-   setOpeningBox28(evt) {
-    this.setState({openingbox_2_8: evt.target.value});  
+   setBoxWithEasyOpeningOrPresenceOfFirmCurtain28(evt) {
+    this.setState({box_with_easy_opening_or_presence_of_firm_curtain_2_8: evt.target.value});  
   }
 
-   setCabinets28(evt) {
-    this.setState({cabinets_2_8: evt.target.value});  
+   setLowCabinetsNoNeedForUseOfStairs28(evt) {
+    this.setState({low_cabinets_no_need_for_use_of_stairs_2_8: evt.target.value});  
   }
 
-   setNonslipFloor28(evt) {
-    this.setState({nonslipfloor_2_8: evt.target.value});  
+   setNonSlipFloor28(evt) {
+    this.setState({non_slip_floor_2_8: evt.target.value});  
   }
 
-   setHandrail28(evt) {
-    this.setState({handrail_2_8: evt.target.value});  
+   setDoubleSidedAndFirmHandrail28(evt) {
+    this.setState({double_sided_and_firm_handrail_2_8: evt.target.value});  
   }
 
 }
