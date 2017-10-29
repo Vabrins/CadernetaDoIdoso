@@ -7,7 +7,7 @@ class AnthropometricData extends React.Component {
   constructor (props) {
     super(props);
 
-    this.state = {persons_references : [], id_historys:'1', id_elderlies:'1', weight_2_5:'', height_2_5:'', imc_2_5:'', pp_2_5:'', weightloss_2_5:''};
+    this.state = {persons_references : [], id_historys:'1', id_elderlies:'1', weight_2_5:'', height_2_5:'', imc_weight_height_2_5:'', calf_perimeter_pp_left_2_5:'', you_have_exp_loss_uni_weight_min_body_last_year_2_5:''};
     this.sendForm = this.sendForm.bind(this);
     this.setWeight25 = this.setWeight25.bind(this);
     this.setHeight25 = this.setHeight25.bind(this);
@@ -61,14 +61,14 @@ class AnthropometricData extends React.Component {
                   <input type="text"  value={this.state.height_2_5} onChange={this.setHeight25} maxLength="5" className="answers-74" id="2.5-height" name="answers[2.5[height]]"  />
                   <br/><br/>
                   <label>IMC = peso/altura2</label><br/>
-                  <input type="text"  value={this.state.imc_2_5} onChange={this.setImc25} maxLength="5" className="answers-75" id="2.5-imc" name="answers[2.5[imc]]"  />
+                  <input type="text"  value={this.state.imc_weight_height_2_5} onChange={this.setImc25} maxLength="5" className="answers-75" id="2.5-imc" name="answers[2.5[imc]]"  />
                   <br/><br/>
                   <label>Perímetro da panturrilha (PP) esquerda</label><br/>
-                  <input type="text"  value={this.state.pp_2_5} onChange={this.setPp25} maxLength="5" className="answers-76" id="2.5-pp" name="answers[2.5[pp]]"  />
+                  <input type="text"  value={this.state.calf_perimeter_pp_left_2_5} onChange={this.setPp25} maxLength="5" className="answers-76" id="2.5-pp" name="answers[2.5[pp]]"  />
                   <br/><br/>
                   <label>Você apresentou perda de peso não intencional* de, no mínimo, 4,5 kg ou de 5% do seu peso corporal no último ano? </label><br/>
-                  <input type="radio" value={this.state.weightloss_2_5} onChange={this.setWeightLoss25} className="answers-77" id="2.5-weightloss-1" name="answers[2.5[weightloss]]" value="1"  />Sim
-                  <input type="radio" value={this.state.weightloss_2_5} onChange={this.setWeightLoss25} className="answers-77" id="2.5-weightloss-0" name="answers[2.5[weightloss]]" value="0"  />Não
+                  <input type="radio" checked={this.state.you_have_exp_loss_uni_weight_min_body_last_year_2_5 === "1"} onChange={this.setWeightLoss25} className="answers-77" id="2.5-weightloss-1" name="answers[2.5[weightloss]]" value="1"  />Sim
+                  <input type="radio" checked={this.state.you_have_exp_loss_uni_weight_min_body_last_year_2_5 === "0"} onChange={this.setWeightLoss25} className="answers-77" id="2.5-weightloss-0" name="answers[2.5[weightloss]]" value="0"  />Não
                   <br/><br/>
                   </fieldset>
                 </div>
@@ -98,15 +98,15 @@ class AnthropometricData extends React.Component {
   }
 
   setImc25(evt) {
-    this.setState({imc_2_5: evt.target.value});  
+    this.setState({imc_weight_height_2_5: evt.target.value});  
   }
 
   setPp25(evt) {
-    this.setState({pp_2_5: evt.target.value});  
+    this.setState({calf_perimeter_pp_left_2_5: evt.target.value});  
   }
 
   setWeightLoss25(evt) {
-    this.setState({weightloss_2_5: evt.target.value});  
+    this.setState({you_have_exp_loss_uni_weight_min_body_last_year_2_5: evt.target.value});  
   }
 
 }

@@ -7,16 +7,27 @@ class DentalProsthesis extends React.Component {
   constructor (props) {
     super(props);
 
-    this.state = {persons_references : [], id_historys:'1', id_elderlies:'1', superior_2_11d:'', bottom_2_11d:'', denture_2_11d:'', mobilebridge_2_11d:'', notprosthesis_2_11d:'', yesprosthesis_2_11d:'', useadapted_2_11d:'', usesunadapted_2_11d:''};
+    this.state = {persons_references : [], 
+      id_historys:'1', 
+      id_elderlies:'1', 
+      superior_2_11_d_a:'', 
+      inferior_2_11_d_a:'', 
+      total_prosthesis_2_11_d_a:'', 
+      partial_prosthesis_2_11_d_a:'', 
+      does_not_use_and_does_not_require_prosthesis_2_11_d_a:'',
+      does_not_use_but_needs_prosthesis_2_11_d_a:'', 
+      uses_adapted_without_exchange_2_11_d_a:'', 
+      uses_not_adapted_needs_exchange_2_11_d_a:''};
+
     this.sendForm = this.sendForm.bind(this);
-    this.setSuperior211d = this.setSuperior211d.bind(this);
-    this.setBottom211d = this.setBottom211d.bind(this);
-    this.setDenture211d = this.setDenture211d.bind(this);
-    this.setMobilebridge211d = this.setMobilebridge211d.bind(this);
-    this.setNotProsthesis211d = this.setNotProsthesis211d.bind(this);
-    this.setYesProsthesis211d = this.setYesProsthesis211d.bind(this);
-    this.setUseAdapted211d = this.setUseAdapted211d.bind(this);
-    this.setUsesundapted211d = this.setUsesundapted211d.bind(this);
+    this.setSuperior211da = this.setSuperior211da.bind(this);
+    this.setInferior211da = this.setInferior211da.bind(this);
+    this.setTotalprosthesis211da = this.setTotalProsthesis211da.bind(this);
+    this.setPartialProsthesis211da = this.setPartialProsthesis211da.bind(this);
+    this.setDoesNotUseAndDoesNotRequireProsthesis211da = this.ssetDoesNotUseAndDoesNotRequireProsthesis211da.bind(this);
+    this.setDoesNotUseButNeedsProsthesis211da = this.setDoesNotUseButNeedsProsthesis211da.bind(this);
+    this.setUsesAdaptedWithoutExchange211da = this.setUsesAdaptedWithoutExchange211da.bind(this);
+    this.setusesNotAdaptedNeedsExchange211da = this.setusesNotAdaptedNeedsExchange211da.bind(this);
   }
 
   componentWillMount() {
@@ -60,36 +71,36 @@ class DentalProsthesis extends React.Component {
                   <h2> PRÓTESE DENTÁRIA</h2>
                   <h2> PRÓTESE TOTAL (DENTADURA) </h2>
                   <label>Superior</label><br/>
-                  <input type="radio" value={this.state.superior_2_11d} onChange={this.setSuperior211d} className="answers-155" id="2.11d.a-superior-y" name="answers[2.11d.a[superior]]" value="y"  />Sim
-                  <input type="radio" value={this.state.superior_2_11d} onChange={this.setSuperior211d} className="answers-155" id="2.11d.a-superior-n" name="answers[2.11d.a[superior]]" value="n"  />Não
+                  <input type="radio" checked={this.state.superior_2_11_d_a === '1'} onChange={this.setSuperior211da} className="answers-155" id="2.11_d_a-superior-y" name="answers[2.11_d_a[superior]]" value="1"  />Sim
+                  <input type="radio" checked={this.state.superior_2_11_d_a === '0'} onChange={this.setSuperior211da} className="answers-155" id="2.11_d_a-superior-n" name="answers[2.11_d_a[superior]]" value="0"  />Não
                   <br/><br/>
                   <label>Inferior</label><br/>
-                  <input type="radio" value={this.state.bottom_2_11d} onChange={this.setBottom211d} className="answers-156" id="2.11d.a-bottom-y" name="answers[2.11d.a[bottom]]" value="y"  />Sim
-                  <input type="radio" value={this.state.bottom_2_11d} onChange={this.setBottom211d} className="answers-156" id="2.11d.a-bottom-n" name="answers[2.11d.a[bottom]]" value="n"  />Não
+                  <input type="radio" checked={this.state.inferior_2_11_d_a === '1'} onChange={this.setInferior211da} className="answers-156" id="2.11_d_a-inferior-y" name="answers[2.11_d_a[inferior]]" value="1"  />Sim
+                  <input type="radio" checked={this.state.inferior_2_11_d_a === '0'} onChange={this.setInferior211da} className="answers-156" id="2.11_d_a-inferior-n" name="answers[2.11_d_a[inferior]]" value="0"  />Não
                   <br/><br/>
                   <label>Prótese total (dentadura)</label><br/>
-                  <input type="radio" value={this.state.denture_2_11d} onChange={this.setDenture211d} className="answers-157" id="2.11d.a-denture-y" name="answers[2.11d.a[denture]]" value="y"  />Sim
-                  <input type="radio" value={this.state.denture_2_11d} onChange={this.setDenture211d} className="answers-157" id="2.11d.a-denture-n" name="answers[2.11d.a[denture]]" value="n"  />Não
+                  <input type="radio" checked={this.state.total_prosthesis_2_11_d_a === '1'} onChange={this.setTotalProsthesis211da} className="answers-157" id="2.11_d_a-total_prosthesis-y" name="answers[2.11_d_a[total_prosthesis]]" value="1"  />Sim
+                  <input type="radio" checked={this.state.total_prosthesis_2_11_d_a === '0'} onChange={this.setTotalProsthesis211da} className="answers-157" id="2.11_d_a-total_prosthesis-n" name="answers[2.11_d_a[total_prosthesis]]" value="0"  />Não
                   <br/><br/>
                   <label>Prótese parcial (ponte móvel)</label><br/>
-                  <input type="radio" value={this.state.mobilebridge_2_11d} onChange={this.setName211c} className="answers-158" id="2.11d.a-mobilebridge-y" name="answers[2.11d.a[mobilebridge]]" value="y"  />Sim
-                  <input type="radio" value={this.state.mobilebridge_2_11d} onChange={this.setName211c} className="answers-158" id="2.11d.a-mobilebridge-n" name="answers[2.11d.a[mobilebridge]]" value="n"  />Não
+                  <input type="radio" checked={this.state.partial_prosthesis_2_11_d_a === '1'} onChange={this.setPartialProsthesis211da} className="answers-158" id="2.11_d_a-partial_prosthesis-y" name="answers[2.11_d_a[partial_prosthesis]]" value="1"  />Sim
+                  <input type="radio" checked={this.state.partial_prosthesis_2_11_d_a === '0'} onChange={this.setPartialProsthesis211da} className="answers-158" id="2.11_d_a-partial_prosthesis-n" name="answers[2.11_d_a[partial_prosthesis]]" value="0"  />Não
                   <br/><br/>
                   <label>Não utiliza e não necessita da prótese</label><br/>
-                  <input type="radio" value={this.state.notprosthesis_2_11d} onChange={this.setName211c} className="answers-159" id="2.11d.a-notprosthesis-y" name="answers[2.11d.a[notprosthesis]]" value="y"  />Sim
-                  <input type="radio" value={this.state.notprosthesis_2_11d} onChange={this.setName211c} className="answers-159" id="2.11d.a-notprosthesis-n" name="answers[2.11d.a[notprosthesis]]" value="n"  />Não
+                  <input type="radio" checked={this.state.does_not_use_and_does_not_require_prosthesis_2_11_d_a === '1'} onChange={this.setDoesNotUseAndDoesNotRequireProsthesis211da} className="answers-159" id="2.11_d_a-does_not_use_and_does_not_require_prosthesis-y" name="answers[2.11_d_a[does_not_use_and_does_not_require_prosthesis]]" value="1"  />Sim
+                  <input type="radio" checked={this.state.does_not_use_and_does_not_require_prosthesis_2_11_d_a === '0'} onChange={this.setDoesNotUseAndDoesNotRequireProsthesis211da} className="answers-159" id="2.11_d_a-does_not_use_and_does_not_require_prosthesis-n" name="answers[2.11_d_a[does_not_use_and_does_not_require_prosthesis]]" value="0"  />Não
                   <br/><br/>
                   <label>Não utiliza, mas necessita da prótese</label><br/>
-                  <input type="radio" value={this.state.yesprosthesis_2_11d} onChange={this.setYesProsthesis211d} className="answers-160" id="2.11d.a-yesprosthesis-y" name="answers[2.11d.a[yesprosthesis]]" value="y"  />Sim
-                  <input type="radio" value={this.state.yesprosthesis_2_11d} onChange={this.setYesProsthesis211d} className="answers-160" id="2.11d.a-yesprosthesis-n" name="answers[2.11d.a[yesprosthesis]]" value="n"  />Não
+                  <input type="radio" checked={this.state.does_not_use_but_needs_prosthesis_2_11_d_a === '1'} onChange={this.setDoesNotUseButNeedsProsthesis211da} className="answers-160" id="2.11_d_a-does_not_use_but_needs_prosthesis-y" name="answers[2.11_d_a[does_not_use_but_needs_prosthesis]]" value="1"  />Sim
+                  <input type="radio" checked={this.state.does_not_use_but_needs_prosthesis_2_11_d_a === '0'} onChange={this.setDoesNotUseButNeedsProsthesis211da} className="answers-160" id="2.11_d_a-does_not_use_but_needs_prosthesis-n" name="answers[2.11_d_a[does_not_use_but_needs_prosthesis]]" value="0"  />Não
                   <br/><br/>
                   <label>Utiliza (adaptada/sem necessidade de troca)</label><br/>
-                  <input type="radio" value={this.state.useadapted_2_11d} onChange={this.setUseAdapted211d} className="answers-170" id="2.11d.a-useadapted-y" name="answers[2.11d.a[useadapted]]" value="y"  />Sim
-                  <input type="radio" value={this.state.useadapted_2_11d} onChange={this.setUseAdapted211d} className="answers-170" id="2.11d.a-useadapted-n" name="answers[2.11d.a[useadapted]]" value="n"  />Não
+                  <input type="radio" checked={this.state.uses_adapted_without_exchange_2_11_d_a === '1'} onChange={this.setUsesAdaptedWithoutExchange211da} className="answers-170" id="2.11_d_a-uses_adapted_without_exchange-y" name="answers[2.11_d_a[uses_adapted_without_exchange]]" value="1"  />Sim
+                  <input type="radio" checked={this.state.uses_adapted_without_exchange_2_11_d_a === '0'} onChange={this.setUsesAdaptedWithoutExchange211da} className="answers-170" id="2.11_d_a-uses_adapted_without_exchange-n" name="answers[2.11_d_a[uses_adapted_without_exchange]]" value="0"  />Não
                   <br/><br/>
                   <label>Utiliza (não adaptada/necessita de troca)</label><br/>
-                  <input type="radio" value={this.state.usesunadapted_2_11d} onChange={this.setUsesundapted211d} className="answers-171" id="2.11d.a-usesunadapted-y" name="answers[2.11d.a[usesunadapted]]" value="y"  />Sim
-                  <input type="radio" value={this.state.usesunadapted_2_11d} onChange={this.setUsesundapted211d} className="answers-171" id="2.11d.a-usesunadapted-n" name="answers[2.11d.a[usesunadapted]]" value="n"  />Não
+                  <input type="radio" checked={this.state.uses_not_adapted_needs_exchange_2_11_d_a === '1'} onChange={this.setusesNotAdaptedNeedsExchange211da} className="answers-171" id="2.11_d_a-uses_not_adapted_needs_exchange-y" name="answers[2.11_d_a[uses_not_adapted_needs_exchange]]" value="1"  />Sim
+                  <input type="radio" checked={this.state.uses_not_adapted_needs_exchange_2_11_d_a === '0'} onChange={this.setusesNotAdaptedNeedsExchange211da} className="answers-171" id="2.11_d_a-uses_not_adapted_needs_exchange-n" name="answers[2.11_d_a[uses_not_adapted_needs_exchange]]" value="0"  />Não
                   <br/><br/>
                   </fieldset>
                 </div>
@@ -110,36 +121,36 @@ class DentalProsthesis extends React.Component {
     )
   }
 
-  setSuperior211d(evt) {
-    this.setState({superior_2_11d: evt.target.value});  
+  setSuperior211da(evt) {
+    this.setState({superior_2_11_d_a: evt.target.value});  
   }
 
-  setBottom211d(evt) {
-    this.setState({bottom_2_11d: evt.target.value});  
+  setInferior211da(evt) {
+    this.setState({inferior_2_11_d_a: evt.target.value});  
   }
 
-  setDenture211d(evt) {
-    this.setState({denture_2_11d: evt.target.value});  
+  setTotalProsthesis211da(evt) {
+    this.setState({total_prosthesis_2_11_d_a: evt.target.value});  
   }
 
-  setMobilebridge211d(evt) {
-    this.setState({mobilebridge_2_11d: evt.target.value});  
+  setPartialProsthesis211da(evt) {
+    this.setState({partial_prosthesis_2_11_d_a: evt.target.value});  
   }
 
-  setNotProsthesis211d(evt) {
-    this.setState({notprosthesis_2_11d: evt.target.value});  
+  setDoesNotUseAndDoesNotRequireProsthesis211da(evt) {
+    this.setState({does_not_use_and_does_not_require_prosthesis_2_11_d_a: evt.target.value});  
   }
 
-   setYesProsthesis211d(evt) {
-    this.setState({yesprosthesis_2_11d: evt.target.value});  
+   setDoesNotUseButNeedsProsthesis211da(evt) {
+    this.setState({does_not_use_but_needs_prosthesis_2_11_d_a: evt.target.value});  
   }
 
-   setUseAdapted211d(evt) {
-    this.setState({useadapted_2_11d: evt.target.value});  
+   setUsesAdaptedWithoutExchange211da(evt) {
+    this.setState({uses_adapted_without_exchange_2_11_d_a: evt.target.value});  
   }
 
-   setUsesundapted211d(evt) {
-    this.setState({usesunadapted_2_11d: evt.target.value});  
+   setusesNotAdaptedNeedsExchange211da(evt) {
+    this.setState({uses_not_adapted_needs_exchange_2_11_d_a: evt.target.value});  
   }
 
 }

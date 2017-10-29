@@ -7,7 +7,7 @@ class ResidentialAddress extends React.Component {
   constructor (props) {
     super(props);
 
-    this.state = {persons_references : [], id_historys:'1', id_elderlies:'1', street_1_a:'', number_1_a:'', complement_1_a:'', district_1_a:'', reference_point_1_a:'', zip_code_1_a:'', county_1_a:'', state_1_a:'', telephone_1_a:'', cell_phone_1_a:'', email_1_a:'' };
+    this.state = {persons_references : [], id_historys:'1', id_elderlies:'1', street_avenue_square_1_a:'', number_1_a:'', complement_1_a:'', district_1_a:'', reference_point_1_a:'', zip_code_1_a:'', county_1_a:'', state_1_a:'', telephone_1_a:'', cell_phone_1_a:'', email_1_a:'' };
     this.sendForm = this.sendForm.bind(this);
     this.setStreet1a = this.setStreet1a.bind(this);
     this.setNumber1a = this.setNumber1a.bind(this);
@@ -62,7 +62,7 @@ class ResidentialAddress extends React.Component {
                 <div className="col">
                   <fieldset>
                   <label>Rua avenida praça</label><br/>
-                  <input type="text"  value={this.state.street_1_a} onChange={this.setStreet1a} placeholder="Rua avenida praça" className="answers-24" id="1.a-street" name="answers[1.a[street]]" />
+                  <input type="text"  value={this.state.street_avenue_square_1_a} onChange={this.setStreet1a} placeholder="Rua avenida praça" className="answers-24" id="1.a-street" name="answers[1.a[street]]" />
                   <br/><br/>
                   <label>N°</label><br/>
                   <input type="Number" value={this.state.number_1_a} onChange={this.setNumber1a} className="answers-25" id="1.a-number" name="answers[1.a[number]]" />
@@ -114,7 +114,7 @@ class ResidentialAddress extends React.Component {
   }
 
   setStreet1a(evt) {
-    this.setState({street_1_a: evt.target.value});  
+    this.setState({street_avenue_square_1_a: evt.target.value});  
   }
 
   setNumber1a(evt) {
