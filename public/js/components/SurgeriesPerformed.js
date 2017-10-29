@@ -7,7 +7,7 @@ class SurgeriesPerformed extends React.Component {
   constructor (props) {
     super(props);
 
-    this.state = {persons_references : [], id_historys:'1', id_elderlies:'1', surgery_2_3:'', year_2_3:'', comments_2_3:''};
+    this.state = {persons_references : [], id_historys:'1', surgery_2_3:'1', year_2_3:'', comments_2_3:''};
     this.sendForm = this.sendForm.bind(this);
     this.setSurgery23 = this.setSurgery23.bind(this);
     this.setYear23 = this.setYear23.bind(this);
