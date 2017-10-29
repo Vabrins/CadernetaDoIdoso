@@ -7,7 +7,7 @@ class VulnerableElderly extends React.Component {
   constructor (props) {
     super(props);
 
-    this.state = {persons_references : [], id_historys:'1', id_elderlies:'1', crouch_2_6:'', tocharge_2_6:'', arms_2_6:'', write_2_6:'', walk_2_6:'', domestic_2_6:''};
+    this.state = {persons_references : [], id_historys:'1', id_elderlies:'1', age_2_6:'' ,self_perception_of_health_2_6: '' , bending_crouching_or_kneel_down_2_6:'', lift_or_load_heavy_objects_approximately_five_kg_2_6:'', raise_or_extend_arms_above_level_of_the_shoulder_2_6:'', write_or_manipulate_and_hold_small_objects_2_6:'', walk_400_meters_about_four_blocks_2_6:'', do_domestic_serv_heavy_rubbing_floor_clean_windows_2_6:''};
     this.sendForm = this.sendForm.bind(this);
     this.setCrouch26 = this.setCrouch26.bind(this);
     this.setTocharge26 = this.setTocharge26.bind(this);
@@ -15,6 +15,8 @@ class VulnerableElderly extends React.Component {
     this.setWrite26 = this.setWrite26.bind(this);
     this.setWalk26 = this.setWalk26.bind(this);
     this.setDomestic26 = this.setDomestic26.bind(this);
+    this.setSelfPerceptionOfHealth26 = this.setSelfPerceptionOfHealth26.bind(this);
+    this.setAge26 = this.setAge26.bind(this);
   }
 
   componentWillMount() {
@@ -55,24 +57,30 @@ class VulnerableElderly extends React.Component {
               <div className="row">
                 <div className="col">
                   <fieldset>
-                  <label>Curvar-se, agachar ou ajoelhar-se</label><br/>
-                  <input type="text" value={this.state.crouch_2_6} onChange={this.setCrouch26} className="answers-78" id="2.6-crouch" name="answers[2.6[crouch]]"  />
-                  <br/><br/>
-                  <label>Levantar ou carregar objetos com peso aproximado de 5 kg</label><br/>
-                  <input type="text" value={this.state.tocharge_2_6} onChange={this.setTocharge26} className="answers-79" id="2.6-tocharge" name="answers[2.6[tocharge]]"  />
-                  <br/><br/>
-                  <label>Elevar ou estender os braços acima do nível do ombro </label><br/>
-                  <input type="text" value={this.state.arms_2_6} onChange={this.setArms26} className="answers-80" id="2.6-arms" name="answers[2.6[arms]]"  />
-                  <br/><br/>
-                  <label>Escrever ou manusear e segurar pequenos objetos</label><br/>
-                  <input type="text" value={this.state.write_2_6} onChange={this.setWrite26} className="answers-81" id="2.6-Write" name="answers[2.6[Write]]"  />
-                  <br/><br/>
-                  <label>Andar 400 metros (aproximadamente quatro quarteirões)</label><br/>
-                  <input type="text" value={this.state.walk_2_6} onChange={this.setWalk26} className="answers-82" id="2.6-walk" name="answers[2.6[walk]]"  />
-                  <br/><br/>
-                  <label>Fazer serviço doméstico pesado, como esfregar o chão ou limpar janelas</label><br/>
-                  <input type="text" value={this.state.domestic_2_6} onChange={this.setDomestic26} className="answers-83" id="2.6-domestic" name="answers[2.6[domestic]]"  />
-                  <br/><br/>
+                    <label>Idade</label><br/>
+                    <input type="text" value={this.state.age_2_6} onChange={this.setAge26} className="answers-78" id="" name=""  />
+                    <br/><br/>
+                    <label>Em geral, comparando-se com outras pessoas da sua idade, você diria que sua saúde é</label><br/>
+                    <input type="text" value={this.state.self_perception_of_health_2_6} onChange={this.setSelfPerceptionOfHealth26} className="answers-78" id="" name=""  />
+                    <br/><br/>
+                    <label>Curvar-se, agachar ou ajoelhar-se</label><br/>
+                    <input type="text" value={this.state.bending_crouching_or_kneel_down_2_6} onChange={this.setCrouch26} className="answers-78" id="2.6-crouch" name="answers[2.6[crouch]]"  />
+                    <br/><br/>
+                    <label>Levantar ou carregar objetos com peso aproximado de 5 kg</label><br/>
+                    <input type="text" value={this.state.lift_or_load_heavy_objects_approximately_five_kg_2_6} onChange={this.setTocharge26} className="answers-79" id="2.6-tocharge" name="answers[2.6[tocharge]]"  />
+                    <br/><br/>
+                    <label>Elevar ou estender os braços acima do nível do ombro </label><br/>
+                    <input type="text" value={this.state.raise_or_extend_arms_above_level_of_the_shoulder_2_6} onChange={this.setArms26} className="answers-80" id="2.6-arms" name="answers[2.6[arms]]"  />
+                    <br/><br/>
+                    <label>Escrever ou manusear e segurar pequenos objetos</label><br/>
+                    <input type="text" value={this.state.write_or_manipulate_and_hold_small_objects_2_6} onChange={this.setWrite26} className="answers-81" id="2.6-Write" name="answers[2.6[Write]]"  />
+                    <br/><br/>
+                    <label>Andar 400 metros (aproximadamente quatro quarteirões)</label><br/>
+                    <input type="text" value={this.state.walk_400_meters_about_four_blocks_2_6} onChange={this.setWalk26} className="answers-82" id="2.6-walk" name="answers[2.6[walk]]"  />
+                    <br/><br/>
+                    <label>Fazer serviço doméstico pesado, como esfregar o chão ou limpar janelas</label><br/>
+                    <input type="text" value={this.state.do_domestic_serv_heavy_rubbing_floor_clean_windows_2_6} onChange={this.setDomestic26} className="answers-83" id="2.6-domestic" name="answers[2.6[domestic]]"  />
+                    <br/><br/>
                   </fieldset>
                 </div>
               </div>
@@ -93,27 +101,35 @@ class VulnerableElderly extends React.Component {
   }
 
   setCrouch26(evt) {
-    this.setState({crouch_2_6: evt.target.value});  
+    this.setState({bending_crouching_or_kneel_down_2_6: evt.target.value});  
   }
 
   setTocharge26(evt) {
-    this.setState({tocharge_2_6: evt.target.value});  
+    this.setState({lift_or_load_heavy_objects_approximately_five_kg_2_6: evt.target.value});  
   }
 
   setArms26(evt) {
-    this.setState({arms_2_6: evt.target.value});  
+    this.setState({raise_or_extend_arms_above_level_of_the_shoulder_2_6: evt.target.value});  
   }
 
   setWrite26(evt) {
-    this.setState({write_2_6: evt.target.value});  
+    this.setState({write_or_manipulate_and_hold_small_objects_2_6: evt.target.value});  
   }
 
   setWalk26(evt) {
-    this.setState({walk_2_6: evt.target.value});  
+    this.setState({walk_400_meters_about_four_blocks_2_6: evt.target.value});  
   }
 
   setDomestic26(evt) {
-    this.setState({domestic_2_6: evt.target.value});  
+    this.setState({do_domestic_serv_heavy_rubbing_floor_clean_windows_2_6: evt.target.value});
+  }
+
+  setSelfPerceptionOfHealth26(evt) {
+    this.setState({self_perception_of_health_2_6: evt.target.value});
+  }
+
+  setAge26(evt) {
+    this.setState({age_2_6: evt.target.value});
   }
 
 }

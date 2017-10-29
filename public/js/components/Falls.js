@@ -7,12 +7,12 @@ class Falls extends React.Component {
   constructor (props) {
     super(props);
 
-    this.state = {persons_references : [], id_historys:'1', id_elderlies:'1', falldate_2_9:'', localfall_2_9:'', fracture_2_9:'', afraidtofall_2_9:''};
+    this.state = {persons_references : [], id_historys:'1', id_elderlies:'1', date_of_fall_month_2_9:'', date_of_fall_year_2_9:'', the_fall_caused_some_fracture_2_9:'', the_fall_caused_some_fracture_extra_2_9:'', you_stopped_perform_some_activity_for_fear_to_fall_again_2_9:''};
     this.sendForm = this.sendForm.bind(this);
-    this.setFallDate29 = this.setFallDate29.bind(this);
-    this.setLocalFall29 = this.setLocalFall29.bind(this);
-    this.setFracture29 = this.setFracture29.bind(this);
-    this.setAfraidtoFall29 = this.setAfraidtoFall29.bind(this);
+    this.setDateOfFallMonth29 = this.setDateOfFallMonth29.bind(this);
+    this.setDateOfFallYear29 = this.setDateOfFallYear29.bind(this);
+    this.setTheFallCausedSomeFracture29 = this.setTheFallCausedSomeFracture29.bind(this);
+    this.setYouStoppedPerformSomeActivityForFearToFallAgain_2_9 = this.setYouStoppedPerformSomeActivityForFearToFallAgain_2_9.bind(this);
   }
 
   componentWillMount() {
@@ -53,22 +53,22 @@ class Falls extends React.Component {
               <div className="row">
                 <div className="col">
                   <fieldset>
-                  <h2>QUEDAS </h2>
-                  <label>Data da queda (mês/ano)</label><br/>
-                  <input type="text" value={this.state.falldate_2_9} onChange={this.setFallDate29} maxLength="12" className="answers-99" id="2.9-falldate" name="answers[2.9[falldate]]"  />
+                  <h2>QUEDAS </h21
+                  <label>Data da queda (mês/ano)</label><br/0
+                  <input type="text" checked={this.state.date_of_fall_month_2_9} onChange={this.setDateOfFallMonth29} maxLength="12" className="answers-99" id="2.9-date_of_fall_month" name="answers[2.9[date_of_fall_month]]"  />
                   <br/><br/>
                   <label>Qual foi o local da queda?</label><br/>
-                  <input type="radio" value={this.state.localfall_2_9} onChange={this.setLocalFall29} className="answers-100" id="2.9-localfall-y" name="answers[2.9[localfall]]" value="y"  />Dentro de casa
-                  <input type="radio" value={this.state.localfall_2_9} onChange={this.setLocalFall29} className="answers-100" id="2.9-localfall-n" name="answers[2.9[localfall]]" value="n"  />Fora de casa
+                  <input type="radio" checked={this.state.date_of_fall_year_2_9 === '1'} onChange={this.setDateOfFallYear29} className="answers-100" id="2.9-date_of_fall_year-y" name="answers[2.9[date_of_fall_year]]" value="1"  />Dentro de casa
+                  <input type="radio" checked={this.state.date_of_fall_year_2_9 === '0'} onChange={this.setDateOfFallYear29} className="answers-100" id="2.9-date_of_fall_year-n" name="answers[2.9[date_of_fall_year]]" value="0"  />Fora de casa
                   <br/><br/>
                   <label>A queda causou alguma fratura?</label><br/>
-                  <input type="radio" value={this.state.fracture_2_9} onChange={this.setFracture29} className="answers-101" id="2.9a-fracture-y" name="answers[2.9[fracture]]" value="1"  />Sim
-                  <input type="radio" value={this.state.fracture_2_9} onChange={this.setFracture29} className="answers-101" id="2.9a-fracture-n" name="answers[2.9[fracture]]" value="0"  />Não
-                  <input type="text"  value={this.state.fracture_2_9} onChange={this.setFracture29} className="answers-101" id="2.9-fracture" name="answers[2.9[fracture]]"/>
+                  <input type="radio" checked={this.state.the_fall_caused_some_fracture_2_9 === '1'} onChange={this.setTheFallCausedSomeFracture29} className="answers-101" id="2.9a-the_fall_caused_some_fracture-y" name="answers[2.9[the_fall_caused_some_fracture]]" value="1"  />Sim
+                  <input type="radio" checked={this.state.the_fall_caused_some_fracture_2_9 === '0'} onChange={this.setTheFallCausedSomeFracture29} className="answers-101" id="2.9a-the_fall_caused_some_fracture-n" name="answers[2.9[the_fall_caused_some_fracture]]" value="0"  />Não
+                  <input type="text"  checked={this.state.the_fall_caused_some_fracture_2_9} onChange={this.setTheFallCausedSomeFracture29} className="answers-101" id="2.9-the_fall_caused_some_fracture" name="answers[2.9[the_fall_caused_some_fracture]]"/>
                   <br/><br/>
                   <label>Você parou de realizar alguma atividade por medo de cair novamente?</label><br/>
-                  <input type="radio" value={this.state.afraidtofall_2_9} onChange={this.setAfraidtoFall29} className="answers-102" id="2.9-afraidtofall-y" name="answers[2.9[afraidtofall]]" value="1"  />Sim
-                  <input type="radio" value={this.state.afraidtofall_2_9} onChange={this.setAfraidtoFall29} className="answers-103" id="2.9-afraidtofall-n" name="answers[2.9[afraidtofall]]" value="0"  />Não
+                  <input type="radio" checked={this.state.the_fall_caused_some_fracture_extra_2_9 === '1'} onChange={this.setYouStoppedPerformSomeActivityForFearToFallAgain_2_9} className="answers-102" id="2.9-the_fall_caused_some_fracture_extra-y" name="answers[2.9[the_fall_caused_some_fracture_extra]]" value="1"  />Sim
+                  <input type="radio" checked={this.state.the_fall_caused_some_fracture_extra_2_9 === '0'} onChange={this.setYouStoppedPerformSomeActivityForFearToFallAgain_2_9} className="answers-103" id="2.9-the_fall_caused_some_fracture_extra-n" name="answers[2.9[the_fall_caused_some_fracture_extra]]" value="0"  />Não
                   <br/><br/>
                   </fieldset>
                 </div>
@@ -89,20 +89,20 @@ class Falls extends React.Component {
     )
   }
 
-  setFallDate29(evt) {
-    this.setState({falldate_2_9: evt.target.value});  
+  setDateOfFallMonth29(evt) {
+    this.setState({date_of_fall_month_2_9: evt.target.value});  
   }
 
-  setLocalFall29(evt) {
-    this.setState({localfall_2_9: evt.target.value});  
+  setDateOfFallYear29(evt) {
+    this.setState({date_of_fall_year_2_9: evt.target.value});  
   }
 
-  setFracture29(evt) {
-    this.setState({fracture_2_9: evt.target.value});  
+  setTheFallCausedSomeFracture29(evt) {
+    this.setState({the_fall_caused_some_fracture_2_9: evt.target.value});  
   }
 
-  setAfraidtoFall29(evt) {
-    this.setState({afraidtofall_2_9: evt.target.value});  
+  setYouStoppedPerformSomeActivityForFearToFallAgain_2_9(evt) {
+    this.setState({the_fall_caused_some_fracture_extra_2_9: evt.target.value});  
   }
 
 }

@@ -7,11 +7,11 @@ class IdentificationChronicPainB extends React.Component {
   constructor (props) {
     super(props);
 
-    this.state = {persons_references : [], id_historys:'1', id_elderlies:'1', data_2_10b:'', placeofpain_2_10b:'', intensityofpain_2_10b:''};
+    this.state = {persons_references : [], id_historys:'1', id_elderlies:'1', date_2_10_b:'', place_of_pain_2_10_b:'', intensity_2_10_b:''};
     this.sendForm = this.sendForm.bind(this);
-    this.setData210b = this.setData210b.bind(this);
+    this.setDate210b = this.setDate210b.bind(this);
     this.setPlaceOfPain210b = this.setPlaceOfPain210b.bind(this);
-    this.setIntensityOfPain210b = this.setIntensityOfPain210b.bind(this);
+    this.setIntensity210b = this.setIntensity210b.bind(this);
   }
 
   componentWillMount() {
@@ -54,12 +54,12 @@ class IdentificationChronicPainB extends React.Component {
                   <fieldset>
                   <h2>IDENTIFICAÇÃO DE DOR CRÔNICA </h2>
                   <label>Data</label><br/>
-                  <input type="date" value={this.state.data_2_10b} onChange={this.setData210b} className="answers-108" id="2.10b-data" name="answers[2.10b[data]]"  /><br/>
+                  <input type="date" value={this.state.data_2_10_b} onChange={this.setData210b} className="answers-108" id="2.10_b-data" name="answers[2.10_b[data]]"  /><br/>
                   <br/><br/>
                   <label>Local da dor</label><br/>
-                  <input type="text"  value={this.state.placeofpain_2_10b} onChange={this.setPlaceOfPain210b} className="answers-109a" id="2.10b-placeofpain" name="answers[2.10b[placeofpain]]"  />
+                  <input type="text"  value={this.state.place_of_pain_2_10_b} onChange={this.setPlaceOfPain210b} className="answers-109a" id="2.10_b-placeofpain" name="answers[2.10_b[placeofpain]]"  />
                   <label>Intensidade da dor</label><br/>
-                  <input type="number"  value={this.state.intensityofpain_2_10b} onChange={this.setIntensityOfPain210b} className="answers-109" id="2.10b-intensityofpain" name="answers[2.10b[intensityofpain]]"  />
+                  <input type="number"  value={this.state.intensity_2_10_b} onChange={this.setIntensity210b} className="answers-109" id="2.10_b-intensity" name="answers[2.10_b[intensity]]"  />
                   <br/><br/>
                   </fieldset>
                 </div>
@@ -81,15 +81,15 @@ class IdentificationChronicPainB extends React.Component {
   }
 
   setData210b(evt) {
-    this.setState({data_2_10b: evt.target.value});  
+    this.setState({data_2_10_b: evt.target.value});  
   }
 
   setPlaceOfPain210b(evt) {
-    this.setState({placeofpain_2_10b: evt.target.value});  
+    this.setState({place_of_pain_2_10_b: evt.target.value});  
   }
 
-  setIntensityOfPain210b(evt) {
-    this.setState({intensityofpain_2_10b: evt.target.value});  
+  setIntensity210b(evt) {
+    this.setState({intensity_2_10_b: evt.target.value});  
   }
 }
 
