@@ -1,16 +1,17 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
+// import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import App from './components/App';
 
-const AppT = () => (
-  <MuiThemeProvider>
-    <App />
-  </MuiThemeProvider>
-);
+// const AppT = () => (
+//   <MuiThemeProvider>
+//     <App />
+//   </MuiThemeProvider>
+// );
 
 ReactDOM.render(
-    <AppT />,
+    // <AppT />,
+    <App />,
     document.getElementById('app')
 );
 
