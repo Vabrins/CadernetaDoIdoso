@@ -1,13 +1,13 @@
 import React from 'react';
 import $ from 'jquery';
-import SideMenu from './SideMenu';
+import { Link } from 'react-router-dom';
 
 class Falls extends React.Component {
   
   constructor (props) {
     super(props);
 
-    this.state = {persons_references : [], id_historys:'1', id_elderlies:'1', date_of_fall_month_2_9:'', date_of_fall_year_2_9:'', the_fall_caused_some_fracture_2_9:'', the_fall_caused_some_fracture_extra_2_9:'', you_stopped_perform_some_activity_for_fear_to_fall_again_2_9:''};
+    this.state = {id_historys:'1', id_elderlies:'1', date_of_fall_month_2_9:'', date_of_fall_year_2_9:'', the_fall_caused_some_fracture_2_9:'', the_fall_caused_some_fracture_extra_2_9:'', you_stopped_perform_some_activity_for_fear_to_fall_again_2_9:''};
     this.sendForm = this.sendForm.bind(this);
     this.setDateOfFallMonth29 = this.setDateOfFallMonth29.bind(this);
     this.setDateOfFallYear29 = this.setDateOfFallYear29.bind(this);
@@ -27,8 +27,6 @@ class Falls extends React.Component {
   }
 
   sendForm(evt) {
-    evt.preventDefault();
-
     $.ajax({
       url: "http://127.0.0.1:8000/api/v1/falls",
       contentType: 'application/json',
@@ -76,11 +74,11 @@ class Falls extends React.Component {
             </form>
             <nav aria-label="Quedas">
               <ul className="pagination justify-content-center">
-                <li className="page-item disabled">
-                  <a className="page-link" href="#" tabIndex="-1"><i className="fa fa-arrow-left" aria-hidden="true"></i></a>
+                <li className="page-item">
+                  <Link className="page-link" to="/environmentalassessment" tabIndex="-1"><i className="fa fa-arrow-left" aria-hidden="true"></i></Link>
                 </li>
                 <li className="page-item">
-                  <a className="page-link" onClick={this.sendForm} href="javascript:;"><i className="fa fa-arrow-right" aria-hidden="true"></i></a>
+                  <Link className="page-link" onClick={this.sendForm} to="/identificationchronicpain"><i className="fa fa-arrow-right" aria-hidden="true"></i></Link>
                 </li>
               </ul>
             </nav>

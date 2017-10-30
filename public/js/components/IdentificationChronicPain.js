@@ -1,17 +1,20 @@
 import React from 'react';
 import $ from 'jquery';
-import SideMenu from './SideMenu';
+import { Link } from 'react-router-dom';
 
 class IdentificationChronicPain extends React.Component {
   
   constructor (props) {
     super(props);
 
-    this.state = {persons_references : [], id_historys:'1', id_elderlies:'1',
-    do_you_have_pain_last_same_more_than_3_mon_2_10:'', 
-    the_pain_is_like_a_shock_or_a_burning_2_10:'',
-    does_the_pain_get_worse_when_walking_2_10:'',
-    does_pain_improve_with_rest_2_10:''};
+    this.state = {
+      id_historys:'1',
+      id_elderlies:'1',
+      do_you_have_pain_last_same_more_than_3_mon_2_10:'', 
+      the_pain_is_like_a_shock_or_a_burning_2_10:'',
+      does_the_pain_get_worse_when_walking_2_10:'',
+      does_pain_improve_with_rest_2_10:''
+    };
 
     this.sendForm = this.sendForm.bind(this);
     this.setDoYouHavePainLastSameMoreThan3Mon210 = this.setDoYouHavePainLastSameMoreThan3Mon210.bind(this);
@@ -32,8 +35,6 @@ class IdentificationChronicPain extends React.Component {
   }
 
   sendForm(evt) {
-    evt.preventDefault();
-
     $.ajax({
       url: "http://127.0.0.1:8000/api/v1/identificationchronicpain",
       contentType: 'application/json',
@@ -81,11 +82,11 @@ class IdentificationChronicPain extends React.Component {
             </form>
             <nav aria-label=" Indentificação de dor crônica">
               <ul className="pagination justify-content-center">
-                <li className="page-item disabled">
-                  <a className="page-link" href="#" tabIndex="-1"><i className="fa fa-arrow-left" aria-hidden="true"></i></a>
+                <li className="page-item">
+                  <Link className="page-link" to="/falls" tabIndex="-1"><i className="fa fa-arrow-left" aria-hidden="true"></i></Link>
                 </li>
                 <li className="page-item">
-                  <a className="page-link" onClick={this.sendForm} href="javascript:;"><i className="fa fa-arrow-right" aria-hidden="true"></i></a>
+                  <Link className="page-link" onClick={this.sendForm} to="/identificationchronicpainb"><i className="fa fa-arrow-right" aria-hidden="true"></i></Link>
                 </li>
               </ul>
             </nav>

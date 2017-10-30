@@ -18,7 +18,7 @@
     <!-- General styles -->
     <link rel="stylesheet" href="{{ asset('/css/global.css') }}">
   </head>
-  <body class="fixed-nav sticky-footer bg-dark " id="page-top">
+  <body class="fixed-nav sticky-footer bg-dark sidenav-toggled" id="page-top">
 
     <div class="content-wrapper">
       <div id="app" class="container-fluid"></div>
@@ -65,9 +65,7 @@
       <script src="{{ asset('/js/popper/popper.min.js') }}"></script>
       <script src="{{ asset('/js/bootstrap.min.js') }}"></script>
       <!-- Core plugin JavaScript-->
-      <script src="{{ asset('/js/jquery.easing.min.js') }}"></script>
-      <!-- Custom scripts for all pages-->
-      <script src="{{ asset('/js/sb-admin.min.js') }}"></script>
+      <script async src="{{ asset('/js/jquery.easing.min.js') }}"></script>
     </div>
   </body>
 </html>

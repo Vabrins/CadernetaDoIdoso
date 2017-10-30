@@ -1,13 +1,13 @@
 import React from 'react';
 import $ from 'jquery';
-import SideMenu from './SideMenu';
+import { Link } from 'react-router-dom';
 
 class SurgeriesPerformed extends React.Component {
   
   constructor (props) {
     super(props);
 
-    this.state = {persons_references : [], id_historys:'1', surgery_2_3:'1', year_2_3:'', comments_2_3:''};
+    this.state = {id_historys:'1', surgery_2_3:'', year_2_3:'', comments_2_3:''};
     this.sendForm = this.sendForm.bind(this);
     this.setSurgery23 = this.setSurgery23.bind(this);
     this.setYear23 = this.setYear23.bind(this);
@@ -26,8 +26,6 @@ class SurgeriesPerformed extends React.Component {
   }
 
   sendForm(evt) {
-    evt.preventDefault();
-
     $.ajax({
       url: "http://127.0.0.1:8000/api/v1/surgeriesperformed",
       contentType: 'application/json',
@@ -67,11 +65,11 @@ class SurgeriesPerformed extends React.Component {
             </form>
             <nav aria-label="Cirurgias realizadas">
               <ul className="pagination justify-content-center">
-                <li className="page-item disabled">
-                  <a className="page-link" href="#" tabIndex="-1"><i className="fa fa-arrow-left" aria-hidden="true"></i></a>
+                <li className="page-item">
+                  <Link className="page-link" to="/diagnosisprevioushospitalization" tabIndex="-1"><i className="fa fa-arrow-left" aria-hidden="true"></i></Link>
                 </li>
                 <li className="page-item">
-                  <a className="page-link" onClick={this.sendForm} href="javascript:;"><i className="fa fa-arrow-right" aria-hidden="true"></i></a>
+                  <Link className="page-link" onClick={this.sendForm} to="/reactionorallergy"><i className="fa fa-arrow-right" aria-hidden="true"></i></Link>
                 </li>
               </ul>
             </nav>

@@ -1,13 +1,13 @@
 import React from 'react';
 import $ from 'jquery';
-import SideMenu from './SideMenu';
+import { Link } from 'react-router-dom';
 
 class PressureControls extends React.Component {
   
   constructor (props) {
     super(props);
 
-    this.state = {persons_references : [], id_historys:'1', id_elderlies:'1', date_2_11_a:'', pa_2_11_a:''};
+    this.state = {id_historys:'1', id_elderlies:'1', date_2_11_a:'', pa_2_11_a:''};
     this.sendForm = this.sendForm.bind(this);
     this.setDate211a = this.setDate211a.bind(this);
     this.setPa211a = this.setPa211a.bind(this);
@@ -25,7 +25,6 @@ class PressureControls extends React.Component {
   }
 
   sendForm(evt) {
-    evt.preventDefault();
 
     $.ajax({
       url: "http://127.0.0.1:8000/api/v1/pressurecontrol",
@@ -63,11 +62,11 @@ class PressureControls extends React.Component {
             </form>
             <nav aria-label=" Controle da Pressão Arterial">
               <ul className="pagination justify-content-center">
-                <li className="page-item disabled">
-                  <a className="page-link" href="#" tabIndex="-1"><i className="fa fa-arrow-left" aria-hidden="true"></i></a>
+                <li className="page-item">
+                  <Link className="page-link" to="/livinghabits" tabIndex="-1"><i className="fa fa-arrow-left" aria-hidden="true"></i></Link>
                 </li>
                 <li className="page-item">
-                  <a className="page-link" onClick={this.sendForm} href="javascript:;"><i className="fa fa-arrow-right" aria-hidden="true"></i></a>
+                  <Link className="page-link" onClick={this.sendForm} to="/glucosecontrol"><i className="fa fa-arrow-right" aria-hidden="true"></i></Link>
                 </li>
               </ul>
             </nav>

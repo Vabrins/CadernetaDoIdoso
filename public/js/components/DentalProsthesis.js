@@ -1,13 +1,13 @@
 import React from 'react';
 import $ from 'jquery';
-import SideMenu from './SideMenu';
+import { Link } from 'react-router-dom';
 
 class DentalProsthesis extends React.Component {
   
   constructor (props) {
     super(props);
 
-    this.state = {persons_references : [], 
+    this.state = {
       id_historys:'1', 
       id_elderlies:'1', 
       superior_2_11_d_a:'', 
@@ -17,14 +17,15 @@ class DentalProsthesis extends React.Component {
       does_not_use_and_does_not_require_prosthesis_2_11_d_a:'',
       does_not_use_but_needs_prosthesis_2_11_d_a:'', 
       uses_adapted_without_exchange_2_11_d_a:'', 
-      uses_not_adapted_needs_exchange_2_11_d_a:''};
+      uses_not_adapted_needs_exchange_2_11_d_a:''
+    };
 
     this.sendForm = this.sendForm.bind(this);
     this.setSuperior211da = this.setSuperior211da.bind(this);
     this.setInferior211da = this.setInferior211da.bind(this);
-    this.setTotalprosthesis211da = this.setTotalProsthesis211da.bind(this);
+    this.setTotalProsthesis211da = this.setTotalProsthesis211da.bind(this);
     this.setPartialProsthesis211da = this.setPartialProsthesis211da.bind(this);
-    this.setDoesNotUseAndDoesNotRequireProsthesis211da = this.ssetDoesNotUseAndDoesNotRequireProsthesis211da.bind(this);
+    this.setDoesNotUseAndDoesNotRequireProsthesis211da = this.setDoesNotUseAndDoesNotRequireProsthesis211da.bind(this);
     this.setDoesNotUseButNeedsProsthesis211da = this.setDoesNotUseButNeedsProsthesis211da.bind(this);
     this.setUsesAdaptedWithoutExchange211da = this.setUsesAdaptedWithoutExchange211da.bind(this);
     this.setusesNotAdaptedNeedsExchange211da = this.setusesNotAdaptedNeedsExchange211da.bind(this);
@@ -42,8 +43,6 @@ class DentalProsthesis extends React.Component {
   }
 
   sendForm(evt) {
-    evt.preventDefault();
-
     $.ajax({
       url: "http://127.0.0.1:8000/api/v1/dentalprosthesis",
       contentType: 'application/json',
@@ -108,11 +107,11 @@ class DentalProsthesis extends React.Component {
             </form>
             <nav aria-label="Prótese Dentária">
               <ul className="pagination justify-content-center">
-                <li className="page-item disabled">
-                  <a className="page-link" href="#" tabIndex="-1"><i className="fa fa-arrow-left" aria-hidden="true"></i></a>
+                <li className="page-item">
+                  <Link className="page-link" to="/oralhealthassessment" tabIndex="-1"><i className="fa fa-arrow-left" aria-hidden="true"></i></Link>
                 </li>
                 <li className="page-item">
-                  <a className="page-link" onClick={this.sendForm} href="javascript:;"><i className="fa fa-arrow-right" aria-hidden="true"></i></a>
+                  <Link className="page-link" onClick={this.sendForm} to="/consultationexamination"><i className="fa fa-arrow-right" aria-hidden="true"></i></Link>
                 </li>
               </ul>
             </nav>

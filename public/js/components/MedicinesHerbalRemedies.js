@@ -1,13 +1,13 @@
 import React from 'react';
 import $ from 'jquery';
-import SideMenu from './SideMenu';
+import { Link } from 'react-router-dom';
 
 class MedicinesHerbalRemedies extends React.Component {
   
   constructor (props) {
     super(props);
 
-    this.state = {persons_references : [], id_historys:'1', id_elderlies:'1', name_of_the_medicinal_supplement_or_vitamin_2_1:'', dose_and_frequency_2_1:'', start_date_or_time_of_use_2_1:'', concomitant_use_of_five_or_more_medicines_2_1:'', it_was_prescribed_by_some_professional_2_1:'', suspension_information_2_1:''};
+    this.state = {id_historys:'1', id_elderlies:'1', name_of_the_medicinal_supplement_or_vitamin_2_1:'', dose_and_frequency_2_1:'', start_date_or_time_of_use_2_1:'', concomitant_use_of_five_or_more_medicines_2_1:'', it_was_prescribed_by_some_professional_2_1:'', suspension_information_2_1:''};
     this.sendForm = this.sendForm.bind(this);
     this.setSupplement21 = this.setSupplement21.bind(this);
     this.setDose21 = this.setDose21.bind(this);
@@ -29,8 +29,6 @@ class MedicinesHerbalRemedies extends React.Component {
   }
 
   sendForm(evt) {
-    evt.preventDefault();
-
     $.ajax({
       url: "http://127.0.0.1:8000/api/v1/medicinesherbalremedies",
       contentType: 'application/json',
@@ -81,11 +79,11 @@ class MedicinesHerbalRemedies extends React.Component {
             </form>
             <nav aria-label="Avaliação da pessoa idosa">
               <ul className="pagination justify-content-center">
-                <li className="page-item disabled">
-                  <a className="page-link" href="#" tabIndex="-1"><i className="fa fa-arrow-left" aria-hidden="true"></i></a>
+                <li className="page-item">
+                  <Link className="page-link" to="/socialfamilyinformations" tabIndex="-1"><i className="fa fa-arrow-left" aria-hidden="true"></i></Link>
                 </li>
                 <li className="page-item">
-                  <a className="page-link" onClick={this.sendForm} href="javascript:;"><i className="fa fa-arrow-right" aria-hidden="true"></i></a>
+                  <Link className="page-link" onClick={this.sendForm} to="/diagnosisprevioushospitalization"><i className="fa fa-arrow-right" aria-hidden="true"></i></Link>
                 </li>
               </ul>
             </nav>

@@ -1,29 +1,32 @@
 import React from 'react';
 import $ from 'jquery';
-import SideMenu from './SideMenu';
+import { Link } from 'react-router-dom';
 
 class OralHealthAssessment extends React.Component {
   
   constructor (props) {
     super(props);
 
-    this.state = {persons_references : [], id_historys:'1', id_elderlies:'1', 
-    alcohol_2_11d:'', 
-    smoke_2_11d:'', 
-    presence_of_lesion_on_the_buccal_mucosa_2_11d:'', 
-    dry_mouth_2_11d:'', 
-    white_tongue_2_11d:'', 
-    presence_of_lesion_on_the_buccal_mucosa_2_11d:'', 
-    presence_of_halitosis_2_11d:'', 
-    presence_of_bacterial_plaque_2_11d:'', 
-    plate_retentive_factors_2_11d:'', 
-    obvious_presence_of_gingivitis_2_11d:'', 
-    obvious_presence_of_periodontitis_2_11d:'', 
-    presence_of_caries_2_11d:'', 
-    dental_loss_in_last_year_2_11d:'', 
-    attendance_at_the_health_unit_2_11d:'', 
-    home_service_2_11d:'', 
-    forwarding_for_specialties_dental_2_11d:''};
+    this.state = {
+      id_historys:'1',
+      id_elderlies:'1', 
+      alcohol_2_11d:'', 
+      smoke_2_11d:'', 
+      presence_of_lesion_on_the_buccal_mucosa_2_11d:'', 
+      dry_mouth_2_11d:'', 
+      white_tongue_2_11d:'', 
+      presence_of_lesion_on_the_buccal_mucosa_2_11d:'', 
+      presence_of_halitosis_2_11d:'', 
+      presence_of_bacterial_plaque_2_11d:'', 
+      plate_retentive_factors_2_11d:'', 
+      obvious_presence_of_gingivitis_2_11d:'', 
+      obvious_presence_of_periodontitis_2_11d:'', 
+      presence_of_caries_2_11d:'', 
+      dental_loss_in_last_year_2_11d:'', 
+      attendance_at_the_health_unit_2_11d:'', 
+      home_service_2_11d:'', 
+      forwarding_for_specialties_dental_2_11d:''
+    };
 
     this.sendForm = this.sendForm.bind(this);
     this.setAlcohol211d = this.setAlcohol211d.bind(this);
@@ -56,8 +59,6 @@ class OralHealthAssessment extends React.Component {
   }
 
   sendForm(evt) {
-    evt.preventDefault();
-
     $.ajax({
       url: "http://127.0.0.1:8000/api/v1/oralhealthassessment",
       contentType: 'application/json',
@@ -156,11 +157,11 @@ class OralHealthAssessment extends React.Component {
             </form>
             <nav aria-label="Avaliação de saúde bucal">
               <ul className="pagination justify-content-center">
-                <li className="page-item disabled">
-                  <a className="page-link" href="#" tabIndex="-1"><i className="fa fa-arrow-left" aria-hidden="true"></i></a>
+                <li className="page-item">
+                  <Link className="page-link" to="/vaccinationcalendar" tabIndex="-1"><i className="fa fa-arrow-left" aria-hidden="true"></i></Link>
                 </li>
                 <li className="page-item">
-                  <a className="page-link" onClick={this.sendForm} href="javascript:;"><i className="fa fa-arrow-right" aria-hidden="true"></i></a>
+                  <Link className="page-link" onClick={this.sendForm} to="/dentalprosthesis"><i className="fa fa-arrow-right" aria-hidden="true"></i></Link>
                 </li>
               </ul>
             </nav>
