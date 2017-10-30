@@ -106,29 +106,29 @@ class PersonalData extends React.Component {
   }
 
   sendForm(evt) {
-    evt.preventDefault();
-    // console.log('You have selected:', this.state.name_1);
+    // evt.preventDefault();
+    console.log('You have selected:', this.state.name_1);
 
-    $.ajax({
-      url: "http://127.0.0.1:8000/api/v1/personaldata",
-      contentType: 'application/json',
-      dataType: 'json',
-      method: "POST",
-      data: JSON.stringify({ test: this.state }),
-      success: function(response){
-        console.log(response);
-        console.log("enviado com sucesso");
-      },
-      error: function(response){
-        console.log(response);
-        if(response.status === 400) {
-          new errorHandler().getErrors(response.responseJSON);
-        }
-        if(response.status === 500) {
-          new errorHandler().getErrors(response.responseJSON);
-        }
-      }.bind(this)
-    });
+    // $.ajax({
+    //   url: "http://127.0.0.1:8000/api/v1/personaldata",
+    //   contentType: 'application/json',
+    //   dataType: 'json',
+    //   method: "POST",
+    //   data: JSON.stringify({ test: this.state }),
+    //   success: function(response){
+    //     console.log(response);
+    //     console.log("enviado com sucesso");
+    //   },
+    //   error: function(response){
+    //     console.log(response);
+    //     if(response.status === 400) {
+    //       new errorHandler().getErrors(response.responseJSON);
+    //     }
+    //     if(response.status === 500) {
+    //       new errorHandler().getErrors(response.responseJSON);
+    //     }
+    //   }.bind(this)
+    // });
   }
 
  render () {
@@ -140,7 +140,7 @@ class PersonalData extends React.Component {
                   <a className="page-link" href="#" tabIndex="-1"><i className="fa fa-arrow-left" aria-hidden="true"></i></a>
                 </li>
                 <li className="page-item">
-                  <a className="page-link" onClick={this.sendForm} href="javascript:;"><i className="fa fa-arrow-right" aria-hidden="true"></i></a>
+                  <Link className="page-link" to="/personsreferences" onClick={this.sendForm} ><i className="fa fa-arrow-right" aria-hidden="true"></i></Link>
                 </li>
               </ul>
             </nav>

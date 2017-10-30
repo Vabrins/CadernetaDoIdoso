@@ -9,7 +9,7 @@ class About extends React.Component {
   render () {
     return (
       <div>
-        <h1>APRESENTAÇÃO</h1>
+        <h1 style={{textAlign: "center"}}>Apresentação</h1>
         <p>
           O Ministério da Saúde
            compreende o envelhecimento populacional como uma conquista 
@@ -45,6 +45,12 @@ class About extends React.Component {
            contribua para 
           qualificar a atenção à pessoa idosa
            no SUS.
+        </p>
+        <h1 style={{textAlign: "center"}}>Sistema</h1>
+        <p>
+          É um projeto open source para a digitalização da caderneta do idoso. Foi inicialmente elaborado para conclusão 
+          de curso de análise de sistema da Fatec São Caetano do Sul.
+          Acesse o repositório do projeto <a href="https://github.com/Vabrins/CadernetaDoIdoso" target="blank">aqui.</a>
         </p>
       </div>
     )

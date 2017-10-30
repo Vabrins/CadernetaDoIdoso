@@ -15,7 +15,7 @@ class Home extends React.Component {
   render () {
     return (
       <div className="jumbotron">
-        <h1 className="display-3">Olá, Ricardo!</h1>
+        <h1 className="display-3">Olá, Bem vindo!</h1>
         <p className="lead">
           A  Caderneta  de  Saúde  da  Pessoa  Idosa  integra  um  
           conjunto de iniciativas que tem por objetivo qualificar 
@@ -28,7 +28,8 @@ class Home extends React.Component {
         <h5 style={{marginBottom: "1.5rem"}}>O que fazer?</h5>
         <p className="lead">
           <Link className="btn btn-primary btn-lg" exact="true" to="/personaldata" style={{marginRight: "10px"}} role="button">Novo registro de saúde</Link>
-          <Link className="btn btn-primary btn-lg" exact="true" to="/listings" role="button">Ver históricos</Link>
+          <Link className="btn btn-primary btn-lg" exact="true" to="/listings" style={{marginRight: "10px"}} role="button">Ver históricos</Link>
+          <Link className="btn btn-primary btn-lg" exact="true" to="/results" style={{marginRight: "10px"}} role="button">Ver resultados</Link>
         </p>
       </div>
     )

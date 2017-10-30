@@ -1,13 +1,13 @@
 import React from 'react';
 import $ from 'jquery';
-import SideMenu from './SideMenu';
+import { Link } from 'react-router-dom';
 
 class ResidentialAddress extends React.Component {
   
   constructor (props) {
     super(props);
 
-    this.state = {persons_references : [], id_historys:'1', id_elderlies:'1', street_avenue_square_1_a:'', number_1_a:'', complement_1_a:'', district_1_a:'', reference_point_1_a:'', zip_code_1_a:'', county_1_a:'', state_1_a:'', telephone_1_a:'', cell_phone_1_a:'', email_1_a:'' };
+    this.state = {id_historys:'1', id_elderlies:'1', street_avenue_square_1_a:'', number_1_a:'', complement_1_a:'', district_1_a:'', reference_point_1_a:'', zip_code_1_a:'', county_1_a:'', state_1_a:'', telephone_1_a:'', cell_phone_1_a:'', email_1_a:'' };
     this.sendForm = this.sendForm.bind(this);
     this.setStreet1a = this.setStreet1a.bind(this);
     this.setNumber1a = this.setNumber1a.bind(this);
@@ -35,8 +35,6 @@ class ResidentialAddress extends React.Component {
   }
 
   sendForm(evt) {
-    evt.preventDefault();
-
     $.ajax({
       url: "http://127.0.0.1:8000/api/v1/residentialaddress",
       contentType: 'application/json',
@@ -100,11 +98,11 @@ class ResidentialAddress extends React.Component {
             </form>
             <nav aria-label="Endereço residencial">
               <ul className="pagination justify-content-center">
-                <li className="page-item disabled">
-                  <a className="page-link" href="#" tabIndex="-1"><i className="fa fa-arrow-left" aria-hidden="true"></i></a>
+                <li className="page-item">
+                  <Link className="page-link" to="/personsreferences" tabIndex="-1"><i className="fa fa-arrow-left" aria-hidden="true"></i></Link>
                 </li>
                 <li className="page-item">
-                  <a className="page-link" onClick={this.sendForm} href="javascript:;"><i className="fa fa-arrow-right" aria-hidden="true"></i></a>
+                  <Link className="page-link" onClick={this.sendForm} to="/socialfamilyinformations"><i className="fa fa-arrow-right" aria-hidden="true"></i></Link>
                 </li>
               </ul>
             </nav>

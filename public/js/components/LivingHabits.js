@@ -1,13 +1,13 @@
 import React from 'react';
 import $ from 'jquery';
-import SideMenu from './SideMenu';
+import { Link } from 'react-router-dom';
 
 class LivingHabits extends React.Component {
   
   constructor (props) {
     super(props);
 
-    this.state = {persons_references : [], id_historys:'1', id_elderlies:'1', do_you_go_to_day_centers_clubs_or_social_groups_2_11:'', do_you_do_any_volunteer_work_2_11:'', do_you_have_any_leisure_activities_2_11:'', do_you_engage_type_ph_act_least_three_tm_week_2_11:'', would_you_like_start_some_phy_activity_program_2_11:'', do_you_make_at_least_three_meals_a_day_2_11:'', do_you_eat_fruits_veg_your_meals_thro_the_day_2_11:'', in_at_least_one_meal_day_you_eat_meat_fish_eggs_2_11:'', you_have_custom_consuming_sug_dr_cak_bis_stuf_dess_2_11:'', in_the_prep_your_meals_great_qt_oils_used_fats_su_salt_2_11:'', do_you_include_water_intake_in_your_daily_routine_2_11:'', do_you_currently_smoke_any_tobacco_products_2_11:'', would_you_like_to_quit_smoking_2_11:'', are_you_a_former_smoker_2_11:'', do_you_drink_alcohol_2_11:'', have_you_ever_felt_the_need_to_reduce_or_of_alcohol_2_11:'', has_anyone_ever_criticized_you_for_drinking_2_11:'', feel_guilty_for_drinking_2_11:'', do_you_usually_drink_in_the_morning_2_11:''};
+    this.state = {id_historys:'1', id_elderlies:'1', do_you_go_to_day_centers_clubs_or_social_groups_2_11:'', do_you_do_any_volunteer_work_2_11:'', do_you_have_any_leisure_activities_2_11:'', do_you_engage_type_ph_act_least_three_tm_week_2_11:'', would_you_like_start_some_phy_activity_program_2_11:'', do_you_make_at_least_three_meals_a_day_2_11:'', do_you_eat_fruits_veg_your_meals_thro_the_day_2_11:'', in_at_least_one_meal_day_you_eat_meat_fish_eggs_2_11:'', you_have_custom_consuming_sug_dr_cak_bis_stuf_dess_2_11:'', in_the_prep_your_meals_great_qt_oils_used_fats_su_salt_2_11:'', do_you_include_water_intake_in_your_daily_routine_2_11:'', do_you_currently_smoke_any_tobacco_products_2_11:'', would_you_like_to_quit_smoking_2_11:'', are_you_a_former_smoker_2_11:'', do_you_drink_alcohol_2_11:'', have_you_ever_felt_the_need_to_reduce_or_of_alcohol_2_11:'', has_anyone_ever_criticized_you_for_drinking_2_11:'', feel_guilty_for_drinking_2_11:'', do_you_usually_drink_in_the_morning_2_11:''};
     this.sendForm = this.sendForm.bind(this);
     this.setAttendClubs211 = this.setAttendClubs211.bind(this);
     this.setVolunteerWork211 = this.setVolunteerWork211.bind(this);
@@ -42,7 +42,6 @@ class LivingHabits extends React.Component {
   }
 
   sendForm(evt) {
-    evt.preventDefault();
 
     $.ajax({
       url: "http://127.0.0.1:8000/api/v1/livinghabits",
@@ -161,11 +160,11 @@ class LivingHabits extends React.Component {
             </form>
             <nav aria-label="Avaliação de saúde bucal">
               <ul className="pagination justify-content-center">
-                <li className="page-item disabled">
-                  <a className="page-link" href="#" tabIndex="-1"><i className="fa fa-arrow-left" aria-hidden="true"></i></a>
+                <li className="page-item">
+                  <Link className="page-link" to="/identificationchronicpainb" tabIndex="-1"><i className="fa fa-arrow-left" aria-hidden="true"></i></Link>
                 </li>
                 <li className="page-item">
-                  <a className="page-link" onClick={this.sendForm} href="javascript:;"><i className="fa fa-arrow-right" aria-hidden="true"></i></a>
+                  <Link className="page-link" onClick={this.sendForm} to="/pressurecontrol"><i className="fa fa-arrow-right" aria-hidden="true"></i></Link>
                 </li>
               </ul>
             </nav>

@@ -1,13 +1,13 @@
 import React from 'react';
 import $ from 'jquery';
-import SideMenu from './SideMenu';
+import { Link } from 'react-router-dom';
 
 class DiagnosisPreviousHospitalization extends React.Component {
   
   constructor (props) {
     super(props);
 
-    this.state = {persons_references : [], id_historys:'1', id_elderlies:'1', diagnostics_2_2:'' , diagnostics_year_2_2:'', hospitalization_2_2:'', other_conditions_2_2:''};
+    this.state = {id_historys:'1', id_elderlies:'1', diagnostics_2_2:'' , diagnostics_year_2_2:'', hospitalization_2_2:'', other_conditions_2_2:''};
     this.sendForm = this.sendForm.bind(this);
     this.setDiagnostics22 = this.setDiagnostics22.bind(this);
     this.setDiagnosticsYear22 = this.setDiagnosticsYear22.bind(this);
@@ -27,8 +27,6 @@ class DiagnosisPreviousHospitalization extends React.Component {
   }
 
   sendForm(evt) {
-    evt.preventDefault();
-
     $.ajax({
       url: "http://127.0.0.1:8000/api/v1/diagnosisprevioushospitalization",
       contentType: 'application/json',
@@ -55,6 +53,7 @@ class DiagnosisPreviousHospitalization extends React.Component {
                   <fieldset>
                     <h2> DIAGNÓSTICOS E INTERNAÇÕES PRÉVIOS </h2>
                     <select onChange={this.setDiagnostics22} defaultValue=""  >
+                      <option value="">Selecione...</option>
                       <option value="Acidente vascular cerebral(AVC) ou derrame">Acidente vascular cerebral(AVC) ou derrame</option>
                       <option value="Anemia">Anemia</option>
                       <option value="Asma">Asma</option>
@@ -86,11 +85,11 @@ class DiagnosisPreviousHospitalization extends React.Component {
             </form>
             <nav aria-label="Protocolo de indentificação do idoso vulnerável">
               <ul className="pagination justify-content-center">
-                <li className="page-item disabled">
-                  <a className="page-link" href="#" tabIndex="-1"><i className="fa fa-arrow-left" aria-hidden="true"></i></a>
+                <li className="page-item">
+                  <Link className="page-link" to="/medicinesherbalremedies" tabIndex="-1"><i className="fa fa-arrow-left" aria-hidden="true"></i></Link>
                 </li>
                 <li className="page-item">
-                  <a className="page-link" onClick={this.sendForm} href="javascript:;"><i className="fa fa-arrow-right" aria-hidden="true"></i></a>
+                  <Link className="page-link" onClick={this.sendForm} to="/surgeriesperformed"><i className="fa fa-arrow-right" aria-hidden="true"></i></Link>
                 </li>
               </ul>
             </nav>

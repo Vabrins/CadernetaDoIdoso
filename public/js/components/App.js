@@ -6,6 +6,8 @@ import About from './About';
 import Home from './Home';
 import CadernetaMenuGuide from './CadernetaMenuGuide';
 import $ from 'jquery';
+import Details from './Details';
+import adminJS from './../sb-admin.min.js';
 
 import PersonalData from './PersonalData';
 import PersonsReferences from './PersonsReferences';
@@ -40,7 +42,19 @@ class App extends React.Component {
     this.setElderlyCpf = this.setElderlyCpf.bind(this);
   }
 
-  setElderlyCpf () {    
+  componentWillMount () {
+    this.loadAdminJs();
+  }
+
+  loadAdminJs () {
+    const script = document.createElement("script");
+
+    script.src = "http://127.0.0.1:8000/js/sb-admin.js";
+    script.async = true;
+    document.body.appendChild(script);
+  }
+
+  setElderlyCpf () {
     $.ajax({
       url: "http://127.0.0.1:8000/api/v1/elderly",
       contentType: 'application/json',
@@ -190,7 +204,7 @@ class App extends React.Component {
                       <input className="form-control" value={this.state.cpf} onChange={this.setCpf} type="text" placeholder="CPF do idoso" maxLength="11" />
                       <span className="input-group-btn">
                       <button className="btn btn-primary" type="button" onClick={this.setElderlyCpf}>
-                      <i className="fa fa-search"></i>
+                      <i className="fa fa-refresh"></i>
                       </button>
                       </span>
                     </div>
@@ -213,11 +227,14 @@ class App extends React.Component {
               </div>
             </div>
           </div>
+
           {/*App Routes*/}
             <Route path="/index" component={Home} />
             <Route path="/listings" component={Listings} />
             <Route path="/results" component={Results} />
             <Route path="/about" component={About} />
+            <Route path="/details" component={Details} />
+
           {/*Evaluation Forms Routes*/}
             <Route path="/personaldata" component={PersonalData} />
             <Route path="/personsreferences" component={PersonsReferences} />

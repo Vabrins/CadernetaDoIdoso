@@ -1,13 +1,13 @@
 import React from 'react';
 import $ from 'jquery';
-import SideMenu from './SideMenu';
+import { Link } from 'react-router-dom';
 
 class AnthropometricData extends React.Component {
   
   constructor (props) {
     super(props);
 
-    this.state = {persons_references : [], id_historys:'1', id_elderlies:'1', weight_2_5:'', height_2_5:'', imc_weight_height_2_5:'', calf_perimeter_pp_left_2_5:'', you_have_exp_loss_uni_weight_min_body_last_year_2_5:''};
+    this.state = {id_historys:'1', id_elderlies:'1', weight_2_5:'', height_2_5:'', imc_weight_height_2_5:'', calf_perimeter_pp_left_2_5:'', you_have_exp_loss_uni_weight_min_body_last_year_2_5:''};
     this.sendForm = this.sendForm.bind(this);
     this.setWeight25 = this.setWeight25.bind(this);
     this.setHeight25 = this.setHeight25.bind(this);
@@ -28,8 +28,6 @@ class AnthropometricData extends React.Component {
   }
 
   sendForm(evt) {
-    evt.preventDefault();
-
     $.ajax({
       url: "http://127.0.0.1:8000/api/v1/anthropometricdata",
       contentType: 'application/json',
@@ -76,11 +74,11 @@ class AnthropometricData extends React.Component {
             </form>
             <nav aria-label="Dados Antropométricos">
               <ul className="pagination justify-content-center">
-                <li className="page-item disabled">
-                  <a className="page-link" href="#" tabIndex="-1"><i className="fa fa-arrow-left" aria-hidden="true"></i></a>
+                <li className="page-item">
+                  <Link className="page-link" to="/reactionorallergy" tabIndex="-1"><i className="fa fa-arrow-left" aria-hidden="true"></i></Link>
                 </li>
                 <li className="page-item">
-                  <a className="page-link" onClick={this.sendForm} href="javascript:;"><i className="fa fa-arrow-right" aria-hidden="true"></i></a>
+                  <Link className="page-link" onClick={this.sendForm} to="/vulnerableelderly"><i className="fa fa-arrow-right" aria-hidden="true"></i></Link>
                 </li>
               </ul>
             </nav>
