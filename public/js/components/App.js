@@ -5,6 +5,7 @@ import Results from './Results';
 import About from './About';
 import Home from './Home';
 import CadernetaMenuGuide from './CadernetaMenuGuide';
+import $ from 'jquery';
 
 import PersonalData from './PersonalData';
 import PersonsReferences from './PersonsReferences';
@@ -34,7 +35,27 @@ import ConsultationExamination from './ConsultationExamination';
 class App extends React.Component {
   constructor (props) {
     super(props)    
-    this.state = {}
+    this.state = {cpf:''};
+    this.setCpf = this.setCpf.bind(this);
+    this.setElderlyCpf = this.setElderlyCpf.bind(this);
+  }
+
+  setElderlyCpf () {    
+    $.ajax({
+      url: "http://127.0.0.1:8000/api/v1/elderly",
+      contentType: 'application/json',
+      dataType: 'json',
+      method: "POST",
+      data: JSON.stringify({ test: this.state.cpf }),
+      success: function(response){
+        console.log(response);
+        console.log("enviado com sucesso");
+      },
+      error: function(response){
+        console.log("erro");
+        console.log(response);
+      }.bind(this)
+    });
   }
 
   render () {
@@ -166,9 +187,9 @@ class App extends React.Component {
                 <li className="nav-item">
                   <form className="form-inline my-2 my-lg-0 mr-lg-2">
                     <div className="input-group">
-                      <input className="form-control" type="text" placeholder="Procurar por..." />
+                      <input className="form-control" value={this.state.cpf} onChange={this.setCpf} type="text" placeholder="CPF do idoso" maxLength="11" />
                       <span className="input-group-btn">
-                      <button className="btn btn-primary" type="button">
+                      <button className="btn btn-primary" type="button" onClick={this.setElderlyCpf}>
                       <i className="fa fa-search"></i>
                       </button>
                       </span>
@@ -224,6 +245,10 @@ class App extends React.Component {
         </div>
       </Router>
     )
+  }
+
+  setCpf(evt) {
+    this.setState({cpf: evt.target.value});
   }
 }
 

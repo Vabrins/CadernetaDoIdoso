@@ -102,8 +102,8 @@ class OralHealthAssessment extends React.Component {
                   <input type="radio" checked={this.state.drymouth_2_11d === '0'} onChange={this.setDrymouth211d} className="answers-142" id="2.11d-drymouth-n" name="answers[2.11d[drymouth]]" value="0"  />Não
                   <br/><br/>
                   <label>Presença de língua saburrosa (língua branca)</label><br/>
-                  <input type="radio" checked={this.state.whitetongue_2_11d === '1'} onChange={this.setWhiteTongue211d} className="answers-143" id="2.11d-whitetongue-y" name="answers[2.11d[whitetongue]]" value="1"  />Sim
-                  <input type="radio" checked={this.state.whitetongue_2_11d === '0'} === '0' onChange={this.setWhiteTongue211d} className="answers-143" id="2.11d-whitetongue-n" name="answers[2.11d[whitetongue]]" value="0"  />Não
+                  <input type="radio" checked={this.state.whitetongue_2_11d === '1'} onChange={this.setWhiteTongue211d} className="answers-143" id="2.11d-whitetongue-y" name="answers[2.11d[whitetongue]]" value="1" />Sim
+                  <input type="radio" checked={this.state.whitetongue_2_11d === '0'} onChange={this.setWhiteTongue211d} className="answers-143" id="2.11d-whitetongue-n" name="answers[2.11d[whitetongue]]" value="0" />Não
                   <br/><br/>
                   <label>Presença de candidíase bucal</label><br/>
                   <input type="radio" checked={this.state.presence_of_lesion_on_the_buccal_mucosa_2_11d === '1'} onChange={this.setPresenceOfLesionOnTheBuccalMucosa211d} className="answers-144" id="2.11d-presence_of_lesion_on_the_buccal_mucosa-y" name="answers[2.11d[presence_of_lesion_on_the_buccal_mucosa]]" value="1"  />Sim

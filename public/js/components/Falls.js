@@ -53,9 +53,9 @@ class Falls extends React.Component {
               <div className="row">
                 <div className="col">
                   <fieldset>
-                  <h2>QUEDAS </h21
-                  <label>Data da queda (mês/ano)</label><br/0
-                  <input type="text" checked={this.state.date_of_fall_month_2_9} onChange={this.setDateOfFallMonth29} maxLength="12" className="answers-99" id="2.9-date_of_fall_month" name="answers[2.9[date_of_fall_month]]"  />
+                  <h2>QUEDAS </h2>
+                  <label>Data da queda (mês/ano)</label><br/>
+                  <input type="text" value={this.state.date_of_fall_month_2_9} onChange={this.setDateOfFallMonth29} maxLength="12" className="answers-99" id="2.9-date_of_fall_month" name="answers[2.9[date_of_fall_month]]"  />
                   <br/><br/>
                   <label>Qual foi o local da queda?</label><br/>
                   <input type="radio" checked={this.state.date_of_fall_year_2_9 === '1'} onChange={this.setDateOfFallYear29} className="answers-100" id="2.9-date_of_fall_year-y" name="answers[2.9[date_of_fall_year]]" value="1"  />Dentro de casa
@@ -90,7 +90,7 @@ class Falls extends React.Component {
   }
 
   setDateOfFallMonth29(evt) {
-    this.setState({date_of_fall_month_2_9: evt.target.value});  
+    this.setState({date_of_fall_month_2_9: evt.target.value});
   }
 
   setDateOfFallYear29(evt) {
