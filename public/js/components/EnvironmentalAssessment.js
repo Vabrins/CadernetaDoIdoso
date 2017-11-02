@@ -39,7 +39,7 @@ class EnvironmentalAssessment extends React.Component {
 
   componentWillMount() {
     $.ajax({
-      url: "http://127.0.0.1:8000/api/v1/environmentalassessment",
+      url: "/api/v1/environmentalassessment",
       dataType: "json",
       method: "GET",
       success:function(response){
@@ -50,7 +50,7 @@ class EnvironmentalAssessment extends React.Component {
 
   sendForm(evt) {
     $.ajax({
-      url: "http://127.0.0.1:8000/api/v1/environmentalassessment",
+      url: "/api/v1/environmentalassessment",
       contentType: 'application/json',
       dataType: 'json',
       method: "POST",

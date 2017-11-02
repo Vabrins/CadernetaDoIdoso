@@ -11,7 +11,7 @@ class Details extends React.Component {
 
   componentWillMount() {
     $.ajax({
-      url: "http://127.0.0.1:8000/api/v1/details",
+      url: "/api/v1/details",
       dataType: "json",
       method: "GET",
       success:function(response){

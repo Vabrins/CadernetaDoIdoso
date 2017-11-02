@@ -20,7 +20,7 @@ class PersonsReferences extends React.Component {
 
   componentWillMount() {
     $.ajax({
-      url: "http://127.0.0.1:8000/api/v1/personsreferences",
+      url: "/api/v1/personsreferences",
       dataType: "json",
       method: "GET",
       success:function(response){
@@ -31,7 +31,7 @@ class PersonsReferences extends React.Component {
 
   sendForm(evt) {    
     $.ajax({
-      url: "http://127.0.0.1:8000/api/v1/personsreferences",
+      url: "/api/v1/personsreferences",
       contentType: 'application/json',
       dataType: 'json',
       method: "POST",

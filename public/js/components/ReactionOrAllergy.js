@@ -16,7 +16,7 @@ class ReactionOrAllergy extends React.Component {
 
   componentWillMount() {
     $.ajax({
-      url: "http://127.0.0.1:8000/api/v1/reactionorallergy",
+      url: "/api/v1/reactionorallergy",
       dataType: "json",
       method: "GET",
       success:function(response){
@@ -27,7 +27,7 @@ class ReactionOrAllergy extends React.Component {
 
   sendForm(evt) {
     $.ajax({
-      url: "http://127.0.0.1:8000/api/v1/reactionorallergy",
+      url: "/api/v1/reactionorallergy",
       contentType: 'application/json',
       dataType: 'json',
       method: "POST",

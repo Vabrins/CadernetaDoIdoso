@@ -49,18 +49,17 @@ class App extends React.Component {
   loadAdminJs () {
     const script = document.createElement("script");
 
-    script.src = "http://127.0.0.1:8000/js/sb-admin.js";
+    script.src = "/js/sb-admin.js";
     script.async = true;
     document.body.appendChild(script);
   }
 
   setElderlyCpf () {
     $.ajax({
-      url: "http://127.0.0.1:8000/api/v1/elderly",
+      url: "/api/v1/elderly/"+this.state.cpf,
       contentType: 'application/json',
       dataType: 'json',
-      method: "POST",
-      data: JSON.stringify({ test: this.state.cpf }),
+      method: "GET",
       success: function(response){
         console.log(response);
         console.log("enviado com sucesso");

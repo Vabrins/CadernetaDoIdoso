@@ -25,7 +25,7 @@ class IdentificationChronicPain extends React.Component {
 
   componentWillMount() {
     $.ajax({
-      url: "http://127.0.0.1:8000/api/v1/identificationchronicpain",
+      url: "/api/v1/identificationchronicpain",
       dataType: "json",
       method: "GET",
       success:function(response){
@@ -36,7 +36,7 @@ class IdentificationChronicPain extends React.Component {
 
   sendForm(evt) {
     $.ajax({
-      url: "http://127.0.0.1:8000/api/v1/identificationchronicpain",
+      url: "/api/v1/identificationchronicpain",
       contentType: 'application/json',
       dataType: 'json',
       method: "POST",

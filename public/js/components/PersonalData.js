@@ -96,7 +96,7 @@ class PersonalData extends React.Component {
 
   componentWillMount() {
     $.ajax({
-      url: "http://127.0.0.1:8000/api/v1/personaldata",
+      url: "/api/v1/personaldata",
       dataType: "json",
       method: "GET",
       success:function(response){
@@ -110,7 +110,7 @@ class PersonalData extends React.Component {
     console.log('You have selected:', this.state.name_1);
 
     // $.ajax({
-    //   url: "http://127.0.0.1:8000/api/v1/personaldata",
+    //   url: "/api/v1/personaldata",
     //   contentType: 'application/json',
     //   dataType: 'json',
     //   method: "POST",

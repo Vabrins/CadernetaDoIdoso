@@ -19,7 +19,7 @@ class MedicinesHerbalRemedies extends React.Component {
 
   componentWillMount() {
     $.ajax({
-      url: "http://127.0.0.1:8000/api/v1/medicinesherbalremedies",
+      url: "/api/v1/medicinesherbalremedies",
       dataType: "json",
       method: "GET",
       success:function(response){
@@ -30,7 +30,7 @@ class MedicinesHerbalRemedies extends React.Component {
 
   sendForm(evt) {
     $.ajax({
-      url: "http://127.0.0.1:8000/api/v1/medicinesherbalremedies",
+      url: "/api/v1/medicinesherbalremedies",
       contentType: 'application/json',
       dataType: 'json',
       method: "POST",

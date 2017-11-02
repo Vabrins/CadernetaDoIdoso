@@ -18,7 +18,7 @@ class Disabilities extends React.Component {
 
   componentWillMount() {
     $.ajax({
-      url: "http://127.0.0.1:8000/api/v1/disabilities",
+      url: "/api/v1/disabilities",
       dataType: "json",
       method: "GET",
       success:function(response){
@@ -29,7 +29,7 @@ class Disabilities extends React.Component {
 
   sendForm(evt) {
     $.ajax({
-      url: "http://127.0.0.1:8000/api/v1/disabilities",
+      url: "/api/v1/disabilities",
       contentType: 'application/json',
       dataType: 'json',
       method: "POST",

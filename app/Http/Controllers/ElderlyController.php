@@ -13,7 +13,10 @@ class ElderlyController extends ElderlyDataController
     	}else{
     		$elderly = \App\Elderly::where('document_cpf', $identification)->first();
     		if(empty($elderly['id'])){
-    			return false;
+    			$new_elderly = new \App\Elderly();
+                $new_elderly->document_cpf = $identification;
+                $new_elderly->save();
+                $elderly['id'] = $new_elderly->id;
     		}
     		$identification = $elderly['id'];
     	}

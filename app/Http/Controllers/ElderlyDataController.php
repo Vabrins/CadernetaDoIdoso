@@ -99,4 +99,11 @@ class ElderlyDataController extends Controller
     {
         //
     }
+
+    public function getTrashed()
+    {
+        echo json_encode($this->model::onlyTrashed()->get());
+        //echo json_encode($this->model::onlyTrashed()->with('history')->get());
+        // echo json_encode($this->model::with('history')->with('user')->onlyTrashed()->get());
+    }
 }
