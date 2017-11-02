@@ -24,6 +24,7 @@ class CreateAnthropometricDataSTable extends Migration
             $table->float('imc_weight_height_2_5', 8, 2)->nullable(true);
             $table->float('calf_perimeter_pp_left_2_5', 8, 2)->nullable(true);
             $table->boolean('you_have_exp_loss_uni_weight_min_body_last_year_2_5')->nullable(true);
+            $table->softDeletes();
             $table->timestamps();
         });
     }

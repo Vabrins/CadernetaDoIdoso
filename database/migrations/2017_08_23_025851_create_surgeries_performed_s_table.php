@@ -22,6 +22,7 @@ class CreateSurgeriesPerformedSTable extends Migration
             $table->string('surgery_2_3', '50')->nullable(true);
             $table->string('year_2_3', '5')->nullable(true);
             $table->string('comments_2_3', '100')->nullable(true);
+            $table->softDeletes();
             $table->timestamps();
         });
     }

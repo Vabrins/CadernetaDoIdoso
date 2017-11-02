@@ -24,6 +24,7 @@ class CreateDisabilities26ATable extends Migration
             $table->boolean('stopped_walking_in_the_house_2_6_a')->nullable(true);
             $table->boolean('stopped_doing_light_household_chores_2_6_a')->nullable(true);
             $table->boolean('stop_taking_showers_alone_2_6_a')->nullable(true);
+            $table->softDeletes();
             $table->timestamps();
         });
     }

@@ -24,6 +24,7 @@ class CreateComplementaryInformationsTable extends Migration
             $table->boolean('forgetfulness_is_preventing_of_some_daily_activity__2_7')->nullable(true);
             $table->boolean('in_the_last_mon_were_dismayed_sad_hop_2_7')->nullable(true);
             $table->boolean('in_the_last_mon_lost_int_pleas_act_form_pleas_2_7')->nullable(true);
+            $table->softDeletes();
             $table->timestamps();
         });
     }

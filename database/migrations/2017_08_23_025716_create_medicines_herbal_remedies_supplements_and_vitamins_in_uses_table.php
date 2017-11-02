@@ -25,6 +25,7 @@ class CreateMedicinesHerbalRemediesSupplementsAndVitaminsInUsesTable extends Mig
             $table->string('it_was_prescribed_by_some_professional_2_1', '30')->nullable(true);
             $table->text('suspension_information_2_1')->nullable(true);
             $table->boolean('concomitant_use_of_five_or_more_medicines_2_1')->nullable(true);
+            $table->softDeletes();
             $table->timestamps();
         });
     }

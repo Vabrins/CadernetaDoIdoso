@@ -27,6 +27,7 @@ class CreateDentalProsthesisTable extends Migration
             $table->boolean('does_not_use_but_needs_prosthesis_2_11_d_a')->nullable(true);
             $table->boolean('uses_adapted_without_exchange_2_11_d_a')->nullable(true);
             $table->boolean('uses_not_adapted_needs_exchange_2_11_d_a')->nullable(true);
+            $table->softDeletes();
             $table->timestamps();
         });
     }

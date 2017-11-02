@@ -38,6 +38,7 @@ class CreateLivingHabitsTable extends Migration
             $table->boolean('has_anyone_ever_criticized_you_for_drinking_2_11')->nullable(true);
             $table->boolean('feel_guilty_for_drinking_2_11')->nullable(true);
             $table->boolean('do_you_usually_drink_in_the_morning_2_11')->nullable(true);
+            $table->softDeletes();
             $table->timestamps();
         });
     }

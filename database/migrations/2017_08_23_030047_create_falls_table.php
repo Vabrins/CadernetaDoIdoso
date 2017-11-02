@@ -24,6 +24,7 @@ class CreateFallsTable extends Migration
             $table->boolean('the_fall_caused_some_fracture_2_9');
             $table->string('the_fall_caused_some_fracture_extra_2_9', '30');
             $table->boolean('you_stopped_perform_some_activity_for_fear_to_fall_again_2_9');
+            $table->softDeletes();
             $table->timestamps();
         });
     }

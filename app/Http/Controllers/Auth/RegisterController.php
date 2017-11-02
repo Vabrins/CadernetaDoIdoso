@@ -41,7 +41,7 @@ class RegisterController extends Controller
 
     public function showRegistrationForm()
     {
-        return view('auth.register')->with('companies', \App\Company::all());
+        return view('auth.register');
     }
 
     /**
@@ -71,7 +71,6 @@ class RegisterController extends Controller
             'name' => $data['name'],
             'cpf' => $data['cpf'],
             'card_number_cns' => $data['card_number_cns'],
-            'id_companies' => $data['id_companies'],
             'email' => $data['email'],
             'password' => bcrypt($data['password']),
         ]);

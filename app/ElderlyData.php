@@ -9,6 +9,8 @@ class ElderlyData extends Model
 {
 	use BelongsToTenants;
 
+    use SoftDeletes;
+
 	public $tenantColumns = ['id_elderly'];
 
 	// one to one
