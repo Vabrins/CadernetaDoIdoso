@@ -21,8 +21,6 @@ class CreateUsersTable extends Migration
             $table->string('name', '30');
             $table->string('card_number_cns', '15');
             $table->enum('level', ['professional', 'super_admin']);
-            $table->unsignedInteger('id_companies');
-            $table->foreign('id_companies', 'users_fk_companies')->references('id')->on('companies');
             $table->rememberToken();
             $table->timestamps();
         });

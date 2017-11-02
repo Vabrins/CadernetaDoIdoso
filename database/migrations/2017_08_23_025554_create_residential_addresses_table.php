@@ -30,6 +30,7 @@ class CreateResidentialAddressesTable extends Migration
             $table->string('telephone_1_a', '15')->nullable(true);
             $table->string('cell_phone_1_a', '15')->nullable(true);
             $table->string('email_1_a', '50')->nullable(true);
+            $table->softDeletes();
             $table->timestamps();
         });
     }

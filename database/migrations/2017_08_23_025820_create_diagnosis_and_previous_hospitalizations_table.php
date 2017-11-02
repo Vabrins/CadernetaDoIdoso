@@ -23,6 +23,7 @@ class CreateDiagnosisAndPreviousHospitalizationsTable extends Migration
             $table->string('diagnostics_year_2_2', '5')->nullable(true);
             $table->string('hospitalization_2_2', '30')->nullable(true);
             $table->string('other_conditions_2_2', '50')->nullable(true);
+            $table->softDeletes();
             $table->timestamps();
         });
     }

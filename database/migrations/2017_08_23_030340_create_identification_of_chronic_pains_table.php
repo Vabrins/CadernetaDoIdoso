@@ -23,6 +23,7 @@ class CreateIdentificationOfChronicPainsTable extends Migration
             $table->boolean('the_pain_is_like_a_shock_or_a_burning_2_10')->nullable(true);
             $table->boolean('does_the_pain_get_worse_when_walking_2_10')->nullable(true);
             $table->boolean('does_pain_improve_with_rest_2_10')->nullable(true);
+            $table->softDeletes();
             $table->timestamps();
         });
     }

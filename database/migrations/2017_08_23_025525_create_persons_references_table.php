@@ -27,6 +27,7 @@ class CreatePersonsReferencesTable extends Migration
             $table->string('cell_phone_1_1', '15')->nullable(true);
             $table->boolean('does_this_person_live_with_you_1_1')->nullable(true);
             $table->date('date_of_this_information_1_1')->nullable(true);
+            $table->softDeletes();
             $table->timestamps();
         });
     }

@@ -31,6 +31,7 @@ class CreateSocialAndFamilyInformationsTable extends Migration
             $table->boolean('do_you_receive_retirement_or_pension_1_b')->nullable(true);
             $table->boolean('you_receive_benefit_of_benefit_continued_bpc_1_b')->nullable(true);
             $table->boolean('do_you_receive_benefits_from_the_exchange_1_b')->nullable(true);
+            $table->softDeletes();
             $table->timestamps();
         });
     }

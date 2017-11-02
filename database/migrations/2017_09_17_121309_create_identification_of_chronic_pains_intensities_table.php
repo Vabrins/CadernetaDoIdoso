@@ -22,6 +22,7 @@ class CreateIdentificationOfChronicPainsIntensitiesTable extends Migration
             $table->date('date_2_10_b')->nullable(true);
             $table->string('place_of_pain_2_10_b', '30')->nullable(true);
             $table->integer('intensity_2_10_b')->nullable(true);
+            $table->softDeletes();
             $table->timestamps();
         });
     }

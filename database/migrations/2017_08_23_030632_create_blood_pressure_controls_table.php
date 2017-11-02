@@ -21,6 +21,7 @@ class CreateBloodPressureControlsTable extends Migration
             $table->foreign('id_elderly', 'blood_pressure_controls_2_11_a_2_fk_elderlies')->references('id')->on('elderlies');
             $table->date('date_2_11_a')->nullable(true);
             $table->float('pa_2_11_a', 8, 2)->nullable(true);
+            $table->softDeletes();
             $table->timestamps();
         });
     }

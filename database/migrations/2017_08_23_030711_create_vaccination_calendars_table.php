@@ -24,6 +24,7 @@ class CreateVaccinationCalendarsTable extends Migration
             $table->string('lot_2_11_c', '15')->nullable(true);
             $table->string('signature_2_11_c', '30')->nullable(true);
             $table->string('dose_2_11_c', '25')->nullable(true);
+            $table->softDeletes();
             $table->timestamps();
         });
     }

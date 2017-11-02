@@ -22,6 +22,7 @@ class CreateBloodGlucoseControlsTable extends Migration
             $table->boolean('fasting_2_11_b')->nullable(true);
             $table->boolean('casual_2_11_b')->nullable(true);
             $table->integer('mg_dl_2_11_b')->nullable(true);
+            $table->softDeletes();
             $table->timestamps();
         });
     }

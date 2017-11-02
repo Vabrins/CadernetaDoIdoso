@@ -52,18 +52,6 @@
                             </div>
                         </div>
 
-                        <div class="form-group">
-                            <label for="id_companies" class="col-md-4 control-label">Unidade</label>
-                            <div class="col-md-6">
-                                <select id="id_companies" class="form-control" name="id_companies" value="{{ old('id_companies') }}" required autofocus>
-                                    <option value="">Selecione</option>
-                                    @foreach ($companies as $company)
-                                        <option value="{{ $company->id }}">{{ $company->name }}</option>
-                                    @endforeach
-                                </select>
-                            </div>
-                        </div>
-
                         <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
                             <label for="email" class="col-md-4 control-label">E-Mail</label>
 

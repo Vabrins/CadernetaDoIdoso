@@ -29,6 +29,7 @@ class CreateEnvironmentalAssessmentsTable extends Migration
             $table->integer('low_cabinets_no_need_for_use_of_stairs_2_8')->nullable(true);
             $table->integer('non-slip_floor_2_8')->nullable(true);
             $table->integer('double-sided_and_firm_handrail_2_8')->nullable(true);
+            $table->softDeletes();
             $table->timestamps();
         });
     }

@@ -24,6 +24,7 @@ class CreateConsultationAndExaminationSchedulesTable extends Migration
             $table->string('place_2_11_e', '40')->nullable(true);
             $table->string('query_exam_2_11_e', '255')->nullable(true);
             $table->string('profissional_name_2_11_e', '40')->nullable(true);
+            $table->softDeletes();
             $table->timestamps();
         });
     }

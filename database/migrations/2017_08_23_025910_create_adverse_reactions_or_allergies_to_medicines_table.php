@@ -22,6 +22,7 @@ class CreateAdverseReactionsOrAllergiesToMedicinesTable extends Migration
             $table->string('medicine_2_4', '30')->nullable(true);
             $table->date('date_2_4')->nullable(true);
             $table->string('adverse_reactions_or_allergies_2_4')->nullable(true);
+            $table->softDeletes();
             $table->timestamps();
         });
     }
