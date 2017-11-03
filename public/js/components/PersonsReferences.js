@@ -91,7 +91,6 @@ class PersonsReferences extends React.Component {
               </ul>
             </nav>
           </div>
-
     )
   }
 

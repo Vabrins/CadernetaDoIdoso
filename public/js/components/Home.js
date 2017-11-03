@@ -6,6 +6,11 @@ const Pdetail = {
   textAlign: "right"
 };
 
+const buttonStyle = {
+  marginRight: "10px",
+  marginBottom: "10px"
+}
+
 class Home extends React.Component {
   constructor (props) {
     super(props)    
@@ -27,9 +32,9 @@ class Home extends React.Component {
         <hr className="my-4" />
         <h5 style={{marginBottom: "1.5rem"}}>O que fazer?</h5>
         <p className="lead">
-          <Link className="btn btn-primary btn-lg" exact="true" to="/personaldata" style={{marginRight: "10px"}} role="button">Novo registro de saúde</Link>
-          <Link className="btn btn-primary btn-lg" exact="true" to="/listings" style={{marginRight: "10px"}} role="button">Ver históricos</Link>
-          <Link className="btn btn-primary btn-lg" exact="true" to="/results" style={{marginRight: "10px"}} role="button">Ver resultados</Link>
+          <Link className="btn btn-primary btn-lg" exact="true" to="/personaldata" style={buttonStyle} role="button">Novo registro de saúde</Link>
+          <Link className="btn btn-primary btn-lg" exact="true" to="/listings" style={buttonStyle} role="button">Ver históricos</Link>
+          <Link className="btn btn-primary btn-lg" exact="true" to="/results" style={buttonStyle} role="button">Ver resultados</Link>
         </p>
       </div>
     )
