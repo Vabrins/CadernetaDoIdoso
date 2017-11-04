@@ -63,9 +63,9 @@
       <!-- Bootstrap core JavaScript-->
       <script src="{{ asset('/js/jquery.min.js') }}"></script>
       <script src="{{ asset('/js/popper/popper.min.js') }}"></script>
-      <script src="{{ asset('/js/bootstrap.min.js') }}"></script>
       <!-- Core plugin JavaScript-->
       <script async src="{{ asset('/js/jquery.easing.min.js') }}"></script>
+      <script src="{{ asset('/js/bootstrap.min.js') }}"></script>
     </div>
   </body>
 </html>

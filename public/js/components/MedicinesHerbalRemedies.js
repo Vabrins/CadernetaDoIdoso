@@ -109,11 +109,11 @@ class MedicinesHerbalRemedies extends React.Component {
   }
 
   setDoctor21(evt) {
-    this.setState({suspension_information_2_1: evt.target.value});  
+    this.setState({it_was_prescribed_by_some_professional_2_1: evt.target.value});  
   }
 
   setSuspension21(evt) {
-    this.setState({it_was_prescribed_by_some_professional_2_1: evt.target.value});  
+    this.setState({suspension_information_2_1: evt.target.value});  
   }
 }
 
