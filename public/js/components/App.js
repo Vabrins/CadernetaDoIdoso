@@ -1,13 +1,13 @@
 import React from 'react';
 import { BrowserRouter as Router, Link, NavLink, Route } from 'react-router-dom';
+import $ from 'jquery';
 import Listings from './Listings';
 import Results from './Results';
 import About from './About';
 import Home from './Home';
 import CadernetaMenuGuide from './CadernetaMenuGuide';
-import $ from 'jquery';
 import Details from './Details';
-import adminJS from './../sb-admin.min.js';
+import Validation from './Validation';
 
 import PersonalData from './PersonalData';
 import PersonsReferences from './PersonsReferences';
@@ -56,10 +56,11 @@ class App extends React.Component {
 
   setElderlyCpf () {
     $.ajax({
-      url: "/api/v1/elderly/"+this.state.cpf,
+      url: "/api/v1/elderly/",
       contentType: 'application/json',
       dataType: 'json',
       method: "GET",
+      data: JSON.stringify({ cpf: this.state.cpf }),
       success: function(response){
         console.log(response);
         console.log("enviado com sucesso");
@@ -264,7 +265,9 @@ class App extends React.Component {
   }
 
   setCpf(evt) {
-    this.setState({cpf: evt.target.value});
+    if (Validation.isNumber(evt.target.value) === true) {
+      this.setState({cpf: evt.target.value});
+    }
   }
 }
 

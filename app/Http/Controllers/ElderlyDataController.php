@@ -44,11 +44,12 @@ class ElderlyDataController extends Controller
      */
     public function store(Request $request)
     {
-        $register = new $$this->model();
-        foreach($request->all() as $field => $value){
-            $register->$field = $value;
-        }
-        $register->save();
+        // $register = new $$this->model();
+        // foreach($request->all() as $field => $value){
+        //     $register->$field = $value;
+        // }
+        // $register->save();
+        echo json_encode("dados cadastrados");
     }
 
     /**
