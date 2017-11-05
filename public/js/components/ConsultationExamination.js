@@ -7,7 +7,7 @@ class ConsultationExamination extends React.Component {
   constructor (props) {
     super(props);
 
-    this.state = {id_historys:'1', id_elderlies:'1', date_2_11_e:'', hour_2_11_e:'', place_2_11e:'', place_2_11_e:'', query_exam_2_11_e:''};
+    this.state = {date_2_11_e:'', hour_2_11_e:'', place_2_11e:'', place_2_11_e:'', query_exam_2_11_e:''};
     this.sendForm = this.sendForm.bind(this);
     this.setDate211e = this.setDate211e.bind(this);
     this.setHour211e = this.setHour211e.bind(this);

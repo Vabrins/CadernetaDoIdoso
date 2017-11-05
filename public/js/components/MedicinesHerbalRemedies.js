@@ -7,7 +7,7 @@ class MedicinesHerbalRemedies extends React.Component {
   constructor (props) {
     super(props);
 
-    this.state = {id_historys:'1', id_elderlies:'1', name_of_the_medicinal_supplement_or_vitamin_2_1:'', dose_and_frequency_2_1:'', start_date_or_time_of_use_2_1:'', concomitant_use_of_five_or_more_medicines_2_1:'', it_was_prescribed_by_some_professional_2_1:'', suspension_information_2_1:''};
+    this.state = {name_of_the_medicinal_supplement_or_vitamin_2_1:'', dose_and_frequency_2_1:'', start_date_or_time_of_use_2_1:'', concomitant_use_of_five_or_more_medicines_2_1:'', it_was_prescribed_by_some_professional_2_1:'', suspension_information_2_1:''};
     this.sendForm = this.sendForm.bind(this);
     this.setSupplement21 = this.setSupplement21.bind(this);
     this.setDose21 = this.setDose21.bind(this);

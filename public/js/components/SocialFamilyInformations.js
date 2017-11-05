@@ -7,7 +7,7 @@ class SocialFamilyInformation extends React.Component {
   constructor (props) {
     super(props);
 
-    this.state = {id_historys:'1', id_elderlies:'1', do_you_live_alone_1_b:'', do_you_live_with_relatives_1_b:'', do_you_live_with_your_spouse_or_partne_1_b:'', in_case_of_need_you_have_some_to_acc_the_health_fac_query_1_b:'', in_the_last_30_days_you_have_met_friends_1_b:'', you_live_long_term_inst_eld_ilpi_shelter_or_nursing_home_1_b:'', county_1_b:'', have_you_easy_access_pharmacy_services_bakery_supermarket_1_b:'', have_you_easy_access_to_transportation_1_b:'', do_you_currently_work_1_b:'', do_you_receive_retirement_or_pension_1_b:'', you_receive_benefit_of_benefit_continued_bpc_1_b:'', do_you_receive_benefits_from_the_exchange_1_b:''};
+    this.state = {do_you_live_alone_1_b:'', do_you_live_with_relatives_1_b:'', do_you_live_with_your_spouse_or_partne_1_b:'', in_case_of_need_you_have_some_to_acc_the_health_fac_query_1_b:'', in_the_last_30_days_you_have_met_friends_1_b:'', you_live_long_term_inst_eld_ilpi_shelter_or_nursing_home_1_b:'', county_1_b:'', have_you_easy_access_pharmacy_services_bakery_supermarket_1_b:'', have_you_easy_access_to_transportation_1_b:'', do_you_currently_work_1_b:'', do_you_receive_retirement_or_pension_1_b:'', you_receive_benefit_of_benefit_continued_bpc_1_b:'', do_you_receive_benefits_from_the_exchange_1_b:''};
     this.sendForm = this.sendForm.bind(this);
     this.setLivingAlone1b = this.setLivingAlone1b.bind(this);
     this.setLiveFamily1b = this.setLiveFamily1b.bind(this);

@@ -7,7 +7,7 @@ class DiagnosisPreviousHospitalization extends React.Component {
   constructor (props) {
     super(props);
 
-    this.state = {id_historys:'1', id_elderlies:'1', diagnostics_2_2:'' , diagnostics_year_2_2:'', hospitalization_2_2:'', other_conditions_2_2:''};
+    this.state = {diagnostics_2_2:'' , diagnostics_year_2_2:'', hospitalization_2_2:'', other_conditions_2_2:''};
     this.sendForm = this.sendForm.bind(this);
     this.setDiagnostics22 = this.setDiagnostics22.bind(this);
     this.setDiagnosticsYear22 = this.setDiagnosticsYear22.bind(this);

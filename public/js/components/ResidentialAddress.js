@@ -7,7 +7,7 @@ class ResidentialAddress extends React.Component {
   constructor (props) {
     super(props);
 
-    this.state = {id_historys:'1', id_elderlies:'1', street_avenue_square_1_a:'', number_1_a:'', complement_1_a:'', district_1_a:'', reference_point_1_a:'', zip_code_1_a:'', county_1_a:'', state_1_a:'', telephone_1_a:'', cell_phone_1_a:'', email_1_a:'' };
+    this.state = {street_avenue_square_1_a:'', number_1_a:'', complement_1_a:'', district_1_a:'', reference_point_1_a:'', zip_code_1_a:'', county_1_a:'', state_1_a:'', telephone_1_a:'', cell_phone_1_a:'', email_1_a:'' };
     this.sendForm = this.sendForm.bind(this);
     this.setStreet1a = this.setStreet1a.bind(this);
     this.setNumber1a = this.setNumber1a.bind(this);

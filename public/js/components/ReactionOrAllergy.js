@@ -7,7 +7,7 @@ class ReactionOrAllergy extends React.Component {
   constructor (props) {
     super(props);
 
-    this.state = {id_historys:'1', id_elderlies:'1', medicine_2_4:'', data_2_4:'', adverse_reactions_or_allergies_2_4:''};
+    this.state = {medicine_2_4:'', data_2_4:'', adverse_reactions_or_allergies_2_4:''};
     this.sendForm = this.sendForm.bind(this);
     this.setMedication24 = this.setMedication24.bind(this);
     this.setData24 = this.setData24.bind(this);

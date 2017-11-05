@@ -7,7 +7,7 @@ class Falls extends React.Component {
   constructor (props) {
     super(props);
 
-    this.state = {id_historys:'1', id_elderlies:'1', date_of_fall_month_2_9:'', date_of_fall_year_2_9:'', the_fall_caused_some_fracture_2_9:'', the_fall_caused_some_fracture_extra_2_9:'', you_stopped_perform_some_activity_for_fear_to_fall_again_2_9:''};
+    this.state = {date_of_fall_month_2_9:'', date_of_fall_year_2_9:'', the_fall_caused_some_fracture_2_9:'', the_fall_caused_some_fracture_extra_2_9:'', you_stopped_perform_some_activity_for_fear_to_fall_again_2_9:''};
     this.sendForm = this.sendForm.bind(this);
     this.setDateOfFallMonth29 = this.setDateOfFallMonth29.bind(this);
     this.setDateOfFallYear29 = this.setDateOfFallYear29.bind(this);

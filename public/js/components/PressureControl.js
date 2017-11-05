@@ -7,7 +7,7 @@ class PressureControls extends React.Component {
   constructor (props) {
     super(props);
 
-    this.state = {id_historys:'1', id_elderlies:'1', date_2_11_a:'', pa_2_11_a:''};
+    this.state = {date_2_11_a:'', pa_2_11_a:''};
     this.sendForm = this.sendForm.bind(this);
     this.setDate211a = this.setDate211a.bind(this);
     this.setPa211a = this.setPa211a.bind(this);

@@ -7,7 +7,7 @@ class VaccinationCalendar extends React.Component {
   constructor (props) {
     super(props);
 
-    this.state = {id_historys:'1', id_elderlies:'1', name_2_11c:'', date_2_11c:'', lot_2_11c:'', signature_2_11c:'', dose_2_11c:''};
+    this.state = {name_2_11c:'', date_2_11c:'', lot_2_11c:'', signature_2_11c:'', dose_2_11c:''};
     this.sendForm = this.sendForm.bind(this);
     this.setName211c = this.setName211c.bind(this);
     this.setDate211c = this.setDate211c.bind(this);

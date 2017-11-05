@@ -7,7 +7,7 @@ class Disabilities extends React.Component {
   constructor (props) {
     super(props);
 
-    this.state = {id_historys:'1', id_elderlies:'1', stopped_shopping_2_6_a:'', stop_tracking_your_money_2_6_a:'', stopped_walking_in_the_house_2_6_a:'', stopped_doing_light_household_chores_2_6_a:'', stop_taking_showers_alone_2_6_a:''};
+    this.state = {stopped_shopping_2_6_a:'', stop_tracking_your_money_2_6_a:'', stopped_walking_in_the_house_2_6_a:'', stopped_doing_light_household_chores_2_6_a:'', stop_taking_showers_alone_2_6_a:''};
     this.sendForm = this.sendForm.bind(this);
     this.setStopShopping26a = this.setStopShopping26a.bind(this);
     this.setStopMoney26a = this.setStopMoney26a.bind(this);

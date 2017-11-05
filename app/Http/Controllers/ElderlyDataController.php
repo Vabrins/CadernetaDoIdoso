@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 use HipsterJazzbo\Landlord\Facades\Landlord;
+use Illuminate\Http\Request;
 use Session;
+use Illuminate\Support\Facades\Auth;
 
 class ElderlyDataController extends Controller
 {
@@ -44,11 +46,12 @@ class ElderlyDataController extends Controller
      */
     public function store(Request $request)
     {
-        $register = new $$this->model();
-        foreach($request->all() as $field => $value){
-            $register->$field = $value;
-        }
-        $register->save();
+        dd(Auth::user());
+        $history = new \App\History();
+        $history->id_users = \Auth::user()->id;
+        $history->save();
+        $register = new $this->model();
+        $register->save($request->all()->put('id_history', $history->id));
     }
 
     /**

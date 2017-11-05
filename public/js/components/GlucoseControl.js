@@ -7,7 +7,7 @@ class GlucoseControls extends React.Component {
   constructor (props) {
     super(props);
 
-    this.state = {id_historys:'1', id_elderlies:'1', fasting_2_11_b:'', casual_2_11_b:'', mgdl_2_11_b:''};
+    this.state = {fasting_2_11_b:'', casual_2_11_b:'', mgdl_2_11_b:''};
     this.sendForm = this.sendForm.bind(this);
     this.setFasting211b = this.setFasting211b.bind(this);
     this.setCasual211b = this.setCasual211b.bind(this);

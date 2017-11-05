@@ -7,7 +7,7 @@ class IdentificationChronicPainB extends React.Component {
   constructor (props) {
     super(props);
 
-    this.state = {id_historys:'1', id_elderlies:'1', date_2_10_b:'', place_of_pain_2_10_b:'', intensity_2_10_b:''};
+    this.state = {date_2_10_b:'', place_of_pain_2_10_b:'', intensity_2_10_b:''};
     this.sendForm = this.sendForm.bind(this);
     this.setDate210b = this.setDate210b.bind(this);
     this.setPlaceOfPain210b = this.setPlaceOfPain210b.bind(this);

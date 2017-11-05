@@ -7,7 +7,7 @@ class AnthropometricData extends React.Component {
   constructor (props) {
     super(props);
 
-    this.state = {id_historys:'1', id_elderlies:'1', weight_2_5:'', height_2_5:'', imc_weight_height_2_5:'', calf_perimeter_pp_left_2_5:'', you_have_exp_loss_uni_weight_min_body_last_year_2_5:''};
+    this.state = {weight_2_5:'', height_2_5:'', imc_weight_height_2_5:'', calf_perimeter_pp_left_2_5:'', you_have_exp_loss_uni_weight_min_body_last_year_2_5:''};
     this.sendForm = this.sendForm.bind(this);
     this.setWeight25 = this.setWeight25.bind(this);
     this.setHeight25 = this.setHeight25.bind(this);

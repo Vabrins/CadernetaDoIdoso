@@ -58,6 +58,9 @@
           </form>
         </div>
       </div>
+      <script>
+        var scriptSrc = '{{ URL::asset('/js/sb-admin.js') }}';
+      </script>
       <!-- React components modules -->
       <script async src="{{ asset('/js/bundle.js') }}"></script>
       <!-- Bootstrap core JavaScript-->

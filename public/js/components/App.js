@@ -48,8 +48,7 @@ class App extends React.Component {
 
   loadAdminJs () {
     const script = document.createElement("script");
-
-    script.src = "/js/sb-admin.js";
+    script.src = scriptSrc;
     script.async = true;
     document.body.appendChild(script);
   }
