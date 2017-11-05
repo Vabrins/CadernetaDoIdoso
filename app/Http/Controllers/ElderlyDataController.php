@@ -46,12 +46,13 @@ class ElderlyDataController extends Controller
      */
     public function store(Request $request)
     {
-        dd(Auth::user());
+        //dd(Auth::user());
         $history = new \App\History();
         $history->id_users = \Auth::user()->id;
         $history->save();
         $register = new $this->model();
         $register->save($request->all()->put('id_history', $history->id));
+        echo json_encode("dados cadastrados");
     }
 
     /**
