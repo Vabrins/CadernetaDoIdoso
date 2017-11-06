@@ -55,11 +55,10 @@ class App extends React.Component {
 
   setElderlyCpf () {
     $.ajax({
-      url: "/api/v1/elderly/",
+      url: "/api/v1/elderly/"+this.state.cpf,
       contentType: 'application/json',
       dataType: 'json',
       method: "GET",
-      data: JSON.stringify({ cpf: this.state.cpf }),
       success: function(response){
         console.log(response);
         console.log("enviado com sucesso");

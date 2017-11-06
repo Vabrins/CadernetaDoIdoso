@@ -7,7 +7,7 @@ class SocialFamilyInformation extends React.Component {
   constructor (props) {
     super(props);
 
-    this.state = {do_you_live_alone_1_b:'', do_you_live_with_relatives_1_b:'', do_you_live_with_your_spouse_or_partne_1_b:'', in_case_of_need_you_have_some_to_acc_the_health_fac_query_1_b:'', in_the_last_30_days_you_have_met_friends_1_b:'', you_live_long_term_inst_eld_ilpi_shelter_or_nursing_home_1_b:'', county_1_b:'', have_you_easy_access_pharmacy_services_bakery_supermarket_1_b:'', have_you_easy_access_to_transportation_1_b:'', do_you_currently_work_1_b:'', do_you_receive_retirement_or_pension_1_b:'', you_receive_benefit_of_benefit_continued_bpc_1_b:'', do_you_receive_benefits_from_the_exchange_1_b:''};
+    this.state = {do_you_live_alone_1_b:'', do_you_live_with_relatives_1_b:'', do_you_live_with_your_spouse_or_partne_1_b:'', in_case_of_need_you_have_some_to_acc_the_health_fac_query_1_b:'', in_the_last_30_days_you_have_met_friends_1_b:'', you_live_long_term_inst_eld_ilpi_shelter_or_nursing_home_1_b:'', have_you_easy_access_pharmacy_services_bakery_supermarket_1_b:'', have_you_easy_access_to_transportation_1_b:'', do_you_currently_work_1_b:'', do_you_receive_retirement_or_pension_1_b:'', you_receive_benefit_of_benefit_continued_bpc_1_b:'', do_you_receive_benefits_from_the_exchange_1_b:''};
     this.sendForm = this.sendForm.bind(this);
     this.setLivingAlone1b = this.setLivingAlone1b.bind(this);
     this.setLiveFamily1b = this.setLiveFamily1b.bind(this);
@@ -15,7 +15,6 @@ class SocialFamilyInformation extends React.Component {
     this.setRestHome1b = this.setRestHome1b.bind(this);
     this.setWalk1b = this.setWalk1b.bind(this);
     this.setMonitoring1b = this.setMonitoring1b.bind(this);
-    this.setCounty1b = this.setCounty1b.bind(this);
     this.setAccess1b = this.setAccess1b.bind(this);
     this.seTransport1b = this.seTransport1b.bind(this);
     this.setWork1b = this.setWork1b.bind(this);
@@ -85,10 +84,6 @@ class SocialFamilyInformation extends React.Component {
                     <input type="radio" checked={this.state.you_live_long_term_inst_eld_ilpi_shelter_or_nursing_home_1_b === "1"} onChange={this.setMonitoring1b} className="answers-37" id="1.b-Monitoring-y" name="answers[1.b[Monitoring]]" value="1" />Sim
                     <input type="radio" checked={this.state.you_live_long_term_inst_eld_ilpi_shelter_or_nursing_home_1_b === "0"} onChange={this.setMonitoring1b} className="answers-37" id="1.b-Monitoring-n" name="answers[1.b[Monitoring]]" value="0" />Não
                     <br/><br/>
-                    <label>Em caso de necessidade, você conta com alguém para acompanhá-lo(a) à unidade de saúde ou a uma consulta?</label><br/>
-                    <input type="radio" checked={this.state.county_1_b === "1"} onChange={this.setCounty1b} className="answers-37a" id="1.b-County-y" name="answers[1.b[County]]" value="1" />Sim
-                    <input type="radio" checked={this.state.county_1_b === "0"} onChange={this.setCounty1b} className="answers-37a" id="1.b-County-n" name="answers[1.b[County]]" value="0" />Não
-                    <br/><br/>    
                     <label>Você tem fácil acesso aos serviços de farmácia, padaria ou supermercado?</label><br/>
                     <input type="radio" checked={this.state.have_you_easy_access_pharmacy_services_bakery_supermarket_1_b === "1"} onChange={this.setAccess1b} className="answers-38" id="1.b-access-y" name="answers[1.b[access]]" value="1" />Sim
                     <input type="radio" checked={this.state.have_you_easy_access_pharmacy_services_bakery_supermarket_1_b === "0"} onChange={this.setAccess1b} className="answers-38" id="1.b-access-n" name="answers[1.b[access]]" value="0" />Não
@@ -154,10 +149,6 @@ class SocialFamilyInformation extends React.Component {
 
   setMonitoring1b(evt) {
     this.setState({you_live_long_term_inst_eld_ilpi_shelter_or_nursing_home_1_b: evt.target.value});  
-  }
-  
-  setCounty1b(evt) {
-    this.setState({county_1_b: evt.target.value}); 
   }
 
   setAccess1b(evt) {
