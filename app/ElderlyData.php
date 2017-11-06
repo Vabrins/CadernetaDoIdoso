@@ -16,11 +16,11 @@ class ElderlyData extends Model
 
 	// one to one
     public function history() {
-        return $this->hasOne('App\History');
+        return $this->belongsTo('App\History', 'id_history');
     }
 
     // one to many
     public function elderly() {
-        return $this->belongsTo('App\Elderly');
+        return $this->belongsTo('App\Elderly', 'id_users');
     }
 }

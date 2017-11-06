@@ -35,7 +35,7 @@ class ElderlyDataController extends Controller
      */
     public function create()
     {
-        echo json_encode("aquiii");
+        //
     }
 
     /**
@@ -46,13 +46,22 @@ class ElderlyDataController extends Controller
      */
     public function store(Request $request)
     {
-        //dd(Auth::user());
-        $history = new \App\History();
-        $history->id_users = \Auth::user()->id;
-        $history->save();
-        $register = new $this->model();
-        $register->save($request->all()->put('id_history', $history->id));
-        echo json_encode("dados cadastrados");
+        try {
+            $history = new \App\History();
+            $history->id_users = 1; // mudar pelo amor de God
+            $history->save();
+            $deletedRows = $this->model::where('id_elderly', $_COOKIE['id_elderly'])->delete();
+            $register = new $this->model();
+            $dados = $request['test'];
+            $dados['id_history'] = $history->id;
+            $dados['id_elderly'] = $_COOKIE['id_elderly'];
+            $dados['created_at'] = \Carbon\Carbon::now();
+            $dados['updated_at'] = \Carbon\Carbon::now();
+            $register->insert($dados);
+            echo json_encode(true);
+        } catch (Exception $e) {
+            echo json_encode(false);
+        }
     }
 
     /**
@@ -86,11 +95,16 @@ class ElderlyDataController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $register = $this->model::find($id);
-        foreach($request->all() as $field => $value){
-            $register->$field = $value;
+        try {
+            $register = $this->model::find($id);
+            foreach($request->all() as $field => $value){
+                $register->$field = $value;
+            }
+            $register->save();
+            echo json_encode(true);
+        } catch (Exception $e) {
+            echo json_encode(false);
         }
-        $register->save();
     }
 
     /**
@@ -106,8 +120,6 @@ class ElderlyDataController extends Controller
 
     public function getTrashed()
     {
-        echo json_encode($this->model::onlyTrashed()->get());
-        //echo json_encode($this->model::onlyTrashed()->with('history')->get());
-        // echo json_encode($this->model::with('history')->with('user')->onlyTrashed()->get());
+        echo json_encode($this->model::onlyTrashed()->with('history.user:id,name')->get());
     }
 }
