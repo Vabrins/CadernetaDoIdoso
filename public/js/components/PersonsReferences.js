@@ -7,7 +7,7 @@ class PersonsReferences extends React.Component {
   constructor (props) {
     super(props);
 
-    this.state = {persons_references : [], id_historys:'1', id_elderlies:'1', name_1_1:'', date_of_birth_1_1:'', link_1_1:'', address_1_1:'', telephone_1_1:'', cell_phone_1_1:'', does_this_person_live_with_you_1_1:'', date_of_this_information_1_1:''};
+    this.state = {name_1_1:'', date_of_birth_1_1:'', link_1_1:'', address_1_1:'', telephone_1_1:'', cell_phone_1_1:'', does_this_person_live_with_you_1_1:'', date_of_this_information_1_1:''};
     this.sendForm = this.sendForm.bind(this);
     this.setName11 = this.setName11.bind(this);
     this.setDateOfBirth11 = this.setDateOfBirth11.bind(this);

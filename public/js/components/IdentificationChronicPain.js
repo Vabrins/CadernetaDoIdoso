@@ -8,8 +8,6 @@ class IdentificationChronicPain extends React.Component {
     super(props);
 
     this.state = {
-      id_historys:'1',
-      id_elderlies:'1',
       do_you_have_pain_last_same_more_than_3_mon_2_10:'', 
       the_pain_is_like_a_shock_or_a_burning_2_10:'',
       does_the_pain_get_worse_when_walking_2_10:'',
