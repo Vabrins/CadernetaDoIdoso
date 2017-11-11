@@ -8,8 +8,6 @@ class EnvironmentalAssessment extends React.Component {
     super(props);
 
     this.state = {
-      id_historys:'1',
-      id_elderlies:'1', 
       unimpeded_walking_areas_2_8:'',
       presence_of_support_bars_2_8:'', 
       uniform_floors_and_carpets_well_fixed_2_8:'', 

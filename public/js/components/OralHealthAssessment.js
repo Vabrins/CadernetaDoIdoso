@@ -8,8 +8,6 @@ class OralHealthAssessment extends React.Component {
     super(props);
 
     this.state = {
-      id_historys:'1',
-      id_elderlies:'1', 
       alcohol_2_11d:'', 
       smoke_2_11d:'', 
       presence_of_lesion_on_the_buccal_mucosa_2_11d:'', 

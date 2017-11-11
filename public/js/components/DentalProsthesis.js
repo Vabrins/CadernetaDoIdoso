@@ -8,8 +8,6 @@ class DentalProsthesis extends React.Component {
     super(props);
 
     this.state = {
-      id_historys:'1', 
-      id_elderlies:'1', 
       superior_2_11_d_a:'', 
       inferior_2_11_d_a:'', 
       total_prosthesis_2_11_d_a:'', 

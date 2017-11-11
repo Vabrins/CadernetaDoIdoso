@@ -8,8 +8,6 @@ class ComplementaryInformation extends React.Component {
     super(props);
 
     this.state = {
-      id_historys:'1',
-      id_elderlies:'1',
       some_family_mem_fri_said_that_are_get_forg_2_7:'',
       forgetfulness_is_getting_worse_in_last_months_2_7:'',
       forgetfulness_is_preventing_of_some_daily_activity_2_7:'', 
