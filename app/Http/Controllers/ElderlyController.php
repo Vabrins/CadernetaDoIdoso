@@ -28,11 +28,10 @@ class ElderlyController extends ElderlyDataController
     }
 
     public function getChart(){
-        Landlord::addTenant('id_elderly', 1);
-        $pressure = $this->getAverageOfColumn(\App\PressureControl::withTrashed()->get(), 'pa_2_11_a'); //pa_2_11_a
-        $weight = $this->getAverageOfColumn(\App\AnthropometricData::withTrashed()->get(), 'weight_2_5'); //weight_2_5
-        $glucose = $this->getAverageOfColumn(\App\GlucoseControl::withTrashed()->get(), 'mg_dl_2_11_b'); //mg_dl_2_11_b
-        dd(get_defined_vars());
+        $pressure = $this->getAverageOfColumn(\App\PressureControl::withTrashed()->get(), 'pa_2_11_a');
+        $weight = $this->getAverageOfColumn(\App\AnthropometricData::withTrashed()->get(), 'weight_2_5');
+        $glucose = $this->getAverageOfColumn(\App\GlucoseControl::withTrashed()->get(), 'mg_dl_2_11_b');
+        echo json_encode(get_defined_vars());
     }
 
     public function getAverageOfColumn($data, $column){
