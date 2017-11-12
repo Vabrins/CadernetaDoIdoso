@@ -7,7 +7,7 @@ class VaccinationCalendar extends React.Component {
   constructor (props) {
     super(props);
 
-    this.state = {name_2_11c:'', date_2_11c:'', lot_2_11c:'', signature_2_11c:'', dose_2_11c:''};
+    this.state = {name_2_11_c:'', date_2_11_c:'', lot_2_11_c:'', signature_2_11_c:'', dose_2_11_c:''};
     this.sendForm = this.sendForm.bind(this);
     this.setName211c = this.setName211c.bind(this);
     this.setDate211c = this.setDate211c.bind(this);
@@ -18,7 +18,7 @@ class VaccinationCalendar extends React.Component {
 
   componentWillMount() {
     $.ajax({
-      url: "/api/v1/bloodglucosecontrols",
+      url: "/api/v1/vaccinationcalendar",
       dataType: "json",
       method: "GET",
       success:function(response){
@@ -29,7 +29,7 @@ class VaccinationCalendar extends React.Component {
 
   sendForm(evt) {
     $.ajax({
-      url: "/api/v1/bloodglucosecontrols",
+      url: "/api/v1/vaccinationcalendar",
       contentType: 'application/json',
       dataType: 'json',
       method: "POST",
@@ -48,25 +48,25 @@ class VaccinationCalendar extends React.Component {
  render () {
   return (
           <div className="container" >
-            <form id="bloodglucosecontrols" method="post">
+            <form id="vaccinationcalendar" method="post">
               <div className="row">
                 <div className="col">
                   <fieldset>
                   <h2> 2.11c CALENDÁRIO DE VACINAÇÃO </h2>
                   <label>Nome</label><br/>
-                  <input type="text"  value={this.state.name_2_11c} onChange={this.setName211c} className="answers-134" id="2.11c-name" name="answers[2.11c[name]]"  />
+                  <input type="text"  value={this.state.name_2_11_c} onChange={this.setName211c} className="answers-134" id="2.11c-name" name="answers[2.11c[name]]"  />
                   <br/><br/>
                   <label>Data</label><br/>
-                  <input type="date" value={this.state.date_2_11c} onChange={this.setDate211c} className="answers-135" id="2.11c-date" name="answers[2.11c[date]]"  />
+                  <input type="date" value={this.state.date_2_11_c} onChange={this.setDate211c} className="answers-135" id="2.11c-date" name="answers[2.11c[date]]"  />
                   <br/><br/>
                   <label>Lote</label><br/>
-                  <input type="text"  value={this.state.lot_2_11c} onChange={this.setLot211c} className="answers-136" id="2.11c-lot" name="answers[2.11c[lot]]"  />
+                  <input type="text"  value={this.state.lot_2_11_c} onChange={this.setLot211c} className="answers-136" id="2.11c-lot" name="answers[2.11c[lot]]"  />
                   <br/><br/>
                   <label>Assinatura</label><br/>
-                  <input type="text"  value={this.state.signature_2_11c} onChange={this.setSignature211c} className="answers-137" id="2.11c-signature" name="answers[2.11c[signature]]"  />
+                  <input type="text"  value={this.state.signature_2_11_c} onChange={this.setSignature211c} className="answers-137" id="2.11c-signature" name="answers[2.11c[signature]]"  />
                   <br/><br/>
                   <label>Dose</label><br/>
-                  <input type="text"  value={this.state.dose_2_11c} onChange={this.setDose211c} className="answers-138" id="2.11c-dose" name="answers[2.11c[dose]]"  />
+                  <input type="text"  value={this.state.dose_2_11_c} onChange={this.setDose211c} className="answers-138" id="2.11c-dose" name="answers[2.11c[dose]]"  />
                   <br/><br/>
                   </fieldset>
                 </div>
@@ -88,27 +88,27 @@ class VaccinationCalendar extends React.Component {
   }
 
   setName211c(evt) {
-    this.setState({name_2_11c: evt.target.value});
+    this.setState({name_2_11_c: evt.target.value});
   }
 
   setFasting211b(evt) {
-    this.setState({name_2_11c: evt.target.value});  
+    this.setState({name_2_11_c: evt.target.value});  
   }
 
   setDate211c(evt) {
-    this.setState({date_2_11c: evt.target.value});  
+    this.setState({date_2_11_c: evt.target.value});  
   }
 
   setLot211c(evt) {
-    this.setState({lot_2_11c: evt.target.value});  
+    this.setState({lot_2_11_c: evt.target.value});  
   }
 
    setSignature211c(evt) {
-    this.setState({signature_2_11c: evt.target.value});  
+    this.setState({signature_2_11_c: evt.target.value});  
   }
 
    setDose211c(evt) {
-    this.setState({dose_2_11c: evt.target.value});  
+    this.setState({dose_2_11_c: evt.target.value});  
   }
 }
 

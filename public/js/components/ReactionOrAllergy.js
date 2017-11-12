@@ -7,7 +7,7 @@ class ReactionOrAllergy extends React.Component {
   constructor (props) {
     super(props);
 
-    this.state = {medicine_2_4:'', data_2_4:'', adverse_reactions_or_allergies_2_4:''};
+    this.state = {medicine_2_4:'', date_2_4:'', adverse_reactions_or_allergies_2_4:''};
     this.sendForm = this.sendForm.bind(this);
     this.setMedication24 = this.setMedication24.bind(this);
     this.setData24 = this.setData24.bind(this);
@@ -54,7 +54,7 @@ class ReactionOrAllergy extends React.Component {
                   <input type="text" value={this.state.medicine_2_4} onChange={this.setMedication24} maxLength="5" className="answers-73" id="2.4-medication" name="answers[2.4[medication]]"  />
                   <br/><br/>
                   <label>Data</label><br/>
-                  <input type="date" value={this.state.data_2_4} onChange={this.setData24} className="answers-74" id="2.4-data" name="answers[2.4[data]]"  />
+                  <input type="date" value={this.state.date_2_4} onChange={this.setData24} className="answers-74" id="2.4-data" name="answers[2.4[data]]"  />
                   <br/><br/>
                   <label>Reações adversas ou alergias</label><br/>
                   <input type="text"  value={this.state.adverse_reactions_or_allergies_2_4} onChange={this.setAllergies24} maxLength="5" className="answers-75" id="2.4-allergies" name="answers[2.4[allergies]]"  />
@@ -83,7 +83,7 @@ class ReactionOrAllergy extends React.Component {
   }
 
   setData24(evt) {
-    this.setState({data_2_4: evt.target.value});  
+    this.setState({date_2_4: evt.target.value});  
   }
 
   setAllergies24(evt) {

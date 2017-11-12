@@ -91,6 +91,7 @@ Route::group(['prefix' => '/v1'], function () {
 	Route::resource('/falls', 'FallsController');
 
 	Route::get('/elderly/getTrashed', 'ElderlyController@getTrashed');
+	Route::get('/elderly/getChart', 'ElderlyController@getChart');
 	Route::resource('/elderly', 'ElderlyController');
 
 	Route::get('/company/getTrashed', 'CompanyController@getTrashed');

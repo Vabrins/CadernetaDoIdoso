@@ -7,7 +7,7 @@ class GlucoseControls extends React.Component {
   constructor (props) {
     super(props);
 
-    this.state = {fasting_2_11_b:'', casual_2_11_b:'', mgdl_2_11_b:''};
+    this.state = {fasting_2_11_b:'', casual_2_11_b:'', mg_dl_2_11_b:''};
     this.sendForm = this.sendForm.bind(this);
     this.setFasting211b = this.setFasting211b.bind(this);
     this.setCasual211b = this.setCasual211b.bind(this);
@@ -61,7 +61,7 @@ class GlucoseControls extends React.Component {
                   <input type="radio" checked={this.state.casual_2_11_b === '0'} onChange={this.setCasual211b} className="answers-132" id="2.11b-casual-n" name="answers[2.11b[casual]]" value="0"  />Não
                   <br/><br/>
                   <label>mg/dL</label><br/>
-                  <input type="text"  value={this.state.mgdl_2_11_b} onChange={this.setMgdl211b} className="answers-133" id="2.11b-mgdl" name="answers[2.11b[mgdl]]"  />
+                  <input type="text"  value={this.state.mg_dl_2_11_b} onChange={this.setMgdl211b} className="answers-133" id="2.11b-mgdl" name="answers[2.11b[mgdl]]"  />
                   <br/><br/>
                   </fieldset>
                 </div>
@@ -91,7 +91,7 @@ class GlucoseControls extends React.Component {
   }
 
   setMgdl211b(evt) {
-    this.setState({mgdl_2_11_b: evt.target.value});  
+    this.setState({mg_dl_2_11_b: evt.target.value});  
   }
 }
 
