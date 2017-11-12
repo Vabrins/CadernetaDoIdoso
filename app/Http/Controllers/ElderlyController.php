@@ -36,8 +36,6 @@ class ElderlyController extends ElderlyDataController
 
     public function getAverageOfColumn($data, $column){
         $years_months = array();
-        $set_ano = false;
-        $set_mes = false;
         foreach($data as $d){
             if(!isset($years_months[$d->created_at->format('y')])){
                 $years_months[$d->created_at->format('y')] = array();
