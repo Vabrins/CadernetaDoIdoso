@@ -1,6 +1,9 @@
-# CadernetaDoIdoso
+# CadernetaDeSaúdeDoIdoso
 Informatização da Caderneta de Saúde do Idoso
 
+![alt text](https://raw.githubusercontent.com/Vabrins/CadernetaDoIdoso/master/public/images/idosa.jpeg)
+
+Configuração
 - Executar ``` composer install ```
 - Criar uma cópia do arquivo .env-example e renomear para .env
 - Executar ``` php artisan key:generate ```
