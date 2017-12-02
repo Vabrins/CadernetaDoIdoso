@@ -28,4 +28,55 @@ fieldset {
 .links-item {
     color: #FEFEFE !important;
     background-color: #333333;
+    border-radius: 5px;
+}
+#cpf {
+    height: 50px;
+    width: 16rem;
+    font-size: 2rem;
+    margin-bottom: 7px;
+    text-align: center;
+}
+#cpf-bottom:hover {
+    opacity: 0.9;
+}
+header {
+    height: 4rem;
+    position: absolute;
+    top: 0;
+    display: inline-block;
+    width: 100%;
+    border-bottom-color: white;
+    border-bottom-style: solid;
+    border-bottom-width: 0.1px;
+    background-color: #24292e;
+}
+#title {
+    padding: 0 25px;
+    color: #ffffff;
+}
+@media only screen and (max-width: 630px) {
+    .top-right {
+        display: block;
+        left: 0;
+        right: 0;
+        margin-left: auto;
+        margin-right: auto;
+        top: 50px;
+        width: 290px;
+    }
+    header {
+        height: 5rem;
+    }
+    #title {
+        text-align: center;
+    }
+    .links > a {
+        padding: 0 15px;
+    }
+}
+#home-login {
+    background-image: url(../images/idosomaos.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
 }

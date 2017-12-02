@@ -1,6 +1,7 @@
 import React from 'react';
 import $ from 'jquery';
 import { Link } from 'react-router-dom';
+import Validation from './Validation';
 
 class DiagnosisPreviousHospitalization extends React.Component {
   
@@ -72,10 +73,10 @@ class DiagnosisPreviousHospitalization extends React.Component {
                     </select>
                     <br/><br/>
                     <label>Ano de diagnóstico</label><br/>
-                    <input type="text" value={this.state.diagnostics_year_2_2} onChange={this.setDiagnosticsYear22} className="" id="" name="" />
+                    <input type="text" value={this.state.diagnostics_year_2_2} onChange={this.setDiagnosticsYear22} maxLength="4" className="" id="" name="" />
                     <br/><br/>
                     <label>Ano de internação</label><br/>
-                    <input type="text" value={this.state.hospitalization_2_2} onChange={this.setHospitalization22} className="" id="" name="" />
+                    <input type="text" value={this.state.hospitalization_2_2} onChange={this.setHospitalization22} maxLength="4" className="" id="" name="" />
                     <br/><br/>
                     <label>Outras condições</label><br/>
                     <input type="text" value={this.state.other_conditions_2_2} onChange={this.setOtherConditions22} className="" id="" name="" />
@@ -102,11 +103,15 @@ class DiagnosisPreviousHospitalization extends React.Component {
   }
   
   setDiagnosticsYear22(evt) {
-    this.setState({diagnostics_year_2_2: evt.target.value});  
+    if (Validation.isNumber(evt.target.value) === true) {
+      this.setState({diagnostics_year_2_2: evt.target.value});  
+    }
   }
 
   setHospitalization22(evt) {
-    this.setState({hospitalization_2_2: evt.target.value});  
+    if (Validation.isNumber(evt.target.value) === true) {
+      this.setState({hospitalization_2_2: evt.target.value});
+    }
   }
 
   setOtherConditions22(evt) {

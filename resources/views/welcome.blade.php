@@ -68,25 +68,45 @@
     </head>
     <body id="welcome">
         <div class="flex-center position-ref full-height">
-            <div class="top-right links">
-                    <a href="https://github.com/Vabrins/CadernetaDoIdoso">GitHub</a>
-            </div>
-
-            <div class="content">
-                <div class="title m-b-md content-title">
-                    Caderneta do Idoso
-                </div>
-                @if (Route::has('login'))
-                    <div class="links">
+            <header>
+                <div class="top-right links">
+                    @if (Route::has('login'))
                         @auth
                             <a href="{{ url('/index') }}">Acesso a Caderneta Digital</a>
                         @else
-                            <a class="links-item" href="{{ route('login') }}">Entrar</a>
-                            <a class="links-item" href="{{ route('register') }}">Registre-se</a>
+                            <a href="{{ route('login') }}">Entrar</a>
+                            <a href="{{ route('register') }}">Registre-se</a>
                         @endauth
-                    </div>
-                @endif
+                    @endif
+                </div>
+                <h3 id="title">Caderneta Digital do Idoso</h3>
+            </header>
+            <div class="content">               
+                @if (Route::has('login'))
+                    @auth
+                        <div class="links">
+                            <a class="links-item" href="{{ url('/index') }}">Voltar para caderneta</a>
+                        </div>
+                    @else
+                        <div class="links">
+                            <input type="text" id="cpf" maxlength="11" placeholder="CPF" onkeypress="onlyNumbers(event)" onchange="checkCPF(this.value)" >
+                            <br/>
+                            <a class="links-item" id="cpf-bottom" style="font-size: 1.4rem" href="">Consultar minha caderneta de saúde</a>
+                        </div>
+                    @endauth
+                @endif  
             </div>
         </div>
     </body>
 </html>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="{{ asset('/js/global.js') }}"></script>
+<script>
+    var CPF = document.getElementById("cpf");
+    
+    document.getElementById("cpf-bottom").addEventListener("click", function(evt){
+        evt.preventDefault();
+        (CPF.value == "") ? alert('Digite seu CPF!') : existCPF(CPF.value);
+        isLogged();       
+    });
+</script>

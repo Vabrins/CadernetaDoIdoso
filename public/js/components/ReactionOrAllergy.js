@@ -51,13 +51,13 @@ class ReactionOrAllergy extends React.Component {
                 <div className="col">
                   <fieldset>
                   <label>Medicamento</label><br/>
-                  <input type="text" value={this.state.medicine_2_4} onChange={this.setMedication24} maxLength="5" className="answers-73" id="2.4-medication" name="answers[2.4[medication]]"  />
+                  <input type="text" value={this.state.medicine_2_4} onChange={this.setMedication24} maxLength="30" className="answers-73" id="2.4-medication" name="answers[2.4[medication]]"  />
                   <br/><br/>
                   <label>Data</label><br/>
                   <input type="date" value={this.state.date_2_4} onChange={this.setData24} className="answers-74" id="2.4-data" name="answers[2.4[data]]"  />
                   <br/><br/>
                   <label>Reações adversas ou alergias</label><br/>
-                  <input type="text"  value={this.state.adverse_reactions_or_allergies_2_4} onChange={this.setAllergies24} maxLength="5" className="answers-75" id="2.4-allergies" name="answers[2.4[allergies]]"  />
+                  <input type="text"  value={this.state.adverse_reactions_or_allergies_2_4} onChange={this.setAllergies24} maxLength="255" className="answers-75" id="2.4-allergies" name="answers[2.4[allergies]]"  />
                   <br/><br/>
                   </fieldset>
                 </div>

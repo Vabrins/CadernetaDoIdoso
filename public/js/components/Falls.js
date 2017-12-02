@@ -1,18 +1,20 @@
 import React from 'react';
 import $ from 'jquery';
 import { Link } from 'react-router-dom';
+import Validation from './Validation';
 
 class Falls extends React.Component {
   
   constructor (props) {
     super(props);
 
-    this.state = {date_of_fall_month_2_9:'', date_of_fall_year_2_9:'', the_fall_caused_some_fracture_2_9:'', the_fall_caused_some_fracture_extra_2_9:'', you_stopped_perform_some_activity_for_fear_to_fall_again_2_9:''};
+    this.state = {date_of_fall_month_2_9:'', date_of_fall_year_2_9:'', the_fall_caused_some_fracture_2_9:'', the_fall_caused_some_fracture_extra_2_9:'', you_stopped_perform_some_activity_for_fear_to_fall_again_2_9:'', place_2_9:''};
     this.sendForm = this.sendForm.bind(this);
     this.setDateOfFallMonth29 = this.setDateOfFallMonth29.bind(this);
     this.setDateOfFallYear29 = this.setDateOfFallYear29.bind(this);
     this.setTheFallCausedSomeFracture29 = this.setTheFallCausedSomeFracture29.bind(this);
     this.setYouStoppedPerformSomeActivityForFearToFallAgain_2_9 = this.setYouStoppedPerformSomeActivityForFearToFallAgain_2_9.bind(this);
+    this.setPlace_2_9 = this.setPlace_2_9.bind(this);
   }
 
   componentWillMount() {
@@ -52,12 +54,16 @@ class Falls extends React.Component {
                 <div className="col">
                   <fieldset>
                   <h2>QUEDAS </h2>
-                  <label>Data da queda (mês/ano)</label><br/>
+                  <label>Data da queda</label><br/>
+                  <label>Mês</label><br/>
                   <input type="text" value={this.state.date_of_fall_month_2_9} onChange={this.setDateOfFallMonth29} maxLength="12" className="answers-99" id="2.9-date_of_fall_month" name="answers[2.9[date_of_fall_month]]"  />
+                  <br/>
+                  <label>Ano</label><br/>
+                  <input type="text" value={this.state.date_of_fall_year_2_9} onChange={this.setDateOfFallYear29} maxLength="12" className="answers-99" id="2.9-date_of_fall_month" name="answers[2.9[date_of_fall_month]]"  />
                   <br/><br/>
                   <label>Qual foi o local da queda?</label><br/>
-                  <input type="radio" checked={this.state.date_of_fall_year_2_9 === '1'} onChange={this.setDateOfFallYear29} className="answers-100" id="2.9-date_of_fall_year-y" name="answers[2.9[date_of_fall_year]]" value="1"  />Dentro de casa
-                  <input type="radio" checked={this.state.date_of_fall_year_2_9 === '0'} onChange={this.setDateOfFallYear29} className="answers-100" id="2.9-date_of_fall_year-n" name="answers[2.9[date_of_fall_year]]" value="0"  />Fora de casa
+                  <input type="radio" checked={this.state.place_2_9 === '1'} onChange={this.setPlace_2_9} className="answers-100" id="2.9-date_of_fall_year-y" name="answers[2.9[date_of_fall_year]]" value="1"  />Dentro de casa
+                  <input type="radio" checked={this.state.place_2_9 === '0'} onChange={this.setPlace_2_9} className="answers-100" id="2.9-date_of_fall_year-n" name="answers[2.9[date_of_fall_year]]" value="0"  />Fora de casa
                   <br/><br/>
                   <label>A queda causou alguma fratura?</label><br/>
                   <input type="radio" checked={this.state.the_fall_caused_some_fracture_2_9 === '1'} onChange={this.setTheFallCausedSomeFracture29} className="answers-101" id="2.9a-the_fall_caused_some_fracture-y" name="answers[2.9[the_fall_caused_some_fracture]]" value="1"  />Sim
@@ -92,7 +98,9 @@ class Falls extends React.Component {
   }
 
   setDateOfFallYear29(evt) {
-    this.setState({date_of_fall_year_2_9: evt.target.value});  
+    if (Validation.isNumber(evt.target.value) === true) {
+      this.setState({date_of_fall_year_2_9: evt.target.value});
+    }
   }
 
   setTheFallCausedSomeFracture29(evt) {
@@ -101,6 +109,10 @@ class Falls extends React.Component {
 
   setYouStoppedPerformSomeActivityForFearToFallAgain_2_9(evt) {
     this.setState({the_fall_caused_some_fracture_extra_2_9: evt.target.value});  
+  }
+
+  setPlace_2_9(evt) {
+    this.setState({place_2_9: evt.target.value});  
   }
 
 }

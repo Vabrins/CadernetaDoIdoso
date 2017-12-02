@@ -6,7 +6,6 @@ import errorHandler from './errorHandler';
 import { Link } from 'react-router-dom';
 import Snackbar from 'material-ui/Snackbar';
 import Validation from './Validation';
-import MessageManager from './MessageManager';
 
   const styles = {
     block: {
@@ -32,8 +31,6 @@ class PersonalData extends React.Component {
     super(props);
 
     this.state = {
-      message : "sucesso!",
-      open:false,
       name_1:'',
       nick_name_1:'',
       card_number_cns_1:'',
@@ -64,6 +61,7 @@ class PersonalData extends React.Component {
       blood_type_1:'',
       rh_factor_1:''
     };
+
     this.sendForm = this.sendForm.bind(this);
     this.setName1 = this.setName1.bind(this);
     this.setNickName1 = this.setNickName1.bind(this);
@@ -93,7 +91,6 @@ class PersonalData extends React.Component {
     this.setWhatDeficiency1 = this.setWhatDeficiency1.bind(this);
     this.setBloodType1 = this.setBloodType1.bind(this);
     this.setRhFactor1 = this.setRhFactor1.bind(this);
-    this.handleRequestClose = this.handleRequestClose.bind(this);
   }
 
   componentWillMount() {
@@ -101,49 +98,66 @@ class PersonalData extends React.Component {
       url: "/api/v1/personaldata",
       dataType: "json",
       method: "GET",
-      success:function(response){
-        console.log(response);
+      success:function(response){        
+        if (response[0].id) {
+          this.buildData(response[0]);
+        }
       }.bind(this)
     });
   }
 
-  handleRequestClose() {
-    this.setState({
-      open: false,
-    });
-  };
+  buildData(data) {
+    this.setState({name_1: data.name_1});  
+    this.setState({nick_name_1: data.nick_name_1});
+    this.setState({card_number_cns_1: data.card_number_cns_1});
+    this.setState({document_rg_1: data.document_rg_1});
+    this.setState({mothers_name_1: data.mothers_name_1});
+    this.setState({do_you_have_a_religion_aux_1: data.do_you_have_a_religion_aux_1});
+    this.setState({document_cpf_1: data.document_cpf_1});
+    this.setState({city_of_birth_1: data.city_of_birth_1});
+    this.setState({country_of_birth_1: data.country_of_birth_1});
+    this.setState({breed_color_aux_1: data.breed_color_aux_1});
+    this.setState({sexuality_1: data.sexuality_1});
+    this.setState({nationality_1: data.nationality_1});
+    this.setState({can_you_read_and_write_1: data.can_you_read_and_write_1});
+    this.setState({scholarity_1: data.scholarity_1});
+    this.setState({breed_color_1: data.breed_color_1});
+    this.setState({do_you_have_a_religion_1: data.do_you_have_a_religion_1});
+    this.setState({date_of_birth_1: data.date_of_birth_1});
+    this.setState({photo_1: data.photo_1});
+    this.setState({marital_status_1: data.marital_status_1});
+    this.setState({marital_status_aux_1: data.marital_status_aux_1});  
+    this.setState({occupation_primary_profession_1: data.occupation_primary_profession_1});  
+    this.setState({basic_heath_unit_that_attends_1: data.basic_heath_unit_that_attends_1});  
+    this.setState({do_you_have_any_major_allergies_1: data.do_you_have_any_major_allergies_1});  
+    this.setState({do_you_have_any_disabilities_1: data.do_you_have_any_disabilities_1});   
+    this.setState({do_you_have_any_disabilities_aux_1: data.do_you_have_any_disabilities_aux_1});   
+    this.setState({whatdeficiency_1: data.whatdeficiency_1});
+    this.setState({blood_type_1: data.blood_type_1});
+    this.setState({rh_factor_1: data.rh_factor_1});
+  }
 
   sendForm(evt) {
-    this.setState({ open: true });
-    // evt.preventDefault();
-    // console.log("campos:")
-    // console.log(this.state);
-
-    MessageManager.createMessage("mensagem enviado");
-
-    // $.ajax({
-    //   url: "/api/v1/personaldata",
-    //   contentType: 'application/json',
-    //   dataType: 'json',
-    //   method: "POST",
-    //   data: JSON.stringify({ data: this.state }),
-    //   success: function(response){
-    //     console.log("resposta do sucesso");
-    //     console.log(response);
-
-    //     this.setState({ message: "Salvo com sucesso!" });  
-    //     this.setState({ open: true });
-    //   },
-    //   error: function(response){
-    //     console.log(response);
-    //     if(response.status === 400) {
-    //       new errorHandler().getErrors(response.responseJSON);
-    //     }
-    //     if(response.status === 500) {
-    //       new errorHandler().getErrors(response.responseJSON);
-    //     }
-    //   }.bind(this)
-    // });
+    $.ajax({
+      url: "/api/v1/personaldata",
+      contentType: 'application/json',
+      dataType: 'json',
+      method: "POST",
+      data: JSON.stringify({ data: this.state }),
+      success: function(response){
+        alert("sucesso");
+        console.log(response);
+      },
+      error: function(response){
+        console.log(response);
+        if(response.status === 400) {
+          new errorHandler().getErrors(response.responseJSON);
+        }
+        if(response.status === 500) {
+          new errorHandler().getErrors(response.responseJSON);
+        }
+      }.bind(this)
+    });
   }
 
  render () {
@@ -254,15 +268,14 @@ class PersonalData extends React.Component {
             </form>
             <nav aria-label="Dados Pessoais">
               <ul className="pagination justify-content-center">
-                <li className="page-item disabled">
-                  <a className="page-link" href="#" tabIndex="-1"><i className="fa fa-arrow-left" aria-hidden="true"></i></a>
+                <li className="page-item">
+                  <a className="page-link" onClick={this.sendForm} onClick={this.sendForm}><i className="fa fa-floppy-o" aria-hidden="true"> Salvar alterações</i></a>
                 </li>
                 <li className="page-item">
-                  <Link className="page-link" to="/personsreferences" onClick={this.sendForm} ><i className="fa fa-arrow-right" aria-hidden="true"></i></Link>
+                  <Link className="page-link" to="/personsreferences" ><i className="fa fa-arrow-right" aria-hidden="true"></i></Link>
                 </li>
               </ul>
             </nav>
-            <Snackbar open={this.state.open} message={this.state.message} autoHideDuration={4000} onRequestClose={this.handleRequestClose} />
           </div>
 
     )
