@@ -12,8 +12,10 @@
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <link rel="stylesheet" href="{{ asset('/css/global.css') }}">
+    <link rel='stylesheet' type='text/css' href='https://fonts.googleapis.com/css?family=Open+Sans'>    
 </head>
-<body>
+<body id="home-login">
     <div id="app">
         <nav class="navbar navbar-default navbar-static-top">
             <div class="container">

@@ -52,12 +52,12 @@ class ElderlyDataController extends Controller
             $history->save();
             $deletedRows = $this->model::where('id_elderly', $_COOKIE['id_elderly'])->delete();
             $register = new $this->model();
-            $dados = $request['test'];
-            $dados['id_history'] = $history->id;
-            $dados['id_elderly'] = $_COOKIE['id_elderly'];
-            $dados['created_at'] = \Carbon\Carbon::now();
-            $dados['updated_at'] = \Carbon\Carbon::now();
-            $register->insert($dados);
+            $data = $request['test'];
+            $data['id_history'] = $history->id;
+            $data['id_elderly'] = $_COOKIE['id_elderly'];
+            $data['created_at'] = \Carbon\Carbon::now();
+            $data['updated_at'] = \Carbon\Carbon::now();
+            $register->insert($data);
             echo json_encode(true);
         } catch (Exception $e) {
             echo json_encode(false);

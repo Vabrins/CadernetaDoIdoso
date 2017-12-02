@@ -1,6 +1,8 @@
 import React from 'react';
 import $ from 'jquery';
 import { Link } from 'react-router-dom';
+import Validation from './Validation';
+import Snackbar from 'material-ui/Snackbar';
 
 class PersonsReferences extends React.Component {
   
@@ -24,9 +26,21 @@ class PersonsReferences extends React.Component {
       dataType: "json",
       method: "GET",
       success:function(response){
-        console.log(response);
+        if (response[0].id) {
+          this.buildData(response[0]);
+        }
       }.bind(this)
     });
+  }
+
+  buildData(data) {
+    this.setState({ name_1_1: data.name_1_1 });
+    this.setState({date_of_birth_1_1: data.date_of_birth_1_1});
+    this.setState({link_1_1: data.link_1_1});
+    this.setState({address_1_1: data.address_1_1});
+    this.setState({telephone_1_1: data.telephone_1_1});
+    this.setState({does_this_person_live_with_you_1_1: data.does_this_person_live_with_you_1_1});
+    this.setState({date_of_this_information_1_1: data.date_of_this_information_1_1});
   }
 
   sendForm(evt) {    
@@ -38,7 +52,7 @@ class PersonsReferences extends React.Component {
       data: JSON.stringify({ test: this.state }),
       success: function(response){
         console.log(response);
-        console.log("enviado com sucesso");
+        alert("enviado com sucesso");
       },
       error: function(response){
         console.log("erro");
@@ -70,11 +84,11 @@ class PersonsReferences extends React.Component {
                     <input type="telephone" value={this.state.telephone_1_1} onChange={this.setTelephone11} placeholder="Telefone" className="answers-48" id="1.1-telephone" name="answers[1.1[telephone]]" maxLength="12" />
                     <br/><br/>
                     <label>Essa pessoa mora com você? </label><br/>
-                    <input type="radio" checked={this.state.livespeople_1_1 === 'y'} onChange={this.setLivesPeople11} className="answers-49" id="1.1-livespeople-n" name="answers[1.1[livespeople]]" value="n" /> Sim
-                    <input type="radio" checked={this.state.livespeople_1_1 === 'n'} onChange={this.setLivesPeople11} className="answers-49" id="1.1-livespeople-y" name="answers[1.1[livespeople]]" value="y" />Não
+                    <input type="radio" checked={this.state.does_this_person_live_with_you_1_1 == '1'} onChange={this.setLivesPeople11} className="answers-49" id="1.1-livespeople-n" name="answers[1.1[livespeople]]" value="1" /> Sim
+                    <input type="radio" checked={this.state.does_this_person_live_with_you_1_1 == '0'} onChange={this.setLivesPeople11} className="answers-49" id="1.1-livespeople-y" name="answers[1.1[livespeople]]" value="0" />Não
                     <br/><br/>
                     <label>Data dessa informação</label><br/>
-                    <input type="date" value={this.state.data_1_1} onChange={this.setData11}  placeholder="Data dessa informação" className="answers-50" id="1.1-data" name="answers[1[cityofbirth]]" />
+                    <input type="date" value={this.state.date_of_this_information_1_1} onChange={this.setData11}  placeholder="Data dessa informação" className="answers-50" id="1.1-data" name="answers[1[cityofbirth]]" />
                     <br/><br/>
                   </fieldset>
                 </div>
@@ -86,7 +100,10 @@ class PersonsReferences extends React.Component {
                   <Link className="page-link" to="/personaldata" tabIndex="-1"><i className="fa fa-arrow-left" aria-hidden="true"></i></Link>
                 </li>
                 <li className="page-item">
-                  <Link className="page-link" to="/residentialaddress" onClick={this.sendForm}><i className="fa fa-arrow-right" aria-hidden="true"></i></Link>
+                  <a className="page-link" onClick={this.sendForm} onClick={this.sendForm}><i className="fa fa-floppy-o" aria-hidden="true"> Salvar alterações</i></a>
+                </li>
+                <li className="page-item">
+                  <Link className="page-link" to="/residentialaddress"><i className="fa fa-arrow-right" aria-hidden="true"></i></Link>
                 </li>
               </ul>
             </nav>
@@ -99,27 +116,29 @@ class PersonsReferences extends React.Component {
   }
 
   setDateOfBirth11(evt) {
-    this.setState({date_of_birth_1_1: evt.target.value});  
+    this.setState({date_of_birth_1_1: evt.target.value});
   }
 
   setLink11(evt) {
-    this.setState({link_1_1: evt.target.value});  
+    this.setState({link_1_1: evt.target.value});
   }
 
   setAddress11(evt) {
-    this.setState({address_1_1: evt.target.value});  
+    this.setState({address_1_1: evt.target.value});
   }
 
   setTelephone11(evt) {
-    this.setState({telephone_1_1: evt.target.value});  
+    if (Validation.isNumber(evt.target.value) === true) {
+      this.setState({telephone_1_1: evt.target.value});
+    }
   }
 
   setLivesPeople11(evt) {
-    this.setState({livespeople_1_1: evt.target.value});  
+    this.setState({does_this_person_live_with_you_1_1: evt.target.value});
   }
 
   setData11(evt) {
-    this.setState({data_1_1: evt.target.value}); 
+    this.setState({date_of_this_information_1_1: evt.target.value});
   }
 
 }

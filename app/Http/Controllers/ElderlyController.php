@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use HipsterJazzbo\Landlord\Facades\Landlord;
 use Illuminate\Support\Facades\DB;
+use Auth;
 
 class ElderlyController extends ElderlyDataController
 {
@@ -58,5 +59,13 @@ class ElderlyController extends ElderlyDataController
     public function getHistory(){
         $elderly = new \App\ElderlyData;
         echo json_encode($elderly->getHistories());
+    }
+
+    public function isLogged() {
+        if (Auth::check()) {
+            echo json_encode(true);
+        } else {
+            echo json_encode(false);
+        }
     }
 }
