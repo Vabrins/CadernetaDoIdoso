@@ -69,8 +69,7 @@ class MedicinesHerbalRemedies extends React.Component {
                   <label>Foi prescrito por algum profissional de saúde? Qual?</label><br/>
                   <input type="text" value={this.state.it_was_prescribed_by_some_professional_2_1} onChange={this.setDoctor21} className="answers-54a" id="2.1-doctor" name="answers[2.1[doctor]]"  />
                   <br/><br/>
-                  <label>Suspensão:</label><br/>
-                  <input type="date" value={this.state.suspension_information_2_1} onChange={this.setSuspension21} className="answers-55a" id="2.1-suspension" name="answers[2.1[suspension]]"  />
+                  <label>Suspensão - Data/Motivo</label><br/>
                   <input type="text" value={this.state.suspension_information_2_1} onChange={this.setSuspension21} className="answers-55a" id="2.1-suspension" name="answers[2.1[suspension]]"  />
                   <br/><br/>
                   </fieldset>
@@ -79,7 +78,7 @@ class MedicinesHerbalRemedies extends React.Component {
             </form>
             <nav aria-label="Avaliação da pessoa idosa">
               <ul className="pagination justify-content-center">
-                <li className="page-item">
+                <li className="page-item disabled">
                   <Link className="page-link" to="/socialfamilyinformations" tabIndex="-1"><i className="fa fa-arrow-left" aria-hidden="true"></i></Link>
                 </li>
                 <li className="page-item">

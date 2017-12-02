@@ -1,6 +1,7 @@
 import React from 'react';
 import $ from 'jquery';
 import { Link } from 'react-router-dom';
+import Validation from './Validation';
 
 class SurgeriesPerformed extends React.Component {
   
@@ -83,7 +84,9 @@ class SurgeriesPerformed extends React.Component {
   }
 
   setYear23(evt) {
-    this.setState({year_2_3: evt.target.value});  
+    if (Validation.isNumber(evt.target.value) === true) {
+      this.setState({year_2_3: evt.target.value});
+    }
   }
 
   setComments23(evt) {

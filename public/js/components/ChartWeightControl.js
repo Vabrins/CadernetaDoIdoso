@@ -11,7 +11,7 @@ class ChartWeightControl extends React.Component {
                 {
                     label: 'Peso',
                     data:[
-                        70,
+                        73,
                         72.500,
                         77,
                         83,

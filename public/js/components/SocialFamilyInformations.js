@@ -1,6 +1,8 @@
 import React from 'react';
 import $ from 'jquery';
 import { Link } from 'react-router-dom';
+import Snackbar from 'material-ui/Snackbar';
+import Validation from './Validation';
 
 class SocialFamilyInformation extends React.Component {
   
@@ -30,9 +32,28 @@ class SocialFamilyInformation extends React.Component {
       dataType: "json",
       method: "GET",
       success:function(response){
-        console.log(response);
+        if (response[0].id) {
+          this.buildData(response[0]);
+        }
       }.bind(this)
     });
+  }
+
+  buildData(data) {
+    this.setState({do_you_live_alone_1_b: data.do_you_live_alone_1_b});  
+    this.setState({do_you_live_with_relatives_1_b: data.do_you_live_with_relatives_1_b});  
+    this.setState({do_you_live_with_your_spouse_or_partne_1_b: data.do_you_live_with_your_spouse_or_partne_1_b});  
+    this.setState({in_case_of_need_you_have_some_to_acc_the_health_fac_query_1_b: data.in_case_of_need_you_have_some_to_acc_the_health_fac_query_1_b});  
+    this.setState({in_the_last_30_days_you_have_met_friends_1_b: data.in_the_last_30_days_you_have_met_friends_1_b});  
+    this.setState({you_live_long_term_inst_eld_ilpi_shelter_or_nursing_home_1_b: data.you_live_long_term_inst_eld_ilpi_shelter_or_nursing_home_1_b});  
+    this.setState({have_you_easy_access_pharmacy_services_bakery_supermarket_1_b: data.have_you_easy_access_pharmacy_services_bakery_supermarket_1_b}); 
+    this.setState({have_you_easy_access_to_transportation_1_b: data.have_you_easy_access_to_transportation_1_b}); 
+    this.setState({do_you_currently_work_1_b: data.do_you_currently_work_1_b}); 
+    this.setState({do_you_receive_retirement_or_pension_1_b: data.do_you_receive_retirement_or_pension_1_b}); 
+    this.setState({you_receive_benefit_of_benefit_continued_bpc_1_b: data.you_receive_benefit_of_benefit_continued_bpc_1_b}); 
+    this.setState({do_you_receive_benefits_from_the_exchange_1_b: data.do_you_receive_benefits_from_the_exchange_1_b});
+    this.setState({have_you_easy_access_to_transportation_1_b: data.have_you_easy_access_to_transportation_1_b});
+    this.setState({do_you_currently_work_1_b: data.do_you_currently_work_1_b});
   }
 
   sendForm(evt) {
@@ -44,7 +65,7 @@ class SocialFamilyInformation extends React.Component {
       data: JSON.stringify({ test: this.state }),
       success: function(response){
         console.log(response); 
-        console.log("enviado com sucesso");
+        alert("enviado com sucesso");
       }, 
       error: function(response){
         console.log("erro");
@@ -59,55 +80,55 @@ class SocialFamilyInformation extends React.Component {
             <form id="socialfamilyinformation" method="post">
               <div className="row">
                 <div className="col">
-  '               <fieldset>
+                  <fieldset>
                     <label>Você mora sozinho(a)?</label><br/>
-                    <input type="radio" checked={this.state.do_you_live_alone_1_b === "1"} onChange={this.setLivingAlone1b} className="answers-32" id="1.b-livingalone-y" name="answers[1.b[livingalone]]" value="1" />Sim
-                    <input type="radio" checked={this.state.do_you_live_alone_1_b === "0"} onChange={this.setLivingAlone1b} className="answers-32" id="1.b-livingalone-n" name="answers[1.b[livingalone]]" value="0" />Não
+                    <input type="radio" checked={this.state.do_you_live_alone_1_b == "1"} onChange={this.setLivingAlone1b} className="answers-32" id="1.b-livingalone-y" name="answers[1.b[livingalone]]" value="1" />Sim
+                    <input type="radio" checked={this.state.do_you_live_alone_1_b == "0"} onChange={this.setLivingAlone1b} className="answers-32" id="1.b-livingalone-n" name="answers[1.b[livingalone]]" value="0" />Não
                     <br/><br/>
                     <label>Você mora com familiares?</label><br/>
-                    <input type="radio" checked={this.state.do_you_live_with_relatives_1_b === "1"} onChange={this.setLiveFamily1b} className="answers-33" id="1.b-livefamily-y" name="answers[1.b[livefamily]]" value="1" />Sim
-                    <input type="radio" checked={this.state.do_you_live_with_relatives_1_b === "0"} onChange={this.setLiveFamily1b} className="answers-33" id="1.b-livefamily-n" name="answers[1.b[livefamily]]" value="0" />Não
+                    <input type="radio" checked={this.state.do_you_live_with_relatives_1_b == "1"} onChange={this.setLiveFamily1b} className="answers-33" id="1.b-livefamily-y" name="answers[1.b[livefamily]]" value="1" />Sim
+                    <input type="radio" checked={this.state.do_you_live_with_relatives_1_b == "0"} onChange={this.setLiveFamily1b} className="answers-33" id="1.b-livefamily-n" name="answers[1.b[livefamily]]" value="0" />Não
                     <br/><br/>
                     <label>Você mora com seu(sua) cônjuge ou companheiro(a)?</label><br/>
-                    <input type="radio" checked={this.state.do_you_live_with_your_spouse_or_partne_1_b === "1"} onChange={this.setLifePartner1b} className="answers-34" id="1.b-lifepartner-y" name="answers[1.b[lifepartner]]" value="1" />Sim
-                    <input type="radio" checked={this.state.do_you_live_with_your_spouse_or_partne_1_b === "0"} onChange={this.setLifePartner1b} className="answers-34" id="1.b-lifepartner-n" name="answers[1.b[lifepartner]]" value="0" />Não
+                    <input type="radio" checked={this.state.do_you_live_with_your_spouse_or_partne_1_b == "1"} onChange={this.setLifePartner1b} className="answers-34" id="1.b-lifepartner-y" name="answers[1.b[lifepartner]]" value="1" />Sim
+                    <input type="radio" checked={this.state.do_you_live_with_your_spouse_or_partne_1_b == "0"} onChange={this.setLifePartner1b} className="answers-34" id="1.b-lifepartner-n" name="answers[1.b[lifepartner]]" value="0" />Não
                     <br/><br/>
                     <label>Você reside em instituição de longa permanência para idosos (ILPI), abrigo ou casa de repouso?</label><br/>
-                    <input type="radio" checked={this.state.in_case_of_need_you_have_some_to_acc_the_health_fac_query_1_b === "1"} onChange={this.setRestHome1b} className="answers-35" id="1.b-resthome-y" name="answers[1.b[resthome]]" value="1" />Sim
-                    <input type="radio" checked={this.state.in_case_of_need_you_have_some_to_acc_the_health_fac_query_1_b === "0"} onChange={this.setRestHome1b} className="answers-35" id="1.b-resthome-n" name="answers[1.b[resthome]]" value="0" />Não
+                    <input type="radio" checked={this.state.in_case_of_need_you_have_some_to_acc_the_health_fac_query_1_b == "1"} onChange={this.setRestHome1b} className="answers-35" id="1.b-resthome-y" name="answers[1.b[resthome]]" value="1" />Sim
+                    <input type="radio" checked={this.state.in_case_of_need_you_have_some_to_acc_the_health_fac_query_1_b == "0"} onChange={this.setRestHome1b} className="answers-35" id="1.b-resthome-n" name="answers[1.b[resthome]]" value="0" />Não
                     <br/><br/>
                     <label>Nos últimos 30 dias, você se encontrou com amigos ou familiares para conversar ou fazer alguma atividade, como ir ao cinema ou à igreja, passear ou caminhar junto?</label><br/>
-                    <input type="radio" checked={this.state.in_the_last_30_days_you_have_met_friends_1_b === "1"} onChange={this.setWalk1b} className="answers-36" id="1.b-walk-y" name="answers[1.b[walk]]" value="1" />Sim
-                    <input type="radio" checked={this.state.in_the_last_30_days_you_have_met_friends_1_b === "0"} onChange={this.setWalk1b} className="answers-36" id="1.b-walk-n" name="answers[1.b[walk]]" value="0" />Não
+                    <input type="radio" checked={this.state.in_the_last_30_days_you_have_met_friends_1_b == "1"} onChange={this.setWalk1b} className="answers-36" id="1.b-walk-y" name="answers[1.b[walk]]" value="1" />Sim
+                    <input type="radio" checked={this.state.in_the_last_30_days_you_have_met_friends_1_b == "0"} onChange={this.setWalk1b} className="answers-36" id="1.b-walk-n" name="answers[1.b[walk]]" value="0" />Não
                     <br/><br/>
                     <label>Em caso de necessidade, você conta com alguém para acompanhá-lo(a) à unidade de saúde ou a uma consulta?</label><br/>
-                    <input type="radio" checked={this.state.you_live_long_term_inst_eld_ilpi_shelter_or_nursing_home_1_b === "1"} onChange={this.setMonitoring1b} className="answers-37" id="1.b-Monitoring-y" name="answers[1.b[Monitoring]]" value="1" />Sim
-                    <input type="radio" checked={this.state.you_live_long_term_inst_eld_ilpi_shelter_or_nursing_home_1_b === "0"} onChange={this.setMonitoring1b} className="answers-37" id="1.b-Monitoring-n" name="answers[1.b[Monitoring]]" value="0" />Não
+                    <input type="radio" checked={this.state.you_live_long_term_inst_eld_ilpi_shelter_or_nursing_home_1_b == "1"} onChange={this.setMonitoring1b} className="answers-37" id="1.b-Monitoring-y" name="answers[1.b[Monitoring]]" value="1" />Sim
+                    <input type="radio" checked={this.state.you_live_long_term_inst_eld_ilpi_shelter_or_nursing_home_1_b == "0"} onChange={this.setMonitoring1b} className="answers-37" id="1.b-Monitoring-n" name="answers[1.b[Monitoring]]" value="0" />Não
                     <br/><br/>
                     <label>Você tem fácil acesso aos serviços de farmácia, padaria ou supermercado?</label><br/>
-                    <input type="radio" checked={this.state.have_you_easy_access_pharmacy_services_bakery_supermarket_1_b === "1"} onChange={this.setAccess1b} className="answers-38" id="1.b-access-y" name="answers[1.b[access]]" value="1" />Sim
-                    <input type="radio" checked={this.state.have_you_easy_access_pharmacy_services_bakery_supermarket_1_b === "0"} onChange={this.setAccess1b} className="answers-38" id="1.b-access-n" name="answers[1.b[access]]" value="0" />Não
+                    <input type="radio" checked={this.state.have_you_easy_access_pharmacy_services_bakery_supermarket_1_b == "1"} onChange={this.setAccess1b} className="answers-38" id="1.b-access-y" name="answers[1.b[access]]" value="1" />Sim
+                    <input type="radio" checked={this.state.have_you_easy_access_pharmacy_services_bakery_supermarket_1_b == "0"} onChange={this.setAccess1b} className="answers-38" id="1.b-access-n" name="answers[1.b[access]]" value="0" />Não
                     <br/><br/>
                     <label>Você tem fácil acesso a transporte? </label><br/>
-                    <input type="radio" checked={this.state.have_you_easy_access_to_transportation_1_b === "1"} onChange={this.seTransport1b} className="answers-39" id="1.b-transport-y" name="answers[1.b[transport]]" value="1" />Sim
-                    <input type="radio" checked={this.state.have_you_easy_access_to_transportation_1_b === "0"} onChange={this.seTransport1b} className="answers-39" id="1.b-transport-n" name="answers[1.b[transport]]" value="0" />Não
+                    <input type="radio" checked={this.state.have_you_easy_access_to_transportation_1_b == "1"} onChange={this.seTransport1b} className="answers-39" id="1.b-transport-y" name="answers[1.b[transport]]" value="1" />Sim
+                    <input type="radio" checked={this.state.have_you_easy_access_to_transportation_1_b == "0"} onChange={this.seTransport1b} className="answers-39" id="1.b-transport-n" name="answers[1.b[transport]]" value="0" />Não
                     <br/><br/>
                     <label>Você trabalha atualmente? </label><br/>
-                    <input type="radio" checked={this.state.do_you_currently_work_1_b === "1"} onChange={this.setWork1b} className="answers-40" id="1.b-work-y" name="answers[1.b[work]]" value="1" />Sim
-                    <input type="radio" checked={this.state.do_you_currently_work_1_b === "0"} onChange={this.setWork1b} className="answers-40" id="1.b-work-n" name="answers[1.b[work]]" value="0" />Não
+                    <input type="radio" checked={this.state.do_you_currently_work_1_b == "1"} onChange={this.setWork1b} className="answers-40" id="1.b-work-y" name="answers[1.b[work]]" value="1" />Sim
+                    <input type="radio" checked={this.state.do_you_currently_work_1_b == "0"} onChange={this.setWork1b} className="answers-40" id="1.b-work-n" name="answers[1.b[work]]" value="0" />Não
                     <br/><br/>
                     <label>Você recebe aposentadoria ou pensão? </label><br/>
-                    <input type="radio" checked={this.state.do_you_receive_retirement_or_pension_1_b === "1"} onChange={this.setRetirement1b} className="answers-41" id="1.b-retirement-y" name="answers[1.b[retirement]]" value="1" />Sim
-                    <input type="radio" checked={this.state.do_you_receive_retirement_or_pension_1_b === "0"} onChange={this.setRetirement1b} className="answers-41" id="1.b-retirement-n" name="answers[1.b[retirement]]" value="0" />Não
+                    <input type="radio" checked={this.state.do_you_receive_retirement_or_pension_1_b == "1"} onChange={this.setRetirement1b} className="answers-41" id="1.b-retirement-y" name="answers[1.b[retirement]]" value="1" />Sim
+                    <input type="radio" checked={this.state.do_you_receive_retirement_or_pension_1_b == "0"} onChange={this.setRetirement1b} className="answers-41" id="1.b-retirement-n" name="answers[1.b[retirement]]" value="0" />Não
                     <br/><br/>
                     <label>Você recebe benefício de prestação continuada (BPC)?</label><br/>
-                    <input type="radio" checked={this.state.you_receive_benefit_of_benefit_continued_bpc_1_b === "1"} onChange={this.setBenefit1b} className="answers-42" id="1.b-benefit-y" name="answers[1.b[benefit]]" value="1" />Sim
-                    <input type="radio" checked={this.state.you_receive_benefit_of_benefit_continued_bpc_1_b === "0"} onChange={this.setBenefit1b} className="answers-42" id="1.b-benefit-n" name="answers[1.b[benefit]]" value="0" />Não
+                    <input type="radio" checked={this.state.you_receive_benefit_of_benefit_continued_bpc_1_b == "1"} onChange={this.setBenefit1b} className="answers-42" id="1.b-benefit-y" name="answers[1.b[benefit]]" value="1" />Sim
+                    <input type="radio" checked={this.state.you_receive_benefit_of_benefit_continued_bpc_1_b == "0"} onChange={this.setBenefit1b} className="answers-42" id="1.b-benefit-n" name="answers[1.b[benefit]]" value="0" />Não
                     <br/><br/>
                     <label>Você recebe benefícios do Bolsa-Família?</label><br/>
-                    <input type="radio" checked={this.state.do_you_receive_benefits_from_the_exchange_1_b === "1"} onChange={this.setBolsaFamilia1b} className="answers-43" id="1.b-Bolsa-Familia-y" name="answers[1.b[BolsaFamilia]]" value="1" />Sim
-                    <input type="radio" checked={this.state.do_you_receive_benefits_from_the_exchange_1_b === "0"} onChange={this.setBolsaFamilia1b} className="answers-43" id="1.b-Bolsa-Familia-n" name="answers[1.b[BolsaFamilia]]" value="0" />Não
-                    <br/><br/>  '  
+                    <input type="radio" checked={this.state.do_you_receive_benefits_from_the_exchange_1_b == "1"} onChange={this.setBolsaFamilia1b} className="answers-43" id="1.b-Bolsa-Familia-y" name="answers[1.b[BolsaFamilia]]" value="1" />Sim
+                    <input type="radio" checked={this.state.do_you_receive_benefits_from_the_exchange_1_b == "0"} onChange={this.setBolsaFamilia1b} className="answers-43" id="1.b-Bolsa-Familia-n" name="answers[1.b[BolsaFamilia]]" value="0" />Não
+                    <br/><br/> 
                   </fieldset>
                 </div>
               </div>
@@ -115,10 +136,10 @@ class SocialFamilyInformation extends React.Component {
             <nav aria-label="Informações sociais">
               <ul className="pagination justify-content-center">
                 <li className="page-item">
-                  <Link className="page-link" to="/personsreferences" tabIndex="-1"><i className="fa fa-arrow-left" aria-hidden="true"></i></Link>
+                  <Link className="page-link" to="/residentialaddress" tabIndex="-1"><i className="fa fa-arrow-left" aria-hidden="true"></i></Link>
                 </li>
                 <li className="page-item">
-                  <Link className="page-link" to="/medicinesherbalremedies" onClick={this.sendForm}><i className="fa fa-arrow-right" aria-hidden="true"></i></Link>
+                  <a className="page-link" onClick={this.sendForm}><i className="fa fa-floppy-o" aria-hidden="true"> Salvar alterações</i></a>
                 </li>
               </ul>
             </nav>

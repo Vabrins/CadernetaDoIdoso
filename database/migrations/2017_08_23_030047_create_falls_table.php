@@ -21,6 +21,7 @@ class CreateFallsTable extends Migration
             $table->foreign('id_elderly', 'falls_2_9_2_fk_elderlies')->references('id')->on('elderlies');
             $table->string('date_of_fall_month_2_9', '12');
             $table->string('date_of_fall_year_2_9', '12');
+            $table->string('place_2_9', '15');
             $table->boolean('the_fall_caused_some_fracture_2_9');
             $table->string('the_fall_caused_some_fracture_extra_2_9', '30');
             $table->boolean('you_stopped_perform_some_activity_for_fear_to_fall_again_2_9');

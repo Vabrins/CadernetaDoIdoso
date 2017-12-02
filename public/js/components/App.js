@@ -8,6 +8,7 @@ import Home from './Home';
 import CadernetaMenuGuide from './CadernetaMenuGuide';
 import Details from './Details';
 import Validation from './Validation';
+import Snackbar from 'material-ui/Snackbar';
 
 import PersonalData from './PersonalData';
 import PersonsReferences from './PersonsReferences';
@@ -37,9 +38,11 @@ import ConsultationExamination from './ConsultationExamination';
 class App extends React.Component {
   constructor (props) {
     super(props)    
-    this.state = {cpf:''};
+    this.state = {cpf:'', open:false, msg:''};
     this.setCpf = this.setCpf.bind(this);
     this.setElderlyCpf = this.setElderlyCpf.bind(this);
+    this.validateCpf = this.validateCpf.bind(this);
+    this.handleRequestClose = this.handleRequestClose.bind(this);
   }
 
   componentWillMount () {
@@ -53,22 +56,39 @@ class App extends React.Component {
     document.body.appendChild(script);
   }
 
+  validateCpf () { 
+    if ( Validation.checkCpf( this.state.cpf ) === true) {
+      this.setElderlyCpf();
+    } else {
+      this.setState({ msg: 'CPF inválido!' });
+      this.setState({ open: true });
+    }
+  }
+
   setElderlyCpf () {
+    let that = this;
+
     $.ajax({
       url: "/api/v1/elderly/"+this.state.cpf,
       contentType: 'application/json',
       dataType: 'json',
       method: "GET",
       success: function(response){
-        console.log(response);
-        console.log("enviado com sucesso");
+        that.setState({ msg: 'CPF ativado!' });
+        that.setState({ open: true });
       },
       error: function(response){
-        console.log("erro");
-        console.log(response);
+        that.setState({ msg: 'Erro ao ativar CPF.' });
+        that.setState({ open: true });
       }.bind(this)
     });
   }
+
+  handleRequestClose() {
+    this.setState({
+      open: false,
+    });
+  };
 
   render () {
     return (
@@ -82,14 +102,14 @@ class App extends React.Component {
             <div className="collapse navbar-collapse" id="navbarResponsive">
               <div id="sidemenu"></div>
               <ul className="navbar-nav navbar-sidenav" id="exampleAccordion">
-                <li className="nav-item" data-toggle="tooltip" data-placement="right" title="Formulário">
+                <li className="nav-item" data-toggle="tooltip" data-placement="right" title="Dados Pessoais">
                   <a className="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#collapseMulti" data-parent="#exampleAccordion">
-                  <i className="fa fa-fw fa-stethoscope"></i>
-                  <span className="nav-link-text"> Formulários</span>
+                  <i className="fa fa-id-card"></i>
+                  <span className="nav-link-text"> Dados Pessoais</span>
                   </a>
                   <ul className="sidenav-second-level collapse" id="collapseMulti">
                     <li>
-                      <Link exact="true" to="/personaldata">Dados Pessoais</Link>
+                      <Link exact="true" to="/personaldata">Informações básicas</Link>
                     </li>
                     <li>
                       <Link exact="true" to="/personsreferences">Pessoas de referência</Link>
@@ -100,6 +120,14 @@ class App extends React.Component {
                     <li>
                       <Link exact="true" to="/socialfamilyinformations">Informações Sociais e Familiares</Link>
                     </li>
+                  </ul>
+                </li>
+                <li className="nav-item" data-toggle="tooltip" data-placement="right" title="Avaliações">
+                  <a className="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#collapseMulti2" data-parent="#exampleAccordion">
+                  <i className="fa fa-fw fa-stethoscope"></i>
+                  <span className="nav-link-text"> Avaliações</span>
+                  </a>
+                  <ul className="sidenav-second-level collapse" id="collapseMulti2">
                     <li>
                       <a className="nav-link-collapse collapsed" data-toggle="collapse" href="#item-elderly_evaluete">Avaliação da pessoa idosa</a>
                       <ul className="sidenav-third-level collapse" id="item-elderly_evaluete">
@@ -199,10 +227,10 @@ class App extends React.Component {
                 <li className="nav-item">
                   <form className="form-inline my-2 my-lg-0 mr-lg-2">
                     <div className="input-group">
-                      <input className="form-control" value={this.state.cpf} onChange={this.setCpf} type="text" placeholder="CPF do idoso" maxLength="11" />
+                      <input className="form-control" value={this.state.cpf} onChange={this.setCpf} type="text" placeholder="Ativar CPF do idoso" maxLength="11" />
                       <span className="input-group-btn">
-                      <button className="btn btn-primary" type="button" onClick={this.setElderlyCpf}>
-                      <i className="fa fa-refresh"></i>
+                      <button className="btn btn-primary" type="button" onClick={this.validateCpf}>
+                        <i className="fa fa-refresh"></i>
                       </button>
                       </span>
                     </div>
@@ -220,11 +248,11 @@ class App extends React.Component {
               <div className="col-12">
                 <div id="menu_guide"></div>
                 <div className="progress">
-                  {/*<div className="progress-bar" role="progressbar" style={{width: '25%', height: '1px'}} aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>*/}
                 </div>
               </div>
             </div>
           </div>
+          <Snackbar open={this.state.open} message={this.state.msg} autoHideDuration={10000} onRequestClose={this.handleRequestClose} />
 
           {/*App Routes*/}
             <Route path="/index" component={Home} />
