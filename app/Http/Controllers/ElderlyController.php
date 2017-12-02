@@ -54,4 +54,9 @@ class ElderlyController extends ElderlyDataController
 
         return($years_months);
     }
+
+    public function getHistory(){
+        $elderly = new \App\ElderlyData;
+        echo json_encode($elderly->getHistories());
+    }
 }

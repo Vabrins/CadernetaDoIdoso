@@ -23,4 +23,8 @@ class ElderlyData extends Model
     public function elderly() {
         return $this->belongsTo('App\Elderly', 'id_users');
     }
+
+    public function getHistories(){
+        dd(class_implements($this));
+    }
 }
