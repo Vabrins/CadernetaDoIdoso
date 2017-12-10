@@ -32,7 +32,7 @@ class SocialFamilyInformation extends React.Component {
       dataType: "json",
       method: "GET",
       success:function(response){
-        if (response[0].id) {
+        if (response != "") {
           this.buildData(response[0]);
         }
       }.bind(this)
@@ -40,20 +40,48 @@ class SocialFamilyInformation extends React.Component {
   }
 
   buildData(data) {
-    this.setState({do_you_live_alone_1_b: data.do_you_live_alone_1_b});  
-    this.setState({do_you_live_with_relatives_1_b: data.do_you_live_with_relatives_1_b});  
-    this.setState({do_you_live_with_your_spouse_or_partne_1_b: data.do_you_live_with_your_spouse_or_partne_1_b});  
-    this.setState({in_case_of_need_you_have_some_to_acc_the_health_fac_query_1_b: data.in_case_of_need_you_have_some_to_acc_the_health_fac_query_1_b});  
-    this.setState({in_the_last_30_days_you_have_met_friends_1_b: data.in_the_last_30_days_you_have_met_friends_1_b});  
-    this.setState({you_live_long_term_inst_eld_ilpi_shelter_or_nursing_home_1_b: data.you_live_long_term_inst_eld_ilpi_shelter_or_nursing_home_1_b});  
-    this.setState({have_you_easy_access_pharmacy_services_bakery_supermarket_1_b: data.have_you_easy_access_pharmacy_services_bakery_supermarket_1_b}); 
-    this.setState({have_you_easy_access_to_transportation_1_b: data.have_you_easy_access_to_transportation_1_b}); 
-    this.setState({do_you_currently_work_1_b: data.do_you_currently_work_1_b}); 
-    this.setState({do_you_receive_retirement_or_pension_1_b: data.do_you_receive_retirement_or_pension_1_b}); 
-    this.setState({you_receive_benefit_of_benefit_continued_bpc_1_b: data.you_receive_benefit_of_benefit_continued_bpc_1_b}); 
-    this.setState({do_you_receive_benefits_from_the_exchange_1_b: data.do_you_receive_benefits_from_the_exchange_1_b});
-    this.setState({have_you_easy_access_to_transportation_1_b: data.have_you_easy_access_to_transportation_1_b});
-    this.setState({do_you_currently_work_1_b: data.do_you_currently_work_1_b});
+    if (data.do_you_live_alone_1_b != null) {
+      this.setState({do_you_live_alone_1_b: data.do_you_live_alone_1_b});  
+    }
+    if (data.do_you_live_with_relatives_1_b != null) {
+      this.setState({do_you_live_with_relatives_1_b: data.do_you_live_with_relatives_1_b});  
+    }
+    if (data.do_you_live_with_your_spouse_or_partne_1_b != null) {
+      this.setState({do_you_live_with_your_spouse_or_partne_1_b: data.do_you_live_with_your_spouse_or_partne_1_b});  
+    }
+    if (data.in_case_of_need_you_have_some_to_acc_the_health_fac_query_1_b != null) {
+      this.setState({in_case_of_need_you_have_some_to_acc_the_health_fac_query_1_b: data.in_case_of_need_you_have_some_to_acc_the_health_fac_query_1_b});  
+    }
+    if (data.in_the_last_30_days_you_have_met_friends_1_b != null) {
+      this.setState({in_the_last_30_days_you_have_met_friends_1_b: data.in_the_last_30_days_you_have_met_friends_1_b});  
+    }
+    if (data.you_live_long_term_inst_eld_ilpi_shelter_or_nursing_home_1_b != null) {
+      this.setState({you_live_long_term_inst_eld_ilpi_shelter_or_nursing_home_1_b: data.you_live_long_term_inst_eld_ilpi_shelter_or_nursing_home_1_b});  
+    }
+    if (data.have_you_easy_access_pharmacy_services_bakery_supermarket_1_b != null) {
+      this.setState({have_you_easy_access_pharmacy_services_bakery_supermarket_1_b: data.have_you_easy_access_pharmacy_services_bakery_supermarket_1_b}); 
+    }
+    if (data.have_you_easy_access_to_transportation_1_b != null) {
+      this.setState({have_you_easy_access_to_transportation_1_b: data.have_you_easy_access_to_transportation_1_b}); 
+    }
+    if (data.do_you_currently_work_1_b != null) {
+      this.setState({do_you_currently_work_1_b: data.do_you_currently_work_1_b}); 
+    }
+    if (data.do_you_receive_retirement_or_pension_1_b != null) {
+      this.setState({do_you_receive_retirement_or_pension_1_b: data.do_you_receive_retirement_or_pension_1_b}); 
+    }
+    if (data.you_receive_benefit_of_benefit_continued_bpc_1_b != null) {
+      this.setState({you_receive_benefit_of_benefit_continued_bpc_1_b: data.you_receive_benefit_of_benefit_continued_bpc_1_b}); 
+    }
+    if (data.do_you_receive_benefits_from_the_exchange_1_b != null) {
+      this.setState({do_you_receive_benefits_from_the_exchange_1_b: data.do_you_receive_benefits_from_the_exchange_1_b});
+    }
+    if (data.have_you_easy_access_to_transportation_1_b != null) {
+      this.setState({have_you_easy_access_to_transportation_1_b: data.have_you_easy_access_to_transportation_1_b});
+    }
+    if (data.do_you_currently_work_1_b != null) {
+      this.setState({do_you_currently_work_1_b: data.do_you_currently_work_1_b});
+    }
   }
 
   sendForm(evt) {

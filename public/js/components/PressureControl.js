@@ -66,7 +66,10 @@ class PressureControls extends React.Component {
                   <Link className="page-link" to="/livinghabits" tabIndex="-1"><i className="fa fa-arrow-left" aria-hidden="true"></i></Link>
                 </li>
                 <li className="page-item">
-                  <Link className="page-link" onClick={this.sendForm} to="/glucosecontrol"><i className="fa fa-arrow-right" aria-hidden="true"></i></Link>
+                  <a className="page-link" onClick={this.sendForm}><i className="fa fa-floppy-o" aria-hidden="true"></i></a>
+                </li>
+                <li className="page-item">
+                  <Link className="page-link" to="/glucosecontrol"><i className="fa fa-arrow-right" aria-hidden="true"></i></Link>
                 </li>
               </ul>
             </nav>

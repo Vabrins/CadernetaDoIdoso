@@ -26,7 +26,7 @@ class PersonsReferences extends React.Component {
       dataType: "json",
       method: "GET",
       success:function(response){
-        if (response[0].id) {
+        if (response != "") {
           this.buildData(response[0]);
         }
       }.bind(this)
@@ -34,13 +34,27 @@ class PersonsReferences extends React.Component {
   }
 
   buildData(data) {
-    this.setState({ name_1_1: data.name_1_1 });
-    this.setState({date_of_birth_1_1: data.date_of_birth_1_1});
-    this.setState({link_1_1: data.link_1_1});
-    this.setState({address_1_1: data.address_1_1});
-    this.setState({telephone_1_1: data.telephone_1_1});
-    this.setState({does_this_person_live_with_you_1_1: data.does_this_person_live_with_you_1_1});
-    this.setState({date_of_this_information_1_1: data.date_of_this_information_1_1});
+    if (data.name_1_1 != null) {
+      this.setState({ name_1_1: data.name_1_1 });
+    }
+    if (data.date_of_birth_1_1 != null) {
+      this.setState({date_of_birth_1_1: data.date_of_birth_1_1});
+    }
+    if (data.link_1_1 != null) {
+      this.setState({link_1_1: data.link_1_1});
+    }
+    if (data.address_1_1 != null) {
+      this.setState({address_1_1: data.address_1_1});
+    }
+    if (data.telephone_1_1 != null) {
+      this.setState({telephone_1_1: data.telephone_1_1});
+    }
+    if (data.does_this_person_live_with_you_1_1 != null) {
+      this.setState({does_this_person_live_with_you_1_1: data.does_this_person_live_with_you_1_1});
+    }
+    if (data.date_of_this_information_1_1 != null) {
+      this.setState({date_of_this_information_1_1: data.date_of_this_information_1_1});
+    }
   }
 
   sendForm(evt) {    

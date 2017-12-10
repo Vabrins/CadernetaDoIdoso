@@ -107,6 +107,6 @@
     document.getElementById("cpf-bottom").addEventListener("click", function(evt){
         evt.preventDefault();
         (CPF.value == "") ? alert('Digite seu CPF!') : existCPF(CPF.value);
-        isLogged();       
+        // isLogged();       
     });
 </script>
