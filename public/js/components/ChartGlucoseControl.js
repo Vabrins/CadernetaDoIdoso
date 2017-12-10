@@ -1,7 +1,7 @@
 import React from 'react';
 import {Bar, Line, Pie} from 'react-chartjs-2';
 
-class ChartWeightControl extends React.Component {
+class ChartGlucoseControl extends React.Component {
     constructor (props) {
         super(props)    
         this.state = {
@@ -27,16 +27,15 @@ class ChartWeightControl extends React.Component {
           dataType: "json",
           method: "GET",
           success:function(response){
-
             this.setState({chartData: {labels: ['Janeiro', 'Fevereiro', 'Março', 'Abril', 'Maio', 'Junho', 'Julho', 'Agosto', 'Setembro', 'Outubro', 'Novembro', 'Dezembro'] } });
             
             this.setState({
                 chartData: {
                     datasets: [{ 
-                        label: 'Peso Kg.',
-                        borderColor: "rgba(136, 26, 26, 0.5)", pointRadius: 5, pointBackgroundColor: "rgba(136, 26, 26, 0.5)", pointBorderColor: "rrgba(136, 26, 26, 0.5)", pointHoverRadius: 5, pointHoverBackgroundColor: "rgba(136, 26, 26, 0.5)", pointHitRadius: 20, pointBorderWidth: 2,
-                        data: [response.weight[year]['01'], response.weight[year]['02'], response.weight[year]['03'], response.weight[year]['04'], response.weight[year]['05'], response.weight[year]['06'], response.weight[year]['07'], response.weight[year]['08'], response.weight[year]['09'], response.weight[year]['10'], response.weight[year]['11'], response.weight[year]['12']],
-                        backgroundColor: ['rgba(136, 26, 26, 0.4)', 'rgba(136, 26, 26, 0.7)', 'rgba(136, 26, 26, 0.4)']
+                        label: 'Glicose mg / dL',
+                        data: [response.glucose[year]['01'], response.glucose[year]['02'], response.glucose[year]['03'], response.glucose[year]['04'], response.glucose[year]['05'], response.glucose[year]['06'], response.glucose[year]['07'], response.glucose[year]['08'], response.glucose[year]['09'], response.glucose[year]['10'], response.glucose[year]['11'], response.glucose[year]['12']],
+                        backgroundColor: "rgba(2,117,216,1)",
+                        borderColor: "rgba(2,117,216,1)"
                     }],  
                 } 
             });
@@ -47,7 +46,7 @@ class ChartWeightControl extends React.Component {
   render () {
     return (
         <div className="chart">
-            <Line
+            <Bar
               data={this.state.chartData}
               options={{
                 title:{
@@ -65,4 +64,4 @@ class ChartWeightControl extends React.Component {
 
 }
 
-  export default ChartWeightControl;
+  export default ChartGlucoseControl;

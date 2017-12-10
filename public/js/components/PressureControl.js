@@ -11,9 +11,12 @@ class PressureControls extends React.Component {
     this.sendForm = this.sendForm.bind(this);
     this.setDate211a = this.setDate211a.bind(this);
     this.setPa211a = this.setPa211a.bind(this);
+    this.setDate = this.setDate.bind(this);
   }
 
   componentWillMount() {
+    this.setDate();
+
     $.ajax({
       url: "/api/v1/pressurecontrol",
       dataType: "json",
@@ -22,6 +25,11 @@ class PressureControls extends React.Component {
         console.log(response);
       }.bind(this)
     });
+  }
+
+  setDate() {
+    let todayDate = new Date().toISOString().slice(0,10);
+    this.setState({ date_2_11_a: todayDate });
   }
 
   sendForm(evt) {
@@ -51,7 +59,7 @@ class PressureControls extends React.Component {
                 <div className="col">
                   <fieldset>
                   <label>Data</label><br/>
-                  <input type="date" value={this.state.date_2_11_a} onChange={this.setDate211a} className="answers-129" id="2.11_a-date" name="answers[2.11_a[date]]"  />
+                  <input type="date" value={this.state.date_2_11_a} disabled onChange={this.setDate211a} className="answers-129" id="2.11_a-date" name="answers[2.11_a[date]]"  />
                   <br/><br/>
                   <label>Pressão arterial</label><br/>
                   <input type="text"  value={this.state.pa_2_11_a} onChange={this.setPa211a} className="answers-130" id="2.11_a-pa" name="answers[2.11_a[pa]]"  />
