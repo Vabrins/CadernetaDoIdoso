@@ -30,25 +30,47 @@ class ResidentialAddress extends React.Component {
       dataType: "json",
       method: "GET",
       success:function(response){
-        if (response[0].id) {
+        if (response != "") {
           this.buildData(response[0]);
         }
       }.bind(this)
     });
   }
 
-  buildData(data) {
-    this.setState({street_avenue_square_1_a: data.street_avenue_square_1_a});
-    this.setState({number_1_a: data.number_1_a});
-    this.setState({complement_1_a: data.complement_1_a});
-    this.setState({district_1_a: data.district_1_a});
-    this.setState({reference_point_1_a: data.reference_point_1_a});
-    this.setState({zip_code_1_a: data.zip_code_1_a});
-    this.setState({county_1_a: data.county_1_a});
-    this.setState({state_1_a: data.state_1_a});
-    this.setState({telephone_1_a: data.telephone_1_a});
-    this.setState({cell_phone_1_a: data.cell_phone_1_a});
-    this.setState({email_1_a: data.email_1_a});
+  buildData(data) {    
+    if (data.street_avenue_square_1_a != null) {
+      this.setState({street_avenue_square_1_a: data.street_avenue_square_1_a});
+    }
+    if (data.number_1_a != null) {
+      this.setState({number_1_a: data.number_1_a});
+    }
+    if (data.complement_1_a != null) {
+      this.setState({complement_1_a: data.complement_1_a});
+    }
+    if (data.district_1_a != null) {
+      this.setState({district_1_a: data.district_1_a});
+    }
+    if (data.reference_point_1_a != null) {
+      this.setState({reference_point_1_a: data.reference_point_1_a});
+    }
+    if (data.zip_code_1_a != null) {
+      this.setState({zip_code_1_a: data.zip_code_1_a});
+    }
+    if (data.county_1_a != null) {
+      this.setState({county_1_a: data.county_1_a});
+    }
+    if (data.state_1_a != null) {
+      this.setState({state_1_a: data.state_1_a});
+    }
+    if (data.telephone_1_a != null) {
+      this.setState({telephone_1_a: data.telephone_1_a});
+    }
+    if (data.cell_phone_1_a != null) {
+      this.setState({cell_phone_1_a: data.cell_phone_1_a});
+    }
+    if (data.email_1_a != null) {
+      this.setState({email_1_a: data.email_1_a});
+    }
   }
 
   sendForm(evt) {

@@ -24,6 +24,7 @@ class CreatePersonalDatasTable extends Migration
             $table->string('card_number_cns_1', '15')->nullable(true);
             $table->string('photo_1', '255')->nullable(true);
             $table->string('document_rg_1', '20')->nullable(true);
+            $table->string('document_cpf_1', '20')->nullable(true);            
             $table->string('mothers_name_1', '50')->nullable(true);
             $table->date('date_of_birth_1')->nullable(true);
             $table->char('sexuality_1', 2)->nullable(true);

@@ -4,7 +4,6 @@ import TextField from 'material-ui/TextField';
 import {lightBlack, red700} from 'material-ui/styles/colors';
 import errorHandler from './errorHandler';
 import { Link } from 'react-router-dom';
-import Snackbar from 'material-ui/Snackbar';
 import Validation from './Validation';
 
   const styles = {
@@ -98,8 +97,8 @@ class PersonalData extends React.Component {
       url: "/api/v1/personaldata",
       dataType: "json",
       method: "GET",
-      success:function(response){        
-        if (response[0].id) {
+      success:function(response){   
+        if (response != "") {
           this.buildData(response[0]);
         }
       }.bind(this)
@@ -107,34 +106,91 @@ class PersonalData extends React.Component {
   }
 
   buildData(data) {
-    this.setState({name_1: data.name_1});  
-    this.setState({nick_name_1: data.nick_name_1});
-    this.setState({card_number_cns_1: data.card_number_cns_1});
-    this.setState({document_rg_1: data.document_rg_1});
-    this.setState({mothers_name_1: data.mothers_name_1});
-    this.setState({do_you_have_a_religion_aux_1: data.do_you_have_a_religion_aux_1});
-    this.setState({document_cpf_1: data.document_cpf_1});
-    this.setState({city_of_birth_1: data.city_of_birth_1});
-    this.setState({country_of_birth_1: data.country_of_birth_1});
-    this.setState({breed_color_aux_1: data.breed_color_aux_1});
-    this.setState({sexuality_1: data.sexuality_1});
-    this.setState({nationality_1: data.nationality_1});
-    this.setState({can_you_read_and_write_1: data.can_you_read_and_write_1});
-    this.setState({scholarity_1: data.scholarity_1});
-    this.setState({breed_color_1: data.breed_color_1});
-    this.setState({do_you_have_a_religion_1: data.do_you_have_a_religion_1});
-    this.setState({date_of_birth_1: data.date_of_birth_1});
-    this.setState({photo_1: data.photo_1});
-    this.setState({marital_status_1: data.marital_status_1});
-    this.setState({marital_status_aux_1: data.marital_status_aux_1});  
-    this.setState({occupation_primary_profession_1: data.occupation_primary_profession_1});  
-    this.setState({basic_heath_unit_that_attends_1: data.basic_heath_unit_that_attends_1});  
-    this.setState({do_you_have_any_major_allergies_1: data.do_you_have_any_major_allergies_1});  
-    this.setState({do_you_have_any_disabilities_1: data.do_you_have_any_disabilities_1});   
-    this.setState({do_you_have_any_disabilities_aux_1: data.do_you_have_any_disabilities_aux_1});   
-    this.setState({whatdeficiency_1: data.whatdeficiency_1});
-    this.setState({blood_type_1: data.blood_type_1});
-    this.setState({rh_factor_1: data.rh_factor_1});
+    console.log(data);
+    if (data.name_1 != null) {
+      this.setState({name_1: data.name_1});  
+    }
+    if (data.nick_name_1 != null) {
+      this.setState({nick_name_1: data.nick_name_1});
+    }
+    if (data.document_rg_1 != null) {
+      this.setState({document_rg_1: data.document_rg_1});
+    }
+    if (data.card_number_cns_1 != null) {
+      this.setState({card_number_cns_1: data.card_number_cns_1});
+    }
+    if (data.mothers_name_1 != null) {
+      this.setState({mothers_name_1: data.mothers_name_1});
+    }
+    if (data.do_you_have_a_religion_aux_1 != null) {
+      this.setState({do_you_have_a_religion_aux_1: data.do_you_have_a_religion_aux_1});
+    }
+    if (data.document_cpf_1 != null) {
+      this.setState({document_cpf_1: data.document_cpf_1});
+    }
+    if (data.city_of_birth_1 != null) {
+      this.setState({city_of_birth_1: data.city_of_birth_1});
+    }
+    if (data.country_of_birth_1 != null) {
+      this.setState({country_of_birth_1: data.country_of_birth_1});
+    }
+    if (data.breed_color_aux_1 != null) {
+      this.setState({breed_color_aux_1: data.breed_color_aux_1});
+    }
+    if (data.sexuality_1 != null) {
+      this.setState({sexuality_1: data.sexuality_1});
+    }
+    if (data.nationality_1 != null) {
+      this.setState({nationality_1: data.nationality_1});
+    }
+    if (data.can_you_read_and_write_1 != null) {
+      this.setState({can_you_read_and_write_1: data.can_you_read_and_write_1});
+    }
+    if (data.scholarity_1 != null) {
+      this.setState({scholarity_1: data.scholarity_1});
+    }
+    if (data.breed_color_1 != null) {
+      this.setState({breed_color_1: data.breed_color_1});
+    }
+    if (data.do_you_have_a_religion_1 != null) {
+      this.setState({do_you_have_a_religion_1: data.do_you_have_a_religion_1});
+    }
+    if (data.date_of_birth_1 != null) {
+      this.setState({date_of_birth_1: data.date_of_birth_1});
+    }
+    // if (data.photo_1 != null) {
+    //   this.setState({photo_1: data.photo_1});
+    // }
+    if (data.marital_status_1 != null) {
+      this.setState({marital_status_1: data.marital_status_1});
+    }
+    if (data.marital_status_aux_1 != null) {
+      this.setState({marital_status_aux_1: data.marital_status_aux_1});  
+    }
+    if (data.occupation_primary_profession_1 != null) {
+      this.setState({occupation_primary_profession_1: data.occupation_primary_profession_1});  
+    }
+    if (data.basic_heath_unit_that_attends_1 != null) {
+      this.setState({basic_heath_unit_that_attends_1: data.basic_heath_unit_that_attends_1});  
+    }
+    if (data.do_you_have_any_major_allergies_1 != null) {
+      this.setState({do_you_have_any_major_allergies_1: data.do_you_have_any_major_allergies_1});  
+    }
+    if (data.do_you_have_any_disabilities_1 != null) {
+      this.setState({do_you_have_any_disabilities_1: data.do_you_have_any_disabilities_1});   
+    }
+    if (data.do_you_have_any_disabilities_aux_1 != null) {
+      this.setState({do_you_have_any_disabilities_aux_1: data.do_you_have_any_disabilities_aux_1});   
+    }
+    if (data.whatdeficiency_1 != null) {
+      this.setState({whatdeficiency_1: data.whatdeficiency_1});
+    }
+    if (data.blood_type_1 != null) {
+      this.setState({blood_type_1: data.blood_type_1});
+    }
+    if (data.rh_factor_1 != null) {
+      this.setState({rh_factor_1: data.rh_factor_1});    
+    }
   }
 
   sendForm(evt) {
@@ -143,7 +199,7 @@ class PersonalData extends React.Component {
       contentType: 'application/json',
       dataType: 'json',
       method: "POST",
-      data: JSON.stringify({ data: this.state }),
+      data: JSON.stringify({ test: this.state }),
       success: function(response){
         alert("sucesso");
         console.log(response);
@@ -187,21 +243,21 @@ class PersonalData extends React.Component {
                     <input type="date" value={this.state.date_of_birth_1} onChange={this.setDateOfBirth1} placeholder="Data de nascimento" className="answers-7" id="1-dateofbirth" name="answers[1[dateofbirth]]"/>
                     <br/><br/>
                     <label>Sexo</label><br/>
-                    <input type="radio" checked={this.state.sexuality_1 === 'F'} onChange={this.setSexuality} className="answers-8" id="1-sexuality-f" name="answers[1[sexuality]]" value="F" /> Feminino
-                    <input type="radio" checked={this.state.sexuality_1 === 'M'} onChange={this.setSexuality} className="answers-8" id="1-sexuality-m" name="answers[1[sexuality]]" value="M" />Masculino
+                    <input type="radio" checked={this.state.sexuality_1 == 'F'} onChange={this.setSexuality} className="answers-8" id="1-sexuality-f" name="answers[1[sexuality]]" value="F" /> Feminino
+                    <input type="radio" checked={this.state.sexuality_1 == 'M'} onChange={this.setSexuality} className="answers-8" id="1-sexuality-m" name="answers[1[sexuality]]" value="M" />Masculino
                     <br/>
                     <TextField hintText="Município de nascimento/UF" floatingLabelText="Município de nascimento/UF" value={this.state.city_of_birth_1} onChange={this.setCityOfBirth1} className="answers-9" id="1-cityofbirth" name="answers[1[cityofbirth]]" maxLength="2" underlineFocusStyle={styles.underlineStyle} floatingLabelFocusStyle={styles.floatingLabelFocusStyle} />
                     <br/><br/>
                     <label>Nacionalidade</label><br/>
-                    <input type="radio" checked={this.state.nationality_1 === 'brasileira'} onChange={this.setNationality1} className="answers-10" id="1-nationality" name="answers[1[nationality]]" value="brasileira" /> Brasileira
-                    <input type="radio" checked={this.state.nationality_1 === 'naturalizado'} onChange={this.setNationality1} className="answers-10" id="1-nationality" name="answers[1[nationality]]" value="naturalizado"/>Naturalizado
-                    <input type="radio" checked={this.state.nationality_1 === 'estrageira'} onChange={this.setNationality1} className="answers-10" id="1-nationality" name="answers[1[nationality]]" value="estrageira" />Estrageira
+                    <input type="radio" checked={this.state.nationality_1 == 'brasileira'} onChange={this.setNationality1} className="answers-10" id="1-nationality" name="answers[1[nationality]]" value="brasileira" /> Brasileira
+                    <input type="radio" checked={this.state.nationality_1 == 'naturalizado'} onChange={this.setNationality1} className="answers-10" id="1-nationality" name="answers[1[nationality]]" value="naturalizado"/>Naturalizado
+                    <input type="radio" checked={this.state.nationality_1 == 'estrageira'} onChange={this.setNationality1} className="answers-10" id="1-nationality" name="answers[1[nationality]]" value="estrageira" />Estrageira
                     <br/>
                     <TextField hintText="País de nascimento" floatingLabelText="País de nascimento" value={this.state.country_of_birth_1} onChange={this.setCountryOfBirth1} className="answers-10" id="1-birthparents" name="answers[1[birthparents]]" maxLength="30" underlineFocusStyle={styles.underlineStyle} floatingLabelFocusStyle={styles.floatingLabelFocusStyle} />
                     <br/>
                     <label>Sabe ler e escrever? </label><br/>
-                    <input type="radio" checked={this.state.can_you_read_and_write_1 === '1'} onChange={this.setCanYouReadAndWrite1} className="answers-11" id="1-readwrite-y" name="answers[1[readwrite]]" value="1" /> Sim
-                    <input type="radio" checked={this.state.can_you_read_and_write_1 === '0'} onChange={this.setCanYouReadAndWrite1} className="answers-11" id="1-readwrite-n" name="answers[1[readwrite]]" value="0" /> Não
+                    <input type="radio" checked={this.state.can_you_read_and_write_1 == '1'} onChange={this.setCanYouReadAndWrite1} className="answers-11" id="1-readwrite-y" name="answers[1[readwrite]]" value="1" /> Sim
+                    <input type="radio" checked={this.state.can_you_read_and_write_1 == '0'} onChange={this.setCanYouReadAndWrite1} className="answers-11" id="1-readwrite-n" name="answers[1[readwrite]]" value="0" /> Não
                     <br/><br/>
                   </fieldset>
                 </div>
@@ -209,37 +265,37 @@ class PersonalData extends React.Component {
                   <fieldset>
                     <br/>
                     <label>Escolaridade</label><br/>
-                    <input type="radio" checked={this.state.scholarity_1 === 'nothing'} onChange={this.setScholarity1} className="answers-12" id="1-sholarity-n" name="answers[1[scholarity]]" value="nothing" />nenhuma
-                    <input type="radio" checked={this.state.scholarity_1 === 'from1to3years'} onChange={this.setScholarity1} className="answers-12" id="1-sholarity-1/3" name="answers[1[scholarity]]" value="from1to3years" />
+                    <input type="radio" checked={this.state.scholarity_1 == 'nothing'} onChange={this.setScholarity1} className="answers-12" id="1-sholarity-n" name="answers[1[scholarity]]" value="nothing" />nenhuma
+                    <input type="radio" checked={this.state.scholarity_1 == 'from1to3years'} onChange={this.setScholarity1} className="answers-12" id="1-sholarity-1/3" name="answers[1[scholarity]]" value="from1to3years" />
                     de 1 a 3 anos
-                    <input type="radio" checked={this.state.scholarity_1 === 'from4to7years'} onChange={this.setScholarity1} className="answers-12" id="1-sholarity-4/7" name="answers[1[scholarity]]" value="from4to7years" />
+                    <input type="radio" checked={this.state.scholarity_1 == 'from4to7years'} onChange={this.setScholarity1} className="answers-12" id="1-sholarity-4/7" name="answers[1[scholarity]]" value="from4to7years" />
                     de 4 a 7 anos
-                    <input type="radio" checked={this.state.scholarity_1 === 'nenhuma'} onChange={this.setScholarity1} className="answers-12" id="1-sholarity-8" name="answers[1[scholarity]]" value="nenhuma" />
+                    <input type="radio" checked={this.state.scholarity_1 == 'nenhuma'} onChange={this.setScholarity1} className="answers-12" id="1-sholarity-8" name="answers[1[scholarity]]" value="nenhuma" />
                     8 anos ou mais
                     <br/><br/>
                     <label>Raça/cor</label><br/>
-                    <input type="radio" checked={this.state.breed_color_1 === 'white'} onChange={this.setBreedColor1} className="answers-13" id="1-breedcolor-white"   name="answers[1[breedcolor]]" value="white" />Branca
-                    <input type="radio" checked={this.state.breed_color_1 === 'black'} onChange={this.setBreedColor1} className="answers-13" id="1-breedcolor-black"   name="answers[1[breedcolor]]" value="black" />Preto
-                    <input type="radio" checked={this.state.breed_color_1 === 'brown'} onChange={this.setBreedColor1} className="answers-13" id="1-breedcolor-brown"   name="answers[1[breedcolor]]" value="brown" />Parda
-                    <input type="radio" checked={this.state.breed_color_1 === 'yellow'} onChange={this.setBreedColor1} className="answers-13" id="1-breedcolor-yellow"  name="answers[1[breedcolor]]" value="yellow" />Amarela
-                    <input type="radio" checked={this.state.breed_color_1 === 'undeclared'} onChange={this.setBreedColor1} className="answers-13" id="1-breedcolor-undeclared" name="answers[1[breedcolor]]" value="undeclared" /> Não declarada
+                    <input type="radio" checked={this.state.breed_color_1 == 'white'} onChange={this.setBreedColor1} className="answers-13" id="1-breedcolor-white"   name="answers[1[breedcolor]]" value="white" />Branca
+                    <input type="radio" checked={this.state.breed_color_1 == 'black'} onChange={this.setBreedColor1} className="answers-13" id="1-breedcolor-black"   name="answers[1[breedcolor]]" value="black" />Preto
+                    <input type="radio" checked={this.state.breed_color_1 == 'brown'} onChange={this.setBreedColor1} className="answers-13" id="1-breedcolor-brown"   name="answers[1[breedcolor]]" value="brown" />Parda
+                    <input type="radio" checked={this.state.breed_color_1 == 'yellow'} onChange={this.setBreedColor1} className="answers-13" id="1-breedcolor-yellow"  name="answers[1[breedcolor]]" value="yellow" />Amarela
+                    <input type="radio" checked={this.state.breed_color_1 == 'undeclared'} onChange={this.setBreedColor1} className="answers-13" id="1-breedcolor-undeclared" name="answers[1[breedcolor]]" value="undeclared" /> Não declarada
                     <br/>
                     <TextField hintText="Qual etnia?" floatingLabelText="Qual etnia?" value={this.state.breed_color_aux_1} onChange={this.setBreedColorAux1} className="answers-13" id="1-breedcolor-what" name="answers[1[breedcolor_aux]]" maxLength="30" underlineFocusStyle={styles.underlineStyle} floatingLabelFocusStyle={styles.floatingLabelFocusStyle} />
                     <br/><br/>
                     <label>Tem religião?</label><br/>
-                    <input type="radio" checked={this.state.do_you_have_a_religion_1 === 'y'} onChange={this.setDoYouHaveaReligion1} className="answers-14" id="1-religion-y" name="answers[1[religion]]" value="y" />Sim
-                    <input type="radio" checked={this.state.do_you_have_a_religion_1 === 'n'} onChange={this.setDoYouHaveaReligion1} className="answers-14" id="1-religion-n" name="answers[1[religion]]" value="n" />Não
+                    <input type="radio" checked={this.state.do_you_have_a_religion_1 == '1'} onChange={this.setDoYouHaveaReligion1} className="answers-14" id="1-religion-y" name="answers[1[religion]]" value="1" />Sim
+                    <input type="radio" checked={this.state.do_you_have_a_religion_1 == '0'} onChange={this.setDoYouHaveaReligion1} className="answers-14" id="1-religion-n" name="answers[1[religion]]" value="0" />Não
                     <br/>
                     <TextField hintText="Qual?" floatingLabelText="Qual?" value={this.state.do_you_have_a_religion_aux_1} onChange={this.setDoYouHaveaReligionAux1} className="answers-14" id="1-religion-w" name="answers[1[religion]]" maxLength="20" underlineFocusStyle={styles.underlineStyle} floatingLabelFocusStyle={styles.floatingLabelFocusStyle} />
                     <br/>
                     <TextField hintText="Ocupação/Profissional" floatingLabelText="Ocupação/Profissional"  value={this.state.occupation_primary_profession_1} onChange={this.setOccupationPrimaryProfession1} className="answers-16" id="1-primaryprofession" name="answers[1[primaryprofession]]" underlineFocusStyle={styles.underlineStyle} floatingLabelFocusStyle={styles.floatingLabelFocusStyle} />
                     <br/>
                     <label>Situação conjugal</label><br/>
-                    <input type="radio" checked={this.state.marital_status_1 === "notmarried"} onChange={this.setMaritalStatus1} className="answers-17" id="1-maritalstatus-s" name="answers[1[maritalstatus]]" value="notmarried" /> Solteiro(a)
-                    <input type="radio" checked={this.state.marital_status_1 === "married"} onChange={this.setMaritalStatus1} className="answers-17" id="1-maritalstatus-m" name="answers[1[maritalstatus]]" value="married" /> Casado(a)/convivio com parceiro(a)
-                    <input type="radio" checked={this.state.marital_status_1 === "divorced"} onChange={this.setMaritalStatus1} className="answers-17" id="1-maritalstatus-d" name="answers[1[maritalstatus]]" value="divorced" /> Divorciado(a)/separado(a)
-                    <input type="radio" checked={this.state.marital_status_1 === "widower"} onChange={this.setMaritalStatus1} className="answers-17" id="1-maritalstatus-w" name="answers[1[maritalstatus]]" value="widower" /> Viúvo(a)
-                    <input type="radio" checked={this.state.marital_status_1 === "Other"} onChange={this.setMaritalStatus1} className="answers-17" id="1-maritalstatus-o" name="answers[1[maritalstatus]]" value="Other" /> Outra
+                    <input type="radio" checked={this.state.marital_status_1 == "notmarried"} onChange={this.setMaritalStatus1} className="answers-17" id="1-maritalstatus-s" name="answers[1[maritalstatus]]" value="notmarried" /> Solteiro(a)
+                    <input type="radio" checked={this.state.marital_status_1 == "married"} onChange={this.setMaritalStatus1} className="answers-17" id="1-maritalstatus-m" name="answers[1[maritalstatus]]" value="married" /> Casado(a)/convivio com parceiro(a)
+                    <input type="radio" checked={this.state.marital_status_1 == "divorced"} onChange={this.setMaritalStatus1} className="answers-17" id="1-maritalstatus-d" name="answers[1[maritalstatus]]" value="divorced" /> Divorciado(a)/separado(a)
+                    <input type="radio" checked={this.state.marital_status_1 == "widower"} onChange={this.setMaritalStatus1} className="answers-17" id="1-maritalstatus-w" name="answers[1[maritalstatus]]" value="widower" /> Viúvo(a)
+                    <input type="radio" checked={this.state.marital_status_1 == "Other"} onChange={this.setMaritalStatus1} className="answers-17" id="1-maritalstatus-o" name="answers[1[maritalstatus]]" value="Other" /> Outra
                     <TextField hintText="Desde quando? Ano." floatingLabelText="Desde quando? Ano."  value={this.state.marital_status_aux_1} onChange={this.setMaritalStatusAux1} className="answers-17" id="1-maritalstatus-sw" name="answers[1[maritalstatus]]" maxLength="5" underlineFocusStyle={styles.underlineStyle} floatingLabelFocusStyle={styles.floatingLabelFocusStyle} />
                     <br/>
                     <TextField hintText="Unidade básica de saúde que frequenta" floatingLabelText="Unidade básica de saúde que frequenta"  value={this.state.basic_heath_unit_that_attends_1} onChange={this.setBasicHeathUnitThatAttends1} className="answers-18" id="1-Basic unit" name="answers[1[Basicunit]]" maxLength="30" underlineFocusStyle={styles.underlineStyle} floatingLabelFocusStyle={styles.floatingLabelFocusStyle} />
@@ -247,15 +303,15 @@ class PersonalData extends React.Component {
                     <TextField hintText="Especificar" floatingLabelText="Tem alguma alergia de maior gravidade?"  value={this.state.do_you_have_any_major_allergies_1} onChange={this.setDoYouHaveAnyMajorAllergies1} className="answers-19" id="1-Major allergy" name="answers[1[maritalstatus]]" maxLength="50" underlineFocusStyle={styles.underlineStyle} floatingLabelFocusStyle={styles.floatingLabelFocusStyle} />
                     <br/><br/>
                     <label>Tem alguma deficiência? </label><br/>
-                    <input type="radio" checked={this.state.do_you_have_any_disabilities_1 === "1"} onChange={this.setDoYouHaveAnyDisabilities1} className="answers-20" id="1-deficiency-y" name="answers[1[deficiency]]" value="1" /> Sim
-                    <input type="radio" checked={this.state.do_you_have_any_disabilities_1 === "0"} onChange={this.setDoYouHaveAnyDisabilities1} className="answers-20" id="1-deficiency-n" name="answers[1[deficiency]]" value="0" /> Não
+                    <input type="radio" checked={this.state.do_you_have_any_disabilities_1 == "1"} onChange={this.setDoYouHaveAnyDisabilities1} className="answers-20" id="1-deficiency-y" name="answers[1[deficiency]]" value="1" /> Sim
+                    <input type="radio" checked={this.state.do_you_have_any_disabilities_1 == "0"} onChange={this.setDoYouHaveAnyDisabilities1} className="answers-20" id="1-deficiency-n" name="answers[1[deficiency]]" value="0" /> Não
                     <br/><br/>
                     <label>Qual? </label><br/>
-                    <input type="radio"  checked={this.state.do_you_have_any_disabilities_aux_1 === "auditory"} onChange={this.setDoYouHaveAnyDisabilitiesAux1} className="answers-21" id="1-whatdeficiency-a" name="answers[1[whatdeficiency]]" value="auditory" />Auditiva
-                    <input type="radio"  checked={this.state.do_you_have_any_disabilities_aux_1 === "visual"} onChange={this.setDoYouHaveAnyDisabilitiesAux1} className="answers-21" id="1-whatdeficiency-v" name="answers[1[whatdeficiency]]" value="visual" />Visual
-                    <input type="radio"  checked={this.state.do_you_have_any_disabilities_aux_1 === "intellectual_cognitive"} onChange={this.setDoYouHaveAnyDisabilitiesAux1} className="answers-21" id="1-whatdeficiency-i" name="answers[1[whatdeficiency]]" value="intellectual_cognitive" />Intelectual/Cognitiva
-                    <input type="radio"  checked={this.state.do_you_have_any_disabilities_aux_1 === "physical"} onChange={this.setDoYouHaveAnyDisabilitiesAux1} className="answers-21" id="1-whatdeficiency-p" name="answers[1[whatdeficiency]]" value="physical" />Física
-                    <input type="radio"  checked={this.state.do_you_have_any_disabilities_aux_1 === "other"} onChange={this.setDoYouHaveAnyDisabilitiesAux1} className="answers-21" id="1-whatdeficiency-o" name="answers[1[whatdeficiency]]" value="other" />Outra
+                    <input type="radio"  checked={this.state.do_you_have_any_disabilities_aux_1 == "auditory"} onChange={this.setDoYouHaveAnyDisabilitiesAux1} className="answers-21" id="1-whatdeficiency-a" name="answers[1[whatdeficiency]]" value="auditory" />Auditiva
+                    <input type="radio"  checked={this.state.do_you_have_any_disabilities_aux_1 == "visual"} onChange={this.setDoYouHaveAnyDisabilitiesAux1} className="answers-21" id="1-whatdeficiency-v" name="answers[1[whatdeficiency]]" value="visual" />Visual
+                    <input type="radio"  checked={this.state.do_you_have_any_disabilities_aux_1 == "intellectual_cognitive"} onChange={this.setDoYouHaveAnyDisabilitiesAux1} className="answers-21" id="1-whatdeficiency-i" name="answers[1[whatdeficiency]]" value="intellectual_cognitive" />Intelectual/Cognitiva
+                    <input type="radio"  checked={this.state.do_you_have_any_disabilities_aux_1 == "physical"} onChange={this.setDoYouHaveAnyDisabilitiesAux1} className="answers-21" id="1-whatdeficiency-p" name="answers[1[whatdeficiency]]" value="physical" />Física
+                    <input type="radio"  checked={this.state.do_you_have_any_disabilities_aux_1 == "other"} onChange={this.setDoYouHaveAnyDisabilitiesAux1} className="answers-21" id="1-whatdeficiency-o" name="answers[1[whatdeficiency]]" value="other" />Outra
                     <br/>
                     <TextField hintText="Especificar" floatingLabelText="Especificar" type="text"  value={this.state.whatdeficiency_1} onChange={this.setWhatDeficiency1} className="answers-21" id="1-specify" name="answers[1[whatdeficiency]]" maxLength="30" underlineFocusStyle={styles.underlineStyle} floatingLabelFocusStyle={styles.floatingLabelFocusStyle} />
                     <br/>
@@ -269,7 +325,7 @@ class PersonalData extends React.Component {
             <nav aria-label="Dados Pessoais">
               <ul className="pagination justify-content-center">
                 <li className="page-item">
-                  <a className="page-link" onClick={this.sendForm} onClick={this.sendForm}><i className="fa fa-floppy-o" aria-hidden="true"> Salvar alterações</i></a>
+                  <a className="page-link" onClick={this.sendForm}><i className="fa fa-floppy-o" aria-hidden="true"> Salvar alterações</i></a>
                 </li>
                 <li className="page-item">
                   <Link className="page-link" to="/personsreferences" ><i className="fa fa-arrow-right" aria-hidden="true"></i></Link>

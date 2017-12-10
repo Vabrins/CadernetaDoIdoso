@@ -14,6 +14,7 @@ class AnthropometricData extends React.Component {
     this.setImc25 = this.setImc25.bind(this);
     this.setPp25 = this.setPp25.bind(this);
     this.setWeightLoss25 = this.setWeightLoss25.bind(this);
+    this.calcImc = this.calcImc.bind(this);
   }
 
   componentWillMount() {
@@ -58,8 +59,8 @@ class AnthropometricData extends React.Component {
                   <label>Altura</label><br/>
                   <input type="text"  value={this.state.height_2_5} onChange={this.setHeight25} maxLength="5" className="answers-74" id="2.5-height" name="answers[2.5[height]]"  />
                   <br/><br/>
-                  <label>IMC = peso/altura2</label><br/>
-                  <input type="text"  value={this.state.imc_weight_height_2_5} onChange={this.setImc25} maxLength="5" className="answers-75" id="2.5-imc" name="answers[2.5[imc]]"  />
+                  <label>IMC</label><br/>
+                  <input type="text" disabled="disabled" value={this.state.imc_weight_height_2_5} onChange={this.setImc25} maxLength="5" className="answers-75" id="2.5-imc" name="answers[2.5[imc]]"  />
                   <br/><br/>
                   <label>Perímetro da panturrilha (PP) esquerda</label><br/>
                   <input type="text"  value={this.state.calf_perimeter_pp_left_2_5} onChange={this.setPp25} maxLength="5" className="answers-76" id="2.5-pp" name="answers[2.5[pp]]"  />
@@ -78,7 +79,10 @@ class AnthropometricData extends React.Component {
                   <Link className="page-link" to="/reactionorallergy" tabIndex="-1"><i className="fa fa-arrow-left" aria-hidden="true"></i></Link>
                 </li>
                 <li className="page-item">
-                  <Link className="page-link" onClick={this.sendForm} to="/vulnerableelderly"><i className="fa fa-arrow-right" aria-hidden="true"></i></Link>
+                  <a className="page-link" onClick={this.sendForm}><i className="fa fa-floppy-o" aria-hidden="true"></i></a>
+                </li>
+                <li className="page-item">
+                  <Link className="page-link" to="/vulnerableelderly"><i className="fa fa-arrow-right" aria-hidden="true"></i></Link>
                 </li>
               </ul>
             </nav>
@@ -89,10 +93,12 @@ class AnthropometricData extends React.Component {
 
   setWeight25(evt) {
     this.setState({weight_2_5: evt.target.value});  
+    this.calcImc();
   }
 
   setHeight25(evt) {
     this.setState({height_2_5: evt.target.value});  
+    this.calcImc();
   }
 
   setImc25(evt) {
@@ -105,6 +111,21 @@ class AnthropometricData extends React.Component {
 
   setWeightLoss25(evt) {
     this.setState({you_have_exp_loss_uni_weight_min_body_last_year_2_5: evt.target.value});  
+  }
+
+  calcImc() {
+    const weight = this.state.weight_2_5;
+    const height = this.state.height_2_5; 
+    const w = weight.toString().length;
+    const h = height.toString().length;
+    
+    if ( weight !="" && height !="" && w >= 2 && h >= 3) {
+      let result = weight/(height * height);
+      this.setState({imc_weight_height_2_5: result});
+    } else {
+      this.setState({imc_weight_height_2_5: '0'});  
+    }
+
   }
 
 }
