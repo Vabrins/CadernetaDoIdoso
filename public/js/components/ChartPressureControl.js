@@ -1,7 +1,7 @@
 import React from 'react';
 import {Bar, Line, Pie} from 'react-chartjs-2';
 
-class ChartWeightControl extends React.Component {
+class ChartPressureControl extends React.Component {
     constructor (props) {
         super(props)    
         this.state = {
@@ -27,16 +27,15 @@ class ChartWeightControl extends React.Component {
           dataType: "json",
           method: "GET",
           success:function(response){
-
             this.setState({chartData: {labels: ['Janeiro', 'Fevereiro', 'Março', 'Abril', 'Maio', 'Junho', 'Julho', 'Agosto', 'Setembro', 'Outubro', 'Novembro', 'Dezembro'] } });
-            
+            console.log(response);
             this.setState({
                 chartData: {
                     datasets: [{ 
-                        label: 'Peso Kg.',
-                        borderColor: "rgba(136, 26, 26, 0.5)", pointRadius: 5, pointBackgroundColor: "rgba(136, 26, 26, 0.5)", pointBorderColor: "rrgba(136, 26, 26, 0.5)", pointHoverRadius: 5, pointHoverBackgroundColor: "rgba(136, 26, 26, 0.5)", pointHitRadius: 20, pointBorderWidth: 2,
-                        data: [response.weight[year]['01'], response.weight[year]['02'], response.weight[year]['03'], response.weight[year]['04'], response.weight[year]['05'], response.weight[year]['06'], response.weight[year]['07'], response.weight[year]['08'], response.weight[year]['09'], response.weight[year]['10'], response.weight[year]['11'], response.weight[year]['12']],
-                        backgroundColor: ['rgba(136, 26, 26, 0.4)', 'rgba(136, 26, 26, 0.7)', 'rgba(136, 26, 26, 0.4)']
+                        label: 'Controle de Pressão mmHg',
+                        data: [response.pressure[year]['01'], response.pressure[year]['02'], response.pressure[year]['03'], response.pressure[year]['04'], response.pressure[year]['05'], response.pressure[year]['06'], response.pressure[year]['07'], response.pressure[year]['08'], response.pressure[year]['09'], response.pressure[year]['10'], response.pressure[year]['11'], response.pressure[year]['12']],
+                        backgroundColor: "#28a745",
+                        borderColor: "#b3ed6d"
                     }],  
                 } 
             });
@@ -65,4 +64,4 @@ class ChartWeightControl extends React.Component {
 
 }
 
-  export default ChartWeightControl;
+  export default ChartPressureControl;
