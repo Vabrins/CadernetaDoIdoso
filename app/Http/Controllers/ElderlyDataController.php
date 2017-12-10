@@ -57,8 +57,6 @@ class ElderlyDataController extends Controller
             $data['id_elderly'] = $_COOKIE['id_elderly'];
             $data['created_at'] = \Carbon\Carbon::now();
             $data['updated_at'] = \Carbon\Carbon::now();
-            // print_r($data);
-            // exit();
             $register->insert($data);
             echo json_encode(true);
         } catch (Exception $e) {
