@@ -2,21 +2,23 @@ import React from 'react';
 import $ from 'jquery';
 import { Link } from 'react-router-dom';
 
+const initialState = {
+  superior_2_11_d_a:'', 
+  inferior_2_11_d_a:'', 
+  total_prosthesis_2_11_d_a:'', 
+  partial_prosthesis_2_11_d_a:'', 
+  does_not_use_and_does_not_require_prosthesis_2_11_d_a:'',
+  does_not_use_but_needs_prosthesis_2_11_d_a:'', 
+  uses_adapted_without_exchange_2_11_d_a:'', 
+  uses_not_adapted_needs_exchange_2_11_d_a:''
+};
+
 class DentalProsthesis extends React.Component {
   
   constructor (props) {
     super(props);
 
-    this.state = {
-      superior_2_11_d_a:'', 
-      inferior_2_11_d_a:'', 
-      total_prosthesis_2_11_d_a:'', 
-      partial_prosthesis_2_11_d_a:'', 
-      does_not_use_and_does_not_require_prosthesis_2_11_d_a:'',
-      does_not_use_but_needs_prosthesis_2_11_d_a:'', 
-      uses_adapted_without_exchange_2_11_d_a:'', 
-      uses_not_adapted_needs_exchange_2_11_d_a:''
-    };
+    this.state = initialState;
 
     this.sendForm = this.sendForm.bind(this);
     this.setSuperior211da = this.setSuperior211da.bind(this);
@@ -40,7 +42,12 @@ class DentalProsthesis extends React.Component {
     });
   }
 
+  reset() {
+    this.setState(initialState);
+  }  
+
   sendForm(evt) {
+    let that = this;
     $.ajax({
       url: "/api/v1/dentalprosthesis",
       contentType: 'application/json',
@@ -49,7 +56,8 @@ class DentalProsthesis extends React.Component {
       data: JSON.stringify({ test: this.state }),
       success: function(response){
         console.log(response);
-        console.log("enviado com sucesso");
+        that.reset();
+        alert("Cadastrado com sucesso!");
       },
       error: function(response){
         console.log("erro");
@@ -91,11 +99,11 @@ class DentalProsthesis extends React.Component {
                   <input type="radio" checked={this.state.does_not_use_but_needs_prosthesis_2_11_d_a === '1'} onChange={this.setDoesNotUseButNeedsProsthesis211da} className="answers-160" id="2.11_d_a-does_not_use_but_needs_prosthesis-y" name="answers[2.11_d_a[does_not_use_but_needs_prosthesis]]" value="1"  />Sim
                   <input type="radio" checked={this.state.does_not_use_but_needs_prosthesis_2_11_d_a === '0'} onChange={this.setDoesNotUseButNeedsProsthesis211da} className="answers-160" id="2.11_d_a-does_not_use_but_needs_prosthesis-n" name="answers[2.11_d_a[does_not_use_but_needs_prosthesis]]" value="0"  />Não
                   <br/><br/>
-                  <label>Utiliza (adaptada/sem necessidade de troca)</label><br/>
+                  <label>Utiliza - Superior (adaptada/sem necessidade de troca)</label><br/>
                   <input type="radio" checked={this.state.uses_adapted_without_exchange_2_11_d_a === '1'} onChange={this.setUsesAdaptedWithoutExchange211da} className="answers-170" id="2.11_d_a-uses_adapted_without_exchange-y" name="answers[2.11_d_a[uses_adapted_without_exchange]]" value="1"  />Sim
                   <input type="radio" checked={this.state.uses_adapted_without_exchange_2_11_d_a === '0'} onChange={this.setUsesAdaptedWithoutExchange211da} className="answers-170" id="2.11_d_a-uses_adapted_without_exchange-n" name="answers[2.11_d_a[uses_adapted_without_exchange]]" value="0"  />Não
                   <br/><br/>
-                  <label>Utiliza (não adaptada/necessita de troca)</label><br/>
+                  <label>Utiliza - Inferior (não adaptada/necessita de troca)</label><br/>
                   <input type="radio" checked={this.state.uses_not_adapted_needs_exchange_2_11_d_a === '1'} onChange={this.setusesNotAdaptedNeedsExchange211da} className="answers-171" id="2.11_d_a-uses_not_adapted_needs_exchange-y" name="answers[2.11_d_a[uses_not_adapted_needs_exchange]]" value="1"  />Sim
                   <input type="radio" checked={this.state.uses_not_adapted_needs_exchange_2_11_d_a === '0'} onChange={this.setusesNotAdaptedNeedsExchange211da} className="answers-171" id="2.11_d_a-uses_not_adapted_needs_exchange-n" name="answers[2.11_d_a[uses_not_adapted_needs_exchange]]" value="0"  />Não
                   <br/><br/>

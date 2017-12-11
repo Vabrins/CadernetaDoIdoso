@@ -3,30 +3,39 @@ import $ from 'jquery';
 import { Link } from 'react-router-dom';
 import Validation from './Validation';
 
+const initialState = {
+  surgery_2_3:'', year_2_3:'', comments_2_3:''
+};
+
 class SurgeriesPerformed extends React.Component {
   
   constructor (props) {
     super(props);
 
-    this.state = {surgery_2_3:'', year_2_3:'', comments_2_3:''};
+    this.state = initialState;
     this.sendForm = this.sendForm.bind(this);
     this.setSurgery23 = this.setSurgery23.bind(this);
     this.setYear23 = this.setYear23.bind(this);
     this.setComments23 = this.setComments23.bind(this);
   }
 
-  componentWillMount() {
+  reset() {
+    this.setState(initialState);
+  }
+
+  componentWillMount() {     
     $.ajax({
       url: "/api/v1/surgeriesperformed",
       dataType: "json",
       method: "GET",
       success:function(response){
-        console.log(response);
+        console.log(response);        
       }.bind(this)
     });
   }
 
   sendForm(evt) {
+    let that = this;
     $.ajax({
       url: "/api/v1/surgeriesperformed",
       contentType: 'application/json',
@@ -35,7 +44,8 @@ class SurgeriesPerformed extends React.Component {
       data: JSON.stringify({ test: this.state }),
       success: function(response){
         console.log(response);
-        console.log("enviado com sucesso");
+        that.reset();
+        alert("Cadastrado com sucesso!");
       },
       error: function(response){
         console.log("erro");

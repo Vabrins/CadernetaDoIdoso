@@ -82,7 +82,7 @@ class ResidentialAddress extends React.Component {
       data: JSON.stringify({ test: this.state }),
       success: function(response){
         console.log(response);
-        console.log("enviado com sucesso");
+        alert("Atualizado com sucesso!");
       },
       error: function(response){
         console.log("erro");

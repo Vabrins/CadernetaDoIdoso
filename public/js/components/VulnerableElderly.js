@@ -1,13 +1,18 @@
 import React from 'react';
 import $ from 'jquery';
 import { Link } from 'react-router-dom';
+import Validation from './Validation';
+
+const initialState = {
+  age_2_6:'' ,self_perception_of_health_2_6: '' , bending_crouching_or_kneel_down_2_6:'', lift_or_load_heavy_objects_approximately_five_kg_2_6:'', raise_or_extend_arms_above_level_of_the_shoulder_2_6:'', write_or_manipulate_and_hold_small_objects_2_6:'', walk_400_meters_about_four_blocks_2_6:'', do_domestic_serv_heavy_rubbing_floor_clean_windows_2_6:''
+};
 
 class VulnerableElderly extends React.Component {
   
   constructor (props) {
     super(props);
 
-    this.state = {age_2_6:'' ,self_perception_of_health_2_6: '' , bending_crouching_or_kneel_down_2_6:'', lift_or_load_heavy_objects_approximately_five_kg_2_6:'', raise_or_extend_arms_above_level_of_the_shoulder_2_6:'', write_or_manipulate_and_hold_small_objects_2_6:'', walk_400_meters_about_four_blocks_2_6:'', do_domestic_serv_heavy_rubbing_floor_clean_windows_2_6:''};
+    this.state = initialState;
     this.sendForm = this.sendForm.bind(this);
     this.setCrouch26 = this.setCrouch26.bind(this);
     this.setTocharge26 = this.setTocharge26.bind(this);
@@ -30,7 +35,12 @@ class VulnerableElderly extends React.Component {
     });
   }
 
+  reset() {
+      this.setState(initialState);
+  }
+
   sendForm(evt) {
+    let that = this; 
     $.ajax({
       url: "/api/v1/vulnerableelderly",
       contentType: 'application/json',
@@ -39,7 +49,8 @@ class VulnerableElderly extends React.Component {
       data: JSON.stringify({ test: this.state }),
       success: function(response){
         console.log(response);
-        console.log("enviado com sucesso");
+        that.reset();
+        alert("Cadastrado com sucesso!");
       },
       error: function(response){
         console.log("erro");
@@ -106,7 +117,9 @@ class VulnerableElderly extends React.Component {
   }
 
   setTocharge26(evt) {
-    this.setState({lift_or_load_heavy_objects_approximately_five_kg_2_6: evt.target.value});  
+    if (Validation.isNumber(evt.target.value) === true) {
+      this.setState({lift_or_load_heavy_objects_approximately_five_kg_2_6: evt.target.value});  
+    }
   }
 
   setArms26(evt) {

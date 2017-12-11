@@ -2,12 +2,16 @@ import React from 'react';
 import $ from 'jquery';
 import { Link } from 'react-router-dom';
 
+const initialState = {
+  name_2_11_c:'', date_2_11_c:'', lot_2_11_c:'', signature_2_11_c:'', dose_2_11_c:''
+};
+
 class VaccinationCalendar extends React.Component {
   
   constructor (props) {
     super(props);
 
-    this.state = {name_2_11_c:'', date_2_11_c:'', lot_2_11_c:'', signature_2_11_c:'', dose_2_11_c:''};
+    this.state = initialState;
     this.sendForm = this.sendForm.bind(this);
     this.setName211c = this.setName211c.bind(this);
     this.setDate211c = this.setDate211c.bind(this);
@@ -27,7 +31,12 @@ class VaccinationCalendar extends React.Component {
     });
   }
 
+  reset() {
+    this.setState(initialState);
+  }
+
   sendForm(evt) {
+    let that = this;
     $.ajax({
       url: "/api/v1/vaccinationcalendar",
       contentType: 'application/json',
@@ -36,7 +45,8 @@ class VaccinationCalendar extends React.Component {
       data: JSON.stringify({ test: this.state }),
       success: function(response){
         console.log(response);
-        console.log("enviado com sucesso");
+        that.reset();
+        alert("Cadastrado com sucesso!");
       },
       error: function(response){
         console.log("erro");
@@ -62,7 +72,7 @@ class VaccinationCalendar extends React.Component {
                   <label>Lote</label><br/>
                   <input type="text"  value={this.state.lot_2_11_c} onChange={this.setLot211c} className="answers-136" id="2.11c-lot" name="answers[2.11c[lot]]"  />
                   <br/><br/>
-                  <label>Assinatura</label><br/>
+                  <label>Assinado/Responsável</label><br/>
                   <input type="text"  value={this.state.signature_2_11_c} onChange={this.setSignature211c} className="answers-137" id="2.11c-signature" name="answers[2.11c[signature]]"  />
                   <br/><br/>
                   <label>Dose</label><br/>

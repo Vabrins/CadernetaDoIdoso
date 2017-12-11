@@ -2,12 +2,16 @@ import React from 'react';
 import $ from 'jquery';
 import { Link } from 'react-router-dom';
 
+const initialState = {
+  fasting_2_11_b:'', casual_2_11_b:'', mg_dl_2_11_b:''
+};
+
 class GlucoseControls extends React.Component {
   
   constructor (props) {
     super(props);
 
-    this.state = {fasting_2_11_b:'', casual_2_11_b:'', mg_dl_2_11_b:''};
+    this.state = initialState;
     this.sendForm = this.sendForm.bind(this);
     this.setFasting211b = this.setFasting211b.bind(this);
     this.setCasual211b = this.setCasual211b.bind(this);
@@ -25,8 +29,12 @@ class GlucoseControls extends React.Component {
     });
   }
 
-  sendForm(evt) {
+  reset() {
+    this.setState(initialState);
+  }
 
+  sendForm(evt) {
+    let that = this;
     $.ajax({
       url: "/api/v1/glucosecontrol",
       contentType: 'application/json',
@@ -35,7 +43,8 @@ class GlucoseControls extends React.Component {
       data: JSON.stringify({ test: this.state }),
       success: function(response){
         console.log(response);
-        console.log("enviado com sucesso");
+        that.reset();
+        alert("Cadastrado com sucesso!");
       },
       error: function(response){
         console.log("erro");

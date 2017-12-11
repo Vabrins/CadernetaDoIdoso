@@ -2,12 +2,16 @@ import React from 'react';
 import $ from 'jquery';
 import { Link } from 'react-router-dom';
 
+const initialState = {
+  date_2_11_e:'', hour_2_11_e:'', place_2_11_e:'', query_exam_2_11_e:''
+};
+
 class ConsultationExamination extends React.Component {
   
   constructor (props) {
     super(props);
 
-    this.state = {date_2_11_e:'', hour_2_11_e:'', place_2_11_e:'', query_exam_2_11_e:''};
+    this.state = initialState;
     this.sendForm = this.sendForm.bind(this);
     this.setDate211e = this.setDate211e.bind(this);
     this.setHour211e = this.setHour211e.bind(this);
@@ -26,7 +30,12 @@ class ConsultationExamination extends React.Component {
     });
   }
 
+  reset() {
+    this.setState(initialState);
+  }
+
   sendForm(evt) {
+    let that = this;
     $.ajax({
       url: "/api/v1/consultationexamination",
       contentType: 'application/json',
@@ -35,7 +44,8 @@ class ConsultationExamination extends React.Component {
       data: JSON.stringify({ test: this.state }),
       success: function(response){
         console.log(response);
-        console.log("enviado com sucesso");
+        that.reset();
+        alert("Cadastrado com sucesso!");
       },
       error: function(response){
         console.log("erro");

@@ -2,23 +2,25 @@ import React from 'react';
 import $ from 'jquery';
 import { Link } from 'react-router-dom';
 
+const initialState = {
+  unimpeded_walking_areas_2_8:'',
+  presence_of_support_bars_2_8:'', 
+  uniform_floors_and_carpets_well_fixed_2_8:'', 
+  enough_lighting_brighten_inside_each_room_including_steps_2_8:'', 
+  switches_accessible_at_the_entrance_two_rooms_2_8:'', 
+  shower_area_with_non_slip_2_8:'', 
+  box_with_easy_opening_or_presence_of_firm_curtain_2_8:'', 
+  low_cabinets_no_need_for_use_of_stairs_2_8:'', 
+  non_slip_floor_2_8:'', 
+  double_sided_and_firm_handrail_2_8:''
+};
+
 class EnvironmentalAssessment extends React.Component {
   
   constructor (props) {
     super(props);
 
-    this.state = {
-      unimpeded_walking_areas_2_8:'',
-      presence_of_support_bars_2_8:'', 
-      uniform_floors_and_carpets_well_fixed_2_8:'', 
-      enough_lighting_brighten_inside_each_room_including_steps_2_8:'', 
-      switches_accessible_at_the_entrance_two_rooms_2_8:'', 
-      shower_area_with_non_slip_2_8:'', 
-      box_with_easy_opening_or_presence_of_firm_curtain_2_8:'', 
-      low_cabinets_no_need_for_use_of_stairs_2_8:'', 
-      non_slip_floor_2_8:'', 
-      double_sided_and_firm_handrail_2_8:''
-    };
+    this.state = initialState;
 
 
     this.sendForm = this.sendForm.bind(this);
@@ -46,7 +48,12 @@ class EnvironmentalAssessment extends React.Component {
     });
   }
 
+  reset() {
+      this.setState(initialState);
+  }
+
   sendForm(evt) {
+    let that = this;
     $.ajax({
       url: "/api/v1/environmentalassessment",
       contentType: 'application/json',
@@ -55,7 +62,8 @@ class EnvironmentalAssessment extends React.Component {
       data: JSON.stringify({ test: this.state }),
       success: function(response){
         console.log(response);
-        console.log("enviado com sucesso");
+        that.reset();
+        alert("Cadastrado com sucesso!");
       },
       error: function(response){
         console.log("erro");

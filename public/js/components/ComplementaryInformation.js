@@ -2,18 +2,20 @@ import React from 'react';
 import $ from 'jquery';
 import { Link } from 'react-router-dom';
 
+const initialState = {
+  some_family_mem_fri_said_that_are_get_forg_2_7:'',
+  forgetfulness_is_getting_worse_in_last_months_2_7:'',
+  forgetfulness_is_preventing_of_some_daily_activity_2_7:'', 
+  in_the_last_mon_were_dismayed_sad_hop_2_7:'', 
+  in_the_last_mon_lost_int_pleas_act_form_pleas_2_7:''
+};
+
 class ComplementaryInformation extends React.Component {
   
   constructor (props) {
     super(props);
 
-    this.state = {
-      some_family_mem_fri_said_that_are_get_forg_2_7:'',
-      forgetfulness_is_getting_worse_in_last_months_2_7:'',
-      forgetfulness_is_preventing_of_some_daily_activity_2_7:'', 
-      in_the_last_mon_were_dismayed_sad_hop_2_7:'', 
-      in_the_last_mon_lost_int_pleas_act_form_pleas_2_7:''
-    };
+    this.state = initialState;
 
     this.sendForm = this.sendForm.bind(this);
     this.setSomeFamilyMemFriSaidThatAreGetForg27 = this.setSomeFamilyMemFriSaidThatAreGetForg27.bind(this);
@@ -34,7 +36,12 @@ class ComplementaryInformation extends React.Component {
     });
   }
 
+  reset() {
+    this.setState(initialState);
+  }
+
   sendForm(evt) {
+    let that = this; 
     $.ajax({
       url: "/api/v1/complementaryinformation",
       contentType: 'application/json',
@@ -43,7 +50,8 @@ class ComplementaryInformation extends React.Component {
       data: JSON.stringify({ test: this.state }),
       success: function(response){
         console.log(response);
-        console.log("enviado com sucesso");
+        that.reset();
+        alert("Cadastrado com sucesso!");
       },
       error: function(response){
         console.log("erro");

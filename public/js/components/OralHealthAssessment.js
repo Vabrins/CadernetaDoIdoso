@@ -2,29 +2,31 @@ import React from 'react';
 import $ from 'jquery';
 import { Link } from 'react-router-dom';
 
+const initialState = {
+  alcohol_2_11_d:'', 
+  smoke_2_11_d:'', 
+  presence_of_lesion_on_the_buccal_mucosa_2_11_d:'', 
+  dry_mouth_2_11_d:'', 
+  white_tongue_2_11_d:'', 
+  presence_of_oral_candidiasis_2_11_d:'', 
+  presence_of_halitosis_2_11_d:'', 
+  presence_of_bacterial_plaque_2_11_d:'', 
+  plate_retentive_factors_2_11_d:'', 
+  obvious_presence_of_gingivitis_2_11_d:'', 
+  obvious_presence_of_periodontitis_2_11_d:'', 
+  presence_of_caries_2_11_d:'', 
+  dental_loss_in_last_year_2_11_d:'', 
+  attendance_at_the_health_unit_2_11_d:'', 
+  home_service_2_11_d:'', 
+  forwarding_for_specialties_dental_2_11_d:''
+};
+
 class OralHealthAssessment extends React.Component {
   
   constructor (props) {
     super(props);
 
-    this.state = {
-      alcohol_2_11_d:'', 
-      smoke_2_11_d:'', 
-      presence_of_lesion_on_the_buccal_mucosa_2_11_d:'', 
-      dry_mouth_2_11_d:'', 
-      white_tongue_2_11_d:'', 
-      presence_of_lesion_on_the_buccal_mucosa_2_11_d:'', 
-      presence_of_halitosis_2_11_d:'', 
-      presence_of_bacterial_plaque_2_11_d:'', 
-      plate_retentive_factors_2_11_d:'', 
-      obvious_presence_of_gingivitis_2_11_d:'', 
-      obvious_presence_of_periodontitis_2_11_d:'', 
-      presence_of_caries_2_11_d:'', 
-      dental_loss_in_last_year_2_11_d:'', 
-      attendance_at_the_health_unit_2_11_d:'', 
-      home_service_2_11_d:'', 
-      forwarding_for_specialties_dental_2_11_d:''
-    };
+    this.state = initialState;
 
     this.sendForm = this.sendForm.bind(this);
     this.setAlcohol211d = this.setAlcohol211d.bind(this);
@@ -42,6 +44,7 @@ class OralHealthAssessment extends React.Component {
     this.setDentalLossInLastYear211d = this.setDentalLossInLastYear211d.bind(this);
     this.setAttendanceAtTheHealthUnit211d = this.setAttendanceAtTheHealthUnit211d.bind(this);
     this.setHomeService211d = this.setHomeService211d.bind(this);
+    this.setCandidiasis = this.setCandidiasis.bind(this);
     this.setForwardingForSpecialtiesDental211d = this.setForwardingForSpecialtiesDental211d.bind(this);
   }
 
@@ -57,6 +60,7 @@ class OralHealthAssessment extends React.Component {
   }
 
   sendForm(evt) {
+    let that = this;
     $.ajax({
       url: "/api/v1/oralhealthassessment",
       contentType: 'application/json',
@@ -65,7 +69,8 @@ class OralHealthAssessment extends React.Component {
       data: JSON.stringify({ test: this.state }),
       success: function(response){
         console.log(response);
-        console.log("enviado com sucesso");
+        that.reset();
+        alert("Cadastrado com sucesso!");
       },
       error: function(response){
         console.log("erro");
@@ -73,6 +78,10 @@ class OralHealthAssessment extends React.Component {
       }.bind(this)
     });
   }
+
+  reset() {
+    this.setState(initialState);
+  }  
 
  render () {
   return (
@@ -97,16 +106,16 @@ class OralHealthAssessment extends React.Component {
                   <input type="radio" checked={this.state.presence_of_lesion_on_the_buccal_mucosa_2_11_d === '0'} onChange={this.setPresenceOfLesionOnTheBuccalMucosa211d} className="answers-141" id="2.11d-presence_of_lesion_on_the_buccal_mucosa-n" name="answers[2.11d[presence_of_lesion_on_the_buccal_mucosa]]" value="0"  />Não
                   <br/><br/>
                   <label>Boca seca (xerostomia – falta de saliva)</label><br/>
-                  <input type="radio" checked={this.state.drymouth_2_11_d === '1'} onChange={this.setDrymouth211d} className="answers-142" id="2.11d-drymouth-y" name="answers[2.11d[drymouth]]" value="1"  />Sim
-                  <input type="radio" checked={this.state.drymouth_2_11_d === '0'} onChange={this.setDrymouth211d} className="answers-142" id="2.11d-drymouth-n" name="answers[2.11d[drymouth]]" value="0"  />Não
+                  <input type="radio" checked={this.state.dry_mouth_2_11_d === '1'} onChange={this.setDrymouth211d} className="answers-142" id="2.11d-drymouth-y" name="answers[2.11d[drymouth]]" value="1"  />Sim
+                  <input type="radio" checked={this.state.dry_mouth_2_11_d === '0'} onChange={this.setDrymouth211d} className="answers-142" id="2.11d-drymouth-n" name="answers[2.11d[drymouth]]" value="0"  />Não
                   <br/><br/>
                   <label>Presença de língua saburrosa (língua branca)</label><br/>
                   <input type="radio" checked={this.state.whitetongue_2_11_d === '1'} onChange={this.setWhiteTongue211d} className="answers-143" id="2.11d-whitetongue-y" name="answers[2.11d[whitetongue]]" value="1" />Sim
                   <input type="radio" checked={this.state.whitetongue_2_11_d === '0'} onChange={this.setWhiteTongue211d} className="answers-143" id="2.11d-whitetongue-n" name="answers[2.11d[whitetongue]]" value="0" />Não
                   <br/><br/>
                   <label>Presença de candidíase bucal</label><br/>
-                  <input type="radio" checked={this.state.presence_of_lesion_on_the_buccal_mucosa_2_11_d === '1'} onChange={this.setPresenceOfLesionOnTheBuccalMucosa211d} className="answers-144" id="2.11d-presence_of_lesion_on_the_buccal_mucosa-y" name="answers[2.11d[presence_of_lesion_on_the_buccal_mucosa]]" value="1"  />Sim
-                  <input type="radio" checked={this.state.presence_of_lesion_on_the_buccal_mucosa_2_11_d === '0'} onChange={this.setPresenceOfLesionOnTheBuccalMucosa211d} className="answers-144" id="2.11d-presence_of_lesion_on_the_buccal_mucosa-n" name="answers[2.11d[presence_of_lesion_on_the_buccal_mucosa]]" value="0"  />Não
+                  <input type="radio" checked={this.state.presence_of_oral_candidiasis_2_11_d === '1'} onChange={this.setCandidiasis} className="answers-144" id="2.11d-presence_of_lesion_on_the_buccal_mucosa-y" name="answers[2.11d[presence_of_lesion_on_the_buccal_mucosa]]" value="1"  />Sim
+                  <input type="radio" checked={this.state.presence_of_oral_candidiasis_2_11_d === '0'} onChange={this.setCandidiasis} className="answers-144" id="2.11d-presence_of_lesion_on_the_buccal_mucosa-n" name="answers[2.11d[presence_of_lesion_on_the_buccal_mucosa]]" value="0"  />Não
                   <br/><br/>
                   <label>Presença de halitose</label><br/>
                   <input type="radio" checked={this.state.presence_of_halitosis_2_11_d === '1'} onChange={this.setPresenceOfHalitosis211d} className="answers-145" id="2.11d-presence_of_halitosis-y" name="answers[2.11d[presence_of_halitosis]]" value="1"  />Sim
@@ -137,7 +146,7 @@ class OralHealthAssessment extends React.Component {
                   <input type="radio" value={this.state.dental_loss_in_last_year_2_11_d === '1'} onChange={this.setDentalLossInLastYear211d} className="answers-151" id="2.11d-dental_loss_in_last_year-y" name="answers[2.11d[dental_loss_in_last_year]]" value="1"  />Sim
                   <input type="radio" value={this.state.dental_loss_in_last_year_2_11_d === '0'} onChange={this.setDentalLossInLastYear211d} className="answers-151" id="2.11d-dental_loss_in_last_year-n" name="answers[2.11d[dental_loss_in_last_year]]" value="0"  />Não
                   <br/><br/>
-                  <h2> CONSULTA CLÍNICA(EQUIPE DE SAÚDE BUCAL </h2>
+                  <h2> CONSULTA CLÍNICA - EQUIPE DE SAÚDE BUCAL </h2>
                   <label>Atendimento na unidade de saúde</label><br/>
                   <input type="radio" value={this.state.attendance_at_the_health_unit_2_11_d === '1'} onChange={this.setAttendanceAtTheHealthUnit211d} className="answers-152" id="2.11d-attendance_at_the_health_unit-y" name="answers[2.11d[attendance_at_the_health_unit]]" value="1"  />Sim
                   <input type="radio" value={this.state.attendance_at_the_health_unit_2_11_d === '0'} onChange={this.setAttendanceAtTheHealthUnit211d} className="answers-152" id="2.11d-attendance_at_the_health_unit-n" name="answers[2.11d[attendance_at_the_health_unit]]" value="0"  />Não
@@ -184,15 +193,15 @@ class OralHealthAssessment extends React.Component {
   }
 
   setDrymouth211d(evt) {
-    this.setState({drymouth_2_11_d: evt.target.value});  
+    this.setState({dry_mouth_2_11_d: evt.target.value});  
   }
 
   setWhiteTongue211d(evt) {
     this.setState({whitetongue_2_11_d: evt.target.value});  
   }
 
-  setPresenceOfLesionOnTheBuccalMucosa211d(evt) {
-    this.setState({presence_of_lesion_on_the_buccal_mucosa_2_11_d: evt.target.value});  
+  setCandidiasis(evt) {
+    this.setState({presence_of_oral_candidiasis_2_11_d: evt.target.value});  
   }
 
   setPresenceOfHalitosis211d(evt) {
