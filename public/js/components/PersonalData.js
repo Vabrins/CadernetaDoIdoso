@@ -201,7 +201,7 @@ class PersonalData extends React.Component {
       method: "POST",
       data: JSON.stringify({ test: this.state }),
       success: function(response){
-        alert("sucesso");
+        alert("Atualizado com sucesso!");
         console.log(response);
       },
       error: function(response){

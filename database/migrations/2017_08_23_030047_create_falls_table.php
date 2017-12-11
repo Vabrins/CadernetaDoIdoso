@@ -19,12 +19,12 @@ class CreateFallsTable extends Migration
             $table->foreign('id_history', 'falls_2_9_1_fk_historys')->references('id')->on('historys');
             $table->unsignedInteger('id_elderly');
             $table->foreign('id_elderly', 'falls_2_9_2_fk_elderlies')->references('id')->on('elderlies');
-            $table->string('date_of_fall_month_2_9', '12');
-            $table->string('date_of_fall_year_2_9', '12');
-            $table->string('place_2_9', '15');
-            $table->boolean('the_fall_caused_some_fracture_2_9');
-            $table->string('the_fall_caused_some_fracture_extra_2_9', '30');
-            $table->boolean('you_stopped_perform_some_activity_for_fear_to_fall_again_2_9');
+            $table->string('date_of_fall_month_2_9', '12')->nullable(true);
+            $table->string('date_of_fall_year_2_9', '12')->nullable(true);
+            $table->string('place_2_9', '15')->nullable(true);
+            $table->boolean('the_fall_caused_some_fracture_2_9')->nullable(true);
+            $table->string('the_fall_caused_some_fracture_extra_2_9', '30')->nullable(true);
+            $table->boolean('you_stopped_perform_some_activity_for_fear_to_fall_again_2_9')->nullable(true);
             $table->softDeletes();
             $table->timestamps();
         });

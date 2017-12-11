@@ -2,17 +2,19 @@ import React from 'react';
 import $ from 'jquery';
 import { Link } from 'react-router-dom';
 
+const initialState = {
+  do_you_have_pain_last_same_more_than_3_mon_2_10:'', 
+  the_pain_is_like_a_shock_or_a_burning_2_10:'',
+  does_the_pain_get_worse_when_walking_2_10:'',
+  does_pain_improve_with_rest_2_10:''  
+};
+
 class IdentificationChronicPain extends React.Component {
   
   constructor (props) {
     super(props);
 
-    this.state = {
-      do_you_have_pain_last_same_more_than_3_mon_2_10:'', 
-      the_pain_is_like_a_shock_or_a_burning_2_10:'',
-      does_the_pain_get_worse_when_walking_2_10:'',
-      does_pain_improve_with_rest_2_10:''
-    };
+    this.state = initialState;
 
     this.sendForm = this.sendForm.bind(this);
     this.setDoYouHavePainLastSameMoreThan3Mon210 = this.setDoYouHavePainLastSameMoreThan3Mon210.bind(this);
@@ -32,7 +34,12 @@ class IdentificationChronicPain extends React.Component {
     });
   }
 
+  reset() {
+    this.setState(initialState);
+  }
+
   sendForm(evt) {
+    let that = this;
     $.ajax({
       url: "/api/v1/identificationchronicpain",
       contentType: 'application/json',
@@ -41,7 +48,8 @@ class IdentificationChronicPain extends React.Component {
       data: JSON.stringify({ test: this.state }),
       success: function(response){
         console.log(response);
-        console.log("enviado com sucesso");
+        that.reset();
+        alert("Cadastrado com sucesso!");
       },
       error: function(response){
         console.log("erro");

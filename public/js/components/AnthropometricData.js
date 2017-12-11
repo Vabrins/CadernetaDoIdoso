@@ -2,12 +2,16 @@ import React from 'react';
 import $ from 'jquery';
 import { Link } from 'react-router-dom';
 
+const initialState = {
+  weight_2_5:'', height_2_5:'', imc_weight_height_2_5:'', calf_perimeter_pp_left_2_5:'', you_have_exp_loss_uni_weight_min_body_last_year_2_5:''
+};
+
 class AnthropometricData extends React.Component {
   
   constructor (props) {
     super(props);
 
-    this.state = {weight_2_5:'', height_2_5:'', imc_weight_height_2_5:'', calf_perimeter_pp_left_2_5:'', you_have_exp_loss_uni_weight_min_body_last_year_2_5:''};
+    this.state = initialState;
     this.sendForm = this.sendForm.bind(this);
     this.setWeight25 = this.setWeight25.bind(this);
     this.setHeight25 = this.setHeight25.bind(this);
@@ -28,7 +32,12 @@ class AnthropometricData extends React.Component {
     });
   }
 
+  reset() {
+    this.setState(initialState);
+  }
+
   sendForm(evt) {
+    let that = this; 
     $.ajax({
       url: "/api/v1/anthropometricdata",
       contentType: 'application/json',
@@ -37,7 +46,8 @@ class AnthropometricData extends React.Component {
       data: JSON.stringify({ test: this.state }),
       success: function(response){
         console.log(response);
-        console.log("enviado com sucesso");
+        that.reset();
+        alert("Cadastrado com sucesso!");
       },
       error: function(response){
         console.log("erro");

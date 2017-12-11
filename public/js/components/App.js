@@ -6,7 +6,6 @@ import Results from './Results';
 import About from './About';
 import Home from './Home';
 import CadernetaMenuGuide from './CadernetaMenuGuide';
-import Details from './Details';
 import Validation from './Validation';
 import Snackbar from 'material-ui/Snackbar';
 
@@ -34,6 +33,25 @@ import OralHealthAssessment from './OralHealthAssessment';
 import DentalProsthesis from './DentalProsthesis';
 import ConsultationExamination from './ConsultationExamination';
 
+import DetailsMedicinesHerbalRemedies from './DetailsMedicinesHerbalRemedies';
+import DetailsDiagnosisPreviousHospitalization from './DetailsDiagnosisPreviousHospitalization';
+import DetailsSurgeriesPerformed from './DetailsSurgeriesPerformed';
+import DetailsReactionOrAllergy from './DetailsReactionOrAllergy';
+import DetailsAnthropometricData from './DetailsAnthropometricData';
+import DetailsVulnerableElderly from './DetailsVulnerableElderly';
+import DetailsDisabilities from './DetailsDisabilities';
+import DetailsComplementaryInformation from './DetailsComplementaryInformation';
+import DetailsEnvironmentalAssessment from './DetailsEnvironmentalAssessment';
+import DetailsFalls from './DetailsFalls';
+import DetailsIdentificationChronicPain from './DetailsIdentificationChronicPain';
+import DetailsIdentificationChronicPainB from './DetailsIdentificationChronicPainB';
+import DetailsLivingHabits from './DetailsLivingHabits';
+import DetailsPressureControl from './DetailsPressureControl';
+import DetailsGlucoseControl from './DetailsGlucoseControl';
+import DetailsVaccinationCalendar from './DetailsVaccinationCalendar';
+import DetailsOralHealthAssessment from './DetailsOralHealthAssessment';
+import DetailsDentalProsthesis from './DetailsDentalProsthesis';
+import DetailsConsultationExamination from './DetailsConsultationExamination';
 
 class App extends React.Component {
   constructor (props) {
@@ -156,7 +174,7 @@ class App extends React.Component {
                           <Link exact="true" to="/complementaryinformation">2.7 Informações complementares </Link>
                         </li>
                         <li>
-                          <Link exact="true" to="/environmentalassessment">2.8 Avaliação ambienta</Link>
+                          <Link exact="true" to="/environmentalassessment">2.8 Avaliação ambiental</Link>
                         </li>
                         <li>
                           <Link exact="true" to="/falls">2.9 Quedas</Link>
@@ -259,7 +277,6 @@ class App extends React.Component {
             <Route path="/listings" component={Listings} />
             <Route path="/results" component={Results} />
             <Route path="/about" component={About} />
-            <Route path="/details" component={Details} />
 
           {/*Evaluation Forms Routes*/}
             <Route path="/personaldata" component={PersonalData} />
@@ -285,6 +302,27 @@ class App extends React.Component {
             <Route path="/oralhealthassessment" component={OralHealthAssessment} />
             <Route path="/dentalprosthesis" component={DentalProsthesis} />
             <Route path="/consultationexamination" component={ConsultationExamination} />
+
+            {/*Listings Tables Routes*/}
+            <Route path="/detailsmedicinesherbalremedies" component={DetailsMedicinesHerbalRemedies} />
+            <Route path="/detailsdiagnosisprevioushospitalization" component={DetailsDiagnosisPreviousHospitalization} />
+            <Route path="/detailssurgeriesperformed" component={DetailsSurgeriesPerformed} />
+            <Route path="/detailsreactionorallergy" component={DetailsReactionOrAllergy} />
+            <Route path="/detailsanthropometricdata" component={DetailsAnthropometricData} />
+            <Route path="/detailsvulnerableelderly" component={DetailsVulnerableElderly} />
+            <Route path="/detailsdisabilities" component={DetailsDisabilities} />
+            <Route path="/detailscomplementaryinformation" component={DetailsComplementaryInformation} />
+            <Route path="/detailsenvironmentalassessment" component={DetailsEnvironmentalAssessment} />
+            <Route path="/detailsfalls" component={DetailsFalls} />
+            <Route path="/detailsidentificationchronicpain" component={DetailsIdentificationChronicPain} />
+            <Route path="/detailsidentificationchronicpainb" component={DetailsIdentificationChronicPainB} />
+            <Route path="/detailslivinghabits" component={DetailsLivingHabits} />
+            <Route path="/detailspressurecontrol" component={DetailsPressureControl} />
+            <Route path="/detailsglucosecontrol" component={DetailsGlucoseControl} />
+            <Route path="/detailsvaccinationcalendar" component={DetailsVaccinationCalendar} />
+            <Route path="/detailsoralhealthassessment" component={DetailsOralHealthAssessment} />
+            <Route path="/detailsdentalprosthesis" component={DetailsDentalProsthesis} />
+            <Route path="/detailsconsultationexamination" component={DetailsConsultationExamination} />
         </div>
       </Router>
     )

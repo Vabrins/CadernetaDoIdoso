@@ -2,12 +2,16 @@ import React from 'react';
 import $ from 'jquery';
 import { Link } from 'react-router-dom';
 
+const initialState = {
+  medicine_2_4:'', date_2_4:'', adverse_reactions_or_allergies_2_4:''
+};
+
 class ReactionOrAllergy extends React.Component {
   
   constructor (props) {
     super(props);
 
-    this.state = {medicine_2_4:'', date_2_4:'', adverse_reactions_or_allergies_2_4:''};
+    this.state = initialState;
     this.sendForm = this.sendForm.bind(this);
     this.setMedication24 = this.setMedication24.bind(this);
     this.setData24 = this.setData24.bind(this);
@@ -25,7 +29,12 @@ class ReactionOrAllergy extends React.Component {
     });
   }
 
+  reset() {
+    this.setState(initialState);
+  }
+
   sendForm(evt) {
+    let that = this; 
     $.ajax({
       url: "/api/v1/reactionorallergy",
       contentType: 'application/json',
@@ -34,7 +43,8 @@ class ReactionOrAllergy extends React.Component {
       data: JSON.stringify({ test: this.state }),
       success: function(response){
         console.log(response);
-        console.log("enviado com sucesso");
+        that.reset();
+        alert("Cadastrado com sucesso!");
       },
       error: function(response){
         console.log("erro");

@@ -2,12 +2,16 @@ import React from 'react';
 import $ from 'jquery';
 import { Link } from 'react-router-dom';
 
+const initialState = {
+  date_2_10_b:'', place_of_pain_2_10_b:'', intensity_2_10_b:''
+};
+
 class IdentificationChronicPainB extends React.Component {
   
   constructor (props) {
     super(props);
 
-    this.state = {date_2_10_b:'', place_of_pain_2_10_b:'', intensity_2_10_b:''};
+    this.state = initialState;
     this.sendForm = this.sendForm.bind(this);
     this.setDate210b = this.setDate210b.bind(this);
     this.setPlaceOfPain210b = this.setPlaceOfPain210b.bind(this);
@@ -25,7 +29,12 @@ class IdentificationChronicPainB extends React.Component {
     });
   }
 
+  reset() {
+    this.setState(initialState);
+  }
+
   sendForm(evt) {
+    let that = this;
     $.ajax({
       url: "/api/v1/idenchronicpainsintensity",
       contentType: 'application/json',
@@ -34,7 +43,8 @@ class IdentificationChronicPainB extends React.Component {
       data: JSON.stringify({ test: this.state }),
       success: function(response){
         console.log(response);
-        console.log("enviado com sucesso");
+        that.reset();
+        alert("Cadastrado com sucesso!");
       },
       error: function(response){
         console.log("erro");
@@ -52,7 +62,7 @@ class IdentificationChronicPainB extends React.Component {
                   <fieldset>
                   <h2>IDENTIFICAÇÃO DE DOR CRÔNICA </h2>
                   <label>Data</label><br/>
-                  <input type="date" value={this.state.data_2_10_b} onChange={this.setDate210b} className="answers-108" id="2.10_b-data" name="answers[2.10_b[data]]"  /><br/>
+                  <input type="date" value={this.state.date_2_10_b} onChange={this.setDate210b} className="answers-108" id="2.10_b-data" name="answers[2.10_b[data]]"  /><br/>
                   <br/><br/>
                   <label>Local da dor</label><br/>
                   <input type="text"  value={this.state.place_of_pain_2_10_b} onChange={this.setPlaceOfPain210b} className="answers-109a" id="2.10_b-placeofpain" name="answers[2.10_b[placeofpain]]"  />
@@ -83,7 +93,7 @@ class IdentificationChronicPainB extends React.Component {
   }
 
   setDate210b(evt) {
-    this.setState({data_2_10_b: evt.target.value});  
+    this.setState({date_2_10_b: evt.target.value});  
   }
 
   setPlaceOfPain210b(evt) {

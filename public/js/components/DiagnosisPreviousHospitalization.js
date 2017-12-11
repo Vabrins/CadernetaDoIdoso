@@ -3,12 +3,16 @@ import $ from 'jquery';
 import { Link } from 'react-router-dom';
 import Validation from './Validation';
 
+const initialState = {
+  diagnostics_2_2:'' , diagnostics_year_2_2:'', hospitalization_2_2:'', other_conditions_2_2:''
+};
+
 class DiagnosisPreviousHospitalization extends React.Component {
   
   constructor (props) {
     super(props);
 
-    this.state = {diagnostics_2_2:'' , diagnostics_year_2_2:'', hospitalization_2_2:'', other_conditions_2_2:''};
+    this.state = initialState;
     this.sendForm = this.sendForm.bind(this);
     this.setDiagnostics22 = this.setDiagnostics22.bind(this);
     this.setDiagnosticsYear22 = this.setDiagnosticsYear22.bind(this);
@@ -27,7 +31,12 @@ class DiagnosisPreviousHospitalization extends React.Component {
     });
   }
 
+  reset() {
+      this.setState(initialState);
+  }
+
   sendForm(evt) {
+    let that = this; 
     $.ajax({
       url: "/api/v1/diagnosisprevioushospitalization",
       contentType: 'application/json',
@@ -36,7 +45,8 @@ class DiagnosisPreviousHospitalization extends React.Component {
       data: JSON.stringify({ test: this.state }),
       success: function(response){
         console.log(response);
-        console.log("enviado com sucesso");
+        that.reset();
+        alert("Cadastrado com sucesso!");
       },
       error: function(response){
         console.log("erro");

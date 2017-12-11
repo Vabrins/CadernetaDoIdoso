@@ -2,12 +2,16 @@ import React from 'react';
 import $ from 'jquery';
 import { Link } from 'react-router-dom';
 
+const initialState = {
+  date_2_11_a:'', pa_2_11_a:''
+};
+
 class PressureControls extends React.Component {
   
   constructor (props) {
     super(props);
 
-    this.state = {date_2_11_a:'', pa_2_11_a:''};
+    this.state = initialState;
     this.sendForm = this.sendForm.bind(this);
     this.setDate211a = this.setDate211a.bind(this);
     this.setPa211a = this.setPa211a.bind(this);
@@ -32,8 +36,12 @@ class PressureControls extends React.Component {
     this.setState({ date_2_11_a: todayDate });
   }
 
-  sendForm(evt) {
+  reset() {
+    this.setState(initialState);
+  }
 
+  sendForm(evt) {
+    let that = this;
     $.ajax({
       url: "/api/v1/pressurecontrol",
       contentType: 'application/json',
@@ -42,7 +50,8 @@ class PressureControls extends React.Component {
       data: JSON.stringify({ test: this.state }),
       success: function(response){
         console.log(response);
-        console.log("enviado com sucesso");
+        that.reset();
+        alert("Cadastrado com sucesso!");
       },
       error: function(response){
         console.log("erro");
