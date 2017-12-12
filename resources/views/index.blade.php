@@ -46,11 +46,9 @@
             <div class="modal-body">Você tem certeza que quer sair? <br/> Dados não salvos serão perdidos.</div>
             <div class="modal-footer">
               <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancelar</button>
-              <a class="btn btn-primary" href="{{ route('logout') }}"
-                                            onclick="event.preventDefault();
-                                                     document.getElementById('logout-form').submit();">
-              Sair
-            </a>
+              <a class="btn btn-primary" href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit(); clearCookie();">
+                Sair
+              </a>
             </div>
           </div>
           <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
@@ -69,6 +67,8 @@
       <!-- Core plugin JavaScript-->
       <script async src="{{ asset('/js/jquery.easing.min.js') }}"></script>
       <script src="{{ asset('/js/bootstrap.min.js') }}"></script>
+      <!-- Aditional functions -->
+      <script async src="{{ asset('/js/global.js') }}"></script>
     </div>
   </body>
 </html>

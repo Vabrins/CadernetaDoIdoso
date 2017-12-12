@@ -106,7 +106,12 @@
     
     document.getElementById("cpf-bottom").addEventListener("click", function(evt){
         evt.preventDefault();
-        (CPF.value == "") ? alert('Digite seu CPF!') : existCPF(CPF.value);
-        // isLogged();       
+        var cpf = '';
+        (CPF.value == "") ? alert('Digite seu CPF!') : cpf = existCPF(CPF.value);
+
+        if (cpf != false) {
+            elderlyRedirect();
+        }
+        // isLogged();
     });
 </script>
