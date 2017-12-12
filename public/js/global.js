@@ -20,7 +20,8 @@
         if (rest != parseInt(strCPF.substring(10, 11) ) ) toReturn = false;  
 
         if(!toReturn){
-            alert('CPF inválido!');            
+            alert('CPF inválido!');
+            clearCookie();        
             CPF.value = "";
         }
         return true;
@@ -34,9 +35,11 @@
           method: "GET",
           success: function(response){
             alert("CPF encontrado!");
+            return true;
           },
           error: function(response){
             alert("Erro ao buscar CPF");
+            return false;
           }
         });
     }
@@ -65,4 +68,23 @@
             alert("Erro ao checar.");
           }
         });
+    }
+
+    function clearCookie() {      
+      document.cookie = 'id_elderly=;expires=Thu, 01 Jan 1970 00:00:01 GMT;';
+    }
+
+    function setCookie(value, days) {
+      if (days) {
+          var date = new Date();
+          date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
+          var expires = "; expires=" + date.toGMTString();
+      } else {
+        var expires = "";
+        document.cookie = "id_elderly=" + JSON.stringify(value) + expires + "; path=/";
+      }
+    }
+
+    function elderlyRedirect(){
+      window.location.href = "/index";
     }

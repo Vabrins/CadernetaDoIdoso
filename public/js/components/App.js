@@ -56,15 +56,33 @@ import DetailsConsultationExamination from './DetailsConsultationExamination';
 class App extends React.Component {
   constructor (props) {
     super(props)    
-    this.state = {cpf:'', open:false, msg:''};
+    this.state = {cpf:'', open:false, msg:'', elderlyLogged: ''};
     this.setCpf = this.setCpf.bind(this);
     this.setElderlyCpf = this.setElderlyCpf.bind(this);
     this.validateCpf = this.validateCpf.bind(this);
     this.handleRequestClose = this.handleRequestClose.bind(this);
+    this.manipulateLayout = this.manipulateLayout.bind(this);
   }
 
   componentWillMount () {
     this.loadAdminJs();
+    this.manipulateLayout();
+  }
+
+  manipulateLayout () {
+    let idElderly = this.getCookie('id_elderly');
+
+    if (idElderly == undefined) {
+      this.setState({ elderlyLogged: "listItem" });
+    } else {
+      this.setState({ elderlyLogged: "none" });
+    }
+  }
+
+  getCookie (name) {
+    let value = "; " + document.cookie;
+    let parts = value.split("; " + name + "=");
+    if (parts.length == 2) return parts.pop().split(";").shift();
   }
 
   loadAdminJs () {
@@ -120,7 +138,8 @@ class App extends React.Component {
             <div className="collapse navbar-collapse" id="navbarResponsive">
               <div id="sidemenu"></div>
               <ul className="navbar-nav navbar-sidenav" id="exampleAccordion">
-                <li className="nav-item" data-toggle="tooltip" data-placement="right" title="Dados Pessoais">
+
+                <li className="nav-item" style={{ display: this.state.elderlyLogged }} data-toggle="tooltip" data-placement="right" title="Dados Pessoais">
                   <a className="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#collapseMulti" data-parent="#exampleAccordion">
                   <i className="fa fa-id-card"></i>
                   <span className="nav-link-text"> Dados Pessoais</span>
@@ -140,7 +159,7 @@ class App extends React.Component {
                     </li>
                   </ul>
                 </li>
-                <li className="nav-item" data-toggle="tooltip" data-placement="right" title="Avaliações">
+                <li className="nav-item" style={{ display: this.state.elderlyLogged }} data-toggle="tooltip" data-placement="right" title="Avaliações">
                   <a className="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#collapseMulti2" data-parent="#exampleAccordion">
                   <i className="fa fa-fw fa-stethoscope"></i>
                   <span className="nav-link-text"> Avaliações</span>
@@ -215,6 +234,7 @@ class App extends React.Component {
                     </li>
                   </ul>
                 </li>
+
                 <li className="nav-item" data-toggle="tooltip" data-placement="right" title="Listagens">
                   <Link className="nav-link" exact="true" to="/listings">
                   <i className="fa fa-fw fa-list-alt"></i>
@@ -244,7 +264,7 @@ class App extends React.Component {
               <ul className="navbar-nav ml-auto">
                 <li className="nav-item">
                   <form className="form-inline my-2 my-lg-0 mr-lg-2">
-                    <div className="input-group">
+                    <div className="input-group" style={{ display: this.state.elderlyLogged }}>
                       <input className="form-control" value={this.state.cpf} onChange={this.setCpf} type="text" placeholder="Ativar CPF do idoso" maxLength="11" />
                       <span className="input-group-btn">
                       <button className="btn btn-primary" type="button" onClick={this.validateCpf}>

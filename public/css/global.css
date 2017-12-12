@@ -83,3 +83,9 @@ header {
 .fa-floppy-o {
     cursor: pointer;
 }
+.page-item {
+    cursor: pointer;
+}
+.fa-refresh {
+    cursor: pointer;
+}
