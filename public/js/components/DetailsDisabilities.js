@@ -6,7 +6,7 @@ class DetailsDisabilities extends React.Component {
   
   constructor (props) {
     super(props);
-    this.state = {stopped_shopping_2_6_a:'', stop_tracking_your_money_2_6_a:'', stopped_walking_in_the_house_2_6_a:'', stopped_doing_light_household_chores_2_6_a:'', stop_taking_showers_alone_2_6_a:''};
+    this.state = {stopped_shopping_2_6_a:'', stop_tracking_your_money_2_6_a:'', stopped_walking_in_the_house_2_6_a:'', stopped_doing_light_household_chores_2_6_a:'', stop_taking_showers_alone_2_6_a:'', created_at:'', list : []};
   }
 
   componentWillMount() {
@@ -20,6 +20,17 @@ class DetailsDisabilities extends React.Component {
         }
       }.bind(this)
     });
+
+    $.ajax({
+      url: "/api/v1/disabilities/getTrashed",
+      dataType: "json",
+      method: "GET",
+      success:function(response){
+        if (response != "") {
+          this.setState({list:response});
+        }
+      }.bind(this)
+    });    
   }
 
   buildData(data) {
@@ -38,6 +49,9 @@ class DetailsDisabilities extends React.Component {
     if (data.stop_taking_showers_alone_2_6_a != null) {
       this.setState({stop_taking_showers_alone_2_6_a: data.stop_taking_showers_alone_2_6_a});
     }
+    if (data.created_at != null) {
+      this.setState({created_at: data.created_at});
+    }    
   }
 
  render () {
@@ -57,15 +71,33 @@ class DetailsDisabilities extends React.Component {
                       <th>Por causa de sua saúde ou condição física, você deixou de caminhar dentro de casa?</th>
                       <th>Por causa de sua saúde ou condição física, você deixou de realizar tarefas domésticas leves,como lavar louça ou fazer limpeza leve?</th>
                       <th>Por causa de sua saúde ou condição física, você deixou de tomar banho sozinho(a)?</th>
+                      <th>Avaliado em</th>
+                      <th>Profissional</th>                      
                     </tr>
                   </thead>
                   <tbody>
+                    {
+                      this.state.list.map(function(data){
+                        return (
+                          <tr key={data.id}>
+                            <td>{data.stopped_shopping_2_6_a}</td>
+                            <td>{data.stop_tracking_your_money_2_6_a}</td>
+                            <td>{data.stopped_walking_in_the_house_2_6_a}</td>
+                            <td>{data.stopped_doing_light_household_chores_2_6_a}</td>
+                            <td>{data.stop_taking_showers_alone_2_6_a}</td>
+                            <td>{data.created_at}</td>
+                            <td>{data.history.user.name}</td>
+                          </tr>
+                        )
+                      })
+                    }                  
                     <tr>
                       <td>{this.state.stopped_shopping_2_6_a}</td>
                       <td>{this.state.stop_tracking_your_money_2_6_a}</td>
                       <td>{this.state.stopped_walking_in_the_house_2_6_a}</td>
                       <td>{this.state.stopped_doing_light_household_chores_2_6_a}</td>
                       <td>{this.state.stop_taking_showers_alone_2_6_a}</td>
+                      <td>{this.state.created_at}</td>
                     </tr>
                   </tbody>
                 </table>

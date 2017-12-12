@@ -16,6 +16,7 @@ class GlucoseControls extends React.Component {
     this.setFasting211b = this.setFasting211b.bind(this);
     this.setCasual211b = this.setCasual211b.bind(this);
     this.setMgdl211b = this.setMgdl211b.bind(this);
+    this.getTrashed = this.getTrashed.bind(this);
   }
 
   componentWillMount() {
@@ -24,6 +25,19 @@ class GlucoseControls extends React.Component {
       dataType: "json",
       method: "GET",
       success:function(response){
+        console.log(response);
+      }.bind(this)
+    });
+    this.getTrashed();
+  }
+
+  getTrashed() {
+    $.ajax({
+      url: "/api/v1/glucosecontrol/getTrashed",
+      dataType: "json",
+      method: "GET",
+      success:function(response){
+        console.log('lixoo');
         console.log(response);
       }.bind(this)
     });

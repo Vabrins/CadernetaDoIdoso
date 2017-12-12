@@ -34,7 +34,6 @@ class OralHealthAssessment extends React.Component {
     this.setPresenceOfLesionOnTheBuccalMucosa211d = this.setPresenceOfLesionOnTheBuccalMucosa211d.bind(this);
     this.setDrymouth211d = this.setDrymouth211d.bind(this);
     this.setWhiteTongue211d = this.setWhiteTongue211d.bind(this);
-    this.setPresenceOfLesionOnTheBuccalMucosa211d = this.setPresenceOfLesionOnTheBuccalMucosa211d.bind(this);
     this.setPresenceOfHalitosis211d = this.setPresenceOfHalitosis211d.bind(this);
     this.setPresenceOfBacterialPlaque211d = this.setPresenceOfBacterialPlaque211d.bind(this);
     this.setPlateRetentiveFactors211d = this.setPlateRetentiveFactors211d.bind(this);
@@ -110,12 +109,12 @@ class OralHealthAssessment extends React.Component {
                   <input type="radio" checked={this.state.dry_mouth_2_11_d === '0'} onChange={this.setDrymouth211d} className="answers-142" id="2.11d-drymouth-n" name="answers[2.11d[drymouth]]" value="0"  />Não
                   <br/><br/>
                   <label>Presença de língua saburrosa (língua branca)</label><br/>
-                  <input type="radio" checked={this.state.whitetongue_2_11_d === '1'} onChange={this.setWhiteTongue211d} className="answers-143" id="2.11d-whitetongue-y" name="answers[2.11d[whitetongue]]" value="1" />Sim
-                  <input type="radio" checked={this.state.whitetongue_2_11_d === '0'} onChange={this.setWhiteTongue211d} className="answers-143" id="2.11d-whitetongue-n" name="answers[2.11d[whitetongue]]" value="0" />Não
+                  <input type="radio" checked={this.state.white_tongue_2_11_d === '1'} onChange={this.setWhiteTongue211d} className="answers-143" id="2.11d-whitetongue-y" name="answers[2.11d[whitetongue]]" value="1" />Sim
+                  <input type="radio" checked={this.state.white_tongue_2_11_d === '0'} onChange={this.setWhiteTongue211d} className="answers-143" id="2.11d-whitetongue-n" name="answers[2.11d[whitetongue]]" value="0" />Não
                   <br/><br/>
                   <label>Presença de candidíase bucal</label><br/>
-                  <input type="radio" checked={this.state.presence_of_oral_candidiasis_2_11_d === '1'} onChange={this.setCandidiasis} className="answers-144" id="2.11d-presence_of_lesion_on_the_buccal_mucosa-y" name="answers[2.11d[presence_of_lesion_on_the_buccal_mucosa]]" value="1"  />Sim
-                  <input type="radio" checked={this.state.presence_of_oral_candidiasis_2_11_d === '0'} onChange={this.setCandidiasis} className="answers-144" id="2.11d-presence_of_lesion_on_the_buccal_mucosa-n" name="answers[2.11d[presence_of_lesion_on_the_buccal_mucosa]]" value="0"  />Não
+                  <input type="radio" checked={this.state.presence_of_oral_candidiasis_2_11_d === '1'} onChange={this.setCandidiasis} className="answers-144" id="1d-presence_of_lesion_on_the_buccal_mucosa-y" name="answers[2.11d[presence_of_lesion_on_the_buccal_mucosa]]" value="1"  />Sim
+                  <input type="radio" checked={this.state.presence_of_oral_candidiasis_2_11_d === '0'} onChange={this.setCandidiasis} className="answers-144" id="2d-presence_of_lesion_on_the_buccal_mucosa-n" name="answers[2.11d[presence_of_lesion_on_the_buccal_mucosa]]" value="0"  />Não
                   <br/><br/>
                   <label>Presença de halitose</label><br/>
                   <input type="radio" checked={this.state.presence_of_halitosis_2_11_d === '1'} onChange={this.setPresenceOfHalitosis211d} className="answers-145" id="2.11d-presence_of_halitosis-y" name="answers[2.11d[presence_of_halitosis]]" value="1"  />Sim
@@ -197,7 +196,7 @@ class OralHealthAssessment extends React.Component {
   }
 
   setWhiteTongue211d(evt) {
-    this.setState({whitetongue_2_11_d: evt.target.value});  
+    this.setState({white_tongue_2_11_d: evt.target.value});  
   }
 
   setCandidiasis(evt) {

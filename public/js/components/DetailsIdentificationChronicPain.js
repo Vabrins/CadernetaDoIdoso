@@ -10,7 +10,8 @@ class DetailsIdentificationChronicPain extends React.Component {
       do_you_have_pain_last_same_more_than_3_mon_2_10:'', 
       the_pain_is_like_a_shock_or_a_burning_2_10:'',
       does_the_pain_get_worse_when_walking_2_10:'',
-      does_pain_improve_with_rest_2_10:''
+      does_pain_improve_with_rest_2_10:'',
+      created_at:'', list : []
     };
   }
 
@@ -25,6 +26,17 @@ class DetailsIdentificationChronicPain extends React.Component {
         }
       }.bind(this)
     });
+
+    $.ajax({
+      url: "/api/v1/identificationchronicpain/getTrashed",
+      dataType: "json",
+      method: "GET",
+      success:function(response){
+        if (response != "") {
+          this.setState({list:response});
+        }
+      }.bind(this)
+    });    
   }
 
   buildData(data) {
@@ -40,6 +52,9 @@ class DetailsIdentificationChronicPain extends React.Component {
     if (data.does_pain_improve_with_rest_2_10 != null) {
       this.setState({does_pain_improve_with_rest_2_10: data.does_pain_improve_with_rest_2_10});
     }
+    if (data.created_at != null) {
+      this.setState({created_at: data.created_at});
+    }    
   }
 
  render () {
@@ -58,14 +73,31 @@ class DetailsIdentificationChronicPain extends React.Component {
                       <th>A dor é como um choque ou uma queimação? </th>
                       <th>A dor piora ao andar?</th>
                       <th>A dor melhora com o repouso?</th>
+                      <th>Avaliado em</th>
+                      <th>Profissional</th>                      
                     </tr>
                   </thead>
                   <tbody>
+                    {
+                      this.state.list.map(function(data){
+                        return (
+                          <tr key={data.id}>
+                            <td>{data.do_you_have_pain_last_same_more_than_3_mon_2_10}</td>
+                            <td>{data.the_pain_is_like_a_shock_or_a_burning_2_10}</td>
+                            <td>{data.does_the_pain_get_worse_when_walking_2_10}</td>
+                            <td>{data.does_pain_improve_with_rest_2_10}</td>
+                            <td>{data.created_at}</td>
+                            <td>{data.history.user.name}</td>
+                          </tr>
+                        )
+                      })
+                    }                  
                     <tr>
                       <td>{this.state.do_you_have_pain_last_same_more_than_3_mon_2_10}</td>
                       <td>{this.state.the_pain_is_like_a_shock_or_a_burning_2_10}</td>
                       <td>{this.state.does_the_pain_get_worse_when_walking_2_10}</td>
                       <td>{this.state.does_pain_improve_with_rest_2_10}</td>
+                      <td>{this.state.created_at}</td>
                     </tr>
                   </tbody>
                 </table>

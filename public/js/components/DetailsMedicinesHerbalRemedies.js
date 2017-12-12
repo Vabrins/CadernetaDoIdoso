@@ -6,7 +6,7 @@ class DetailsMedicinesHerbalRemedies extends React.Component {
   
   constructor (props) {
     super(props);
-    this.state = {name_of_the_medicinal_supplement_or_vitamin_2_1:'', dose_and_frequency_2_1:'', start_date_or_time_of_use_2_1:'', concomitant_use_of_five_or_more_medicines_2_1:'', it_was_prescribed_by_some_professional_2_1:'', suspension_information_2_1:''};
+    this.state = {name_of_the_medicinal_supplement_or_vitamin_2_1:'', dose_and_frequency_2_1:'', start_date_or_time_of_use_2_1:'', concomitant_use_of_five_or_more_medicines_2_1:'', it_was_prescribed_by_some_professional_2_1:'', suspension_information_2_1:'', created_at:'', list : []};
   }
 
   componentWillMount() {
@@ -20,6 +20,17 @@ class DetailsMedicinesHerbalRemedies extends React.Component {
         }
       }.bind(this)
     });
+
+    $.ajax({
+      url: "/api/v1/medicinesherbalremedies/getTrashed",
+      dataType: "json",
+      method: "GET",
+      success:function(response){
+        if (response != "") {
+          this.setState({list:response});
+        }
+      }.bind(this)
+    });    
   }
 
   buildData(data) {
@@ -41,6 +52,9 @@ class DetailsMedicinesHerbalRemedies extends React.Component {
     if (data.suspension_information_2_1 != null) {
       this.setState({suspension_information_2_1: data.suspension_information_2_1});
     }
+    if (data.created_at != null) {
+      this.setState({created_at: data.created_at});
+    }    
   }
 
  render () {
@@ -61,9 +75,27 @@ class DetailsMedicinesHerbalRemedies extends React.Component {
                       <th>Uso concomitante de 5 ou mais medicamentos? </th>
                       <th>Foi prescrito por algum profissional de saúde? Qual?</th>
                       <th>Suspensão - Data/Motivo</th>
+                      <th>Avaliado em</th>
+                      <th>Profissional</th>                      
                     </tr>
                   </thead>
                   <tbody>
+                    {
+                      this.state.list.map(function(data){
+                        return (
+                          <tr key={data.id}>
+                            <td>{data.name_of_the_medicinal_supplement_or_vitamin_2_1}</td>
+                            <td>{data.dose_and_frequency_2_1}</td>
+                            <td>{data.start_date_or_time_of_use_2_1}</td>
+                            <td>{data.concomitant_use_of_five_or_more_medicines_2_1}</td>
+                            <td>{data.it_was_prescribed_by_some_professional_2_1}</td>
+                            <td>{data.suspension_information_2_1}</td>
+                            <td>{data.created_at}</td>
+                            <td>{data.history.user.name}</td>
+                          </tr>
+                        )
+                      })
+                    }                  
                     <tr>
                       <td>{this.state.name_of_the_medicinal_supplement_or_vitamin_2_1}</td>
                       <td>{this.state.dose_and_frequency_2_1}</td>
@@ -71,6 +103,7 @@ class DetailsMedicinesHerbalRemedies extends React.Component {
                       <td>{this.state.concomitant_use_of_five_or_more_medicines_2_1}</td>
                       <td>{this.state.it_was_prescribed_by_some_professional_2_1}</td>
                       <td>{this.state.suspension_information_2_1}</td>
+                      <td>{this.state.created_at}</td>
                     </tr>
                   </tbody>
                 </table>

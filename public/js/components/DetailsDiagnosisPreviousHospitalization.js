@@ -6,7 +6,7 @@ class DetailsDiagnosisPreviousHospitalization extends React.Component {
   
   constructor (props) {
     super(props);
-    this.state = {diagnostics_2_2:'' , diagnostics_year_2_2:'', hospitalization_2_2:'', other_conditions_2_2:''};
+    this.state = {diagnostics_2_2:'' , diagnostics_year_2_2:'', hospitalization_2_2:'', other_conditions_2_2:'', created_at:'', list : []};
   }
 
   componentWillMount() {
@@ -20,13 +20,24 @@ class DetailsDiagnosisPreviousHospitalization extends React.Component {
         }
       }.bind(this)
     });
+
+    $.ajax({
+      url: "/api/v1/diagnosisprevioushospitalization/getTrashed",
+      dataType: "json",
+      method: "GET",
+      success:function(response){
+        if (response != "") {
+          this.setState({list:response});
+        }
+      }.bind(this)
+    });    
   }
 
   buildData(data) {
     if (data.diagnostics_2_2 != null) {
       this.setState({diagnostics_2_2: data.diagnostics_2_2});
     }
-    if (data.dose_and_frequency_2_1 != null) {
+    if (data.diagnostics_year_2_2 != null) {
       this.setState({diagnostics_year_2_2: data.diagnostics_year_2_2});
     }
     if (data.hospitalization_2_2 != null) {
@@ -35,6 +46,9 @@ class DetailsDiagnosisPreviousHospitalization extends React.Component {
     if (data.other_conditions_2_2 != null) {
       this.setState({other_conditions_2_2: data.other_conditions_2_2});
     }
+    if (data.created_at != null) {
+      this.setState({created_at: data.created_at});
+    }    
   }
 
  render () {
@@ -53,14 +67,31 @@ class DetailsDiagnosisPreviousHospitalization extends React.Component {
                       <th>Ano de diagnóstico</th>
                       <th>Ano de internação</th>
                       <th>Outras condições</th>
+                      <th>Avaliado em</th>
+                      <th>Profissional</th>                      
                     </tr>
                   </thead>
                   <tbody>
+                    {
+                      this.state.list.map(function(data){
+                        return (
+                          <tr key={data.id}>
+                            <td>{data.diagnostics_2_2}</td>
+                            <td>{data.diagnostics_year_2_2}</td>
+                            <td>{data.hospitalization_2_2}</td>
+                            <td>{data.other_conditions_2_2}</td>
+                            <td>{data.created_at}</td>
+                            <td>{data.history.user.name}</td>
+                          </tr>
+                        )
+                      })
+                    }                  
                     <tr>
                       <td>{this.state.diagnostics_2_2}</td>
                       <td>{this.state.diagnostics_year_2_2}</td>
                       <td>{this.state.hospitalization_2_2}</td>
                       <td>{this.state.other_conditions_2_2}</td>
+                      <td>{this.state.created_at}</td>
                     </tr>
                   </tbody>
                 </table>

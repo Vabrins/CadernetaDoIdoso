@@ -6,7 +6,7 @@ class DetailsIdentificationChronicPainB extends React.Component {
   
   constructor (props) {
     super(props);
-    this.state = {date_2_10_b:'', place_of_pain_2_10_b:'', intensity_2_10_b:''};
+    this.state = {date_2_10_b:'', place_of_pain_2_10_b:'', intensity_2_10_b:'', created_at:'', list : []};
   }
 
   componentWillMount() {
@@ -20,6 +20,17 @@ class DetailsIdentificationChronicPainB extends React.Component {
         }
       }.bind(this)
     });
+
+    $.ajax({
+      url: "/api/v1/idenchronicpainsintensity/getTrashed",
+      dataType: "json",
+      method: "GET",
+      success:function(response){
+        if (response != "") {
+          this.setState({list:response});
+        }
+      }.bind(this)
+    });    
   }
 
   buildData(data) {
@@ -32,6 +43,9 @@ class DetailsIdentificationChronicPainB extends React.Component {
     if (data.intensity_2_10_b != null) {
       this.setState({intensity_2_10_b: data.intensity_2_10_b});
     }
+    if (data.created_at != null) {
+      this.setState({created_at: data.created_at});
+    }    
   }
 
  render () {
@@ -49,13 +63,29 @@ class DetailsIdentificationChronicPainB extends React.Component {
                       <th>Data</th>
                       <th>Local da dor</th>
                       <th>Intensidade da dor</th>
+                      <th>Avaliado em</th>
+                      <th>Profissional</th>                      
                     </tr>
                   </thead>
                   <tbody>
+                    {
+                      this.state.list.map(function(data){
+                        return (
+                          <tr key={data.id}>
+                            <td>{data.date_2_10_b}</td>
+                            <td>{data.place_of_pain_2_10_b}</td>
+                            <td>{data.intensity_2_10_b}</td>
+                            <td>{data.created_at}</td>
+                            <td>{data.history.user.name}</td>
+                          </tr>
+                        )
+                      })
+                    }                  
                     <tr>
                       <td>{this.state.date_2_10_b}</td>
                       <td>{this.state.place_of_pain_2_10_b}</td>
                       <td>{this.state.intensity_2_10_b}</td>
+                      <td>{this.state.created_at}</td>                      
                     </tr>
                   </tbody>
                 </table>

@@ -6,7 +6,7 @@ class DetailsConsultationExamination extends React.Component {
   
   constructor (props) {
     super(props);
-    this.state = {date_2_11_e:'', hour_2_11_e:'', place_2_11_e:'', query_exam_2_11_e:''};
+    this.state = {date_2_11_e:'', hour_2_11_e:'', place_2_11_e:'', query_exam_2_11_e:'', created_at:'', list : []};
   }
 
   componentWillMount() {
@@ -20,6 +20,17 @@ class DetailsConsultationExamination extends React.Component {
         }
       }.bind(this)
     });
+
+    $.ajax({
+      url: "/api/v1/consultationexamination/getTrashed",
+      dataType: "json",
+      method: "GET",
+      success:function(response){
+        if (response != "") {
+          this.setState({list:response});
+        }
+      }.bind(this)
+    });    
   }
 
   buildData(data) {
@@ -35,6 +46,9 @@ class DetailsConsultationExamination extends React.Component {
     if (data.query_exam_2_11_e != null) {
       this.setState({query_exam_2_11_e: data.query_exam_2_11_e});
     }
+    if (data.created_at != null) {
+      this.setState({created_at: data.created_at});
+    }    
   }
 
  render () {
@@ -53,14 +67,31 @@ class DetailsConsultationExamination extends React.Component {
                       <th>Hora</th>
                       <th>Local</th>
                       <th>Consulta/exame</th>
+                      <th>Avaliado em</th>
+                      <th>Profissional</th>                      
                     </tr>
                   </thead>
                   <tbody>
+                    {
+                      this.state.list.map(function(data){
+                        return (
+                          <tr key={data.id}>
+                            <td>{data.date_2_11_e}</td>
+                            <td>{data.hour_2_11_e}</td>
+                            <td>{data.place_2_11_e}</td>
+                            <td>{data.query_exam_2_11_e}</td>
+                            <td>{data.created_at}</td>
+                            <td>{data.history.user.name}</td>
+                          </tr>
+                        )
+                      })
+                    }                  
                     <tr>
                       <td>{this.state.date_2_11_e}</td>
                       <td>{this.state.hour_2_11_e}</td>
                       <td>{this.state.place_2_11_e}</td>
                       <td>{this.state.query_exam_2_11_e}</td>
+                      <td>{this.state.created_at}</td>
                     </tr>
                   </tbody>
                 </table>

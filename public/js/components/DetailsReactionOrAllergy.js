@@ -6,7 +6,7 @@ class DetailsReactionOrAllergy extends React.Component {
   
   constructor (props) {
     super(props);
-    this.state = {medicine_2_4:'', date_2_4:'', adverse_reactions_or_allergies_2_4:''};
+    this.state = {medicine_2_4:'', date_2_4:'', adverse_reactions_or_allergies_2_4:'', created_at:'', list : []};
   }
 
   componentWillMount() {
@@ -20,6 +20,17 @@ class DetailsReactionOrAllergy extends React.Component {
         }
       }.bind(this)
     });
+
+    $.ajax({
+      url: "/api/v1/reactionorallergy/getTrashed",
+      dataType: "json",
+      method: "GET",
+      success:function(response){
+        if (response != "") {
+          this.setState({list:response});
+        }
+      }.bind(this)
+    });    
   }
 
   buildData(data) {
@@ -32,6 +43,9 @@ class DetailsReactionOrAllergy extends React.Component {
     if (data.adverse_reactions_or_allergies_2_4 != null) {
       this.setState({adverse_reactions_or_allergies_2_4: data.adverse_reactions_or_allergies_2_4});
     }
+    if (data.created_at != null) {
+      this.setState({created_at: data.created_at});
+    }    
   }
 
  render () {
@@ -49,13 +63,29 @@ class DetailsReactionOrAllergy extends React.Component {
                       <th>Medicamento</th>
                       <th>Data</th>
                       <th>Reações adversas ou alergias</th>
+                      <th>Avaliado em</th>
+                      <th>Profissional</th>                      
                     </tr>
                   </thead>
                   <tbody>
+                    {
+                      this.state.list.map(function(data){
+                        return (
+                          <tr key={data.id}>
+                            <td>{data.medicine_2_4}</td>
+                            <td>{data.date_2_4}</td>
+                            <td>{data.adverse_reactions_or_allergies_2_4}</td>
+                            <td>{data.created_at}</td>
+                            <td>{data.history.user.name}</td>
+                          </tr>
+                        )
+                      })
+                    }                  
                     <tr>
                       <td>{this.state.medicine_2_4}</td>
                       <td>{this.state.date_2_4}</td>
                       <td>{this.state.adverse_reactions_or_allergies_2_4}</td>
+                      <td>{this.state.created_at}</td>
                     </tr>
                   </tbody>
                 </table>

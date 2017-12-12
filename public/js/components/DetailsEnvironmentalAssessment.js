@@ -16,7 +16,8 @@ class DetailsEnvironmentalAssessment extends React.Component {
       box_with_easy_opening_or_presence_of_firm_curtain_2_8:'', 
       low_cabinets_no_need_for_use_of_stairs_2_8:'', 
       non_slip_floor_2_8:'', 
-      double_sided_and_firm_handrail_2_8:''
+      double_sided_and_firm_handrail_2_8:'',
+      created_at:'', list : []
     };
   }
 
@@ -31,6 +32,17 @@ class DetailsEnvironmentalAssessment extends React.Component {
         }
       }.bind(this)
     });
+
+    $.ajax({
+      url: "/api/v1/environmentalassessment/getTrashed",
+      dataType: "json",
+      method: "GET",
+      success:function(response){
+        if (response != "") {
+          this.setState({list:response});
+        }
+      }.bind(this)
+    });    
   }
 
   buildData(data) {
@@ -64,6 +76,9 @@ class DetailsEnvironmentalAssessment extends React.Component {
     if (data.double_sided_and_firm_handrail_2_8 != null) {
       this.setState({double_sided_and_firm_handrail_2_8: data.double_sided_and_firm_handrail_2_8});
     }
+    if (data.created_at != null) {
+      this.setState({created_at: data.created_at});
+    }    
   }
 
  render () {
@@ -88,9 +103,31 @@ class DetailsEnvironmentalAssessment extends React.Component {
                       <th>Armários baixos, sem necessidade do uso de escada  </th>
                       <th>Piso antiderrapante  </th>
                       <th>Corrimão dos dois lados e firme </th>
+                      <th>Avaliado em</th>
+                      <th>Profissional</th>                      
                     </tr>
                   </thead>
                   <tbody>
+                    {
+                      this.state.list.map(function(data){
+                        return (
+                          <tr key={data.id}>
+                            <td>{data.unimpeded_walking_areas_2_8}</td>
+                            <td>{data.presence_of_support_bars_2_8}</td>
+                            <td>{data.uniform_floors_and_carpets_well_fixed_2_8}</td>
+                            <td>{data.enough_lighting_brighten_inside_each_room_including_steps_2_8}</td>
+                            <td>{data.switches_accessible_at_the_entrance_two_rooms_2_8}</td>
+                            <td>{data.shower_area_with_non_slip_2_8}</td>
+                            <td>{data.box_with_easy_opening_or_presence_of_firm_curtain_2_8}</td>
+                            <td>{data.low_cabinets_no_need_for_use_of_stairs_2_8}</td>
+                            <td>{data.non_slip_floor_2_8}</td>
+                            <td>{data.double_sided_and_firm_handrail_2_8}</td>
+                            <td>{data.created_at}</td>
+                            <td>{data.history.user.name}</td>
+                          </tr>
+                        )
+                      })
+                    }                  
                     <tr>
                       <td>{this.state.unimpeded_walking_areas_2_8}</td>
                       <td>{this.state.presence_of_support_bars_2_8}</td>
@@ -102,6 +139,7 @@ class DetailsEnvironmentalAssessment extends React.Component {
                       <td>{this.state.low_cabinets_no_need_for_use_of_stairs_2_8}</td>
                       <td>{this.state.non_slip_floor_2_8}</td>
                       <td>{this.state.double_sided_and_firm_handrail_2_8}</td>
+                      <td>{this.state.created_at}</td>
                     </tr>
                   </tbody>
                 </table>

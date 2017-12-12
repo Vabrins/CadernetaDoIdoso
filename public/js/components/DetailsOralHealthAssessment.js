@@ -22,7 +22,8 @@ class DetailsOralHealthAssessment extends React.Component {
       dental_loss_in_last_year_2_11_d:'', 
       attendance_at_the_health_unit_2_11_d:'', 
       home_service_2_11_d:'', 
-      forwarding_for_specialties_dental_2_11_d:''
+      forwarding_for_specialties_dental_2_11_d:'',
+      created_at:'', list : []
     };
   }
 
@@ -37,6 +38,17 @@ class DetailsOralHealthAssessment extends React.Component {
         }
       }.bind(this)
     });
+
+    $.ajax({
+      url: "/api/v1/oralhealthassessment/getTrashed",
+      dataType: "json",
+      method: "GET",
+      success:function(response){
+        if (response != "") {
+          this.setState({list:response});
+        }
+      }.bind(this)
+    });    
   }
 
   buildData(data) {
@@ -88,6 +100,9 @@ class DetailsOralHealthAssessment extends React.Component {
     if (data.forwarding_for_specialties_dental_2_11_d != null) {
       this.setState({forwarding_for_specialties_dental_2_11_d: data.forwarding_for_specialties_dental_2_11_d});
     }
+    if (data.created_at != null) {
+      this.setState({created_at: data.created_at});
+    }    
   }
 
  render () {
@@ -117,10 +132,38 @@ class DetailsOralHealthAssessment extends React.Component {
                       <th>Perda dental no último ano</th>
                       <th>Atendimento na unidade de saúde</th>
                       <th>Atendimento no domicílio</th>
-                      <th>Encaminhamento para especialidades odontológicas</th>                  
+                      <th>Encaminhamento para especialidades odontológicas</th>
+                      <th>Avaliado em</th>
+                      <th>Profissional</th>                                      
                     </tr>
                   </thead>
                   <tbody>
+                    {
+                      this.state.list.map(function(data){
+                        return (
+                          <tr key={data.id}>
+                            <td>{data.alcohol_2_11_d}</td>
+                            <td>{data.smoke_2_11_d}</td>
+                            <td>{data.presence_of_lesion_on_the_buccal_mucosa_2_11_d}</td>
+                            <td>{data.dry_mouth_2_11_d}</td>
+                            <td>{data.white_tongue_2_11_d}</td>
+                            <td>{data.presence_of_oral_candidiasis_2_11_d}</td>
+                            <td>{data.presence_of_halitosis_2_11_d}</td>
+                            <td>{data.presence_of_bacterial_plaque_2_11_d}</td>
+                            <td>{data.plate_retentive_factors_2_11_d}</td>
+                            <td>{data.obvious_presence_of_gingivitis_2_11_d}</td>
+                            <td>{data.obvious_presence_of_periodontitis_2_11_d}</td>
+                            <td>{data.presence_of_caries_2_11_d}</td>
+                            <td>{data.dental_loss_in_last_year_2_11_d}</td>
+                            <td>{data.attendance_at_the_health_unit_2_11_d}</td>
+                            <td>{data.home_service_2_11_d}</td>
+                            <td>{data.forwarding_for_specialties_dental_2_11_d}</td>
+                            <td>{data.created_at}</td>
+                            <td>{data.history.user.name}</td>
+                          </tr>
+                        )
+                      })
+                    }                  
                     <tr>
                       <td>{this.state.alcohol_2_11_d}</td>
                       <td>{this.state.smoke_2_11_d}</td>
@@ -138,6 +181,7 @@ class DetailsOralHealthAssessment extends React.Component {
                       <td>{this.state.attendance_at_the_health_unit_2_11_d}</td>
                       <td>{this.state.home_service_2_11_d}</td>
                       <td>{this.state.forwarding_for_specialties_dental_2_11_d}</td>
+                      <td>{this.state.created_at}</td>
                     </tr>
                   </tbody>
                 </table>
