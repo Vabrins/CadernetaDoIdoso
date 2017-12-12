@@ -19,6 +19,7 @@ class Falls extends React.Component {
     this.setTheFallCausedSomeFracture29 = this.setTheFallCausedSomeFracture29.bind(this);
     this.setYouStoppedPerformSomeActivityForFearToFallAgain_2_9 = this.setYouStoppedPerformSomeActivityForFearToFallAgain_2_9.bind(this);
     this.setPlace_2_9 = this.setPlace_2_9.bind(this);
+    this.setTheFallCausedSomeFractureExtra29 = this.setTheFallCausedSomeFractureExtra29.bind(this);
   }
 
   componentWillMount() {

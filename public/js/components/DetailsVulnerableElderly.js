@@ -6,7 +6,7 @@ class DetailsVulnerableElderly extends React.Component {
   
   constructor (props) {
     super(props);
-    this.state = {age_2_6:'' ,self_perception_of_health_2_6: '' , bending_crouching_or_kneel_down_2_6:'', lift_or_load_heavy_objects_approximately_five_kg_2_6:'', raise_or_extend_arms_above_level_of_the_shoulder_2_6:'', write_or_manipulate_and_hold_small_objects_2_6:'', walk_400_meters_about_four_blocks_2_6:'', do_domestic_serv_heavy_rubbing_floor_clean_windows_2_6:''};
+    this.state = {age_2_6:'' ,self_perception_of_health_2_6: '' , bending_crouching_or_kneel_down_2_6:'', lift_or_load_heavy_objects_approximately_five_kg_2_6:'', raise_or_extend_arms_above_level_of_the_shoulder_2_6:'', write_or_manipulate_and_hold_small_objects_2_6:'', walk_400_meters_about_four_blocks_2_6:'', do_domestic_serv_heavy_rubbing_floor_clean_windows_2_6:'', created_at:'', list : []};
   }
 
   componentWillMount() {
@@ -20,6 +20,17 @@ class DetailsVulnerableElderly extends React.Component {
         }
       }.bind(this)
     });
+
+    $.ajax({
+      url: "/api/v1/vulnerableelderly/getTrashed",
+      dataType: "json",
+      method: "GET",
+      success:function(response){
+        if (response != "") {
+          this.setState({list:response});
+        }
+      }.bind(this)
+    });    
   }
 
   buildData(data) {
@@ -47,6 +58,9 @@ class DetailsVulnerableElderly extends React.Component {
     if (data.age_2_6 != null) {
       this.setState({age_2_6: data.age_2_6});
     }
+    if (data.created_at != null) {
+      this.setState({created_at: data.created_at});
+    }    
   }
 
  render () {
@@ -69,9 +83,29 @@ class DetailsVulnerableElderly extends React.Component {
                       <th>Escrever ou manusear e segurar pequenos objetos</th>
                       <th>Andar 400 metros (aproximadamente quatro quarteirões)</th>
                       <th>Fazer serviço doméstico pesado, como esfregar o chão ou limpar janelas</th>
+                      <th>Avaliado em</th>
+                      <th>Profissional</th>                      
                     </tr>
                   </thead>
                   <tbody>
+                    {
+                      this.state.list.map(function(data){
+                        return (
+                          <tr key={data.id}>
+                            <td>{data.age_2_6}</td>
+                            <td>{data.self_perception_of_health_2_6}</td>
+                            <td>{data.bending_crouching_or_kneel_down_2_6}</td>
+                            <td>{data.lift_or_load_heavy_objects_approximately_five_kg_2_6}</td>
+                            <td>{data.raise_or_extend_arms_above_level_of_the_shoulder_2_6}</td>
+                            <td>{data.write_or_manipulate_and_hold_small_objects_2_6}</td>
+                            <td>{data.walk_400_meters_about_four_blocks_2_6}</td>
+                            <td>{data.do_domestic_serv_heavy_rubbing_floor_clean_windows_2_6}</td>
+                            <td>{data.created_at}</td>
+                            <td>{data.history.user.name}</td>
+                          </tr>
+                        )
+                      })
+                    }                  
                     <tr>
                       <td>{this.state.age_2_6}</td>
                       <td>{this.state.self_perception_of_health_2_6}</td>
@@ -81,6 +115,7 @@ class DetailsVulnerableElderly extends React.Component {
                       <td>{this.state.write_or_manipulate_and_hold_small_objects_2_6}</td>
                       <td>{this.state.walk_400_meters_about_four_blocks_2_6}</td>
                       <td>{this.state.do_domestic_serv_heavy_rubbing_floor_clean_windows_2_6}</td>
+                      <td>{this.state.created_at}</td>
                     </tr>
                   </tbody>
                 </table>

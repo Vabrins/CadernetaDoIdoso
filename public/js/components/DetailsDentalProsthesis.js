@@ -14,7 +14,8 @@ class DetailsDentalProsthesis extends React.Component {
       does_not_use_and_does_not_require_prosthesis_2_11_d_a:'',
       does_not_use_but_needs_prosthesis_2_11_d_a:'', 
       uses_adapted_without_exchange_2_11_d_a:'', 
-      uses_not_adapted_needs_exchange_2_11_d_a:''
+      uses_not_adapted_needs_exchange_2_11_d_a:'',
+      created_at:'', list : []
     };
   }
 
@@ -29,6 +30,17 @@ class DetailsDentalProsthesis extends React.Component {
         }
       }.bind(this)
     });
+
+    $.ajax({
+      url: "/api/v1/dentalprosthesis/getTrashed",
+      dataType: "json",
+      method: "GET",
+      success:function(response){
+        if (response != "") {
+          this.setState({list:response});
+        }
+      }.bind(this)
+    });    
   }
 
   buildData(data) {
@@ -56,6 +68,9 @@ class DetailsDentalProsthesis extends React.Component {
     if (data.uses_not_adapted_needs_exchange_2_11_d_a != null) {
       this.setState({uses_not_adapted_needs_exchange_2_11_d_a: data.uses_not_adapted_needs_exchange_2_11_d_a});
     }
+    if (data.created_at != null) {
+      this.setState({created_at: data.created_at});
+    }    
   }
 
  render () {
@@ -78,9 +93,29 @@ class DetailsDentalProsthesis extends React.Component {
                       <th>Não utiliza, mas necessita da prótese</th>
                       <th>Utiliza (adaptada/sem necessidade de troca)</th>
                       <th>Utiliza (não adaptada/necessita de troca)</th>
+                      <th>Avaliado em</th>
+                      <th>Profissional</th>                      
                     </tr>
                   </thead>
                   <tbody>
+                    {
+                      this.state.list.map(function(data){
+                        return (
+                          <tr key={data.id}>
+                            <td>{data.superior_2_11_d_a}</td>
+                            <td>{data.inferior_2_11_d_a}</td>
+                            <td>{data.total_prosthesis_2_11_d_a}</td>
+                            <td>{data.partial_prosthesis_2_11_d_a}</td>
+                            <td>{data.does_not_use_and_does_not_require_prosthesis_2_11_d_a}</td>
+                            <td>{data.does_not_use_but_needs_prosthesis_2_11_d_a}</td>
+                            <td>{data.uses_adapted_without_exchange_2_11_d_a}</td>
+                            <td>{data.uses_not_adapted_needs_exchange_2_11_d_a}</td>
+                            <td>{data.created_at}</td>
+                            <td>{data.history.user.name}</td>
+                          </tr>
+                        )
+                      })
+                    }                  
                     <tr>
                       <td>{this.state.superior_2_11_d_a}</td>
                       <td>{this.state.inferior_2_11_d_a}</td>
@@ -90,6 +125,7 @@ class DetailsDentalProsthesis extends React.Component {
                       <td>{this.state.does_not_use_but_needs_prosthesis_2_11_d_a}</td>
                       <td>{this.state.uses_adapted_without_exchange_2_11_d_a}</td>
                       <td>{this.state.uses_not_adapted_needs_exchange_2_11_d_a}</td>
+                      <td>{this.state.created_at}</td>
                     </tr>
                   </tbody>
                 </table>

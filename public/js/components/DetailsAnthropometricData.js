@@ -6,7 +6,7 @@ class DetailsAnthropometricData extends React.Component {
   
   constructor (props) {
     super(props);
-    this.state = {weight_2_5:'', height_2_5:'', imc_weight_height_2_5:'', calf_perimeter_pp_left_2_5:'', you_have_exp_loss_uni_weight_min_body_last_year_2_5:''};
+    this.state = {weight_2_5:'', height_2_5:'', imc_weight_height_2_5:'', calf_perimeter_pp_left_2_5:'', you_have_exp_loss_uni_weight_min_body_last_year_2_5:'', created_at:'', list : []};
   }
 
   componentWillMount() {
@@ -17,6 +17,17 @@ class DetailsAnthropometricData extends React.Component {
       success:function(response){
         if (response != "") {
           this.buildData(response[0]);
+        }
+      }.bind(this)
+    });
+
+    $.ajax({
+      url: "/api/v1/anthropometricdata/getTrashed",
+      dataType: "json",
+      method: "GET",
+      success:function(response){
+        if (response != "") {
+          this.setState({list:response});
         }
       }.bind(this)
     });
@@ -38,6 +49,9 @@ class DetailsAnthropometricData extends React.Component {
     if (data.you_have_exp_loss_uni_weight_min_body_last_year_2_5 != null) {
       this.setState({you_have_exp_loss_uni_weight_min_body_last_year_2_5: data.you_have_exp_loss_uni_weight_min_body_last_year_2_5});
     }
+    if (data.created_at != null) {
+      this.setState({created_at: data.created_at});
+    }    
   }
 
  render () {
@@ -57,15 +71,33 @@ class DetailsAnthropometricData extends React.Component {
                       <th>IMC</th>
                       <th>Perímetro da panturrilha (PP) esquerda</th>
                       <th>Você apresentou perda de peso não intencional de, no mínimo, 4,5 kg ou de 5% do seu peso corporal no último ano? </th>
+                      <th>Avaliado em</th>
+                      <th>Profissional</th>                      
                     </tr>
                   </thead>
                   <tbody>
+                    {
+                      this.state.list.map(function(data){
+                        return (
+                          <tr key={data.id}>
+                            <td>{data.weight_2_5}</td>
+                            <td>{data.height_2_5}</td>
+                            <td>{data.imc_weight_height_2_5}</td>
+                            <td>{data.calf_perimeter_pp_left_2_5}</td>
+                            <td>{data.you_have_exp_loss_uni_weight_min_body_last_year_2_5}</td>
+                            <td>{data.created_at}</td>
+                            <td>{data.history.user.name}</td>
+                          </tr>
+                        )
+                      })
+                    }                  
                     <tr>
-                      <td>{this.weight_2_5}</td>
-                      <td>{this.height_2_5}</td>
-                      <td>{this.imc_weight_height_2_5}</td>
-                      <td>{this.calf_perimeter_pp_left_2_5}</td>
-                      <td>{this.you_have_exp_loss_uni_weight_min_body_last_year_2_5}</td>
+                      <td>{this.state.weight_2_5}</td>
+                      <td>{this.state.height_2_5}</td>
+                      <td>{this.state.imc_weight_height_2_5}</td>
+                      <td>{this.state.calf_perimeter_pp_left_2_5}</td>
+                      <td>{this.state.you_have_exp_loss_uni_weight_min_body_last_year_2_5}</td>
+                      <td>{this.state.created_at}</td>                      
                     </tr>
                   </tbody>
                 </table>

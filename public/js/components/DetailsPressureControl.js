@@ -6,7 +6,7 @@ class DetailsPressureControl extends React.Component {
   
   constructor (props) {
     super(props);
-    this.state = {date_2_11_a:'', pa_2_11_a:''};
+    this.state = {date_2_11_a:'', pa_2_11_a:'', created_at:'', list : []};
   }
 
   componentWillMount() {
@@ -20,6 +20,17 @@ class DetailsPressureControl extends React.Component {
         }
       }.bind(this)
     });
+
+    $.ajax({
+      url: "/api/v1/pressurecontrol/getTrashed",
+      dataType: "json",
+      method: "GET",
+      success:function(response){
+        if (response != "") {
+          this.setState({list:response});
+        }
+      }.bind(this)
+    });    
   }
 
   buildData(data) {
@@ -29,6 +40,9 @@ class DetailsPressureControl extends React.Component {
     if (data.pa_2_11_a != null) {
       this.setState({pa_2_11_a: data.pa_2_11_a});
     }
+    if (data.created_at != null) {
+      this.setState({created_at: data.created_at});
+    }    
   }
 
  render () {
@@ -45,12 +59,27 @@ class DetailsPressureControl extends React.Component {
                     <tr>
                       <th>Data</th>
                       <th>Pressão arterial</th>
+                      <th>Avaliado em</th>
+                      <th>Profissional</th>                      
                     </tr>
                   </thead>
                   <tbody>
+                    {
+                      this.state.list.map(function(data){
+                        return (
+                          <tr key={data.id}>
+                            <td>{data.date_2_11_a}</td>
+                            <td>{data.pa_2_11_a}</td>
+                            <td>{data.created_at}</td>
+                            <td>{data.history.user.name}</td>
+                          </tr>
+                        )
+                      })
+                    }                  
                     <tr>
                       <td>{this.state.date_2_11_a}</td>
                       <td>{this.state.pa_2_11_a}</td>
+                      <td>{this.state.created_at}</td>
                     </tr>
                   </tbody>
                 </table>

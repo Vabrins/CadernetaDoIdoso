@@ -6,7 +6,7 @@ class DetailsSurgeriesPerformed extends React.Component {
   
   constructor (props) {
     super(props);
-    this.state = {surgery_2_3:'', year_2_3:'', comments_2_3:''};
+    this.state = {surgery_2_3:'', year_2_3:'', comments_2_3:'', created_at:'', list : []};
   }
 
   componentWillMount() {
@@ -20,6 +20,17 @@ class DetailsSurgeriesPerformed extends React.Component {
         }
       }.bind(this)
     });
+
+    $.ajax({
+      url: "/api/v1/surgeriesperformed/getTrashed",
+      dataType: "json",
+      method: "GET",
+      success:function(response){
+        if (response != "") {
+          this.setState({list:response});
+        }
+      }.bind(this)
+    });    
   }
 
   buildData(data) {
@@ -32,6 +43,9 @@ class DetailsSurgeriesPerformed extends React.Component {
     if (data.comments_2_3 != null) {
       this.setState({comments_2_3: data.comments_2_3});
     }
+    if (data.created_at != null) {
+      this.setState({created_at: data.created_at});
+    }    
   }
 
  render () {
@@ -49,13 +63,29 @@ class DetailsSurgeriesPerformed extends React.Component {
                       <th>Cirurgia</th>
                       <th>Ano</th>
                       <th>Observações</th>
+                      <th>Avaliado em</th>
+                      <th>Profissional</th>                      
                     </tr>
                   </thead>
                   <tbody>
+                    {
+                      this.state.list.map(function(data){
+                        return (
+                          <tr key={data.id}>
+                            <td>{data.surgery_2_3}</td>
+                            <td>{data.year_2_3}</td>
+                            <td>{data.comments_2_3}</td>
+                            <td>{data.created_at}</td>
+                            <td>{data.history.user.name}</td>
+                          </tr>
+                        )
+                      })
+                    }                  
                     <tr>
                       <td>{this.state.surgery_2_3}</td>
                       <td>{this.state.year_2_3}</td>
                       <td>{this.state.comments_2_3}</td>
+                      <td>{this.state.created_at}</td>
                     </tr>
                   </tbody>
                 </table>

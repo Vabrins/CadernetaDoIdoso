@@ -6,7 +6,7 @@ class DetailsFalls extends React.Component {
   
   constructor (props) {
     super(props);
-    this.state = {date_of_fall_month_2_9:'', date_of_fall_year_2_9:'', the_fall_caused_some_fracture_2_9:'', the_fall_caused_some_fracture_extra_2_9:'', you_stopped_perform_some_activity_for_fear_to_fall_again_2_9:'', place_2_9:''};
+    this.state = {date_of_fall_month_2_9:'', date_of_fall_year_2_9:'', the_fall_caused_some_fracture_2_9:'', the_fall_caused_some_fracture_extra_2_9:'', you_stopped_perform_some_activity_for_fear_to_fall_again_2_9:'', place_2_9:'', created_at:'', list : []};
   }
 
   componentWillMount() {
@@ -20,6 +20,17 @@ class DetailsFalls extends React.Component {
         }
       }.bind(this)
     });
+
+    $.ajax({
+      url: "/api/v1/falls/getTrashed",
+      dataType: "json",
+      method: "GET",
+      success:function(response){
+        if (response != "") {
+          this.setState({list:response});
+        }
+      }.bind(this)
+    });    
   }
 
   buildData(data) {
@@ -41,6 +52,9 @@ class DetailsFalls extends React.Component {
     if (data.place_2_9 != null) {
       this.setState({place_2_9: data.place_2_9});
     }
+    if (data.created_at != null) {
+      this.setState({created_at: data.created_at});
+    }    
   }
 
  render () {
@@ -61,9 +75,27 @@ class DetailsFalls extends React.Component {
                       <th>A queda causou alguma fratura?</th>
                       <th>Qual?</th>
                       <th>Você parou de realizar alguma atividade por medo de cair novamente?</th>
+                      <th>Avaliado em</th>
+                      <th>Profissional</th>                      
                     </tr>
                   </thead>
                   <tbody>
+                    {
+                      this.state.list.map(function(data){
+                        return (
+                          <tr key={data.id}>
+                            <td>{data.date_of_fall_month_2_9}</td>
+                            <td>{data.date_of_fall_year_2_9}</td>
+                            <td>{data.place_2_9}</td>
+                            <td>{data.the_fall_caused_some_fracture_2_9}</td>
+                            <td>{data.the_fall_caused_some_fracture_extra_2_9}</td>
+                            <td>{data.you_stopped_perform_some_activity_for_fear_to_fall_again_2_9}</td>
+                            <td>{data.created_at}</td>
+                            <td>{data.history.user.name}</td>
+                          </tr>
+                        )
+                      })
+                    }                  
                     <tr>
                       <td>{this.state.date_of_fall_month_2_9}</td>
                       <td>{this.state.date_of_fall_year_2_9}</td>
@@ -71,6 +103,7 @@ class DetailsFalls extends React.Component {
                       <td>{this.state.the_fall_caused_some_fracture_2_9}</td>
                       <td>{this.state.the_fall_caused_some_fracture_extra_2_9}</td>
                       <td>{this.state.you_stopped_perform_some_activity_for_fear_to_fall_again_2_9}</td>
+                      <td>{this.state.created_at}</td>
                     </tr>
                   </tbody>
                 </table>
