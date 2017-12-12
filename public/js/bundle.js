@@ -60001,11 +60001,11 @@ class App extends __WEBPACK_IMPORTED_MODULE_0_react___default.a.Component {
   manipulateLayout() {
     let idElderly = this.getCookie('id_elderly');
 
-    /*if (idElderly == undefined) {*/
-    this.setState({ elderlyLogged: "listItem" });
-    /*} else {*/
-    /*this.setState({ elderlyLogged: "none" });*/
-    /*}*/
+    if (idElderly == undefined) {
+      this.setState({ elderlyLogged: "listItem" });
+    } else {
+      this.setState({ elderlyLogged: "none" });
+    }
   }
 
   getCookie(name) {

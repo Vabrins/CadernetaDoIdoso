@@ -72,11 +72,11 @@ class App extends React.Component {
   manipulateLayout () {
     let idElderly = this.getCookie('id_elderly');
 
-    /*if (idElderly == undefined) {*/
+    if (idElderly == undefined) {
       this.setState({ elderlyLogged: "listItem" });
-    /*} else {*/
-      /*this.setState({ elderlyLogged: "none" });*/
-    /*}*/
+    } else {
+      this.setState({ elderlyLogged: "none" });
+    }
   }
 
   getCookie (name) {
