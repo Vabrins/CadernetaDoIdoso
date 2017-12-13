@@ -47,34 +47,34 @@ class DetailsEnvironmentalAssessment extends React.Component {
 
   buildData(data) {
     if (data.unimpeded_walking_areas_2_8 != null) {
-      this.setState({unimpeded_walking_areas_2_8: data.unimpeded_walking_areas_2_8});
+      this.setState({unimpeded_walking_areas_2_8: (data.unimpeded_walking_areas_2_8 == "1") ? 'SIM' : 'NÃO'});
     }
     if (data.presence_of_support_bars_2_8 != null) {
-      this.setState({presence_of_support_bars_2_8: data.presence_of_support_bars_2_8});
+      this.setState({presence_of_support_bars_2_8: (data.presence_of_support_bars_2_8 == "1") ? 'SIM' : 'NÃO'});
     }
     if (data.uniform_floors_and_carpets_well_fixed_2_8 != null) {
-      this.setState({uniform_floors_and_carpets_well_fixed_2_8: data.uniform_floors_and_carpets_well_fixed_2_8});
+      this.setState({uniform_floors_and_carpets_well_fixed_2_8: (data.uniform_floors_and_carpets_well_fixed_2_8 == "1") ? 'SIM' : 'NÃO'});
     }
     if (data.enough_lighting_brighten_inside_each_room_including_steps_2_8 != null) {
-      this.setState({enough_lighting_brighten_inside_each_room_including_steps_2_8: data.enough_lighting_brighten_inside_each_room_including_steps_2_8});
+      this.setState({enough_lighting_brighten_inside_each_room_including_steps_2_8: (data.enough_lighting_brighten_inside_each_room_including_steps_2_8 == "1") ? 'SIM' : 'NÃO'});
     }
     if (data.switches_accessible_at_the_entrance_two_rooms_2_8 != null) {
-      this.setState({switches_accessible_at_the_entrance_two_rooms_2_8: data.switches_accessible_at_the_entrance_two_rooms_2_8});
+      this.setState({switches_accessible_at_the_entrance_two_rooms_2_8: (data.switches_accessible_at_the_entrance_two_rooms_2_8 == "1") ? 'SIM' : 'NÃO'});
     }
     if (data.shower_area_with_non_slip_2_8 != null) {
-      this.setState({shower_area_with_non_slip_2_8: data.shower_area_with_non_slip_2_8});
+      this.setState({shower_area_with_non_slip_2_8: (data.shower_area_with_non_slip_2_8 == "1") ? 'SIM' : 'NÃO'});
     }
     if (data.box_with_easy_opening_or_presence_of_firm_curtain_2_8 != null) {
-      this.setState({box_with_easy_opening_or_presence_of_firm_curtain_2_8: data.box_with_easy_opening_or_presence_of_firm_curtain_2_8});
+      this.setState({box_with_easy_opening_or_presence_of_firm_curtain_2_8: (data.box_with_easy_opening_or_presence_of_firm_curtain_2_8 == "1") ? 'SIM' : 'NÃO'});
     }
     if (data.low_cabinets_no_need_for_use_of_stairs_2_8 != null) {
-      this.setState({low_cabinets_no_need_for_use_of_stairs_2_8: data.low_cabinets_no_need_for_use_of_stairs_2_8});
+      this.setState({low_cabinets_no_need_for_use_of_stairs_2_8: (data.low_cabinets_no_need_for_use_of_stairs_2_8 == "1") ? 'SIM' : 'NÃO'});
     }
     if (data.non_slip_floor_2_8 != null) {
-      this.setState({non_slip_floor_2_8: data.non_slip_floor_2_8});
+      this.setState({non_slip_floor_2_8: (data.non_slip_floor_2_8 == "1") ? 'SIM' : 'NÃO'});
     }
     if (data.double_sided_and_firm_handrail_2_8 != null) {
-      this.setState({double_sided_and_firm_handrail_2_8: data.double_sided_and_firm_handrail_2_8});
+      this.setState({double_sided_and_firm_handrail_2_8: (data.double_sided_and_firm_handrail_2_8 == "1") ? 'SIM' : 'NÃO'});
     }
     if (data.created_at != null) {
       this.setState({created_at: data.created_at});
@@ -112,16 +112,16 @@ class DetailsEnvironmentalAssessment extends React.Component {
                       this.state.list.map(function(data){
                         return (
                           <tr key={data.id}>
-                            <td>{data.unimpeded_walking_areas_2_8}</td>
-                            <td>{data.presence_of_support_bars_2_8}</td>
-                            <td>{data.uniform_floors_and_carpets_well_fixed_2_8}</td>
-                            <td>{data.enough_lighting_brighten_inside_each_room_including_steps_2_8}</td>
-                            <td>{data.switches_accessible_at_the_entrance_two_rooms_2_8}</td>
-                            <td>{data.shower_area_with_non_slip_2_8}</td>
-                            <td>{data.box_with_easy_opening_or_presence_of_firm_curtain_2_8}</td>
-                            <td>{data.low_cabinets_no_need_for_use_of_stairs_2_8}</td>
-                            <td>{data.non_slip_floor_2_8}</td>
-                            <td>{data.double_sided_and_firm_handrail_2_8}</td>
+                            <td>{(data.unimpeded_walking_areas_2_8 == "1") ? 'SIM' : 'NÃO'}</td>
+                            <td>{(data.presence_of_support_bars_2_8 == "1") ? 'SIM' : 'NÃO'}</td>
+                            <td>{(data.uniform_floors_and_carpets_well_fixed_2_8 == "1") ? 'SIM' : 'NÃO'}</td>
+                            <td>{(data.enough_lighting_brighten_inside_each_room_including_steps_2_8 == "1") ? 'SIM' : 'NÃO'}</td>
+                            <td>{(data.switches_accessible_at_the_entrance_two_rooms_2_8 == "1") ? 'SIM' : 'NÃO'}</td>
+                            <td>{(data.shower_area_with_non_slip_2_8 == "1") ? 'SIM' : 'NÃO'}</td>
+                            <td>{(data.box_with_easy_opening_or_presence_of_firm_curtain_2_8 == "1") ? 'SIM' : 'NÃO'}</td>
+                            <td>{(data.low_cabinets_no_need_for_use_of_stairs_2_8 == "1") ? 'SIM' : 'NÃO'}</td>
+                            <td>{(data.non_slip_floor_2_8 == "1") ? 'SIM' : 'NÃO'}</td>
+                            <td>{(data.double_sided_and_firm_handrail_2_8 == "1") ? 'SIM' : 'NÃO'}</td>
                             <td>{data.created_at}</td>
                             <td>{data.history.user.name}</td>
                           </tr>

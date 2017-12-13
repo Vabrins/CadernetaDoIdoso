@@ -42,19 +42,19 @@ class DetailsComplementaryInformation extends React.Component {
 
   buildData(data) {
     if (data.some_family_mem_fri_said_that_are_get_forg_2_7 != null) {
-      this.setState({some_family_mem_fri_said_that_are_get_forg_2_7: data.some_family_mem_fri_said_that_are_get_forg_2_7});
+      this.setState({some_family_mem_fri_said_that_are_get_forg_2_7: (data.some_family_mem_fri_said_that_are_get_forg_2_7 == "1") ? 'SIM' : 'NÃO'});
     }
     if (data.forgetfulness_is_getting_worse_in_last_months_2_7 != null) {
-      this.setState({forgetfulness_is_getting_worse_in_last_months_2_7: data.forgetfulness_is_getting_worse_in_last_months_2_7});
+      this.setState({forgetfulness_is_getting_worse_in_last_months_2_7: (data.forgetfulness_is_getting_worse_in_last_months_2_7 == "1") ? 'SIM' : 'NÃO'});
     }
     if (data.forgetfulness_is_preventing_of_some_daily_activity_2_7 != null) {
-      this.setState({forgetfulness_is_preventing_of_some_daily_activity_2_7: data.forgetfulness_is_preventing_of_some_daily_activity_2_7});
+      this.setState({forgetfulness_is_preventing_of_some_daily_activity_2_7: (data.forgetfulness_is_preventing_of_some_daily_activity_2_7 == "1") ? 'SIM' : 'NÃO'});
     }
     if (data.in_the_last_mon_were_dismayed_sad_hop_2_7 != null) {
-      this.setState({in_the_last_mon_were_dismayed_sad_hop_2_7: data.in_the_last_mon_were_dismayed_sad_hop_2_7});
+      this.setState({in_the_last_mon_were_dismayed_sad_hop_2_7: (data.in_the_last_mon_were_dismayed_sad_hop_2_7 == "1") ? 'SIM' : 'NÃO'});
     }
     if (data.in_the_last_mon_lost_int_pleas_act_form_pleas_2_7 != null) {
-      this.setState({in_the_last_mon_lost_int_pleas_act_form_pleas_2_7: data.in_the_last_mon_lost_int_pleas_act_form_pleas_2_7});
+      this.setState({in_the_last_mon_lost_int_pleas_act_form_pleas_2_7: (data.in_the_last_mon_lost_int_pleas_act_form_pleas_2_7 == "1") ? 'SIM' : 'NÃO'});
     }
     if (data.created_at != null) {
       this.setState({created_at: data.created_at});
@@ -87,11 +87,11 @@ class DetailsComplementaryInformation extends React.Component {
                       this.state.list.map(function(data){
                         return (
                           <tr key={data.id}>
-                            <td>{data.some_family_mem_fri_said_that_are_get_forg_2_7}</td>
-                            <td>{data.forgetfulness_is_getting_worse_in_last_months_2_7}</td>
-                            <td>{data.forgetfulness_is_preventing_of_some_daily_activity_2_7}</td>
-                            <td>{data.in_the_last_mon_were_dismayed_sad_hop_2_7}</td>
-                            <td>{data.in_the_last_mon_lost_int_pleas_act_form_pleas_2_7}</td>
+                            <td>{(data.some_family_mem_fri_said_that_are_get_forg_2_7 == "1") ? 'SIM' : 'NÃO'}</td>
+                            <td>{(data.forgetfulness_is_getting_worse_in_last_months_2_7 == "1") ? 'SIM' : 'NÃO'}</td>
+                            <td>{(data.forgetfulness_is_preventing_of_some_daily_activity_2_7 == "1") ? 'SIM' : 'NÃO'}</td>
+                            <td>{(data.in_the_last_mon_were_dismayed_sad_hop_2_7 == "1") ? 'SIM' : 'NÃO'}</td>
+                            <td>{(data.in_the_last_mon_lost_int_pleas_act_form_pleas_2_7 == "1") ? 'SIM' : 'NÃO'}</td>
                             <td>{data.created_at}</td>
                             <td>{data.history.user.name}</td>
                           </tr>

@@ -36,10 +36,10 @@ class DetailsGlucoseControl extends React.Component {
 
   buildData(data) {
     if (data.fasting_2_11_b != null) {
-      this.setState({fasting_2_11_b: data.fasting_2_11_b});
+      this.setState({fasting_2_11_b: (data.fasting_2_11_b == "1") ? 'SIM' : 'NÃO'});
     }
     if (data.casual_2_11_b != null) {
-      this.setState({casual_2_11_b: data.casual_2_11_b});
+      this.setState({casual_2_11_b: (data.casual_2_11_b == "1") ? 'SIM' : 'NÃO'});
     }
     if (data.mg_dl_2_11_b != null) {
       this.setState({mg_dl_2_11_b: data.mg_dl_2_11_b});
@@ -73,8 +73,8 @@ class DetailsGlucoseControl extends React.Component {
                       this.state.list.map(function(data){
                         return (
                           <tr key={data.id}>
-                            <td>{data.fasting_2_11_b}</td>
-                            <td>{data.casual_2_11_b}</td>
+                            <td>{(data.fasting_2_11_b == "1") ? 'SIM' : 'NÃO'}</td>
+                            <td>{(data.casual_2_11_b == "1") ? 'SIM' : 'NÃO'}</td>
                             <td>{data.mg_dl_2_11_b}</td>
                             <td>{data.created_at}</td>
                             <td>{data.history.user.name}</td>

@@ -47,7 +47,7 @@ class DetailsAnthropometricData extends React.Component {
       this.setState({calf_perimeter_pp_left_2_5: data.calf_perimeter_pp_left_2_5});
     }
     if (data.you_have_exp_loss_uni_weight_min_body_last_year_2_5 != null) {
-      this.setState({you_have_exp_loss_uni_weight_min_body_last_year_2_5: data.you_have_exp_loss_uni_weight_min_body_last_year_2_5});
+      this.setState({you_have_exp_loss_uni_weight_min_body_last_year_2_5: (data.you_have_exp_loss_uni_weight_min_body_last_year_2_5 == "1") ? 'SIM' : 'NÃO'});      
     }
     if (data.created_at != null) {
       this.setState({created_at: data.created_at});
@@ -59,7 +59,7 @@ class DetailsAnthropometricData extends React.Component {
         <div className="container" >
           <div className="card mb-3">
             <div className="card-header">
-              <i className="fa fa-table"></i> Dados antropométrico
+              <i className="fa fa-table"></i> Dados antropométricos
             </div>
             <div className="card-body">
               <div className="table-responsive">
@@ -84,7 +84,7 @@ class DetailsAnthropometricData extends React.Component {
                             <td>{data.height_2_5}</td>
                             <td>{data.imc_weight_height_2_5}</td>
                             <td>{data.calf_perimeter_pp_left_2_5}</td>
-                            <td>{data.you_have_exp_loss_uni_weight_min_body_last_year_2_5}</td>
+                            <td>{(data.you_have_exp_loss_uni_weight_min_body_last_year_2_5 == "1") ? 'SIM' : 'NÃO'}</td>
                             <td>{data.created_at}</td>
                             <td>{data.history.user.name}</td>
                           </tr>

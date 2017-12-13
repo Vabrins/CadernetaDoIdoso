@@ -35,19 +35,19 @@ class DetailsDisabilities extends React.Component {
 
   buildData(data) {
     if (data.stopped_shopping_2_6_a != null) {
-      this.setState({stopped_shopping_2_6_a: data.stopped_shopping_2_6_a});
+      this.setState({stopped_shopping_2_6_a: (data.stopped_shopping_2_6_a == "1") ? 'SIM' : 'NÃO'});
     }
     if (data.stop_tracking_your_money_2_6_a != null) {
-      this.setState({stop_tracking_your_money_2_6_a: data.stop_tracking_your_money_2_6_a});
+      this.setState({stop_tracking_your_money_2_6_a: (data.stop_tracking_your_money_2_6_a == "1") ? 'SIM' : 'NÃO'});
     }
     if (data.stopped_walking_in_the_house_2_6_a != null) {
-      this.setState({stopped_walking_in_the_house_2_6_a: data.stopped_walking_in_the_house_2_6_a});
+      this.setState({stopped_walking_in_the_house_2_6_a: (data.stopped_walking_in_the_house_2_6_a == "1") ? 'SIM' : 'NÃO'});
     }
     if (data.stopped_doing_light_household_chores_2_6_a != null) {
-      this.setState({stopped_doing_light_household_chores_2_6_a: data.stopped_doing_light_household_chores_2_6_a});
+      this.setState({stopped_doing_light_household_chores_2_6_a: (data.stopped_doing_light_household_chores_2_6_a == "1") ? 'SIM' : 'NÃO'});
     }
     if (data.stop_taking_showers_alone_2_6_a != null) {
-      this.setState({stop_taking_showers_alone_2_6_a: data.stop_taking_showers_alone_2_6_a});
+      this.setState({stop_taking_showers_alone_2_6_a: (data.stop_taking_showers_alone_2_6_a == "1") ? 'SIM' : 'NÃO'});
     }
     if (data.created_at != null) {
       this.setState({created_at: data.created_at});
@@ -80,11 +80,11 @@ class DetailsDisabilities extends React.Component {
                       this.state.list.map(function(data){
                         return (
                           <tr key={data.id}>
-                            <td>{data.stopped_shopping_2_6_a}</td>
-                            <td>{data.stop_tracking_your_money_2_6_a}</td>
-                            <td>{data.stopped_walking_in_the_house_2_6_a}</td>
-                            <td>{data.stopped_doing_light_household_chores_2_6_a}</td>
-                            <td>{data.stop_taking_showers_alone_2_6_a}</td>
+                            <td>{(data.stopped_shopping_2_6_a == "1") ? 'SIM' : 'NÃO'}</td>
+                            <td>{(data.stop_tracking_your_money_2_6_a == "1") ? 'SIM' : 'NÃO'}</td>
+                            <td>{(data.stopped_walking_in_the_house_2_6_a == "1") ? 'SIM' : 'NÃO'}</td>
+                            <td>{(data.stopped_doing_light_household_chores_2_6_a == "1") ? 'SIM' : 'NÃO'}</td>
+                            <td>{(data.stop_taking_showers_alone_2_6_a == "1") ? 'SIM' : 'NÃO'}</td>
                             <td>{data.created_at}</td>
                             <td>{data.history.user.name}</td>
                           </tr>

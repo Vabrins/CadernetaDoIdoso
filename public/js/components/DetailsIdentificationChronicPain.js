@@ -41,16 +41,16 @@ class DetailsIdentificationChronicPain extends React.Component {
 
   buildData(data) {
     if (data.do_you_have_pain_last_same_more_than_3_mon_2_10 != null) {
-      this.setState({do_you_have_pain_last_same_more_than_3_mon_2_10: data.do_you_have_pain_last_same_more_than_3_mon_2_10});
+      this.setState({do_you_have_pain_last_same_more_than_3_mon_2_10: (data.do_you_have_pain_last_same_more_than_3_mon_2_10 == "1") ? 'SIM' : 'NÃO'});
     }
     if (data.the_pain_is_like_a_shock_or_a_burning_2_10 != null) {
-      this.setState({the_pain_is_like_a_shock_or_a_burning_2_10: data.the_pain_is_like_a_shock_or_a_burning_2_10});
+      this.setState({the_pain_is_like_a_shock_or_a_burning_2_10: (data.the_pain_is_like_a_shock_or_a_burning_2_10 == "1") ? 'SIM' : 'NÃO'});
     }
     if (data.does_the_pain_get_worse_when_walking_2_10 != null) {
-      this.setState({does_the_pain_get_worse_when_walking_2_10: data.does_the_pain_get_worse_when_walking_2_10});
+      this.setState({does_the_pain_get_worse_when_walking_2_10: (data.does_the_pain_get_worse_when_walking_2_10 == "1") ? 'SIM' : 'NÃO'});
     }
     if (data.does_pain_improve_with_rest_2_10 != null) {
-      this.setState({does_pain_improve_with_rest_2_10: data.does_pain_improve_with_rest_2_10});
+      this.setState({does_pain_improve_with_rest_2_10: (data.does_pain_improve_with_rest_2_10 == "1") ? 'SIM' : 'NÃO'});
     }
     if (data.created_at != null) {
       this.setState({created_at: data.created_at});
@@ -82,10 +82,10 @@ class DetailsIdentificationChronicPain extends React.Component {
                       this.state.list.map(function(data){
                         return (
                           <tr key={data.id}>
-                            <td>{data.do_you_have_pain_last_same_more_than_3_mon_2_10}</td>
-                            <td>{data.the_pain_is_like_a_shock_or_a_burning_2_10}</td>
-                            <td>{data.does_the_pain_get_worse_when_walking_2_10}</td>
-                            <td>{data.does_pain_improve_with_rest_2_10}</td>
+                            <td>{(data.do_you_have_pain_last_same_more_than_3_mon_2_10 == "1") ? 'SIM' : 'NÃO'}</td>
+                            <td>{(data.the_pain_is_like_a_shock_or_a_burning_2_10 == "1") ? 'SIM' : 'NÃO'}</td>
+                            <td>{(data.does_the_pain_get_worse_when_walking_2_10 == "1") ? 'SIM' : 'NÃO'}</td>
+                            <td>{(data.does_pain_improve_with_rest_2_10 == "1") ? 'SIM' : 'NÃO'}</td>
                             <td>{data.created_at}</td>
                             <td>{data.history.user.name}</td>
                           </tr>

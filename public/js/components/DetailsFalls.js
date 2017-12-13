@@ -41,13 +41,13 @@ class DetailsFalls extends React.Component {
       this.setState({date_of_fall_year_2_9: data.date_of_fall_year_2_9});
     }
     if (data.the_fall_caused_some_fracture_2_9 != null) {
-      this.setState({the_fall_caused_some_fracture_2_9: data.the_fall_caused_some_fracture_2_9});
+      this.setState({the_fall_caused_some_fracture_2_9: (data.the_fall_caused_some_fracture_2_9 == "1") ? 'SIM' : 'NÃO'});
     }
     if (data.the_fall_caused_some_fracture_extra_2_9 != null) {
       this.setState({the_fall_caused_some_fracture_extra_2_9: data.the_fall_caused_some_fracture_extra_2_9});
     }
     if (data.you_stopped_perform_some_activity_for_fear_to_fall_again_2_9 != null) {
-      this.setState({you_stopped_perform_some_activity_for_fear_to_fall_again_2_9: data.you_stopped_perform_some_activity_for_fear_to_fall_again_2_9});
+      this.setState({you_stopped_perform_some_activity_for_fear_to_fall_again_2_9: (data.you_stopped_perform_some_activity_for_fear_to_fall_again_2_9 == "1") ? 'SIM' : 'NÃO'});
     }
     if (data.place_2_9 != null) {
       this.setState({place_2_9: data.place_2_9});
@@ -86,10 +86,10 @@ class DetailsFalls extends React.Component {
                           <tr key={data.id}>
                             <td>{data.date_of_fall_month_2_9}</td>
                             <td>{data.date_of_fall_year_2_9}</td>
-                            <td>{data.place_2_9}</td>
-                            <td>{data.the_fall_caused_some_fracture_2_9}</td>
+                            <td>{data.place_2_9}</td>                          
+                            <td>{(data.the_fall_caused_some_fracture_2_9 == "1") ? 'SIM' : 'NÃO'}</td>
                             <td>{data.the_fall_caused_some_fracture_extra_2_9}</td>
-                            <td>{data.you_stopped_perform_some_activity_for_fear_to_fall_again_2_9}</td>
+                            <td>{(data.you_stopped_perform_some_activity_for_fear_to_fall_again_2_9 == "1") ? 'SIM' : 'NÃO'}</td>
                             <td>{data.created_at}</td>
                             <td>{data.history.user.name}</td>
                           </tr>

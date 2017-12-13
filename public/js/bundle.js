@@ -91069,7 +91069,7 @@ class DetailsMedicinesHerbalRemedies extends __WEBPACK_IMPORTED_MODULE_0_react__
       this.setState({ start_date_or_time_of_use_2_1: data.start_date_or_time_of_use_2_1 });
     }
     if (data.concomitant_use_of_five_or_more_medicines_2_1 != null) {
-      this.setState({ concomitant_use_of_five_or_more_medicines_2_1: data.concomitant_use_of_five_or_more_medicines_2_1 });
+      this.setState({ concomitant_use_of_five_or_more_medicines_2_1: data.concomitant_use_of_five_or_more_medicines_2_1 == "1" ? 'SIM' : 'NÃO' });
     }
     if (data.it_was_prescribed_by_some_professional_2_1 != null) {
       this.setState({ it_was_prescribed_by_some_professional_2_1: data.it_was_prescribed_by_some_professional_2_1 });
@@ -91177,7 +91177,7 @@ class DetailsMedicinesHerbalRemedies extends __WEBPACK_IMPORTED_MODULE_0_react__
                     __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                       'td',
                       null,
-                      data.concomitant_use_of_five_or_more_medicines_2_1
+                      data.concomitant_use_of_five_or_more_medicines_2_1 == "1" ? 'SIM' : 'NÃO'
                     ),
                     __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                       'td',
@@ -91948,7 +91948,7 @@ class DetailsAnthropometricData extends __WEBPACK_IMPORTED_MODULE_0_react___defa
       this.setState({ calf_perimeter_pp_left_2_5: data.calf_perimeter_pp_left_2_5 });
     }
     if (data.you_have_exp_loss_uni_weight_min_body_last_year_2_5 != null) {
-      this.setState({ you_have_exp_loss_uni_weight_min_body_last_year_2_5: data.you_have_exp_loss_uni_weight_min_body_last_year_2_5 });
+      this.setState({ you_have_exp_loss_uni_weight_min_body_last_year_2_5: data.you_have_exp_loss_uni_weight_min_body_last_year_2_5 == "1" ? 'SIM' : 'NÃO' });
     }
     if (data.created_at != null) {
       this.setState({ created_at: data.created_at });
@@ -91966,7 +91966,7 @@ class DetailsAnthropometricData extends __WEBPACK_IMPORTED_MODULE_0_react___defa
           'div',
           { className: 'card-header' },
           __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('i', { className: 'fa fa-table' }),
-          ' Dados antropom\xE9trico'
+          ' Dados antropom\xE9tricos'
         ),
         __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
           'div',
@@ -92050,7 +92050,7 @@ class DetailsAnthropometricData extends __WEBPACK_IMPORTED_MODULE_0_react___defa
                     __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                       'td',
                       null,
-                      data.you_have_exp_loss_uni_weight_min_body_last_year_2_5
+                      data.you_have_exp_loss_uni_weight_min_body_last_year_2_5 == "1" ? 'SIM' : 'NÃO'
                     ),
                     __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                       'td',
@@ -92464,19 +92464,19 @@ class DetailsDisabilities extends __WEBPACK_IMPORTED_MODULE_0_react___default.a.
 
   buildData(data) {
     if (data.stopped_shopping_2_6_a != null) {
-      this.setState({ stopped_shopping_2_6_a: data.stopped_shopping_2_6_a });
+      this.setState({ stopped_shopping_2_6_a: data.stopped_shopping_2_6_a == "1" ? 'SIM' : 'NÃO' });
     }
     if (data.stop_tracking_your_money_2_6_a != null) {
-      this.setState({ stop_tracking_your_money_2_6_a: data.stop_tracking_your_money_2_6_a });
+      this.setState({ stop_tracking_your_money_2_6_a: data.stop_tracking_your_money_2_6_a == "1" ? 'SIM' : 'NÃO' });
     }
     if (data.stopped_walking_in_the_house_2_6_a != null) {
-      this.setState({ stopped_walking_in_the_house_2_6_a: data.stopped_walking_in_the_house_2_6_a });
+      this.setState({ stopped_walking_in_the_house_2_6_a: data.stopped_walking_in_the_house_2_6_a == "1" ? 'SIM' : 'NÃO' });
     }
     if (data.stopped_doing_light_household_chores_2_6_a != null) {
-      this.setState({ stopped_doing_light_household_chores_2_6_a: data.stopped_doing_light_household_chores_2_6_a });
+      this.setState({ stopped_doing_light_household_chores_2_6_a: data.stopped_doing_light_household_chores_2_6_a == "1" ? 'SIM' : 'NÃO' });
     }
     if (data.stop_taking_showers_alone_2_6_a != null) {
-      this.setState({ stop_taking_showers_alone_2_6_a: data.stop_taking_showers_alone_2_6_a });
+      this.setState({ stop_taking_showers_alone_2_6_a: data.stop_taking_showers_alone_2_6_a == "1" ? 'SIM' : 'NÃO' });
     }
     if (data.created_at != null) {
       this.setState({ created_at: data.created_at });
@@ -92558,27 +92558,27 @@ class DetailsDisabilities extends __WEBPACK_IMPORTED_MODULE_0_react___default.a.
                     __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                       'td',
                       null,
-                      data.stopped_shopping_2_6_a
+                      data.stopped_shopping_2_6_a == "1" ? 'SIM' : 'NÃO'
                     ),
                     __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                       'td',
                       null,
-                      data.stop_tracking_your_money_2_6_a
+                      data.stop_tracking_your_money_2_6_a == "1" ? 'SIM' : 'NÃO'
                     ),
                     __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                       'td',
                       null,
-                      data.stopped_walking_in_the_house_2_6_a
+                      data.stopped_walking_in_the_house_2_6_a == "1" ? 'SIM' : 'NÃO'
                     ),
                     __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                       'td',
                       null,
-                      data.stopped_doing_light_household_chores_2_6_a
+                      data.stopped_doing_light_household_chores_2_6_a == "1" ? 'SIM' : 'NÃO'
                     ),
                     __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                       'td',
                       null,
-                      data.stop_taking_showers_alone_2_6_a
+                      data.stop_taking_showers_alone_2_6_a == "1" ? 'SIM' : 'NÃO'
                     ),
                     __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                       'td',
@@ -92708,19 +92708,19 @@ class DetailsComplementaryInformation extends __WEBPACK_IMPORTED_MODULE_0_react_
 
   buildData(data) {
     if (data.some_family_mem_fri_said_that_are_get_forg_2_7 != null) {
-      this.setState({ some_family_mem_fri_said_that_are_get_forg_2_7: data.some_family_mem_fri_said_that_are_get_forg_2_7 });
+      this.setState({ some_family_mem_fri_said_that_are_get_forg_2_7: data.some_family_mem_fri_said_that_are_get_forg_2_7 == "1" ? 'SIM' : 'NÃO' });
     }
     if (data.forgetfulness_is_getting_worse_in_last_months_2_7 != null) {
-      this.setState({ forgetfulness_is_getting_worse_in_last_months_2_7: data.forgetfulness_is_getting_worse_in_last_months_2_7 });
+      this.setState({ forgetfulness_is_getting_worse_in_last_months_2_7: data.forgetfulness_is_getting_worse_in_last_months_2_7 == "1" ? 'SIM' : 'NÃO' });
     }
     if (data.forgetfulness_is_preventing_of_some_daily_activity_2_7 != null) {
-      this.setState({ forgetfulness_is_preventing_of_some_daily_activity_2_7: data.forgetfulness_is_preventing_of_some_daily_activity_2_7 });
+      this.setState({ forgetfulness_is_preventing_of_some_daily_activity_2_7: data.forgetfulness_is_preventing_of_some_daily_activity_2_7 == "1" ? 'SIM' : 'NÃO' });
     }
     if (data.in_the_last_mon_were_dismayed_sad_hop_2_7 != null) {
-      this.setState({ in_the_last_mon_were_dismayed_sad_hop_2_7: data.in_the_last_mon_were_dismayed_sad_hop_2_7 });
+      this.setState({ in_the_last_mon_were_dismayed_sad_hop_2_7: data.in_the_last_mon_were_dismayed_sad_hop_2_7 == "1" ? 'SIM' : 'NÃO' });
     }
     if (data.in_the_last_mon_lost_int_pleas_act_form_pleas_2_7 != null) {
-      this.setState({ in_the_last_mon_lost_int_pleas_act_form_pleas_2_7: data.in_the_last_mon_lost_int_pleas_act_form_pleas_2_7 });
+      this.setState({ in_the_last_mon_lost_int_pleas_act_form_pleas_2_7: data.in_the_last_mon_lost_int_pleas_act_form_pleas_2_7 == "1" ? 'SIM' : 'NÃO' });
     }
     if (data.created_at != null) {
       this.setState({ created_at: data.created_at });
@@ -92802,27 +92802,27 @@ class DetailsComplementaryInformation extends __WEBPACK_IMPORTED_MODULE_0_react_
                     __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                       'td',
                       null,
-                      data.some_family_mem_fri_said_that_are_get_forg_2_7
+                      data.some_family_mem_fri_said_that_are_get_forg_2_7 == "1" ? 'SIM' : 'NÃO'
                     ),
                     __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                       'td',
                       null,
-                      data.forgetfulness_is_getting_worse_in_last_months_2_7
+                      data.forgetfulness_is_getting_worse_in_last_months_2_7 == "1" ? 'SIM' : 'NÃO'
                     ),
                     __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                       'td',
                       null,
-                      data.forgetfulness_is_preventing_of_some_daily_activity_2_7
+                      data.forgetfulness_is_preventing_of_some_daily_activity_2_7 == "1" ? 'SIM' : 'NÃO'
                     ),
                     __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                       'td',
                       null,
-                      data.in_the_last_mon_were_dismayed_sad_hop_2_7
+                      data.in_the_last_mon_were_dismayed_sad_hop_2_7 == "1" ? 'SIM' : 'NÃO'
                     ),
                     __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                       'td',
                       null,
-                      data.in_the_last_mon_lost_int_pleas_act_form_pleas_2_7
+                      data.in_the_last_mon_lost_int_pleas_act_form_pleas_2_7 == "1" ? 'SIM' : 'NÃO'
                     ),
                     __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                       'td',
@@ -92957,34 +92957,34 @@ class DetailsEnvironmentalAssessment extends __WEBPACK_IMPORTED_MODULE_0_react__
 
   buildData(data) {
     if (data.unimpeded_walking_areas_2_8 != null) {
-      this.setState({ unimpeded_walking_areas_2_8: data.unimpeded_walking_areas_2_8 });
+      this.setState({ unimpeded_walking_areas_2_8: data.unimpeded_walking_areas_2_8 == "1" ? 'SIM' : 'NÃO' });
     }
     if (data.presence_of_support_bars_2_8 != null) {
-      this.setState({ presence_of_support_bars_2_8: data.presence_of_support_bars_2_8 });
+      this.setState({ presence_of_support_bars_2_8: data.presence_of_support_bars_2_8 == "1" ? 'SIM' : 'NÃO' });
     }
     if (data.uniform_floors_and_carpets_well_fixed_2_8 != null) {
-      this.setState({ uniform_floors_and_carpets_well_fixed_2_8: data.uniform_floors_and_carpets_well_fixed_2_8 });
+      this.setState({ uniform_floors_and_carpets_well_fixed_2_8: data.uniform_floors_and_carpets_well_fixed_2_8 == "1" ? 'SIM' : 'NÃO' });
     }
     if (data.enough_lighting_brighten_inside_each_room_including_steps_2_8 != null) {
-      this.setState({ enough_lighting_brighten_inside_each_room_including_steps_2_8: data.enough_lighting_brighten_inside_each_room_including_steps_2_8 });
+      this.setState({ enough_lighting_brighten_inside_each_room_including_steps_2_8: data.enough_lighting_brighten_inside_each_room_including_steps_2_8 == "1" ? 'SIM' : 'NÃO' });
     }
     if (data.switches_accessible_at_the_entrance_two_rooms_2_8 != null) {
-      this.setState({ switches_accessible_at_the_entrance_two_rooms_2_8: data.switches_accessible_at_the_entrance_two_rooms_2_8 });
+      this.setState({ switches_accessible_at_the_entrance_two_rooms_2_8: data.switches_accessible_at_the_entrance_two_rooms_2_8 == "1" ? 'SIM' : 'NÃO' });
     }
     if (data.shower_area_with_non_slip_2_8 != null) {
-      this.setState({ shower_area_with_non_slip_2_8: data.shower_area_with_non_slip_2_8 });
+      this.setState({ shower_area_with_non_slip_2_8: data.shower_area_with_non_slip_2_8 == "1" ? 'SIM' : 'NÃO' });
     }
     if (data.box_with_easy_opening_or_presence_of_firm_curtain_2_8 != null) {
-      this.setState({ box_with_easy_opening_or_presence_of_firm_curtain_2_8: data.box_with_easy_opening_or_presence_of_firm_curtain_2_8 });
+      this.setState({ box_with_easy_opening_or_presence_of_firm_curtain_2_8: data.box_with_easy_opening_or_presence_of_firm_curtain_2_8 == "1" ? 'SIM' : 'NÃO' });
     }
     if (data.low_cabinets_no_need_for_use_of_stairs_2_8 != null) {
-      this.setState({ low_cabinets_no_need_for_use_of_stairs_2_8: data.low_cabinets_no_need_for_use_of_stairs_2_8 });
+      this.setState({ low_cabinets_no_need_for_use_of_stairs_2_8: data.low_cabinets_no_need_for_use_of_stairs_2_8 == "1" ? 'SIM' : 'NÃO' });
     }
     if (data.non_slip_floor_2_8 != null) {
-      this.setState({ non_slip_floor_2_8: data.non_slip_floor_2_8 });
+      this.setState({ non_slip_floor_2_8: data.non_slip_floor_2_8 == "1" ? 'SIM' : 'NÃO' });
     }
     if (data.double_sided_and_firm_handrail_2_8 != null) {
-      this.setState({ double_sided_and_firm_handrail_2_8: data.double_sided_and_firm_handrail_2_8 });
+      this.setState({ double_sided_and_firm_handrail_2_8: data.double_sided_and_firm_handrail_2_8 == "1" ? 'SIM' : 'NÃO' });
     }
     if (data.created_at != null) {
       this.setState({ created_at: data.created_at });
@@ -93091,52 +93091,52 @@ class DetailsEnvironmentalAssessment extends __WEBPACK_IMPORTED_MODULE_0_react__
                     __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                       'td',
                       null,
-                      data.unimpeded_walking_areas_2_8
+                      data.unimpeded_walking_areas_2_8 == "1" ? 'SIM' : 'NÃO'
                     ),
                     __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                       'td',
                       null,
-                      data.presence_of_support_bars_2_8
+                      data.presence_of_support_bars_2_8 == "1" ? 'SIM' : 'NÃO'
                     ),
                     __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                       'td',
                       null,
-                      data.uniform_floors_and_carpets_well_fixed_2_8
+                      data.uniform_floors_and_carpets_well_fixed_2_8 == "1" ? 'SIM' : 'NÃO'
                     ),
                     __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                       'td',
                       null,
-                      data.enough_lighting_brighten_inside_each_room_including_steps_2_8
+                      data.enough_lighting_brighten_inside_each_room_including_steps_2_8 == "1" ? 'SIM' : 'NÃO'
                     ),
                     __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                       'td',
                       null,
-                      data.switches_accessible_at_the_entrance_two_rooms_2_8
+                      data.switches_accessible_at_the_entrance_two_rooms_2_8 == "1" ? 'SIM' : 'NÃO'
                     ),
                     __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                       'td',
                       null,
-                      data.shower_area_with_non_slip_2_8
+                      data.shower_area_with_non_slip_2_8 == "1" ? 'SIM' : 'NÃO'
                     ),
                     __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                       'td',
                       null,
-                      data.box_with_easy_opening_or_presence_of_firm_curtain_2_8
+                      data.box_with_easy_opening_or_presence_of_firm_curtain_2_8 == "1" ? 'SIM' : 'NÃO'
                     ),
                     __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                       'td',
                       null,
-                      data.low_cabinets_no_need_for_use_of_stairs_2_8
+                      data.low_cabinets_no_need_for_use_of_stairs_2_8 == "1" ? 'SIM' : 'NÃO'
                     ),
                     __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                       'td',
                       null,
-                      data.non_slip_floor_2_8
+                      data.non_slip_floor_2_8 == "1" ? 'SIM' : 'NÃO'
                     ),
                     __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                       'td',
                       null,
-                      data.double_sided_and_firm_handrail_2_8
+                      data.double_sided_and_firm_handrail_2_8 == "1" ? 'SIM' : 'NÃO'
                     ),
                     __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                       'td',
@@ -93290,13 +93290,13 @@ class DetailsFalls extends __WEBPACK_IMPORTED_MODULE_0_react___default.a.Compone
       this.setState({ date_of_fall_year_2_9: data.date_of_fall_year_2_9 });
     }
     if (data.the_fall_caused_some_fracture_2_9 != null) {
-      this.setState({ the_fall_caused_some_fracture_2_9: data.the_fall_caused_some_fracture_2_9 });
+      this.setState({ the_fall_caused_some_fracture_2_9: data.the_fall_caused_some_fracture_2_9 == "1" ? 'SIM' : 'NÃO' });
     }
     if (data.the_fall_caused_some_fracture_extra_2_9 != null) {
       this.setState({ the_fall_caused_some_fracture_extra_2_9: data.the_fall_caused_some_fracture_extra_2_9 });
     }
     if (data.you_stopped_perform_some_activity_for_fear_to_fall_again_2_9 != null) {
-      this.setState({ you_stopped_perform_some_activity_for_fear_to_fall_again_2_9: data.you_stopped_perform_some_activity_for_fear_to_fall_again_2_9 });
+      this.setState({ you_stopped_perform_some_activity_for_fear_to_fall_again_2_9: data.you_stopped_perform_some_activity_for_fear_to_fall_again_2_9 == "1" ? 'SIM' : 'NÃO' });
     }
     if (data.place_2_9 != null) {
       this.setState({ place_2_9: data.place_2_9 });
@@ -93401,7 +93401,7 @@ class DetailsFalls extends __WEBPACK_IMPORTED_MODULE_0_react___default.a.Compone
                     __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                       'td',
                       null,
-                      data.the_fall_caused_some_fracture_2_9
+                      data.the_fall_caused_some_fracture_2_9 == "1" ? 'SIM' : 'NÃO'
                     ),
                     __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                       'td',
@@ -93411,7 +93411,7 @@ class DetailsFalls extends __WEBPACK_IMPORTED_MODULE_0_react___default.a.Compone
                     __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                       'td',
                       null,
-                      data.you_stopped_perform_some_activity_for_fear_to_fall_again_2_9
+                      data.you_stopped_perform_some_activity_for_fear_to_fall_again_2_9 == "1" ? 'SIM' : 'NÃO'
                     ),
                     __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                       'td',
@@ -93545,16 +93545,16 @@ class DetailsIdentificationChronicPain extends __WEBPACK_IMPORTED_MODULE_0_react
 
   buildData(data) {
     if (data.do_you_have_pain_last_same_more_than_3_mon_2_10 != null) {
-      this.setState({ do_you_have_pain_last_same_more_than_3_mon_2_10: data.do_you_have_pain_last_same_more_than_3_mon_2_10 });
+      this.setState({ do_you_have_pain_last_same_more_than_3_mon_2_10: data.do_you_have_pain_last_same_more_than_3_mon_2_10 == "1" ? 'SIM' : 'NÃO' });
     }
     if (data.the_pain_is_like_a_shock_or_a_burning_2_10 != null) {
-      this.setState({ the_pain_is_like_a_shock_or_a_burning_2_10: data.the_pain_is_like_a_shock_or_a_burning_2_10 });
+      this.setState({ the_pain_is_like_a_shock_or_a_burning_2_10: data.the_pain_is_like_a_shock_or_a_burning_2_10 == "1" ? 'SIM' : 'NÃO' });
     }
     if (data.does_the_pain_get_worse_when_walking_2_10 != null) {
-      this.setState({ does_the_pain_get_worse_when_walking_2_10: data.does_the_pain_get_worse_when_walking_2_10 });
+      this.setState({ does_the_pain_get_worse_when_walking_2_10: data.does_the_pain_get_worse_when_walking_2_10 == "1" ? 'SIM' : 'NÃO' });
     }
     if (data.does_pain_improve_with_rest_2_10 != null) {
-      this.setState({ does_pain_improve_with_rest_2_10: data.does_pain_improve_with_rest_2_10 });
+      this.setState({ does_pain_improve_with_rest_2_10: data.does_pain_improve_with_rest_2_10 == "1" ? 'SIM' : 'NÃO' });
     }
     if (data.created_at != null) {
       this.setState({ created_at: data.created_at });
@@ -93631,22 +93631,22 @@ class DetailsIdentificationChronicPain extends __WEBPACK_IMPORTED_MODULE_0_react
                     __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                       'td',
                       null,
-                      data.do_you_have_pain_last_same_more_than_3_mon_2_10
+                      data.do_you_have_pain_last_same_more_than_3_mon_2_10 == "1" ? 'SIM' : 'NÃO'
                     ),
                     __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                       'td',
                       null,
-                      data.the_pain_is_like_a_shock_or_a_burning_2_10
+                      data.the_pain_is_like_a_shock_or_a_burning_2_10 == "1" ? 'SIM' : 'NÃO'
                     ),
                     __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                       'td',
                       null,
-                      data.does_the_pain_get_worse_when_walking_2_10
+                      data.does_the_pain_get_worse_when_walking_2_10 == "1" ? 'SIM' : 'NÃO'
                     ),
                     __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                       'td',
                       null,
-                      data.does_pain_improve_with_rest_2_10
+                      data.does_pain_improve_with_rest_2_10 == "1" ? 'SIM' : 'NÃO'
                     ),
                     __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                       'td',
@@ -93986,61 +93986,61 @@ class DetailsLivingHabits extends __WEBPACK_IMPORTED_MODULE_0_react___default.a.
 
   buildData(data) {
     if (data.do_you_go_to_day_centers_clubs_or_social_groups_2_11 != null) {
-      this.setState({ do_you_go_to_day_centers_clubs_or_social_groups_2_11: data.do_you_go_to_day_centers_clubs_or_social_groups_2_11 });
+      this.setState({ do_you_go_to_day_centers_clubs_or_social_groups_2_11: data.do_you_go_to_day_centers_clubs_or_social_groups_2_11 == "1" ? 'SIM' : 'NÃO' });
     }
     if (data.do_you_do_any_volunteer_work_2_11 != null) {
-      this.setState({ do_you_do_any_volunteer_work_2_11: data.do_you_do_any_volunteer_work_2_11 });
+      this.setState({ do_you_do_any_volunteer_work_2_11: data.do_you_do_any_volunteer_work_2_11 == "1" ? 'SIM' : 'NÃO' });
     }
     if (data.do_you_have_any_leisure_activities_2_11 != null) {
-      this.setState({ do_you_have_any_leisure_activities_2_11: data.do_you_have_any_leisure_activities_2_11 });
+      this.setState({ do_you_have_any_leisure_activities_2_11: data.do_you_have_any_leisure_activities_2_11 == "1" ? 'SIM' : 'NÃO' });
     }
     if (data.do_you_engage_type_ph_act_least_three_tm_week_2_11 != null) {
-      this.setState({ do_you_engage_type_ph_act_least_three_tm_week_2_11: data.do_you_engage_type_ph_act_least_three_tm_week_2_11 });
+      this.setState({ do_you_engage_type_ph_act_least_three_tm_week_2_11: data.do_you_engage_type_ph_act_least_three_tm_week_2_11 == "1" ? 'SIM' : 'NÃO' });
     }
     if (data.would_you_like_start_some_phy_activity_program_2_11 != null) {
-      this.setState({ would_you_like_start_some_phy_activity_program_2_11: data.would_you_like_start_some_phy_activity_program_2_11 });
+      this.setState({ would_you_like_start_some_phy_activity_program_2_11: data.would_you_like_start_some_phy_activity_program_2_11 == "1" ? 'SIM' : 'NÃO' });
     }
     if (data.do_you_make_at_least_three_meals_a_day_2_11 != null) {
-      this.setState({ do_you_make_at_least_three_meals_a_day_2_11: data.do_you_make_at_least_three_meals_a_day_2_11 });
+      this.setState({ do_you_make_at_least_three_meals_a_day_2_11: data.do_you_make_at_least_three_meals_a_day_2_11 == "1" ? 'SIM' : 'NÃO' });
     }
     if (data.do_you_eat_fruits_veg_your_meals_thro_the_day_2_11 != null) {
-      this.setState({ do_you_eat_fruits_veg_your_meals_thro_the_day_2_11: data.do_you_eat_fruits_veg_your_meals_thro_the_day_2_11 });
+      this.setState({ do_you_eat_fruits_veg_your_meals_thro_the_day_2_11: data.do_you_eat_fruits_veg_your_meals_thro_the_day_2_11 == "1" ? 'SIM' : 'NÃO' });
     }
     if (data.in_at_least_one_meal_day_you_eat_meat_fish_eggs_2_11 != null) {
-      this.setState({ in_at_least_one_meal_day_you_eat_meat_fish_eggs_2_11: data.in_at_least_one_meal_day_you_eat_meat_fish_eggs_2_11 });
+      this.setState({ in_at_least_one_meal_day_you_eat_meat_fish_eggs_2_11: data.in_at_least_one_meal_day_you_eat_meat_fish_eggs_2_11 == "1" ? 'SIM' : 'NÃO' });
     }
     if (data.you_have_custom_consuming_sug_dr_cak_bis_stuf_dess_2_11 != null) {
-      this.setState({ you_have_custom_consuming_sug_dr_cak_bis_stuf_dess_2_11: data.you_have_custom_consuming_sug_dr_cak_bis_stuf_dess_2_11 });
+      this.setState({ you_have_custom_consuming_sug_dr_cak_bis_stuf_dess_2_11: data.you_have_custom_consuming_sug_dr_cak_bis_stuf_dess_2_11 == "1" ? 'SIM' : 'NÃO' });
     }
     if (data.in_the_prep_your_meals_great_qt_oils_used_fats_su_salt_2_11 != null) {
-      this.setState({ in_the_prep_your_meals_great_qt_oils_used_fats_su_salt_2_11: data.in_the_prep_your_meals_great_qt_oils_used_fats_su_salt_2_11 });
+      this.setState({ in_the_prep_your_meals_great_qt_oils_used_fats_su_salt_2_11: data.in_the_prep_your_meals_great_qt_oils_used_fats_su_salt_2_11 == "1" ? 'SIM' : 'NÃO' });
     }
     if (data.do_you_include_water_intake_in_your_daily_routine_2_11 != null) {
-      this.setState({ do_you_include_water_intake_in_your_daily_routine_2_11: data.do_you_include_water_intake_in_your_daily_routine_2_11 });
+      this.setState({ do_you_include_water_intake_in_your_daily_routine_2_11: data.do_you_include_water_intake_in_your_daily_routine_2_11 == "1" ? 'SIM' : 'NÃO' });
     }
     if (data.do_you_currently_smoke_any_tobacco_products_2_11 != null) {
-      this.setState({ do_you_currently_smoke_any_tobacco_products_2_11: data.do_you_currently_smoke_any_tobacco_products_2_11 });
+      this.setState({ do_you_currently_smoke_any_tobacco_products_2_11: data.do_you_currently_smoke_any_tobacco_products_2_11 == "1" ? 'SIM' : 'NÃO' });
     }
     if (data.would_you_like_to_quit_smoking_2_11 != null) {
-      this.setState({ would_you_like_to_quit_smoking_2_11: data.would_you_like_to_quit_smoking_2_11 });
+      this.setState({ would_you_like_to_quit_smoking_2_11: data.would_you_like_to_quit_smoking_2_11 == "1" ? 'SIM' : 'NÃO' });
     }
     if (data.are_you_a_former_smoker_2_11 != null) {
-      this.setState({ are_you_a_former_smoker_2_11: data.are_you_a_former_smoker_2_11 });
+      this.setState({ are_you_a_former_smoker_2_11: data.are_you_a_former_smoker_2_11 == "1" ? 'SIM' : 'NÃO' });
     }
     if (data.do_you_drink_alcohol_2_11 != null) {
-      this.setState({ do_you_drink_alcohol_2_11: data.do_you_drink_alcohol_2_11 });
+      this.setState({ do_you_drink_alcohol_2_11: data.do_you_drink_alcohol_2_11 == "1" ? 'SIM' : 'NÃO' });
     }
     if (data.have_you_ever_felt_the_need_to_reduce_or_of_alcohol_2_11 != null) {
-      this.setState({ have_you_ever_felt_the_need_to_reduce_or_of_alcohol_2_11: data.have_you_ever_felt_the_need_to_reduce_or_of_alcohol_2_11 });
+      this.setState({ have_you_ever_felt_the_need_to_reduce_or_of_alcohol_2_11: data.have_you_ever_felt_the_need_to_reduce_or_of_alcohol_2_11 == "1" ? 'SIM' : 'NÃO' });
     }
     if (data.has_anyone_ever_criticized_you_for_drinking_2_11 != null) {
-      this.setState({ has_anyone_ever_criticized_you_for_drinking_2_11: data.has_anyone_ever_criticized_you_for_drinking_2_11 });
+      this.setState({ has_anyone_ever_criticized_you_for_drinking_2_11: data.has_anyone_ever_criticized_you_for_drinking_2_11 == "1" ? 'SIM' : 'NÃO' });
     }
     if (data.feel_guilty_for_drinking_2_11 != null) {
-      this.setState({ feel_guilty_for_drinking_2_11: data.feel_guilty_for_drinking_2_11 });
+      this.setState({ feel_guilty_for_drinking_2_11: data.feel_guilty_for_drinking_2_11 == "1" ? 'SIM' : 'NÃO' });
     }
     if (data.do_you_usually_drink_in_the_morning_2_11 != null) {
-      this.setState({ do_you_usually_drink_in_the_morning_2_11: data.do_you_usually_drink_in_the_morning_2_11 });
+      this.setState({ do_you_usually_drink_in_the_morning_2_11: data.do_you_usually_drink_in_the_morning_2_11 == "1" ? 'SIM' : 'NÃO' });
     }
     if (data.created_at != null) {
       this.setState({ created_at: data.created_at });
@@ -94192,97 +94192,97 @@ class DetailsLivingHabits extends __WEBPACK_IMPORTED_MODULE_0_react___default.a.
                     __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                       'td',
                       null,
-                      data.do_you_go_to_day_centers_clubs_or_social_groups_2_11
+                      data.do_you_go_to_day_centers_clubs_or_social_groups_2_11 == "1" ? 'SIM' : 'NÃO'
                     ),
                     __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                       'td',
                       null,
-                      data.do_you_do_any_volunteer_work_2_11
+                      data.do_you_do_any_volunteer_work_2_11 == "1" ? 'SIM' : 'NÃO'
                     ),
                     __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                       'td',
                       null,
-                      data.do_you_have_any_leisure_activities_2_11
+                      data.do_you_have_any_leisure_activities_2_11 == "1" ? 'SIM' : 'NÃO'
                     ),
                     __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                       'td',
                       null,
-                      data.do_you_engage_type_ph_act_least_three_tm_week_2_11
+                      data.do_you_engage_type_ph_act_least_three_tm_week_2_11 == "1" ? 'SIM' : 'NÃO'
                     ),
                     __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                       'td',
                       null,
-                      data.would_you_like_start_some_phy_activity_program_2_11
+                      data.would_you_like_start_some_phy_activity_program_2_11 == "1" ? 'SIM' : 'NÃO'
                     ),
                     __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                       'td',
                       null,
-                      data.do_you_make_at_least_three_meals_a_day_2_11
+                      data.do_you_make_at_least_three_meals_a_day_2_11 == "1" ? 'SIM' : 'NÃO'
                     ),
                     __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                       'td',
                       null,
-                      data.do_you_eat_fruits_veg_your_meals_thro_the_day_2_11
+                      data.do_you_eat_fruits_veg_your_meals_thro_the_day_2_11 == "1" ? 'SIM' : 'NÃO'
                     ),
                     __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                       'td',
                       null,
-                      data.in_at_least_one_meal_day_you_eat_meat_fish_eggs_2_11
+                      data.in_at_least_one_meal_day_you_eat_meat_fish_eggs_2_11 == "1" ? 'SIM' : 'NÃO'
                     ),
                     __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                       'td',
                       null,
-                      data.you_have_custom_consuming_sug_dr_cak_bis_stuf_dess_2_11
+                      data.you_have_custom_consuming_sug_dr_cak_bis_stuf_dess_2_11 == "1" ? 'SIM' : 'NÃO'
                     ),
                     __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                       'td',
                       null,
-                      data.in_the_prep_your_meals_great_qt_oils_used_fats_su_salt_2_11
+                      data.in_the_prep_your_meals_great_qt_oils_used_fats_su_salt_2_11 == "1" ? 'SIM' : 'NÃO'
                     ),
                     __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                       'td',
                       null,
-                      data.do_you_include_water_intake_in_your_daily_routine_2_11
+                      data.do_you_include_water_intake_in_your_daily_routine_2_11 == "1" ? 'SIM' : 'NÃO'
                     ),
                     __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                       'td',
                       null,
-                      data.do_you_currently_smoke_any_tobacco_products_2_11
+                      data.do_you_currently_smoke_any_tobacco_products_2_11 == "1" ? 'SIM' : 'NÃO'
                     ),
                     __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                       'td',
                       null,
-                      data.would_you_like_to_quit_smoking_2_11
+                      data.would_you_like_to_quit_smoking_2_11 == "1" ? 'SIM' : 'NÃO'
                     ),
                     __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                       'td',
                       null,
-                      data.are_you_a_former_smoker_2_11
+                      data.are_you_a_former_smoker_2_11 == "1" ? 'SIM' : 'NÃO'
                     ),
                     __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                       'td',
                       null,
-                      data.do_you_drink_alcohol_2_11
+                      data.do_you_drink_alcohol_2_11 == "1" ? 'SIM' : 'NÃO'
                     ),
                     __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                       'td',
                       null,
-                      data.have_you_ever_felt_the_need_to_reduce_or_of_alcohol_2_11
+                      data.have_you_ever_felt_the_need_to_reduce_or_of_alcohol_2_11 == "1" ? 'SIM' : 'NÃO'
                     ),
                     __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                       'td',
                       null,
-                      data.has_anyone_ever_criticized_you_for_drinking_2_11
+                      data.has_anyone_ever_criticized_you_for_drinking_2_11 == "1" ? 'SIM' : 'NÃO'
                     ),
                     __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                       'td',
                       null,
-                      data.feel_guilty_for_drinking_2_11
+                      data.feel_guilty_for_drinking_2_11 == "1" ? 'SIM' : 'NÃO'
                     ),
                     __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                       'td',
                       null,
-                      data.do_you_usually_drink_in_the_morning_2_11
+                      data.do_you_usually_drink_in_the_morning_2_11 == "1" ? 'SIM' : 'NÃO'
                     ),
                     __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                       'td',
@@ -94659,10 +94659,10 @@ class DetailsGlucoseControl extends __WEBPACK_IMPORTED_MODULE_0_react___default.
 
   buildData(data) {
     if (data.fasting_2_11_b != null) {
-      this.setState({ fasting_2_11_b: data.fasting_2_11_b });
+      this.setState({ fasting_2_11_b: data.fasting_2_11_b == "1" ? 'SIM' : 'NÃO' });
     }
     if (data.casual_2_11_b != null) {
-      this.setState({ casual_2_11_b: data.casual_2_11_b });
+      this.setState({ casual_2_11_b: data.casual_2_11_b == "1" ? 'SIM' : 'NÃO' });
     }
     if (data.mg_dl_2_11_b != null) {
       this.setState({ mg_dl_2_11_b: data.mg_dl_2_11_b });
@@ -94737,12 +94737,12 @@ class DetailsGlucoseControl extends __WEBPACK_IMPORTED_MODULE_0_react___default.
                     __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                       'td',
                       null,
-                      data.fasting_2_11_b
+                      data.fasting_2_11_b == "1" ? 'SIM' : 'NÃO'
                     ),
                     __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                       'td',
                       null,
-                      data.casual_2_11_b
+                      data.casual_2_11_b == "1" ? 'SIM' : 'NÃO'
                     ),
                     __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                       'td',
@@ -95115,52 +95115,52 @@ class DetailsOralHealthAssessment extends __WEBPACK_IMPORTED_MODULE_0_react___de
 
   buildData(data) {
     if (data.alcohol_2_11_d != null) {
-      this.setState({ alcohol_2_11_d: data.alcohol_2_11_d });
+      this.setState({ alcohol_2_11_d: data.alcohol_2_11_d == "1" ? 'SIM' : 'NÃO' });
     }
     if (data.smoke_2_11_d != null) {
-      this.setState({ smoke_2_11_d: data.smoke_2_11_d });
+      this.setState({ smoke_2_11_d: data.smoke_2_11_d == "1" ? 'SIM' : 'NÃO' });
     }
     if (data.presence_of_lesion_on_the_buccal_mucosa_2_11_d != null) {
-      this.setState({ presence_of_lesion_on_the_buccal_mucosa_2_11_d: data.presence_of_lesion_on_the_buccal_mucosa_2_11_d });
+      this.setState({ presence_of_lesion_on_the_buccal_mucosa_2_11_d: data.presence_of_lesion_on_the_buccal_mucosa_2_11_d == "1" ? 'SIM' : 'NÃO' });
     }
     if (data.dry_mouth_2_11_d != null) {
-      this.setState({ dry_mouth_2_11_d: data.dry_mouth_2_11_d });
+      this.setState({ dry_mouth_2_11_d: data.dry_mouth_2_11_d == "1" ? 'SIM' : 'NÃO' });
     }
     if (data.white_tongue_2_11_d != null) {
-      this.setState({ white_tongue_2_11_d: data.white_tongue_2_11_d });
+      this.setState({ white_tongue_2_11_d: data.white_tongue_2_11_d == "1" ? 'SIM' : 'NÃO' });
     }
     if (data.presence_of_oral_candidiasis_2_11_d != null) {
-      this.setState({ presence_of_oral_candidiasis_2_11_d: data.presence_of_oral_candidiasis_2_11_d });
+      this.setState({ presence_of_oral_candidiasis_2_11_d: data.presence_of_oral_candidiasis_2_11_d == "1" ? 'SIM' : 'NÃO' });
     }
     if (data.presence_of_halitosis_2_11_d != null) {
-      this.setState({ presence_of_halitosis_2_11_d: data.presence_of_halitosis_2_11_d });
+      this.setState({ presence_of_halitosis_2_11_d: data.presence_of_halitosis_2_11_d == "1" ? 'SIM' : 'NÃO' });
     }
     if (data.presence_of_bacterial_plaque_2_11_d != null) {
-      this.setState({ presence_of_bacterial_plaque_2_11_d: data.presence_of_bacterial_plaque_2_11_d });
+      this.setState({ presence_of_bacterial_plaque_2_11_d: data.presence_of_bacterial_plaque_2_11_d == "1" ? 'SIM' : 'NÃO' });
     }
     if (data.plate_retentive_factors_2_11_d != null) {
-      this.setState({ plate_retentive_factors_2_11_d: data.plate_retentive_factors_2_11_d });
+      this.setState({ plate_retentive_factors_2_11_d: data.plate_retentive_factors_2_11_d == "1" ? 'SIM' : 'NÃO' });
     }
     if (data.obvious_presence_of_gingivitis_2_11_d != null) {
-      this.setState({ obvious_presence_of_gingivitis_2_11_d: data.obvious_presence_of_gingivitis_2_11_d });
+      this.setState({ obvious_presence_of_gingivitis_2_11_d: data.obvious_presence_of_gingivitis_2_11_d == "1" ? 'SIM' : 'NÃO' });
     }
     if (data.obvious_presence_of_periodontitis_2_11_d != null) {
-      this.setState({ obvious_presence_of_periodontitis_2_11_d: data.obvious_presence_of_periodontitis_2_11_d });
+      this.setState({ obvious_presence_of_periodontitis_2_11_d: data.obvious_presence_of_periodontitis_2_11_d == "1" ? 'SIM' : 'NÃO' });
     }
     if (data.presence_of_caries_2_11_d != null) {
-      this.setState({ presence_of_caries_2_11_d: data.presence_of_caries_2_11_d });
+      this.setState({ presence_of_caries_2_11_d: data.presence_of_caries_2_11_d == "1" ? 'SIM' : 'NÃO' });
     }
     if (data.dental_loss_in_last_year_2_11_d != null) {
-      this.setState({ dental_loss_in_last_year_2_11_d: data.dental_loss_in_last_year_2_11_d });
+      this.setState({ dental_loss_in_last_year_2_11_d: data.dental_loss_in_last_year_2_11_d == "1" ? 'SIM' : 'NÃO' });
     }
     if (data.attendance_at_the_health_unit_2_11_d != null) {
-      this.setState({ attendance_at_the_health_unit_2_11_d: data.attendance_at_the_health_unit_2_11_d });
+      this.setState({ attendance_at_the_health_unit_2_11_d: data.attendance_at_the_health_unit_2_11_d == "1" ? 'SIM' : 'NÃO' });
     }
     if (data.home_service_2_11_d != null) {
-      this.setState({ home_service_2_11_d: data.home_service_2_11_d });
+      this.setState({ home_service_2_11_d: data.home_service_2_11_d == "1" ? 'SIM' : 'NÃO' });
     }
     if (data.forwarding_for_specialties_dental_2_11_d != null) {
-      this.setState({ forwarding_for_specialties_dental_2_11_d: data.forwarding_for_specialties_dental_2_11_d });
+      this.setState({ forwarding_for_specialties_dental_2_11_d: data.forwarding_for_specialties_dental_2_11_d == "1" ? 'SIM' : 'NÃO' });
     }
     if (data.created_at != null) {
       this.setState({ created_at: data.created_at });
@@ -95297,82 +95297,82 @@ class DetailsOralHealthAssessment extends __WEBPACK_IMPORTED_MODULE_0_react___de
                     __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                       'td',
                       null,
-                      data.alcohol_2_11_d
+                      data.alcohol_2_11_d == "1" ? 'SIM' : 'NÃO'
                     ),
                     __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                       'td',
                       null,
-                      data.smoke_2_11_d
+                      data.smoke_2_11_d == "1" ? 'SIM' : 'NÃO'
                     ),
                     __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                       'td',
                       null,
-                      data.presence_of_lesion_on_the_buccal_mucosa_2_11_d
+                      data.presence_of_lesion_on_the_buccal_mucosa_2_11_d == "1" ? 'SIM' : 'NÃO'
                     ),
                     __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                       'td',
                       null,
-                      data.dry_mouth_2_11_d
+                      data.dry_mouth_2_11_d == "1" ? 'SIM' : 'NÃO'
                     ),
                     __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                       'td',
                       null,
-                      data.white_tongue_2_11_d
+                      data.white_tongue_2_11_d == "1" ? 'SIM' : 'NÃO'
                     ),
                     __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                       'td',
                       null,
-                      data.presence_of_oral_candidiasis_2_11_d
+                      data.presence_of_oral_candidiasis_2_11_d == "1" ? 'SIM' : 'NÃO'
                     ),
                     __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                       'td',
                       null,
-                      data.presence_of_halitosis_2_11_d
+                      data.presence_of_halitosis_2_11_d == "1" ? 'SIM' : 'NÃO'
                     ),
                     __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                       'td',
                       null,
-                      data.presence_of_bacterial_plaque_2_11_d
+                      data.presence_of_bacterial_plaque_2_11_d == "1" ? 'SIM' : 'NÃO'
                     ),
                     __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                       'td',
                       null,
-                      data.plate_retentive_factors_2_11_d
+                      data.plate_retentive_factors_2_11_d == "1" ? 'SIM' : 'NÃO'
                     ),
                     __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                       'td',
                       null,
-                      data.obvious_presence_of_gingivitis_2_11_d
+                      data.obvious_presence_of_gingivitis_2_11_d == "1" ? 'SIM' : 'NÃO'
                     ),
                     __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                       'td',
                       null,
-                      data.obvious_presence_of_periodontitis_2_11_d
+                      data.obvious_presence_of_periodontitis_2_11_d == "1" ? 'SIM' : 'NÃO'
                     ),
                     __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                       'td',
                       null,
-                      data.presence_of_caries_2_11_d
+                      data.presence_of_caries_2_11_d == "1" ? 'SIM' : 'NÃO'
                     ),
                     __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                       'td',
                       null,
-                      data.dental_loss_in_last_year_2_11_d
+                      data.dental_loss_in_last_year_2_11_d == "1" ? 'SIM' : 'NÃO'
                     ),
                     __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                       'td',
                       null,
-                      data.attendance_at_the_health_unit_2_11_d
+                      data.attendance_at_the_health_unit_2_11_d == "1" ? 'SIM' : 'NÃO'
                     ),
                     __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                       'td',
                       null,
-                      data.home_service_2_11_d
+                      data.home_service_2_11_d == "1" ? 'SIM' : 'NÃO'
                     ),
                     __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                       'td',
                       null,
-                      data.forwarding_for_specialties_dental_2_11_d
+                      data.forwarding_for_specialties_dental_2_11_d == "1" ? 'SIM' : 'NÃO'
                     ),
                     __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                       'td',
@@ -95560,28 +95560,28 @@ class DetailsDentalProsthesis extends __WEBPACK_IMPORTED_MODULE_0_react___defaul
 
   buildData(data) {
     if (data.superior_2_11_d_a != null) {
-      this.setState({ superior_2_11_d_a: data.superior_2_11_d_a });
+      this.setState({ superior_2_11_d_a: data.superior_2_11_d_a == "1" ? 'SIM' : 'NÃO' });
     }
     if (data.inferior_2_11_d_a != null) {
-      this.setState({ inferior_2_11_d_a: data.inferior_2_11_d_a });
+      this.setState({ inferior_2_11_d_a: data.inferior_2_11_d_a == "1" ? 'SIM' : 'NÃO' });
     }
     if (data.total_prosthesis_2_11_d_a != null) {
-      this.setState({ total_prosthesis_2_11_d_a: data.total_prosthesis_2_11_d_a });
+      this.setState({ total_prosthesis_2_11_d_a: data.total_prosthesis_2_11_d_a == "1" ? 'SIM' : 'NÃO' });
     }
     if (data.partial_prosthesis_2_11_d_a != null) {
-      this.setState({ partial_prosthesis_2_11_d_a: data.partial_prosthesis_2_11_d_a });
+      this.setState({ partial_prosthesis_2_11_d_a: data.partial_prosthesis_2_11_d_a == "1" ? 'SIM' : 'NÃO' });
     }
     if (data.does_not_use_and_does_not_require_prosthesis_2_11_d_a != null) {
-      this.setState({ does_not_use_and_does_not_require_prosthesis_2_11_d_a: data.does_not_use_and_does_not_require_prosthesis_2_11_d_a });
+      this.setState({ does_not_use_and_does_not_require_prosthesis_2_11_d_a: data.does_not_use_and_does_not_require_prosthesis_2_11_d_a == "1" ? 'SIM' : 'NÃO' });
     }
     if (data.does_not_use_but_needs_prosthesis_2_11_d_a != null) {
-      this.setState({ does_not_use_but_needs_prosthesis_2_11_d_a: data.does_not_use_but_needs_prosthesis_2_11_d_a });
+      this.setState({ does_not_use_but_needs_prosthesis_2_11_d_a: data.does_not_use_but_needs_prosthesis_2_11_d_a == "1" ? 'SIM' : 'NÃO' });
     }
     if (data.uses_adapted_without_exchange_2_11_d_a != null) {
-      this.setState({ uses_adapted_without_exchange_2_11_d_a: data.uses_adapted_without_exchange_2_11_d_a });
+      this.setState({ uses_adapted_without_exchange_2_11_d_a: data.uses_adapted_without_exchange_2_11_d_a == "1" ? 'SIM' : 'NÃO' });
     }
     if (data.uses_not_adapted_needs_exchange_2_11_d_a != null) {
-      this.setState({ uses_not_adapted_needs_exchange_2_11_d_a: data.uses_not_adapted_needs_exchange_2_11_d_a });
+      this.setState({ uses_not_adapted_needs_exchange_2_11_d_a: data.uses_not_adapted_needs_exchange_2_11_d_a == "1" ? 'SIM' : 'NÃO' });
     }
     if (data.created_at != null) {
       this.setState({ created_at: data.created_at });
@@ -95678,42 +95678,42 @@ class DetailsDentalProsthesis extends __WEBPACK_IMPORTED_MODULE_0_react___defaul
                     __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                       'td',
                       null,
-                      data.superior_2_11_d_a
+                      data.superior_2_11_d_a == "1" ? 'SIM' : 'NÃO'
                     ),
                     __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                       'td',
                       null,
-                      data.inferior_2_11_d_a
+                      data.inferior_2_11_d_a == "1" ? 'SIM' : 'NÃO'
                     ),
                     __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                       'td',
                       null,
-                      data.total_prosthesis_2_11_d_a
+                      data.total_prosthesis_2_11_d_a == "1" ? 'SIM' : 'NÃO'
                     ),
                     __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                       'td',
                       null,
-                      data.partial_prosthesis_2_11_d_a
+                      data.partial_prosthesis_2_11_d_a == "1" ? 'SIM' : 'NÃO'
                     ),
                     __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                       'td',
                       null,
-                      data.does_not_use_and_does_not_require_prosthesis_2_11_d_a
+                      data.does_not_use_and_does_not_require_prosthesis_2_11_d_a == "1" ? 'SIM' : 'NÃO'
                     ),
                     __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                       'td',
                       null,
-                      data.does_not_use_but_needs_prosthesis_2_11_d_a
+                      data.does_not_use_but_needs_prosthesis_2_11_d_a == "1" ? 'SIM' : 'NÃO'
                     ),
                     __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                       'td',
                       null,
-                      data.uses_adapted_without_exchange_2_11_d_a
+                      data.uses_adapted_without_exchange_2_11_d_a == "1" ? 'SIM' : 'NÃO'
                     ),
                     __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                       'td',
                       null,
-                      data.uses_not_adapted_needs_exchange_2_11_d_a
+                      data.uses_not_adapted_needs_exchange_2_11_d_a == "1" ? 'SIM' : 'NÃO'
                     ),
                     __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                       'td',

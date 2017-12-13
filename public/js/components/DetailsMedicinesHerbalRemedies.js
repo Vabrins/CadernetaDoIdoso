@@ -44,7 +44,7 @@ class DetailsMedicinesHerbalRemedies extends React.Component {
       this.setState({start_date_or_time_of_use_2_1: data.start_date_or_time_of_use_2_1});
     }
     if (data.concomitant_use_of_five_or_more_medicines_2_1 != null) {
-      this.setState({concomitant_use_of_five_or_more_medicines_2_1: data.concomitant_use_of_five_or_more_medicines_2_1});
+      this.setState({concomitant_use_of_five_or_more_medicines_2_1: (data.concomitant_use_of_five_or_more_medicines_2_1 == "1") ? 'SIM' : 'NÃO'});
     }
     if (data.it_was_prescribed_by_some_professional_2_1 != null) {
       this.setState({it_was_prescribed_by_some_professional_2_1: data.it_was_prescribed_by_some_professional_2_1});
@@ -87,7 +87,7 @@ class DetailsMedicinesHerbalRemedies extends React.Component {
                             <td>{data.name_of_the_medicinal_supplement_or_vitamin_2_1}</td>
                             <td>{data.dose_and_frequency_2_1}</td>
                             <td>{data.start_date_or_time_of_use_2_1}</td>
-                            <td>{data.concomitant_use_of_five_or_more_medicines_2_1}</td>
+                            <td>{(data.concomitant_use_of_five_or_more_medicines_2_1 == "1") ? 'SIM' : 'NÃO'}</td>
                             <td>{data.it_was_prescribed_by_some_professional_2_1}</td>
                             <td>{data.suspension_information_2_1}</td>
                             <td>{data.created_at}</td>

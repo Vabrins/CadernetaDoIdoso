@@ -45,28 +45,28 @@ class DetailsDentalProsthesis extends React.Component {
 
   buildData(data) {
     if (data.superior_2_11_d_a != null) {
-      this.setState({superior_2_11_d_a: data.superior_2_11_d_a});
+      this.setState({superior_2_11_d_a: (data.superior_2_11_d_a == "1") ? 'SIM' : 'NÃO'});
     }
     if (data.inferior_2_11_d_a != null) {
-      this.setState({inferior_2_11_d_a: data.inferior_2_11_d_a});
+      this.setState({inferior_2_11_d_a: (data.inferior_2_11_d_a == "1") ? 'SIM' : 'NÃO'});
     }
     if (data.total_prosthesis_2_11_d_a != null) {
-      this.setState({total_prosthesis_2_11_d_a: data.total_prosthesis_2_11_d_a});
+      this.setState({total_prosthesis_2_11_d_a: (data.total_prosthesis_2_11_d_a == "1") ? 'SIM' : 'NÃO'});
     }
     if (data.partial_prosthesis_2_11_d_a != null) {
-      this.setState({partial_prosthesis_2_11_d_a: data.partial_prosthesis_2_11_d_a});
+      this.setState({partial_prosthesis_2_11_d_a: (data.partial_prosthesis_2_11_d_a == "1") ? 'SIM' : 'NÃO'});
     }
     if (data.does_not_use_and_does_not_require_prosthesis_2_11_d_a != null) {
-      this.setState({does_not_use_and_does_not_require_prosthesis_2_11_d_a: data.does_not_use_and_does_not_require_prosthesis_2_11_d_a});
+      this.setState({does_not_use_and_does_not_require_prosthesis_2_11_d_a: (data.does_not_use_and_does_not_require_prosthesis_2_11_d_a == "1") ? 'SIM' : 'NÃO'});
     }
     if (data.does_not_use_but_needs_prosthesis_2_11_d_a != null) {
-      this.setState({does_not_use_but_needs_prosthesis_2_11_d_a: data.does_not_use_but_needs_prosthesis_2_11_d_a});
+      this.setState({does_not_use_but_needs_prosthesis_2_11_d_a: (data.does_not_use_but_needs_prosthesis_2_11_d_a == "1") ? 'SIM' : 'NÃO'});
     }
     if (data.uses_adapted_without_exchange_2_11_d_a != null) {
-      this.setState({uses_adapted_without_exchange_2_11_d_a: data.uses_adapted_without_exchange_2_11_d_a});
+      this.setState({uses_adapted_without_exchange_2_11_d_a: (data.uses_adapted_without_exchange_2_11_d_a == "1") ? 'SIM' : 'NÃO'});
     }
     if (data.uses_not_adapted_needs_exchange_2_11_d_a != null) {
-      this.setState({uses_not_adapted_needs_exchange_2_11_d_a: data.uses_not_adapted_needs_exchange_2_11_d_a});
+      this.setState({uses_not_adapted_needs_exchange_2_11_d_a: (data.uses_not_adapted_needs_exchange_2_11_d_a == "1") ? 'SIM' : 'NÃO'});
     }
     if (data.created_at != null) {
       this.setState({created_at: data.created_at});
@@ -102,14 +102,14 @@ class DetailsDentalProsthesis extends React.Component {
                       this.state.list.map(function(data){
                         return (
                           <tr key={data.id}>
-                            <td>{data.superior_2_11_d_a}</td>
-                            <td>{data.inferior_2_11_d_a}</td>
-                            <td>{data.total_prosthesis_2_11_d_a}</td>
-                            <td>{data.partial_prosthesis_2_11_d_a}</td>
-                            <td>{data.does_not_use_and_does_not_require_prosthesis_2_11_d_a}</td>
-                            <td>{data.does_not_use_but_needs_prosthesis_2_11_d_a}</td>
-                            <td>{data.uses_adapted_without_exchange_2_11_d_a}</td>
-                            <td>{data.uses_not_adapted_needs_exchange_2_11_d_a}</td>
+                            <td>{(data.superior_2_11_d_a == "1") ? 'SIM' : 'NÃO'}</td>
+                            <td>{(data.inferior_2_11_d_a == "1") ? 'SIM' : 'NÃO'}</td>
+                            <td>{(data.total_prosthesis_2_11_d_a == "1") ? 'SIM' : 'NÃO'}</td>
+                            <td>{(data.partial_prosthesis_2_11_d_a == "1") ? 'SIM' : 'NÃO'}</td>
+                            <td>{(data.does_not_use_and_does_not_require_prosthesis_2_11_d_a == "1") ? 'SIM' : 'NÃO'}</td>
+                            <td>{(data.does_not_use_but_needs_prosthesis_2_11_d_a == "1") ? 'SIM' : 'NÃO'}</td>
+                            <td>{(data.uses_adapted_without_exchange_2_11_d_a == "1") ? 'SIM' : 'NÃO'}</td>
+                            <td>{(data.uses_not_adapted_needs_exchange_2_11_d_a == "1") ? 'SIM' : 'NÃO'}</td>
                             <td>{data.created_at}</td>
                             <td>{data.history.user.name}</td>
                           </tr>

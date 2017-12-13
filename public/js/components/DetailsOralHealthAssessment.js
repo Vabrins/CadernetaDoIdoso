@@ -53,52 +53,52 @@ class DetailsOralHealthAssessment extends React.Component {
 
   buildData(data) {
     if (data.alcohol_2_11_d != null) {
-      this.setState({alcohol_2_11_d: data.alcohol_2_11_d});
+      this.setState({alcohol_2_11_d: (data.alcohol_2_11_d == "1") ? 'SIM' : 'NÃO'});
     }
     if (data.smoke_2_11_d != null) {
-      this.setState({smoke_2_11_d: data.smoke_2_11_d});
+      this.setState({smoke_2_11_d: (data.smoke_2_11_d == "1") ? 'SIM' : 'NÃO'});
     }
     if (data.presence_of_lesion_on_the_buccal_mucosa_2_11_d != null) {
-      this.setState({presence_of_lesion_on_the_buccal_mucosa_2_11_d: data.presence_of_lesion_on_the_buccal_mucosa_2_11_d});
+      this.setState({presence_of_lesion_on_the_buccal_mucosa_2_11_d: (data.presence_of_lesion_on_the_buccal_mucosa_2_11_d == "1") ? 'SIM' : 'NÃO'});
     }
     if (data.dry_mouth_2_11_d != null) {
-      this.setState({dry_mouth_2_11_d: data.dry_mouth_2_11_d});
+      this.setState({dry_mouth_2_11_d: (data.dry_mouth_2_11_d == "1") ? 'SIM' : 'NÃO'});
     }
     if (data.white_tongue_2_11_d != null) {
-      this.setState({white_tongue_2_11_d: data.white_tongue_2_11_d});
+      this.setState({white_tongue_2_11_d: (data.white_tongue_2_11_d == "1") ? 'SIM' : 'NÃO'});
     }
     if (data.presence_of_oral_candidiasis_2_11_d != null) {
-      this.setState({presence_of_oral_candidiasis_2_11_d: data.presence_of_oral_candidiasis_2_11_d});
+      this.setState({presence_of_oral_candidiasis_2_11_d: (data.presence_of_oral_candidiasis_2_11_d == "1") ? 'SIM' : 'NÃO'});
     }
     if (data.presence_of_halitosis_2_11_d != null) {
-      this.setState({presence_of_halitosis_2_11_d: data.presence_of_halitosis_2_11_d});
+      this.setState({presence_of_halitosis_2_11_d: (data.presence_of_halitosis_2_11_d == "1") ? 'SIM' : 'NÃO'});
     }
     if (data.presence_of_bacterial_plaque_2_11_d != null) {
-      this.setState({presence_of_bacterial_plaque_2_11_d: data.presence_of_bacterial_plaque_2_11_d});
+      this.setState({presence_of_bacterial_plaque_2_11_d: (data.presence_of_bacterial_plaque_2_11_d == "1") ? 'SIM' : 'NÃO'});
     }
     if (data.plate_retentive_factors_2_11_d != null) {
-      this.setState({plate_retentive_factors_2_11_d: data.plate_retentive_factors_2_11_d});
+      this.setState({plate_retentive_factors_2_11_d: (data.plate_retentive_factors_2_11_d == "1") ? 'SIM' : 'NÃO'});
     }
     if (data.obvious_presence_of_gingivitis_2_11_d != null) {
-      this.setState({obvious_presence_of_gingivitis_2_11_d: data.obvious_presence_of_gingivitis_2_11_d});
+      this.setState({obvious_presence_of_gingivitis_2_11_d: (data.obvious_presence_of_gingivitis_2_11_d == "1") ? 'SIM' : 'NÃO'});
     }
     if (data.obvious_presence_of_periodontitis_2_11_d != null) {
-      this.setState({obvious_presence_of_periodontitis_2_11_d: data.obvious_presence_of_periodontitis_2_11_d});
+      this.setState({obvious_presence_of_periodontitis_2_11_d: (data.obvious_presence_of_periodontitis_2_11_d == "1") ? 'SIM' : 'NÃO'});
     }
     if (data.presence_of_caries_2_11_d != null) {
-      this.setState({presence_of_caries_2_11_d: data.presence_of_caries_2_11_d});
+      this.setState({presence_of_caries_2_11_d: (data.presence_of_caries_2_11_d == "1") ? 'SIM' : 'NÃO'});
     }
     if (data.dental_loss_in_last_year_2_11_d != null) {
-      this.setState({dental_loss_in_last_year_2_11_d: data.dental_loss_in_last_year_2_11_d});
+      this.setState({dental_loss_in_last_year_2_11_d: (data.dental_loss_in_last_year_2_11_d == "1") ? 'SIM' : 'NÃO'});
     }
     if (data.attendance_at_the_health_unit_2_11_d != null) {
-      this.setState({attendance_at_the_health_unit_2_11_d: data.attendance_at_the_health_unit_2_11_d});
+      this.setState({attendance_at_the_health_unit_2_11_d: (data.attendance_at_the_health_unit_2_11_d == "1") ? 'SIM' : 'NÃO'});
     }
     if (data.home_service_2_11_d != null) {
-      this.setState({home_service_2_11_d: data.home_service_2_11_d});
+      this.setState({home_service_2_11_d: (data.home_service_2_11_d == "1") ? 'SIM' : 'NÃO'});
     }
     if (data.forwarding_for_specialties_dental_2_11_d != null) {
-      this.setState({forwarding_for_specialties_dental_2_11_d: data.forwarding_for_specialties_dental_2_11_d});
+      this.setState({forwarding_for_specialties_dental_2_11_d: (data.forwarding_for_specialties_dental_2_11_d == "1") ? 'SIM' : 'NÃO'});
     }
     if (data.created_at != null) {
       this.setState({created_at: data.created_at});
@@ -141,23 +141,23 @@ class DetailsOralHealthAssessment extends React.Component {
                     {
                       this.state.list.map(function(data){
                         return (
-                          <tr key={data.id}>
-                            <td>{data.alcohol_2_11_d}</td>
-                            <td>{data.smoke_2_11_d}</td>
-                            <td>{data.presence_of_lesion_on_the_buccal_mucosa_2_11_d}</td>
-                            <td>{data.dry_mouth_2_11_d}</td>
-                            <td>{data.white_tongue_2_11_d}</td>
-                            <td>{data.presence_of_oral_candidiasis_2_11_d}</td>
-                            <td>{data.presence_of_halitosis_2_11_d}</td>
-                            <td>{data.presence_of_bacterial_plaque_2_11_d}</td>
-                            <td>{data.plate_retentive_factors_2_11_d}</td>
-                            <td>{data.obvious_presence_of_gingivitis_2_11_d}</td>
-                            <td>{data.obvious_presence_of_periodontitis_2_11_d}</td>
-                            <td>{data.presence_of_caries_2_11_d}</td>
-                            <td>{data.dental_loss_in_last_year_2_11_d}</td>
-                            <td>{data.attendance_at_the_health_unit_2_11_d}</td>
-                            <td>{data.home_service_2_11_d}</td>
-                            <td>{data.forwarding_for_specialties_dental_2_11_d}</td>
+                          <tr key={data.id}>                          
+                            <td>{(data.alcohol_2_11_d == "1") ? 'SIM' : 'NÃO'}</td>
+                            <td>{(data.smoke_2_11_d == "1") ? 'SIM' : 'NÃO'}</td>
+                            <td>{(data.presence_of_lesion_on_the_buccal_mucosa_2_11_d == "1") ? 'SIM' : 'NÃO'}</td>
+                            <td>{(data.dry_mouth_2_11_d == "1") ? 'SIM' : 'NÃO'}</td>
+                            <td>{(data.white_tongue_2_11_d == "1") ? 'SIM' : 'NÃO'}</td>
+                            <td>{(data.presence_of_oral_candidiasis_2_11_d == "1") ? 'SIM' : 'NÃO'}</td>
+                            <td>{(data.presence_of_halitosis_2_11_d == "1") ? 'SIM' : 'NÃO'}</td>
+                            <td>{(data.presence_of_bacterial_plaque_2_11_d == "1") ? 'SIM' : 'NÃO'}</td>
+                            <td>{(data.plate_retentive_factors_2_11_d == "1") ? 'SIM' : 'NÃO'}</td>
+                            <td>{(data.obvious_presence_of_gingivitis_2_11_d == "1") ? 'SIM' : 'NÃO'}</td>
+                            <td>{(data.obvious_presence_of_periodontitis_2_11_d == "1") ? 'SIM' : 'NÃO'}</td>
+                            <td>{(data.presence_of_caries_2_11_d == "1") ? 'SIM' : 'NÃO'}</td>
+                            <td>{(data.dental_loss_in_last_year_2_11_d == "1") ? 'SIM' : 'NÃO'}</td>
+                            <td>{(data.attendance_at_the_health_unit_2_11_d == "1") ? 'SIM' : 'NÃO'}</td>
+                            <td>{(data.home_service_2_11_d == "1") ? 'SIM' : 'NÃO'}</td>
+                            <td>{(data.forwarding_for_specialties_dental_2_11_d == "1") ? 'SIM' : 'NÃO'}</td>
                             <td>{data.created_at}</td>
                             <td>{data.history.user.name}</td>
                           </tr>
